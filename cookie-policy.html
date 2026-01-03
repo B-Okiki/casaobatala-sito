@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cookie Policy - Casa Obàtálá</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background: #fafafa; color: #1a1a1a; padding-top: 70px; }
+        nav { position: fixed; top: 0; width: 100%; padding: 1rem 1.2rem; z-index: 1000; display: flex; justify-content: space-between; align-items: center; background: rgba(255,255,255,0.98); border-bottom: 1px solid rgba(139,69,19,0.1); }
+        .logo { font-family: 'Playfair Display', serif; font-size: 1.2rem; background: linear-gradient(135deg, #8B4513, #B8860B); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .nav-links { display: none; gap: 2rem; list-style: none; }
+        .nav-links a { color: #1a1a1a; text-decoration: none; font-size: 0.85rem; text-transform: uppercase; }
+        .menu-toggle { display: flex; flex-direction: column; cursor: pointer; gap: 5px; }
+        .menu-toggle span { width: 24px; height: 2px; background: #8B4513; }
+        .mobile-menu { display: none; position: fixed; top: 58px; left: 0; right: 0; background: #fff; padding: 1rem; z-index: 999; }
+        .mobile-menu.active { display: block; }
+        .mobile-menu a { display: block; padding: 0.9rem 0; color: #1a1a1a; text-decoration: none; border-bottom: 1px solid rgba(139,69,19,0.08); }
+        .section { padding: 1.5rem 1rem 2.5rem; max-width: 900px; margin: 0 auto; }
+        .section-title { font-family: 'Playfair Display', serif; font-size: 2rem; margin-bottom: 0.5rem; color: #8B4513; }
+        .last-update { color: #6b5d4f; font-size: 0.85rem; margin-bottom: 2rem; }
+        .policy-content { background: #fff; border: 1px solid rgba(139,69,19,0.12); border-radius: 12px; padding: 1.5rem 1.2rem; }
+        .policy-content h2 { font-family: 'Playfair Display', serif; color: #8B4513; font-size: 1.3rem; margin: 2rem 0 1rem; }
+        .policy-content h2:first-child { margin-top: 0; }
+        .policy-content p { font-size: 0.95rem; line-height: 1.7; margin-bottom: 1rem; color: #2a2a2a; }
+        .policy-content ul { padding-left: 1.5rem; margin-bottom: 1rem; }
+        .policy-content li { font-size: 0.95rem; line-height: 1.6; margin-bottom: 0.5rem; color: #2a2a2a; }
+        .policy-content strong { color: #8B4513; }
+        .policy-content a { color: #8B4513; }
+        .info-box { background: rgba(139,69,19,0.04); border-left: 3px solid #8B4513; padding: 1rem 1.2rem; margin: 1.5rem 0; border-radius: 0 8px 8px 0; }
+        table { width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: 0.85rem; }
+        th, td { border: 1px solid rgba(139,69,19,0.2); padding: 0.7rem; text-align: left; }
+        th { background: rgba(139,69,19,0.06); color: #8B4513; }
+        .back-button { display: inline-block; margin: 1.5rem auto; padding: 0.9rem 1.8rem; background: linear-gradient(135deg, #8B4513, #A0522D); color: white; text-decoration: none; border-radius: 50px; font-size: 0.85rem; text-transform: uppercase; }
+        .button-container { text-align: center; margin-top: 2rem; }
+        footer { text-align: center; padding: 2rem 1rem; background: #f8f6f3; }
+        footer p { color: #6b5d4f; font-size: 0.8rem; line-height: 1.7; }
+        footer a { color: #6b5d4f; }
+        @media (min-width: 768px) { body { padding-top: 80px; } nav { padding: 1.2rem 2rem; } .logo { font-size: 1.4rem; } .section { padding: 2.5rem 2rem; } .section-title { font-size: 2.5rem; } .policy-content { padding: 2.5rem; } }
+        @media (min-width: 1024px) { body { padding-top: 100px; } nav { padding: 1.5rem 3rem; } .logo { font-size: 1.5rem; } .menu-toggle { display: none; } .nav-links { display: flex; } }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">CASA OBÀTÁLÁ</div>
+        <div class="menu-toggle" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="meditazione.html">Meditazione</a></li>
+            <li><a href="piante.html">Piante</a></li>
+            <li><a href="glossario.html">Glossario</a></li>
+            <li><a href="eventi.html">Eventi</a></li>
+            <li><a href="chi-sono.html">Chi Sono</a></li>
+            <li><a href="contatti.html">Contatti</a></li>
+        </ul>
+    </nav>
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="index.html">Home</a><a href="meditazione.html">Meditazione</a><a href="piante.html">Piante</a><a href="glossario.html">Glossario</a><a href="eventi.html">Eventi</a><a href="chi-sono.html">Chi Sono</a><a href="contatti.html">Contatti</a>
+    </div>
+
+    <section class="section">
+        <h1 class="section-title">Cookie Policy</h1>
+        <p class="last-update">Ultimo aggiornamento: Gennaio 2025</p>
+
+        <div class="policy-content">
+            <h2>1. Cosa sono i Cookie</h2>
+            <p>I cookie sono piccoli file di testo che i siti web salvano sul tuo dispositivo (computer, smartphone, tablet) quando li visiti. Servono a memorizzare informazioni sulla tua visita, come le preferenze di lingua o altri dati, per rendere la navigazione più semplice e personalizzata.</p>
+
+            <h2>2. Titolare del Trattamento</h2>
+            <div class="info-box">
+                <p><strong>Titolare:</strong> Lorenzo Rossi</p>
+                <p><strong>Indirizzo:</strong> Viale dei Promontori 310, 00122 Ostia Lido (RM)</p>
+                <p><strong>Email:</strong> <a href="mailto:lorenzo.okiki@gmail.com">lorenzo.okiki@gmail.com</a></p>
+            </div>
+
+            <h2>3. Tipologie di Cookie</h2>
+            <p>I cookie possono essere classificati in base a diversi criteri:</p>
+            
+            <h3>Per durata:</h3>
+            <ul>
+                <li><strong>Cookie di sessione:</strong> vengono eliminati alla chiusura del browser</li>
+                <li><strong>Cookie persistenti:</strong> rimangono sul dispositivo per un periodo determinato</li>
+            </ul>
+
+            <h3>Per provenienza:</h3>
+            <ul>
+                <li><strong>Cookie di prima parte:</strong> impostati direttamente dal sito visitato</li>
+                <li><strong>Cookie di terze parti:</strong> impostati da domini diversi dal sito visitato</li>
+            </ul>
+
+            <h3>Per finalità:</h3>
+            <ul>
+                <li><strong>Cookie tecnici:</strong> necessari al funzionamento del sito</li>
+                <li><strong>Cookie analitici:</strong> raccolgono statistiche sulla navigazione</li>
+                <li><strong>Cookie di profilazione:</strong> tracciano le preferenze per pubblicità mirata</li>
+            </ul>
+
+            <h2>4. Cookie Utilizzati da Questo Sito</h2>
+            <p>Il sito <strong>casaobatala.it</strong> utilizza esclusivamente <strong>cookie tecnici</strong> strettamente necessari al funzionamento.</p>
+
+            <table>
+                <tr>
+                    <th>Nome</th>
+                    <th>Tipo</th>
+                    <th>Finalità</th>
+                    <th>Durata</th>
+                </tr>
+                <tr>
+                    <td>cookieConsent</td>
+                    <td>Tecnico (prima parte)</td>
+                    <td>Memorizza la scelta sui cookie</td>
+                    <td>12 mesi</td>
+                </tr>
+                <tr>
+                    <td>__cfduid (Netlify)</td>
+                    <td>Tecnico (terza parte)</td>
+                    <td>Sicurezza e performance</td>
+                    <td>30 giorni</td>
+                </tr>
+            </table>
+
+            <div class="info-box">
+                <p><strong>⚠️ Nota importante:</strong> Questo sito <strong>NON utilizza</strong>:</p>
+                <ul style="margin-top: 0.5rem; margin-bottom: 0;">
+                    <li>Cookie di profilazione</li>
+                    <li>Cookie pubblicitari</li>
+                    <li>Google Analytics o altri strumenti di tracciamento</li>
+                    <li>Facebook Pixel o strumenti di marketing</li>
+                </ul>
+            </div>
+
+            <h2>5. Cookie di Terze Parti</h2>
+            <p>Il sito si appoggia ai seguenti servizi esterni che potrebbero installare cookie tecnici:</p>
+            
+            <p><strong>Netlify</strong> (hosting e form)</p>
+            <ul>
+                <li>Finalità: hosting del sito e gestione moduli di contatto</li>
+                <li>Cookie: tecnici per sicurezza e performance</li>
+                <li>Privacy Policy: <a href="https://www.netlify.com/privacy/" target="_blank">netlify.com/privacy</a></li>
+            </ul>
+
+            <p><strong>Google Fonts</strong> (caratteri tipografici)</p>
+            <ul>
+                <li>Finalità: caricamento dei font del sito</li>
+                <li>Cookie: nessun cookie, ma registra l'indirizzo IP</li>
+                <li>Privacy Policy: <a href="https://policies.google.com/privacy" target="_blank">policies.google.com/privacy</a></li>
+            </ul>
+
+            <h2>6. Base Giuridica</h2>
+            <p>I <strong>cookie tecnici</strong> non richiedono il consenso preventivo in quanto strettamente necessari al funzionamento del sito (Art. 122 D.Lgs. 196/2003 e Provvedimento Garante 8 maggio 2014).</p>
+            <p>Qualora in futuro venissero introdotti cookie analitici o di profilazione, sarà richiesto il tuo consenso esplicito tramite banner.</p>
+
+            <h2>7. Come Gestire i Cookie</h2>
+            <p>Puoi gestire le preferenze sui cookie in diversi modi:</p>
+
+            <h3>Tramite il browser:</h3>
+            <ul>
+                <li><strong>Chrome:</strong> Impostazioni → Privacy e sicurezza → Cookie</li>
+                <li><strong>Firefox:</strong> Opzioni → Privacy → Cronologia</li>
+                <li><strong>Safari:</strong> Preferenze → Privacy</li>
+                <li><strong>Edge:</strong> Impostazioni → Privacy → Cookie</li>
+            </ul>
+
+            <p><strong>Attenzione:</strong> la disabilitazione dei cookie tecnici potrebbe compromettere alcune funzionalità del sito.</p>
+
+            <h2>8. Aggiornamenti</h2>
+            <p>Questa Cookie Policy può essere aggiornata periodicamente. Ti invitiamo a consultare questa pagina regolarmente. La data dell'ultimo aggiornamento è indicata in alto.</p>
+
+            <h2>9. Contatti</h2>
+            <p>Per qualsiasi domanda sui cookie utilizzati da questo sito, puoi contattare il Titolare:</p>
+            <ul>
+                <li>Email: <a href="mailto:lorenzo.okiki@gmail.com">lorenzo.okiki@gmail.com</a></li>
+                <li>Telefono: +39 347 363 8901</li>
+            </ul>
+
+            <h2>10. Link Utili</h2>
+            <ul>
+                <li><a href="privacy-policy.html">Privacy Policy completa</a></li>
+                <li><a href="https://www.garanteprivacy.it/cookie" target="_blank">Garante Privacy - Informazioni sui cookie</a></li>
+                <li><a href="https://www.youronlinechoices.eu/" target="_blank">Your Online Choices - Gestione cookie pubblicitari</a></li>
+            </ul>
+        </div>
+
+        <div class="button-container">
+            <a href="index.html" class="back-button">← Home</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2025 CASA OBÀTÁLÁ - LORENZO ROSSI</p>
+        <p>C.F.: RSSLNZ76A21H501K</p>
+        <p style="margin-top: 0.5rem;"><a href="privacy-policy.html">Privacy Policy</a> | <a href="cookie-policy.html">Cookie Policy</a></p>
+    </footer>
+
+    <script>function toggleMenu() { document.getElementById('mobileMenu').classList.toggle('active'); }</script>
+</body>
+</html>

@@ -33,25 +33,29 @@
         .quote-box { margin-top: 1.5rem; padding: 1.2rem; background: rgba(139,69,19,0.04); border-radius: 10px; text-align: center; }
         .quote-box p { font-size: 0.9rem; font-style: italic; color: #2a2a2a; line-height: 1.6; }
         .form-group { margin-bottom: 1.2rem; }
-        .form-group label { display: block; font-size: 0.85rem; color: #6b5d4f; margin-bottom: 0.4rem; text-transform: uppercase; }
+        .form-group label { display: block; font-size: 0.85rem; color: #6b5d4f; margin-bottom: 0.4rem; }
         .form-group input, .form-group textarea, .form-group select { width: 100%; padding: 0.9rem 1rem; border: 1px solid rgba(139,69,19,0.2); border-radius: 8px; font-size: 1rem; font-family: 'Inter', sans-serif; background: #fafafa; }
         .form-group textarea { min-height: 120px; resize: vertical; }
         .privacy-check { display: flex; gap: 0.8rem; margin: 1.2rem 0; align-items: flex-start; }
-        .privacy-check input { width: 18px; height: 18px; margin-top: 3px; }
-        .privacy-check label { font-size: 0.85rem; color: #6b5d4f; line-height: 1.5; }
+        .privacy-check input { width: 18px; height: 18px; margin-top: 3px; flex-shrink: 0; }
+        .privacy-check label { font-size: 0.82rem; color: #6b5d4f; line-height: 1.5; }
         .privacy-check a { color: #8B4513; }
-        .submit-btn { width: 100%; padding: 1rem; background: linear-gradient(135deg, #8B4513, #A0522D); color: white; border: none; border-radius: 50px; font-size: 0.95rem; cursor: pointer; text-transform: uppercase; letter-spacing: 0.05em; }
-        .privacy-notice { max-width: 900px; margin: 2rem auto 0; padding: 1.5rem 1.2rem; background: rgba(139,69,19,0.03); border-radius: 10px; }
-        .privacy-notice h4 { color: #8B4513; font-size: 1rem; margin-bottom: 0.8rem; }
-        .privacy-notice p { font-size: 0.8rem; color: #6b5d4f; line-height: 1.7; margin-bottom: 0.5rem; }
+        .submit-btn { width: 100%; padding: 1rem; background: linear-gradient(135deg, #8B4513, #A0522D); color: white; border: none; border-radius: 50px; font-size: 0.95rem; cursor: pointer; text-transform: uppercase; }
+        .privacy-notice { max-width: 900px; margin: 2rem auto 0; padding: 1.5rem 1.2rem; background: #fff; border: 1px solid rgba(139,69,19,0.12); border-radius: 12px; }
+        .privacy-notice h4 { color: #8B4513; font-size: 1.1rem; margin-bottom: 1rem; font-family: 'Playfair Display', serif; }
+        .privacy-notice p { font-size: 0.85rem; color: #2a2a2a; line-height: 1.7; margin-bottom: 0.8rem; }
+        .privacy-notice strong { color: #8B4513; }
         .privacy-notice a { color: #8B4513; }
+        .privacy-notice ul { padding-left: 1.2rem; margin: 0.5rem 0 1rem; }
+        .privacy-notice li { font-size: 0.85rem; color: #2a2a2a; line-height: 1.5; margin-bottom: 0.3rem; }
         .back-button { display: inline-block; margin: 1.5rem auto; padding: 0.9rem 1.8rem; background: linear-gradient(135deg, #8B4513, #A0522D); color: white; text-decoration: none; border-radius: 50px; font-size: 0.85rem; text-transform: uppercase; }
         .button-container { text-align: center; margin-top: 1.5rem; }
         footer { text-align: center; padding: 2rem 1rem; background: #f8f6f3; }
         footer p { color: #6b5d4f; font-size: 0.8rem; line-height: 1.7; }
+        footer a { color: #6b5d4f; }
         .hidden { display: none; }
-        @media (min-width: 768px) { body { padding-top: 80px; } nav { padding: 1.2rem 2rem; } .logo { font-size: 1.4rem; } .section { padding: 2.5rem 2rem; } .section-title { font-size: 2.5rem; } .contact-grid { grid-template-columns: 1fr 1fr; } .contact-box { padding: 2rem; } }
-        @media (min-width: 1024px) { body { padding-top: 100px; } nav { padding: 1.5rem 3rem; } .logo { font-size: 1.5rem; } .menu-toggle { display: none; } .nav-links { display: flex; } .section { padding: 3rem; } .section-title { font-size: 3rem; } }
+        @media (min-width: 768px) { body { padding-top: 80px; } nav { padding: 1.2rem 2rem; } .logo { font-size: 1.4rem; } .section { padding: 2.5rem 2rem; } .section-title { font-size: 2.5rem; } .contact-grid { grid-template-columns: 1fr 1fr; } .contact-box { padding: 2rem; } .privacy-notice { padding: 2rem; } }
+        @media (min-width: 1024px) { body { padding-top: 100px; } nav { padding: 1.5rem 3rem; } .logo { font-size: 1.5rem; } .menu-toggle { display: none; } .nav-links { display: flex; } }
     </style>
 </head>
 <body>
@@ -96,7 +100,7 @@
                     <p>Lun-Ven: 10:00 - 19:00<br>Sabato: Su appuntamento</p>
                 </div>
                 <div class="quote-box">
-                    <p>"Nel culto Yoruba si dice che le persone giuste arrivano al momento giusto."</p>
+                    <p>"Le persone giuste arrivano al momento giusto."</p>
                 </div>
             </div>
             <div class="contact-box">
@@ -132,25 +136,31 @@
                     </div>
                     <div class="privacy-check">
                         <input type="checkbox" id="privacy" name="privacy" required>
-                        <label for="privacy">Accetto l'<a href="#privacy-policy">Informativa Privacy</a> *</label>
+                        <label for="privacy">Ho letto l'<a href="#informativa-form">informativa privacy</a> e acconsento al trattamento dei dati *</label>
                     </div>
                     <button type="submit" class="submit-btn">Invia</button>
                 </form>
             </div>
         </div>
-        <div class="privacy-notice" id="privacy-policy">
-            <h4>Privacy (GDPR)</h4>
-            <p><strong>Titolare:</strong> Lorenzo Rossi - Casa Obàtálá</p>
-            <p><strong>Finalità:</strong> Rispondere alle richieste di informazioni.</p>
-            <p><strong>Diritti:</strong> Accesso, rettifica, cancellazione. Contatto: lorenzo.okiki@gmail.com</p>
+        <div class="privacy-notice" id="informativa-form">
+            <h4>Informativa Trattamento Dati (Art. 13 GDPR)</h4>
+            <p><strong>Titolare:</strong> Lorenzo Rossi - Viale dei Promontori 310, 00122 Ostia Lido (RM) - C.F. RSSLNZ76A21H501K - Email: lorenzo.okiki@gmail.com</p>
+            <p><strong>Dati raccolti:</strong> nome, email, telefono (facoltativo), messaggio, tipo di interesse.</p>
+            <p><strong>Finalità:</strong> rispondere alla richiesta e ricontattarti per i servizi.</p>
+            <p><strong>Base giuridica:</strong> consenso (Art. 6.1.a GDPR), revocabile in qualsiasi momento.</p>
+            <p><strong>Conservazione:</strong> 24 mesi dalla raccolta.</p>
+            <p><strong>Destinatari:</strong> Netlify Inc. (USA) per elaborazione form, con Clausole Contrattuali Standard UE.</p>
+            <p><strong>Diritti:</strong> accesso, rettifica, cancellazione, limitazione, opposizione, portabilità, revoca consenso. Scrivi a: lorenzo.okiki@gmail.com</p>
+            <p><strong>Reclamo:</strong> Garante Privacy - <a href="https://www.garanteprivacy.it" target="_blank">www.garanteprivacy.it</a></p>
+            <p style="margin-top: 1rem;"><a href="privacy-policy.html">→ Privacy Policy completa</a></p>
         </div>
         <div class="button-container">
             <a href="index.html" class="back-button">← Home</a>
         </div>
     </section>
     <footer>
-        <p>© 2025 CASA OBÀTÁLÁ - LORENZO OKÌKÍ ROSSI</p>
-        <p>📱 3473638901 | 📧 lorenzo.okiki@gmail.com</p>
+        <p>© 2025 CASA OBÀTÁLÁ - LORENZO ROSSI - C.F. RSSLNZ76A21H501K</p>
+        <p style="margin-top: 0.5rem;"><a href="privacy-policy.html">Privacy</a> | <a href="cookie-policy.html">Cookie</a></p>
     </footer>
     <script>function toggleMenu() { document.getElementById('mobileMenu').classList.toggle('active'); }</script>
 </body>
