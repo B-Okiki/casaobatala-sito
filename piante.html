@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saggezza delle Piante - Casa Obàtálá</title>
+    <meta name="description" content="Fitoterapia integrata con la tradizione Yoruba. Le piante come ponte tra corpo e spirito con Lorenzo Okìkí Rossi.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background: #fafafa; color: #1a1a1a; overflow-x: hidden; padding-top: 70px; }
+        
+        nav { position: fixed; top: 0; width: 100%; padding: 1rem 1.2rem; z-index: 1000; display: flex; justify-content: space-between; align-items: center; background: rgba(255, 255, 255, 0.98); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(139, 69, 19, 0.1); }
+        .logo { font-family: 'Playfair Display', serif; font-size: 1.2rem; font-weight: 400; letter-spacing: 0.08em; background: linear-gradient(135deg, #8B4513, #B8860B); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .nav-links { display: none; gap: 2rem; list-style: none; }
+        .nav-links a { color: #1a1a1a; text-decoration: none; font-size: 0.85rem; letter-spacing: 0.1em; text-transform: uppercase; }
+        .nav-links a:hover { color: #8B4513; }
+        .menu-toggle { display: flex; flex-direction: column; cursor: pointer; gap: 5px; padding: 5px; }
+        .menu-toggle span { width: 24px; height: 2px; background: #8B4513; }
+        
+        .mobile-menu { display: none; position: fixed; top: 58px; left: 0; right: 0; background: #fff; padding: 1rem 1.2rem; border-bottom: 1px solid rgba(139, 69, 19, 0.1); box-shadow: 0 10px 30px rgba(0,0,0,0.1); z-index: 999; }
+        .mobile-menu.active { display: block; }
+        .mobile-menu a { display: block; padding: 0.9rem 0; color: #1a1a1a; text-decoration: none; font-size: 1rem; border-bottom: 1px solid rgba(139, 69, 19, 0.08); }
+        .mobile-menu a:last-child { border-bottom: none; }
+        
+        .section { padding: 1.5rem 1rem 2.5rem; }
+        .section-title { font-family: 'Playfair Display', serif; text-align: center; font-size: 2rem; font-weight: 300; margin-bottom: 0.5rem; color: #1a1a1a; }
+        .section-subtitle { text-align: center; color: #6b5d4f; font-size: 0.85rem; margin-bottom: 1.5rem; letter-spacing: 0.12em; text-transform: uppercase; }
+        .bio-content { max-width: 800px; margin: 0 auto; }
+        .bio-text { background: #fff; border: 1px solid rgba(139, 69, 19, 0.12); border-radius: 12px; padding: 1.5rem 1.2rem; position: relative; }
+        .bio-text::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, #8B4513, #B8860B); border-radius: 12px 12px 0 0; }
+        .bio-text p { margin-bottom: 1.3rem; color: #2a2a2a; font-size: 0.95rem; line-height: 1.75; }
+        .bio-text h3 { font-family: 'Playfair Display', serif; color: #8B4513; font-size: 1.4rem; margin-top: 2rem; margin-bottom: 0.8rem; }
+        .bio-text h3:first-of-type { margin-top: 0.5rem; }
+        .bio-text ul { margin: 1rem 0; padding-left: 1.3rem; }
+        .bio-text li { margin-bottom: 0.6rem; color: #2a2a2a; line-height: 1.6; font-size: 0.92rem; }
+        .bio-text strong { color: #8B4513; font-weight: 500; }
+        .bio-text em { color: #6b5d4f; }
+        
+        .cta-box { text-align: center; margin-top: 2rem; padding: 1.5rem 1.2rem; background: linear-gradient(135deg, rgba(139, 69, 19, 0.04), rgba(184, 134, 11, 0.04)); border-radius: 12px; border: 1px solid rgba(184, 134, 11, 0.2); }
+        .cta-box h4 { font-family: 'Playfair Display', serif; font-size: 1.3rem; color: #8B4513; margin-bottom: 0.8rem; }
+        .cta-box p { margin-bottom: 0.6rem; font-size: 0.95rem; }
+        .cta-box .contact-info { font-size: 0.95rem; margin-top: 1rem; line-height: 1.8; }
+        
+        .quote-box { text-align: center; margin-top: 1.5rem; color: #8B4513; font-family: 'Playfair Display', serif; font-size: 1rem; }
+        .quote-box .translation { font-size: 0.85rem; color: #6b5d4f; font-family: 'Inter', sans-serif; margin-top: 0.4rem; }
+        
+        .back-button { display: inline-block; margin: 1.5rem auto; padding: 0.9rem 1.8rem; background: linear-gradient(135deg, #8B4513, #A0522D); color: white; text-decoration: none; border-radius: 50px; font-size: 0.85rem; letter-spacing: 0.1em; text-transform: uppercase; }
+        .button-container { text-align: center; margin-top: 1.5rem; }
+        
+        footer { text-align: center; padding: 2rem 1rem; background: #f8f6f3; border-top: 1px solid rgba(139, 69, 19, 0.1); }
+        footer p { color: #6b5d4f; font-size: 0.8rem; line-height: 1.7; }
+
+        @media (min-width: 768px) {
+            body { padding-top: 80px; }
+            nav { padding: 1.2rem 2rem; }
+            .logo { font-size: 1.4rem; }
+            .section { padding: 2.5rem 2rem 3rem; }
+            .section-title { font-size: 2.5rem; }
+            .bio-text { padding: 2rem 1.8rem; }
+            .bio-text p { font-size: 1rem; }
+            .bio-text h3 { font-size: 1.6rem; }
+        }
+
+        @media (min-width: 1024px) {
+            body { padding-top: 100px; }
+            nav { padding: 1.5rem 3rem; }
+            .logo { font-size: 1.5rem; letter-spacing: 0.12em; }
+            .menu-toggle { display: none; }
+            .nav-links { display: flex; }
+            .section { padding: 3rem 3rem 4rem; }
+            .section-title { font-size: 3rem; margin-bottom: 1rem; }
+            .section-subtitle { font-size: 1rem; margin-bottom: 2.5rem; }
+            .bio-text { padding: 3rem; border-radius: 16px; }
+            .bio-text p { font-size: 1.05rem; line-height: 1.9; margin-bottom: 1.5rem; }
+            .bio-text h3 { font-size: 1.8rem; margin-top: 2.5rem; }
+            .bio-text li { font-size: 1rem; }
+            .cta-box { padding: 2rem; }
+            .back-button { padding: 1rem 2.5rem; font-size: 0.9rem; }
+            footer { padding: 3rem 2rem; }
+            footer p { font-size: 0.85rem; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">CASA OBÀTÁLÁ</div>
+        <div class="menu-toggle" onclick="toggleMenu()">
+            <span></span><span></span><span></span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="meditazione.html">Meditazione</a></li>
+            <li><a href="piante.html">Piante</a></li>
+            <li><a href="glossario.html">Glossario</a></li>
+            <li><a href="eventi.html">Eventi</a></li>
+            <li><a href="chi-sono.html">Chi Sono</a></li>
+            <li><a href="contatti.html">Contatti</a></li>
+        </ul>
+    </nav>
+
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="index.html">Home</a>
+        <a href="meditazione.html">Meditazione</a>
+        <a href="piante.html">Piante</a>
+        <a href="glossario.html">Glossario</a>
+        <a href="eventi.html">Eventi</a>
+        <a href="chi-sono.html">Chi Sono</a>
+        <a href="contatti.html">Contatti</a>
+    </div>
+
+    <section class="section">
+        <h2 class="section-title">La Saggezza delle Piante</h2>
+        <p class="section-subtitle">Ewe - Medicina della Terra</p>
+        
+        <div class="bio-content">
+            <div class="bio-text">
+                <h3>Ko sí ewe, ko sí Òrìṣà</h3>
+                <p><em>"Senza piante, non ci sono Òrìṣà"</em> - così dice la tradizione Yoruba.</p>
+                
+                <p>Le <strong>piante</strong> non sono solo "medicina naturale". Sono <strong>ponti tra il mondo fisico e quello spirituale</strong>. Portatrici di Àṣẹ, il potere vitale che anima ogni cosa.</p>
+
+                <h3>Il Mio Cammino con le Piante</h3>
+                <p>Il mio viaggio spirituale è iniziato dalle piante. Ho studiato counseling naturopatico e conseguito la certificazione in <strong>Fitoterapia</strong> presso l'Università Federico II di Napoli.</p>
+
+                <p>Nel culto Yoruba, ogni Òrìṣà ha le sue piante sacre - <strong>ewe</strong>. Ogni foglia porta una particolare energia, un messaggio, una medicina.</p>
+
+                <h3>Fitoterapia Integrata</h3>
+                <p><strong>Fitoterapia Occidentale:</strong> studi scientifici, principi attivi, dosaggi precisi. Uso principalmente piante italiane.</p>
+
+                <p><strong>Saggezza Yoruba delle Ewe:</strong> conoscenza ancestrale, energia spirituale delle piante, legame con gli Òrìṣà.</p>
+
+                <p>Il risultato: una medicina che cura <strong>corpo e spirito insieme</strong>.</p>
+
+                <h3>Come Lavoro</h3>
+                <ul>
+                    <li><strong>Consultazione Personalizzata</strong> - Ascolto la tua storia e ti consiglio le piante adatte</li>
+                    <li><strong>Corsi e Guida</strong> - Insegno a riconoscere e usare le piante in sicurezza</li>
+                    <li><strong>Bagni Spirituali</strong> - Rituali di purificazione con piante sacre</li>
+                </ul>
+
+                <h3>Per Cosa Aiutano le Piante</h3>
+                <ul>
+                    <li>Stress e ansia</li>
+                    <li>Disturbi del sonno</li>
+                    <li>Problemi digestivi</li>
+                    <li>Ciclo mestruale</li>
+                    <li>Sistema immunitario</li>
+                    <li>Purificazione energetica</li>
+                </ul>
+
+                <h3>⚠️ Avvertenze</h3>
+                <p><strong>Non faccio preparazioni né prescrizioni.</strong> Il mio ruolo è di guida e insegnamento. Non sostituisco medici o professionisti sanitari.</p>
+
+                <p>La fitoterapia <strong>non sostituisce cure mediche</strong>. Se hai patologie o assumi farmaci, parla sempre con il tuo medico.</p>
+
+                <div class="cta-box">
+                    <h4>Inizia il tuo cammino</h4>
+                    <p>Contattami per una consultazione.</p>
+                    <div class="contact-info">
+                        <strong>📱</strong> 3473638901<br>
+                        <strong>📧</strong> lorenzo.okiki@gmail.com
+                    </div>
+                </div>
+
+                <div class="quote-box">
+                    <strong>"Ko sí ewe, ko sí Òrìṣà"</strong>
+                    <p class="translation">Senza piante, non ci sono Òrìṣà</p>
+                </div>
+            </div>
+
+            <div class="button-container">
+                <a href="index.html" class="back-button">← Home</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2025 CASA OBÀTÁLÁ - LORENZO OKÌKÍ ROSSI</p>
+        <p style="margin-top: 0.5rem;">📱 3473638901 | 📧 lorenzo.okiki@gmail.com</p>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            document.getElementById('mobileMenu').classList.toggle('active');
+        }
+    </script>
+</body>
+</html>

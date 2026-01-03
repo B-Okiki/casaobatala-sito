@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glossario Piante - Casa Obàtálá</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background: #fafafa; color: #1a1a1a; padding-top: 70px; }
+        nav { position: fixed; top: 0; width: 100%; padding: 1rem 1.2rem; z-index: 1000; display: flex; justify-content: space-between; align-items: center; background: rgba(255,255,255,0.98); border-bottom: 1px solid rgba(139,69,19,0.1); }
+        .logo { font-family: 'Playfair Display', serif; font-size: 1.2rem; background: linear-gradient(135deg, #8B4513, #B8860B); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .nav-links { display: none; gap: 2rem; list-style: none; }
+        .nav-links a { color: #1a1a1a; text-decoration: none; font-size: 0.85rem; text-transform: uppercase; }
+        .menu-toggle { display: flex; flex-direction: column; cursor: pointer; gap: 5px; }
+        .menu-toggle span { width: 24px; height: 2px; background: #8B4513; }
+        .mobile-menu { display: none; position: fixed; top: 58px; left: 0; right: 0; background: #fff; padding: 1rem; z-index: 999; }
+        .mobile-menu.active { display: block; }
+        .mobile-menu a { display: block; padding: 0.9rem 0; color: #1a1a1a; text-decoration: none; border-bottom: 1px solid rgba(139,69,19,0.08); }
+        .section { padding: 1.5rem 1rem 2.5rem; }
+        .section-title { font-family: 'Playfair Display', serif; text-align: center; font-size: 2rem; margin-bottom: 0.5rem; }
+        .section-subtitle { text-align: center; color: #6b5d4f; font-size: 0.85rem; margin-bottom: 1.5rem; text-transform: uppercase; letter-spacing: 0.1em; }
+        .intro-box { background: #fff; border: 1px solid rgba(139,69,19,0.12); border-radius: 12px; padding: 1.5rem 1.2rem; margin-bottom: 2rem; position: relative; }
+        .intro-box::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, #8B4513, #B8860B); border-radius: 12px 12px 0 0; }
+        .intro-box h3 { font-family: 'Playfair Display', serif; color: #8B4513; font-size: 1.3rem; margin-bottom: 1rem; }
+        .intro-box p { font-size: 0.95rem; line-height: 1.7; margin-bottom: 1rem; color: #2a2a2a; }
+        .sources { margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid rgba(139,69,19,0.1); }
+        .sources h4 { color: #8B4513; font-size: 1rem; margin-bottom: 0.8rem; }
+        .sources li { font-size: 0.85rem; color: #6b5d4f; margin-bottom: 0.5rem; list-style: none; }
+        .plants-grid { display: grid; grid-template-columns: 1fr; gap: 1.2rem; }
+        .plant-card { background: #fff; border: 1px solid rgba(139,69,19,0.12); border-radius: 12px; padding: 1.5rem 1.2rem; }
+        .plant-card h3 { font-family: 'Playfair Display', serif; color: #8B4513; font-size: 1.3rem; margin-bottom: 0.4rem; }
+        .plant-latin { font-style: italic; color: #6b5d4f; font-size: 0.9rem; margin-bottom: 0.6rem; }
+        .plant-yoruba { color: #8B4513; font-size: 0.9rem; margin-bottom: 0.3rem; }
+        .plant-family { color: #6b5d4f; font-size: 0.85rem; margin-bottom: 1rem; }
+        .plant-info { padding-top: 1rem; border-top: 1px solid rgba(139,69,19,0.1); }
+        .plant-info h4 { color: #8B4513; font-size: 1rem; margin-bottom: 0.5rem; }
+        .plant-info p { font-size: 0.9rem; line-height: 1.6; margin-bottom: 0.8rem; color: #2a2a2a; }
+        .plant-location { display: inline-block; background: rgba(139,69,19,0.06); padding: 0.4rem 0.8rem; border-radius: 20px; font-size: 0.8rem; color: #8B4513; margin-top: 0.5rem; }
+        .copyright-box { background: #fff; border: 1px solid rgba(139,69,19,0.12); border-radius: 12px; padding: 1.5rem; text-align: center; margin: 2rem 0; }
+        .copyright-box p { font-size: 0.85rem; color: #6b5d4f; line-height: 1.6; margin-bottom: 0.5rem; }
+        .back-button { display: inline-block; margin: 1.5rem auto; padding: 0.9rem 1.8rem; background: linear-gradient(135deg, #8B4513, #A0522D); color: white; text-decoration: none; border-radius: 50px; font-size: 0.85rem; text-transform: uppercase; }
+        .button-container { text-align: center; }
+        footer { text-align: center; padding: 2rem 1rem; background: #f8f6f3; }
+        footer p { color: #6b5d4f; font-size: 0.8rem; line-height: 1.7; }
+        @media (min-width: 600px) { .plants-grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (min-width: 768px) { body { padding-top: 80px; } nav { padding: 1.2rem 2rem; } .logo { font-size: 1.4rem; } .section { padding: 2.5rem 2rem; } .section-title { font-size: 2.5rem; } .intro-box, .plant-card { padding: 2rem; } }
+        @media (min-width: 1024px) { body { padding-top: 100px; } nav { padding: 1.5rem 3rem; } .logo { font-size: 1.5rem; } .menu-toggle { display: none; } .nav-links { display: flex; } .section { padding: 3rem; } .section-title { font-size: 3rem; } .plants-grid { grid-template-columns: repeat(3, 1fr); gap: 2rem; } }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">CASA OBÀTÁLÁ</div>
+        <div class="menu-toggle" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="meditazione.html">Meditazione</a></li>
+            <li><a href="piante.html">Piante</a></li>
+            <li><a href="glossario.html">Glossario</a></li>
+            <li><a href="eventi.html">Eventi</a></li>
+            <li><a href="chi-sono.html">Chi Sono</a></li>
+            <li><a href="contatti.html">Contatti</a></li>
+        </ul>
+    </nav>
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="index.html">Home</a><a href="meditazione.html">Meditazione</a><a href="piante.html">Piante</a><a href="glossario.html">Glossario</a><a href="eventi.html">Eventi</a><a href="chi-sono.html">Chi Sono</a><a href="contatti.html">Contatti</a>
+    </div>
+    <section class="section">
+        <h2 class="section-title">Glossario Piante</h2>
+        <p class="section-subtitle">Ewe - La Medicina della Terra</p>
+        <div class="intro-box">
+            <h3>Il Progetto</h3>
+            <p>Questo glossario fa parte di un <strong>progetto di 987 piante</strong> che unisce tradizione italiana, europea e saggezza ancestrale Yoruba.</p>
+            <div class="sources">
+                <h4>Fonti:</h4>
+                <ul>
+                    <li>📚 <strong>Ewé</strong> di Pierre Fatumbi Verger</li>
+                    <li>📚 <strong>APG IV</strong> - Classificazione botanica</li>
+                    <li>📚 <strong>POWO/IPNI</strong> - Plants of the World Online</li>
+                    <li>📚 <strong>Acta Plantarum</strong> - Specie italiane</li>
+                </ul>
+            </div>
+        </div>
+        <div class="plants-grid">
+            <div class="plant-card">
+                <h3>Gombo</h3>
+                <p class="plant-latin">Abelmoschus esculentus</p>
+                <p class="plant-yoruba">Yoruba: <strong>Ílá</strong></p>
+                <p class="plant-family">Malvaceae</p>
+                <div class="plant-info">
+                    <h4>Proprietà:</h4>
+                    <p>Pianta mucillaginosa, sacra a Ọṣun. Emolliente, aiuta la digestione. Semi antidiabetici.</p>
+                    <span class="plant-location">📍 Africa / Italia</span>
+                </div>
+            </div>
+            <div class="plant-card">
+                <h3>Aloe</h3>
+                <p class="plant-latin">Aloe vera</p>
+                <p class="plant-yoruba">Yoruba: <strong>Eti-erin, Ahon-erin</strong></p>
+                <p class="plant-family">Asphodelaceae</p>
+                <div class="plant-info">
+                    <h4>Proprietà:</h4>
+                    <p>Cicatrizzante, lenitiva, immunostimolante. Gel per pelle. Usata per protezione e purificazione.</p>
+                    <span class="plant-location">📍 Ovunque</span>
+                </div>
+            </div>
+            <div class="plant-card">
+                <h3>Amaranto</h3>
+                <p class="plant-latin">Amaranthus hybridus</p>
+                <p class="plant-yoruba">Yoruba: <strong>Tẹ̀tẹ̀</strong></p>
+                <p class="plant-family">Amaranthaceae</p>
+                <div class="plant-info">
+                    <h4>Proprietà:</h4>
+                    <p>Ricca di ferro e proteine. Associata a fertilità e abbondanza. Depurativa del sangue.</p>
+                    <span class="plant-location">📍 Italia / Africa</span>
+                </div>
+            </div>
+            <div class="plant-card">
+                <h3>Kalanchoe</h3>
+                <p class="plant-latin">Bryophyllum pinnatum</p>
+                <p class="plant-yoruba">Yoruba: <strong>Abamoda, Odundun</strong></p>
+                <p class="plant-family">Crassulaceae</p>
+                <div class="plant-info">
+                    <h4>Proprietà:</h4>
+                    <p>Cicatrizzante, antinfiammatoria. Usata per Obàtálá - purificazione e pace.</p>
+                    <span class="plant-location">📍 Tropicale</span>
+                </div>
+            </div>
+            <div class="plant-card">
+                <h3>Grani del Paradiso</h3>
+                <p class="plant-latin">Aframomum melegueta</p>
+                <p class="plant-yoruba">Yoruba: <strong>Àtàrè</strong></p>
+                <p class="plant-family">Zingiberaceae</p>
+                <div class="plant-info">
+                    <h4>Proprietà:</h4>
+                    <p>Spezia sacra usata in tutti i rituali Yoruba. Stimolante, afrodisiaco, antibatterico.</p>
+                    <span class="plant-location">📍 Africa occidentale</span>
+                </div>
+            </div>
+            <div class="plant-card">
+                <h3>Cola</h3>
+                <p class="plant-latin">Cola acuminata</p>
+                <p class="plant-yoruba">Yoruba: <strong>Obì</strong></p>
+                <p class="plant-family">Malvaceae</p>
+                <div class="plant-info">
+                    <h4>Proprietà:</h4>
+                    <p>Noce sacra usata in TUTTI i rituali Yoruba. Stimolante. Simbolo di ospitalità.</p>
+                    <span class="plant-location">📍 Africa occidentale</span>
+                </div>
+            </div>
+        </div>
+        <div class="copyright-box">
+            <p><strong>© 2025 Lorenzo Okìkí Rossi</strong></p>
+            <p>Opera protetta - Tutti i diritti riservati</p>
+            <p>Glossario completo: <strong>987 piante</strong></p>
+        </div>
+        <div class="button-container">
+            <a href="index.html" class="back-button">← Home</a>
+        </div>
+    </section>
+    <footer>
+        <p>© 2025 CASA OBÀTÁLÁ - LORENZO OKÌKÍ ROSSI</p>
+        <p>📱 3473638901 | 📧 lorenzo.okiki@gmail.com</p>
+    </footer>
+    <script>function toggleMenu() { document.getElementById('mobileMenu').classList.toggle('active'); }</script>
+</body>
+</html>

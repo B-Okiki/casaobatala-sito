@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contatti - Casa Obàtálá</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background: #fafafa; color: #1a1a1a; padding-top: 70px; }
+        nav { position: fixed; top: 0; width: 100%; padding: 1rem 1.2rem; z-index: 1000; display: flex; justify-content: space-between; align-items: center; background: rgba(255,255,255,0.98); border-bottom: 1px solid rgba(139,69,19,0.1); }
+        .logo { font-family: 'Playfair Display', serif; font-size: 1.2rem; background: linear-gradient(135deg, #8B4513, #B8860B); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .nav-links { display: none; gap: 2rem; list-style: none; }
+        .nav-links a { color: #1a1a1a; text-decoration: none; font-size: 0.85rem; text-transform: uppercase; }
+        .menu-toggle { display: flex; flex-direction: column; cursor: pointer; gap: 5px; }
+        .menu-toggle span { width: 24px; height: 2px; background: #8B4513; }
+        .mobile-menu { display: none; position: fixed; top: 58px; left: 0; right: 0; background: #fff; padding: 1rem; z-index: 999; }
+        .mobile-menu.active { display: block; }
+        .mobile-menu a { display: block; padding: 0.9rem 0; color: #1a1a1a; text-decoration: none; border-bottom: 1px solid rgba(139,69,19,0.08); }
+        .section { padding: 1.5rem 1rem 2.5rem; }
+        .section-title { font-family: 'Playfair Display', serif; text-align: center; font-size: 2rem; margin-bottom: 0.5rem; }
+        .section-subtitle { text-align: center; color: #6b5d4f; font-size: 0.85rem; margin-bottom: 1.5rem; text-transform: uppercase; }
+        .contact-grid { display: grid; grid-template-columns: 1fr; gap: 1.5rem; max-width: 900px; margin: 0 auto; }
+        .contact-box { background: #fff; border: 1px solid rgba(139,69,19,0.12); border-radius: 12px; padding: 1.5rem 1.2rem; }
+        .contact-box h3 { font-family: 'Playfair Display', serif; color: #8B4513; font-size: 1.4rem; margin-bottom: 1.2rem; }
+        .contact-item { margin-bottom: 1.5rem; }
+        .contact-item h4 { color: #8B4513; font-size: 1rem; margin-bottom: 0.4rem; }
+        .contact-item p { font-size: 0.95rem; color: #2a2a2a; line-height: 1.6; }
+        .contact-item a { color: #8B4513; text-decoration: none; }
+        .contact-item .note { font-size: 0.85rem; color: #6b5d4f; margin-top: 0.3rem; }
+        .quote-box { margin-top: 1.5rem; padding: 1.2rem; background: rgba(139,69,19,0.04); border-radius: 10px; text-align: center; }
+        .quote-box p { font-size: 0.9rem; font-style: italic; color: #2a2a2a; line-height: 1.6; }
+        .form-group { margin-bottom: 1.2rem; }
+        .form-group label { display: block; font-size: 0.85rem; color: #6b5d4f; margin-bottom: 0.4rem; text-transform: uppercase; }
+        .form-group input, .form-group textarea, .form-group select { width: 100%; padding: 0.9rem 1rem; border: 1px solid rgba(139,69,19,0.2); border-radius: 8px; font-size: 1rem; font-family: 'Inter', sans-serif; background: #fafafa; }
+        .form-group textarea { min-height: 120px; resize: vertical; }
+        .privacy-check { display: flex; gap: 0.8rem; margin: 1.2rem 0; align-items: flex-start; }
+        .privacy-check input { width: 18px; height: 18px; margin-top: 3px; }
+        .privacy-check label { font-size: 0.85rem; color: #6b5d4f; line-height: 1.5; }
+        .privacy-check a { color: #8B4513; }
+        .submit-btn { width: 100%; padding: 1rem; background: linear-gradient(135deg, #8B4513, #A0522D); color: white; border: none; border-radius: 50px; font-size: 0.95rem; cursor: pointer; text-transform: uppercase; letter-spacing: 0.05em; }
+        .privacy-notice { max-width: 900px; margin: 2rem auto 0; padding: 1.5rem 1.2rem; background: rgba(139,69,19,0.03); border-radius: 10px; }
+        .privacy-notice h4 { color: #8B4513; font-size: 1rem; margin-bottom: 0.8rem; }
+        .privacy-notice p { font-size: 0.8rem; color: #6b5d4f; line-height: 1.7; margin-bottom: 0.5rem; }
+        .privacy-notice a { color: #8B4513; }
+        .back-button { display: inline-block; margin: 1.5rem auto; padding: 0.9rem 1.8rem; background: linear-gradient(135deg, #8B4513, #A0522D); color: white; text-decoration: none; border-radius: 50px; font-size: 0.85rem; text-transform: uppercase; }
+        .button-container { text-align: center; margin-top: 1.5rem; }
+        footer { text-align: center; padding: 2rem 1rem; background: #f8f6f3; }
+        footer p { color: #6b5d4f; font-size: 0.8rem; line-height: 1.7; }
+        .hidden { display: none; }
+        @media (min-width: 768px) { body { padding-top: 80px; } nav { padding: 1.2rem 2rem; } .logo { font-size: 1.4rem; } .section { padding: 2.5rem 2rem; } .section-title { font-size: 2.5rem; } .contact-grid { grid-template-columns: 1fr 1fr; } .contact-box { padding: 2rem; } }
+        @media (min-width: 1024px) { body { padding-top: 100px; } nav { padding: 1.5rem 3rem; } .logo { font-size: 1.5rem; } .menu-toggle { display: none; } .nav-links { display: flex; } .section { padding: 3rem; } .section-title { font-size: 3rem; } }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">CASA OBÀTÁLÁ</div>
+        <div class="menu-toggle" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="meditazione.html">Meditazione</a></li>
+            <li><a href="piante.html">Piante</a></li>
+            <li><a href="glossario.html">Glossario</a></li>
+            <li><a href="eventi.html">Eventi</a></li>
+            <li><a href="chi-sono.html">Chi Sono</a></li>
+            <li><a href="contatti.html">Contatti</a></li>
+        </ul>
+    </nav>
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="index.html">Home</a><a href="meditazione.html">Meditazione</a><a href="piante.html">Piante</a><a href="glossario.html">Glossario</a><a href="eventi.html">Eventi</a><a href="chi-sono.html">Chi Sono</a><a href="contatti.html">Contatti</a>
+    </div>
+    <section class="section">
+        <h2 class="section-title">Contatti</h2>
+        <p class="section-subtitle">Inizia il tuo cammino</p>
+        <div class="contact-grid">
+            <div class="contact-box">
+                <h3>Come Raggiungermi</h3>
+                <div class="contact-item">
+                    <h4>📱 WhatsApp</h4>
+                    <p><a href="tel:+393473638901">+39 347 363 8901</a></p>
+                    <p class="note">Preferibilmente WhatsApp</p>
+                </div>
+                <div class="contact-item">
+                    <h4>📧 Email</h4>
+                    <p><a href="mailto:lorenzo.okiki@gmail.com">lorenzo.okiki@gmail.com</a></p>
+                    <p class="note">Rispondo entro 24-48 ore</p>
+                </div>
+                <div class="contact-item">
+                    <h4>📍 Dove Opero</h4>
+                    <p><strong>Ostia Antica</strong> (Roma)<br><strong>Montagna Pistoiese</strong> (Toscana)<br><strong>Online</strong></p>
+                </div>
+                <div class="contact-item">
+                    <h4>🕐 Orari</h4>
+                    <p>Lun-Ven: 10:00 - 19:00<br>Sabato: Su appuntamento</p>
+                </div>
+                <div class="quote-box">
+                    <p>"Nel culto Yoruba si dice che le persone giuste arrivano al momento giusto."</p>
+                </div>
+            </div>
+            <div class="contact-box">
+                <h3>Scrivimi</h3>
+                <form name="contatti" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+                    <p class="hidden"><label>Non compilare: <input name="bot-field"></label></p>
+                    <input type="hidden" name="form-name" value="contatti">
+                    <div class="form-group">
+                        <label>Nome e Cognome *</label>
+                        <input type="text" name="nome" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Email *</label>
+                        <input type="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Telefono</label>
+                        <input type="tel" name="telefono">
+                    </div>
+                    <div class="form-group">
+                        <label>Interesse</label>
+                        <select name="interesse">
+                            <option value="">Seleziona...</option>
+                            <option value="meditazione">Meditazione</option>
+                            <option value="piante">Consulenza Piante</option>
+                            <option value="percorso">Percorso Personale</option>
+                            <option value="info">Informazioni</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Messaggio *</label>
+                        <textarea name="messaggio" required placeholder="Raccontami cosa cerchi..."></textarea>
+                    </div>
+                    <div class="privacy-check">
+                        <input type="checkbox" id="privacy" name="privacy" required>
+                        <label for="privacy">Accetto l'<a href="#privacy-policy">Informativa Privacy</a> *</label>
+                    </div>
+                    <button type="submit" class="submit-btn">Invia</button>
+                </form>
+            </div>
+        </div>
+        <div class="privacy-notice" id="privacy-policy">
+            <h4>Privacy (GDPR)</h4>
+            <p><strong>Titolare:</strong> Lorenzo Rossi - Casa Obàtálá</p>
+            <p><strong>Finalità:</strong> Rispondere alle richieste di informazioni.</p>
+            <p><strong>Diritti:</strong> Accesso, rettifica, cancellazione. Contatto: lorenzo.okiki@gmail.com</p>
+        </div>
+        <div class="button-container">
+            <a href="index.html" class="back-button">← Home</a>
+        </div>
+    </section>
+    <footer>
+        <p>© 2025 CASA OBÀTÁLÁ - LORENZO OKÌKÍ ROSSI</p>
+        <p>📱 3473638901 | 📧 lorenzo.okiki@gmail.com</p>
+    </footer>
+    <script>function toggleMenu() { document.getElementById('mobileMenu').classList.toggle('active'); }</script>
+</body>
+</html>

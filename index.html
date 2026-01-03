@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Casa Obàtálá - Lorenzo Okìkí Rossi</title>
+    <meta name="description" content="Casa Obàtálá - Lorenzo Okìkí Rossi, Omọ Obàtálá. Meditazione profonda, fitoterapia e culto tradizionale Yoruba a Roma e in Toscana.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background: #fafafa; color: #1a1a1a; overflow-x: hidden; }
+        
+        nav { position: fixed; top: 0; width: 100%; padding: 1rem 1.2rem; z-index: 1000; display: flex; justify-content: space-between; align-items: center; background: rgba(255, 255, 255, 0.98); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(139, 69, 19, 0.1); }
+        .logo { font-family: 'Playfair Display', serif; font-size: 1.2rem; font-weight: 400; letter-spacing: 0.08em; background: linear-gradient(135deg, #8B4513, #B8860B); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .nav-links { display: none; gap: 2rem; list-style: none; }
+        .nav-links a { color: #1a1a1a; text-decoration: none; font-size: 0.85rem; letter-spacing: 0.1em; text-transform: uppercase; }
+        .nav-links a:hover { color: #8B4513; }
+        .menu-toggle { display: flex; flex-direction: column; cursor: pointer; gap: 5px; padding: 5px; }
+        .menu-toggle span { width: 24px; height: 2px; background: #8B4513; }
+        
+        .mobile-menu { display: none; position: fixed; top: 58px; left: 0; right: 0; background: #fff; padding: 1rem 1.2rem; border-bottom: 1px solid rgba(139, 69, 19, 0.1); box-shadow: 0 10px 30px rgba(0,0,0,0.1); z-index: 999; }
+        .mobile-menu.active { display: block; }
+        .mobile-menu a { display: block; padding: 0.9rem 0; color: #1a1a1a; text-decoration: none; font-size: 1rem; border-bottom: 1px solid rgba(139, 69, 19, 0.08); }
+        .mobile-menu a:last-child { border-bottom: none; }
+
+        /* HERO */
+        .hero { height: 100vh; display: flex; align-items: center; justify-content: center; position: relative; background: linear-gradient(135deg, #ffffff 0%, #f8f6f3 100%); }
+        .hero::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(139, 69, 19, 0.06) 0%, transparent 70%); animation: rotate 25s linear infinite; }
+        @keyframes rotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+        .hero-content { text-align: center; z-index: 2; padding: 1.5rem; }
+        h1 { font-family: 'Playfair Display', serif; font-size: 2.5rem; font-weight: 300; margin-bottom: 1rem; background: linear-gradient(135deg, #1a1a1a 0%, #8B4513 50%, #B8860B 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; animation: fadeInUp 1.2s ease-out; line-height: 1.2; }
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        .subtitle { font-size: 0.85rem; color: #6b5d4f; letter-spacing: 0.3em; text-transform: uppercase; animation: fadeInUp 1.2s ease-out 0.3s both; }
+        .scroll-indicator { position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%); width: 28px; height: 45px; border: 2px solid rgba(139, 69, 19, 0.4); border-radius: 20px; cursor: pointer; }
+        .scroll-indicator::before { content: ''; position: absolute; top: 8px; left: 50%; transform: translateX(-50%); width: 5px; height: 5px; background: #B8860B; border-radius: 50%; animation: scroll 2.5s infinite; }
+        @keyframes scroll { 0%, 100% { transform: translate(-50%, 0); opacity: 1; } 50% { transform: translate(-50%, 15px); opacity: 0.3; } }
+
+        /* CARDS SECTION */
+        .section { padding: 3rem 1rem; }
+        .section-title { font-family: 'Playfair Display', serif; text-align: center; font-size: 2rem; font-weight: 300; margin-bottom: 0.5rem; }
+        .section-subtitle { text-align: center; color: #6b5d4f; font-size: 0.85rem; margin-bottom: 2rem; letter-spacing: 0.12em; text-transform: uppercase; }
+        .grid { display: grid; grid-template-columns: 1fr; gap: 1.2rem; max-width: 1200px; margin: 0 auto; }
+        .card { background: #fff; border: 1px solid rgba(139, 69, 19, 0.12); border-radius: 12px; padding: 1.5rem; text-decoration: none; color: inherit; display: block; transition: transform 0.3s, box-shadow 0.3s; }
+        .card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(139, 69, 19, 0.1); }
+        .card-icon { font-size: 2.5rem; margin-bottom: 1rem; }
+        .card h3 { font-family: 'Playfair Display', serif; font-size: 1.4rem; margin-bottom: 0.6rem; color: #1a1a1a; }
+        .card p { color: #6b5d4f; line-height: 1.6; font-size: 0.9rem; }
+
+        footer { text-align: center; padding: 2rem 1rem; background: #f8f6f3; border-top: 1px solid rgba(139, 69, 19, 0.1); }
+        footer p { color: #6b5d4f; font-size: 0.8rem; line-height: 1.7; }
+
+        /* TABLET */
+        @media (min-width: 600px) {
+            .grid { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; padding: 0 1rem; }
+        }
+
+        /* TABLET LARGE */
+        @media (min-width: 768px) {
+            nav { padding: 1.2rem 2rem; }
+            .logo { font-size: 1.4rem; }
+            h1 { font-size: 3.5rem; }
+            .subtitle { font-size: 0.95rem; }
+            .section { padding: 4rem 2rem; }
+            .section-title { font-size: 2.5rem; }
+            .card { padding: 2rem; }
+            .card h3 { font-size: 1.5rem; }
+        }
+
+        /* DESKTOP */
+        @media (min-width: 1024px) {
+            nav { padding: 1.5rem 3rem; }
+            .logo { font-size: 1.5rem; letter-spacing: 0.12em; }
+            .menu-toggle { display: none; }
+            .nav-links { display: flex; }
+            h1 { font-size: 5rem; }
+            .subtitle { font-size: 1.1rem; letter-spacing: 0.4em; }
+            .section { padding: 5rem 3rem; }
+            .section-title { font-size: 3rem; margin-bottom: 1rem; }
+            .section-subtitle { font-size: 1rem; margin-bottom: 3rem; }
+            .grid { grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+            .card { padding: 2.5rem; border-radius: 16px; }
+            .card-icon { font-size: 3rem; }
+            .card h3 { font-size: 1.6rem; }
+            .card p { font-size: 0.95rem; }
+            footer { padding: 3rem 2rem; }
+            footer p { font-size: 0.85rem; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">CASA OBÀTÁLÁ</div>
+        <div class="menu-toggle" onclick="toggleMenu()">
+            <span></span><span></span><span></span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="meditazione.html">Meditazione</a></li>
+            <li><a href="piante.html">Piante</a></li>
+            <li><a href="glossario.html">Glossario</a></li>
+            <li><a href="eventi.html">Eventi</a></li>
+            <li><a href="chi-sono.html">Chi Sono</a></li>
+            <li><a href="contatti.html">Contatti</a></li>
+        </ul>
+    </nav>
+
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="index.html">Home</a>
+        <a href="meditazione.html">Meditazione</a>
+        <a href="piante.html">Piante</a>
+        <a href="glossario.html">Glossario</a>
+        <a href="eventi.html">Eventi</a>
+        <a href="chi-sono.html">Chi Sono</a>
+        <a href="contatti.html">Contatti</a>
+    </div>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Lorenzo Okìkí Rossi</h1>
+            <p class="subtitle">Omọ Obàtálá • Culto Tradizionale Yoruba</p>
+        </div>
+        <div class="scroll-indicator" onclick="document.getElementById('sezioni').scrollIntoView({behavior: 'smooth'})"></div>
+    </section>
+
+    <section class="section" id="sezioni">
+        <h2 class="section-title">Esplora</h2>
+        <p class="section-subtitle">Scopri il mio cammino</p>
+        
+        <div class="grid">
+            <a href="meditazione.html" class="card">
+                <div class="card-icon">🧘</div>
+                <h3>Meditazione Profonda</h3>
+                <p>Un viaggio verso la tua guida interiore attraverso la tradizione Yoruba.</p>
+            </a>
+            
+            <a href="piante.html" class="card">
+                <div class="card-icon">🌿</div>
+                <h3>Saggezza delle Piante</h3>
+                <p>Fitoterapia integrata con la tradizione Yoruba. Corpo e spirito insieme.</p>
+            </a>
+            
+            <a href="glossario.html" class="card">
+                <div class="card-icon">📖</div>
+                <h3>Glossario Piante</h3>
+                <p>987 piante tra tradizione italiana e saggezza Yoruba.</p>
+            </a>
+
+            <a href="chi-sono.html" class="card">
+                <div class="card-icon">🙏</div>
+                <h3>Chi Sono</h3>
+                <p>Il mio cammino dalla naturopatia al culto tradizionale Yoruba.</p>
+            </a>
+
+            <a href="eventi.html" class="card">
+                <div class="card-icon">📅</div>
+                <h3>Eventi</h3>
+                <p>Percorsi di gruppo, workshop e appuntamenti.</p>
+            </a>
+
+            <a href="contatti.html" class="card">
+                <div class="card-icon">✉️</div>
+                <h3>Contatti</h3>
+                <p>Inizia il tuo cammino. Scrivimi.</p>
+            </a>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2025 CASA OBÀTÁLÁ - LORENZO OKÌKÍ ROSSI</p>
+        <p style="margin-top: 0.5rem;">📱 3473638901 | 📧 lorenzo.okiki@gmail.com</p>
+        <p style="margin-top: 0.3rem;">📍 Roma | Toscana | Online</p>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            document.getElementById('mobileMenu').classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
