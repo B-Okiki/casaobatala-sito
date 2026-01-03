@@ -4,92 +4,75 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Saggezza delle Piante - Casa Obàtálá</title>
-    <meta name="description" content="Fitoterapia integrata con la tradizione Yoruba. Le piante come ponte tra corpo e spirito con Lorenzo Okìkí Rossi.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Inter', sans-serif; background: #fafafa; color: #1a1a1a; overflow-x: hidden; padding-top: 70px; }
-        
-        nav { position: fixed; top: 0; width: 100%; padding: 1rem 1.2rem; z-index: 1000; display: flex; justify-content: space-between; align-items: center; background: rgba(255, 255, 255, 0.98); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(139, 69, 19, 0.1); }
-        .logo { font-family: 'Playfair Display', serif; font-size: 1.2rem; font-weight: 400; letter-spacing: 0.08em; background: linear-gradient(135deg, #8B4513, #B8860B); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        body { font-family: 'Inter', sans-serif; background: #fafafa; color: #1a1a1a; padding-top: 70px; }
+        nav { position: fixed; top: 0; width: 100%; padding: 1rem 1.2rem; z-index: 1000; display: flex; justify-content: space-between; align-items: center; background: rgba(255,255,255,0.98); border-bottom: 1px solid rgba(139,69,19,0.1); }
+        .logo { font-family: 'Playfair Display', serif; font-size: 1.2rem; background: linear-gradient(135deg, #8B4513, #B8860B); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
         .nav-links { display: none; gap: 2rem; list-style: none; }
-        .nav-links a { color: #1a1a1a; text-decoration: none; font-size: 0.85rem; letter-spacing: 0.1em; text-transform: uppercase; }
-        .nav-links a:hover { color: #8B4513; }
-        .menu-toggle { display: flex; flex-direction: column; cursor: pointer; gap: 5px; padding: 5px; }
+        .nav-links a { color: #1a1a1a; text-decoration: none; font-size: 0.85rem; text-transform: uppercase; }
+        .menu-toggle { display: flex; flex-direction: column; cursor: pointer; gap: 5px; }
         .menu-toggle span { width: 24px; height: 2px; background: #8B4513; }
-        
-        .mobile-menu { display: none; position: fixed; top: 58px; left: 0; right: 0; background: #fff; padding: 1rem 1.2rem; border-bottom: 1px solid rgba(139, 69, 19, 0.1); box-shadow: 0 10px 30px rgba(0,0,0,0.1); z-index: 999; }
+        .mobile-menu { display: none; position: fixed; top: 58px; left: 0; right: 0; background: #fff; padding: 1rem; z-index: 999; }
         .mobile-menu.active { display: block; }
-        .mobile-menu a { display: block; padding: 0.9rem 0; color: #1a1a1a; text-decoration: none; font-size: 1rem; border-bottom: 1px solid rgba(139, 69, 19, 0.08); }
-        .mobile-menu a:last-child { border-bottom: none; }
-        
+        .mobile-menu a { display: block; padding: 0.9rem 0; color: #1a1a1a; text-decoration: none; border-bottom: 1px solid rgba(139,69,19,0.08); }
         .section { padding: 1.5rem 1rem 2.5rem; }
-        .section-title { font-family: 'Playfair Display', serif; text-align: center; font-size: 2rem; font-weight: 300; margin-bottom: 0.5rem; color: #1a1a1a; }
-        .section-subtitle { text-align: center; color: #6b5d4f; font-size: 0.85rem; margin-bottom: 1.5rem; letter-spacing: 0.12em; text-transform: uppercase; }
+        .section-title { font-family: 'Playfair Display', serif; text-align: center; font-size: 2rem; margin-bottom: 0.5rem; }
+        .section-subtitle { text-align: center; color: #6b5d4f; font-size: 0.85rem; margin-bottom: 1.5rem; text-transform: uppercase; }
         .bio-content { max-width: 800px; margin: 0 auto; }
-        .bio-text { background: #fff; border: 1px solid rgba(139, 69, 19, 0.12); border-radius: 12px; padding: 1.5rem 1.2rem; position: relative; }
+        .bio-text { background: #fff; border: 1px solid rgba(139,69,19,0.12); border-radius: 12px; padding: 1.5rem 1.2rem; position: relative; }
         .bio-text::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, #8B4513, #B8860B); border-radius: 12px 12px 0 0; }
         .bio-text p { margin-bottom: 1.3rem; color: #2a2a2a; font-size: 0.95rem; line-height: 1.75; }
         .bio-text h3 { font-family: 'Playfair Display', serif; color: #8B4513; font-size: 1.4rem; margin-top: 2rem; margin-bottom: 0.8rem; }
         .bio-text h3:first-of-type { margin-top: 0.5rem; }
         .bio-text ul { margin: 1rem 0; padding-left: 1.3rem; }
         .bio-text li { margin-bottom: 0.6rem; color: #2a2a2a; line-height: 1.6; font-size: 0.92rem; }
-        .bio-text strong { color: #8B4513; font-weight: 500; }
+        .bio-text strong { color: #8B4513; }
         .bio-text em { color: #6b5d4f; }
-        
-        .cta-box { text-align: center; margin-top: 2rem; padding: 1.5rem 1.2rem; background: linear-gradient(135deg, rgba(139, 69, 19, 0.04), rgba(184, 134, 11, 0.04)); border-radius: 12px; border: 1px solid rgba(184, 134, 11, 0.2); }
+        .cta-box { text-align: center; margin-top: 2rem; padding: 1.5rem; background: rgba(139,69,19,0.04); border-radius: 12px; border: 1px solid rgba(184,134,11,0.2); }
         .cta-box h4 { font-family: 'Playfair Display', serif; font-size: 1.3rem; color: #8B4513; margin-bottom: 0.8rem; }
-        .cta-box p { margin-bottom: 0.6rem; font-size: 0.95rem; }
-        .cta-box .contact-info { font-size: 0.95rem; margin-top: 1rem; line-height: 1.8; }
-        
-        .quote-box { text-align: center; margin-top: 1.5rem; color: #8B4513; font-family: 'Playfair Display', serif; font-size: 1rem; }
-        .quote-box .translation { font-size: 0.85rem; color: #6b5d4f; font-family: 'Inter', sans-serif; margin-top: 0.4rem; }
-        
-        .back-button { display: inline-block; margin: 1.5rem auto; padding: 0.9rem 1.8rem; background: linear-gradient(135deg, #8B4513, #A0522D); color: white; text-decoration: none; border-radius: 50px; font-size: 0.85rem; letter-spacing: 0.1em; text-transform: uppercase; }
-        .button-container { text-align: center; margin-top: 1.5rem; }
-        
-        footer { text-align: center; padding: 2rem 1rem; background: #f8f6f3; border-top: 1px solid rgba(139, 69, 19, 0.1); }
+        .quote-box { text-align: center; margin-top: 1.5rem; color: #8B4513; font-family: 'Playfair Display', serif; }
+        .quote-box .translation { font-size: 0.85rem; color: #6b5d4f; font-family: 'Inter', sans-serif; }
+        .back-button { display: inline-block; margin: 1.5rem auto; padding: 0.9rem 1.8rem; background: linear-gradient(135deg, #8B4513, #A0522D); color: white; text-decoration: none; border-radius: 50px; font-size: 0.85rem; text-transform: uppercase; }
+        .button-container { text-align: center; }
+        footer { text-align: center; padding: 2rem 1rem; background: #f8f6f3; }
         footer p { color: #6b5d4f; font-size: 0.8rem; line-height: 1.7; }
-
-        @media (min-width: 768px) {
-            body { padding-top: 80px; }
-            nav { padding: 1.2rem 2rem; }
-            .logo { font-size: 1.4rem; }
-            .section { padding: 2.5rem 2rem 3rem; }
-            .section-title { font-size: 2.5rem; }
-            .bio-text { padding: 2rem 1.8rem; }
-            .bio-text p { font-size: 1rem; }
-            .bio-text h3 { font-size: 1.6rem; }
-        }
-
-        @media (min-width: 1024px) {
-            body { padding-top: 100px; }
-            nav { padding: 1.5rem 3rem; }
-            .logo { font-size: 1.5rem; letter-spacing: 0.12em; }
-            .menu-toggle { display: none; }
-            .nav-links { display: flex; }
-            .section { padding: 3rem 3rem 4rem; }
-            .section-title { font-size: 3rem; margin-bottom: 1rem; }
-            .section-subtitle { font-size: 1rem; margin-bottom: 2.5rem; }
-            .bio-text { padding: 3rem; border-radius: 16px; }
-            .bio-text p { font-size: 1.05rem; line-height: 1.9; margin-bottom: 1.5rem; }
-            .bio-text h3 { font-size: 1.8rem; margin-top: 2.5rem; }
-            .bio-text li { font-size: 1rem; }
-            .cta-box { padding: 2rem; }
-            .back-button { padding: 1rem 2.5rem; font-size: 0.9rem; }
-            footer { padding: 3rem 2rem; }
-            footer p { font-size: 0.85rem; }
-        }
+        footer a { color: #6b5d4f; }
+        #cookie-banner { position: fixed; bottom: 0; left: 0; right: 0; background: #fff; border-top: 2px solid #8B4513; padding: 1rem; box-shadow: 0 -4px 20px rgba(0,0,0,0.15); z-index: 9999; display: none; }
+        #cookie-banner.show { display: block; }
+        .cookie-content { max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; justify-content: space-between; }
+        .cookie-text { flex: 1; min-width: 280px; }
+        .cookie-text p { font-size: 0.85rem; color: #2a2a2a; margin: 0; line-height: 1.5; }
+        .cookie-text a { color: #8B4513; }
+        .cookie-buttons { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+        .cookie-btn { padding: 0.6rem 1.2rem; border-radius: 50px; font-size: 0.8rem; cursor: pointer; border: none; font-family: inherit; }
+        .cookie-btn.accept { background: linear-gradient(135deg, #8B4513, #A0522D); color: white; }
+        .cookie-btn.reject { background: transparent; color: #8B4513; border: 1px solid #8B4513; }
+        .cookie-btn.settings { background: transparent; color: #666; border: 1px solid #ccc; }
+        #cookie-modal { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.5); z-index: 10000; padding: 1rem; }
+        #cookie-modal.show { display: flex; align-items: center; justify-content: center; }
+        .modal-box { background: #fff; max-width: 500px; width: 100%; border-radius: 12px; }
+        .modal-header { background: linear-gradient(135deg, #8B4513, #B8860B); color: white; padding: 1rem 1.5rem; border-radius: 12px 12px 0 0; }
+        .modal-body { padding: 1.5rem; }
+        .cookie-option { margin-bottom: 1rem; padding-bottom: 1rem; border-bottom: 1px solid #eee; }
+        .cookie-option-header { display: flex; justify-content: space-between; margin-bottom: 0.3rem; }
+        .cookie-option-header strong { color: #8B4513; font-size: 0.9rem; }
+        .cookie-badge { padding: 0.2rem 0.5rem; border-radius: 10px; font-size: 0.7rem; }
+        .cookie-badge.active { background: #8B4513; color: white; }
+        .cookie-badge.inactive { background: #ccc; color: #666; }
+        .cookie-option p { font-size: 0.8rem; color: #666; margin: 0; }
+        .modal-footer { display: flex; gap: 0.5rem; justify-content: flex-end; margin-top: 1rem; }
+        @media (min-width: 768px) { body { padding-top: 80px; } nav { padding: 1.2rem 2rem; } .logo { font-size: 1.4rem; } .section { padding: 2.5rem 2rem; } .section-title { font-size: 2.5rem; } .bio-text { padding: 2rem; } }
+        @media (min-width: 1024px) { body { padding-top: 100px; } nav { padding: 1.5rem 3rem; } .menu-toggle { display: none; } .nav-links { display: flex; } .section { padding: 3rem; } .section-title { font-size: 3rem; } .bio-text { padding: 3rem; } }
     </style>
 </head>
 <body>
     <nav>
         <div class="logo">CASA OBÀTÁLÁ</div>
-        <div class="menu-toggle" onclick="toggleMenu()">
-            <span></span><span></span><span></span>
-        </div>
+        <div class="menu-toggle" onclick="toggleMenu()"><span></span><span></span><span></span></div>
         <ul class="nav-links">
             <li><a href="index.html">Home</a></li>
             <li><a href="meditazione.html">Meditazione</a></li>
@@ -100,94 +83,56 @@
             <li><a href="contatti.html">Contatti</a></li>
         </ul>
     </nav>
-
     <div class="mobile-menu" id="mobileMenu">
-        <a href="index.html">Home</a>
-        <a href="meditazione.html">Meditazione</a>
-        <a href="piante.html">Piante</a>
-        <a href="glossario.html">Glossario</a>
-        <a href="eventi.html">Eventi</a>
-        <a href="chi-sono.html">Chi Sono</a>
-        <a href="contatti.html">Contatti</a>
+        <a href="index.html">Home</a><a href="meditazione.html">Meditazione</a><a href="piante.html">Piante</a><a href="glossario.html">Glossario</a><a href="eventi.html">Eventi</a><a href="chi-sono.html">Chi Sono</a><a href="contatti.html">Contatti</a>
     </div>
-
     <section class="section">
         <h2 class="section-title">La Saggezza delle Piante</h2>
         <p class="section-subtitle">Ewe - Medicina della Terra</p>
-        
         <div class="bio-content">
             <div class="bio-text">
                 <h3>Ko sí ewe, ko sí Òrìṣà</h3>
                 <p><em>"Senza piante, non ci sono Òrìṣà"</em> - così dice la tradizione Yoruba.</p>
-                
-                <p>Le <strong>piante</strong> non sono solo "medicina naturale". Sono <strong>ponti tra il mondo fisico e quello spirituale</strong>. Portatrici di Àṣẹ, il potere vitale che anima ogni cosa.</p>
-
+                <p>Le <strong>piante</strong> sono ponti tra il mondo fisico e quello spirituale, portatrici di Àṣẹ, il potere vitale.</p>
                 <h3>Il Mio Cammino con le Piante</h3>
-                <p>Il mio viaggio spirituale è iniziato dalle piante. Ho studiato counseling naturopatico e conseguito la certificazione in <strong>Fitoterapia</strong> presso l'Università Federico II di Napoli.</p>
-
-                <p>Nel culto Yoruba, ogni Òrìṣà ha le sue piante sacre - <strong>ewe</strong>. Ogni foglia porta una particolare energia, un messaggio, una medicina.</p>
-
+                <p>Ho studiato counseling naturopatico e conseguito la certificazione in <strong>Fitoterapia</strong> presso l'Università Federico II di Napoli.</p>
                 <h3>Fitoterapia Integrata</h3>
-                <p><strong>Fitoterapia Occidentale:</strong> studi scientifici, principi attivi, dosaggi precisi. Uso principalmente piante italiane.</p>
-
-                <p><strong>Saggezza Yoruba delle Ewe:</strong> conoscenza ancestrale, energia spirituale delle piante, legame con gli Òrìṣà.</p>
-
-                <p>Il risultato: una medicina che cura <strong>corpo e spirito insieme</strong>.</p>
-
+                <p><strong>Fitoterapia Occidentale:</strong> studi scientifici, principi attivi, piante italiane.</p>
+                <p><strong>Saggezza Yoruba:</strong> conoscenza ancestrale, energia spirituale, legame con gli Òrìṣà.</p>
                 <h3>Come Lavoro</h3>
                 <ul>
-                    <li><strong>Consultazione Personalizzata</strong> - Ascolto la tua storia e ti consiglio le piante adatte</li>
-                    <li><strong>Corsi e Guida</strong> - Insegno a riconoscere e usare le piante in sicurezza</li>
-                    <li><strong>Bagni Spirituali</strong> - Rituali di purificazione con piante sacre</li>
+                    <li><strong>Consultazione Personalizzata</strong></li>
+                    <li><strong>Corsi e Guida</strong></li>
+                    <li><strong>Bagni Spirituali</strong></li>
                 </ul>
-
-                <h3>Per Cosa Aiutano le Piante</h3>
-                <ul>
-                    <li>Stress e ansia</li>
-                    <li>Disturbi del sonno</li>
-                    <li>Problemi digestivi</li>
-                    <li>Ciclo mestruale</li>
-                    <li>Sistema immunitario</li>
-                    <li>Purificazione energetica</li>
-                </ul>
-
                 <h3>⚠️ Avvertenze</h3>
-                <p><strong>Non faccio preparazioni né prescrizioni.</strong> Il mio ruolo è di guida e insegnamento. Non sostituisco medici o professionisti sanitari.</p>
-
-                <p>La fitoterapia <strong>non sostituisce cure mediche</strong>. Se hai patologie o assumi farmaci, parla sempre con il tuo medico.</p>
-
+                <p><strong>Non faccio preparazioni né prescrizioni.</strong> Il mio ruolo è di guida. La fitoterapia non sostituisce cure mediche.</p>
                 <div class="cta-box">
                     <h4>Inizia il tuo cammino</h4>
-                    <p>Contattami per una consultazione.</p>
-                    <div class="contact-info">
-                        <strong>📱</strong> 3473638901<br>
-                        <strong>📧</strong> lorenzo.okiki@gmail.com
-                    </div>
+                    <p>📱 3473638901 | 📧 lorenzo.okiki@gmail.com</p>
                 </div>
-
                 <div class="quote-box">
                     <strong>"Ko sí ewe, ko sí Òrìṣà"</strong>
                     <p class="translation">Senza piante, non ci sono Òrìṣà</p>
                 </div>
             </div>
-
-            <div class="button-container">
-                <a href="index.html" class="back-button">← Home</a>
-            </div>
+            <div class="button-container"><a href="index.html" class="back-button">← Home</a></div>
         </div>
     </section>
-
     <footer>
-        <p>© 2025 CASA OBÀTÁLÁ - LORENZO ROSSI</p>
-        <p style="margin-top: 0.3rem; font-size: 0.75rem;"><a href="privacy-policy.html" style="color: #6b5d4f;">Privacy</a> | <a href="cookie-policy.html" style="color: #6b5d4f;">Cookie</a></p>
-        <p style="margin-top: 0.5rem;">📱 3473638901 | 📧 lorenzo.okiki@gmail.com</p>
+        <p>© 2025 CASA OBÀTÁLÁ - LORENZO ROSSI - C.F. RSSLNZ76A21H501K</p>
+        <p style="margin-top: 0.5rem;"><a href="privacy-policy.html">Privacy Policy</a> | <a href="cookie-policy.html">Cookie Policy</a></p>
     </footer>
-
+    <div id="cookie-banner"><div class="cookie-content"><div class="cookie-text"><p><strong>🍪 Questo sito usa cookie tecnici</strong><br>Utilizziamo solo cookie necessari. <a href="cookie-policy.html">Info</a></p></div><div class="cookie-buttons"><button class="cookie-btn accept" onclick="acceptCookies()">Accetta</button><button class="cookie-btn reject" onclick="rejectCookies()">Rifiuta</button><button class="cookie-btn settings" onclick="openCookieSettings()">Personalizza</button></div></div></div>
+    <div id="cookie-modal" onclick="if(event.target===this)closeCookieModal()"><div class="modal-box"><div class="modal-header"><h3>Preferenze Cookie</h3></div><div class="modal-body"><div class="cookie-option"><div class="cookie-option-header"><strong>Cookie Tecnici</strong><span class="cookie-badge active">Sempre attivi</span></div><p>Necessari per il funzionamento.</p></div><div class="cookie-option"><div class="cookie-option-header"><strong>Cookie Analitici</strong><span class="cookie-badge inactive">Non utilizzati</span></div><p>Non usiamo tracciamento.</p></div><div class="cookie-option"><div class="cookie-option-header"><strong>Cookie Marketing</strong><span class="cookie-badge inactive">Non utilizzati</span></div><p>Non usiamo pubblicità.</p></div><div class="modal-footer"><button class="cookie-btn reject" onclick="rejectCookies()">Rifiuta</button><button class="cookie-btn accept" onclick="acceptCookies()">Accetta</button></div></div></div></div>
     <script>
-        function toggleMenu() {
-            document.getElementById('mobileMenu').classList.toggle('active');
-        }
+    function toggleMenu(){document.getElementById('mobileMenu').classList.toggle('active')}
+    function acceptCookies(){localStorage.setItem('cookieConsent','accepted');hideBanner()}
+    function rejectCookies(){localStorage.setItem('cookieConsent','rejected');hideBanner()}
+    function hideBanner(){document.getElementById('cookie-banner').classList.remove('show');document.getElementById('cookie-modal').classList.remove('show')}
+    function openCookieSettings(){document.getElementById('cookie-modal').classList.add('show')}
+    function closeCookieModal(){document.getElementById('cookie-modal').classList.remove('show')}
+    if(!localStorage.getItem('cookieConsent')){document.getElementById('cookie-banner').classList.add('show')}
     </script>
-<script src="cookie-banner.js"></script>
 </body>
 </html>

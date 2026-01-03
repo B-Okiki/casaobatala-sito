@@ -21,33 +21,52 @@
         .mobile-menu a { display: block; padding: 0.9rem 0; color: #1a1a1a; text-decoration: none; border-bottom: 1px solid rgba(139,69,19,0.08); }
         .section { padding: 1.5rem 1rem 2.5rem; }
         .section-title { font-family: 'Playfair Display', serif; text-align: center; font-size: 2rem; margin-bottom: 0.5rem; }
-        .section-subtitle { text-align: center; color: #6b5d4f; font-size: 0.85rem; margin-bottom: 1.5rem; text-transform: uppercase; letter-spacing: 0.1em; }
-        .intro-box { background: #fff; border: 1px solid rgba(139,69,19,0.12); border-radius: 12px; padding: 1.5rem 1.2rem; margin-bottom: 2rem; position: relative; }
+        .section-subtitle { text-align: center; color: #6b5d4f; font-size: 0.85rem; margin-bottom: 1.5rem; text-transform: uppercase; }
+        .intro-box { background: #fff; border: 1px solid rgba(139,69,19,0.12); border-radius: 12px; padding: 1.5rem; margin-bottom: 2rem; max-width: 900px; margin-left: auto; margin-right: auto; position: relative; }
         .intro-box::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, #8B4513, #B8860B); border-radius: 12px 12px 0 0; }
         .intro-box h3 { font-family: 'Playfair Display', serif; color: #8B4513; font-size: 1.3rem; margin-bottom: 1rem; }
-        .intro-box p { font-size: 0.95rem; line-height: 1.7; margin-bottom: 1rem; color: #2a2a2a; }
-        .sources { margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid rgba(139,69,19,0.1); }
-        .sources h4 { color: #8B4513; font-size: 1rem; margin-bottom: 0.8rem; }
-        .sources li { font-size: 0.85rem; color: #6b5d4f; margin-bottom: 0.5rem; list-style: none; }
-        .plants-grid { display: grid; grid-template-columns: 1fr; gap: 1.2rem; }
-        .plant-card { background: #fff; border: 1px solid rgba(139,69,19,0.12); border-radius: 12px; padding: 1.5rem 1.2rem; }
-        .plant-card h3 { font-family: 'Playfair Display', serif; color: #8B4513; font-size: 1.3rem; margin-bottom: 0.4rem; }
-        .plant-latin { font-style: italic; color: #6b5d4f; font-size: 0.9rem; margin-bottom: 0.6rem; }
-        .plant-yoruba { color: #8B4513; font-size: 0.9rem; margin-bottom: 0.3rem; }
-        .plant-family { color: #6b5d4f; font-size: 0.85rem; margin-bottom: 1rem; }
-        .plant-info { padding-top: 1rem; border-top: 1px solid rgba(139,69,19,0.1); }
-        .plant-info h4 { color: #8B4513; font-size: 1rem; margin-bottom: 0.5rem; }
-        .plant-info p { font-size: 0.9rem; line-height: 1.6; margin-bottom: 0.8rem; color: #2a2a2a; }
-        .plant-location { display: inline-block; background: rgba(139,69,19,0.06); padding: 0.4rem 0.8rem; border-radius: 20px; font-size: 0.8rem; color: #8B4513; margin-top: 0.5rem; }
-        .copyright-box { background: #fff; border: 1px solid rgba(139,69,19,0.12); border-radius: 12px; padding: 1.5rem; text-align: center; margin: 2rem 0; }
-        .copyright-box p { font-size: 0.85rem; color: #6b5d4f; line-height: 1.6; margin-bottom: 0.5rem; }
+        .intro-box p { font-size: 0.95rem; line-height: 1.7; margin-bottom: 0.8rem; }
+        .plants-grid { display: grid; grid-template-columns: 1fr; gap: 1.2rem; max-width: 1200px; margin: 0 auto; }
+        .plant-card { background: #fff; border: 1px solid rgba(139,69,19,0.12); border-radius: 12px; padding: 1.5rem; }
+        .plant-card h3 { font-family: 'Playfair Display', serif; color: #8B4513; font-size: 1.3rem; margin-bottom: 0.3rem; }
+        .plant-latin { font-style: italic; color: #6b5d4f; font-size: 0.9rem; }
+        .plant-yoruba { color: #8B4513; font-size: 0.9rem; margin: 0.3rem 0; }
+        .plant-info p { font-size: 0.9rem; line-height: 1.5; margin-top: 0.8rem; }
+        .plant-location { display: inline-block; background: rgba(139,69,19,0.06); padding: 0.3rem 0.8rem; border-radius: 20px; font-size: 0.8rem; color: #8B4513; margin-top: 0.5rem; }
+        .copyright-box { background: #fff; border: 1px solid rgba(139,69,19,0.12); border-radius: 12px; padding: 1.5rem; text-align: center; margin: 2rem auto; max-width: 900px; }
+        .copyright-box p { font-size: 0.85rem; color: #6b5d4f; }
         .back-button { display: inline-block; margin: 1.5rem auto; padding: 0.9rem 1.8rem; background: linear-gradient(135deg, #8B4513, #A0522D); color: white; text-decoration: none; border-radius: 50px; font-size: 0.85rem; text-transform: uppercase; }
         .button-container { text-align: center; }
         footer { text-align: center; padding: 2rem 1rem; background: #f8f6f3; }
         footer p { color: #6b5d4f; font-size: 0.8rem; line-height: 1.7; }
+        footer a { color: #6b5d4f; }
+        #cookie-banner { position: fixed; bottom: 0; left: 0; right: 0; background: #fff; border-top: 2px solid #8B4513; padding: 1rem; z-index: 9999; display: none; }
+        #cookie-banner.show { display: block; }
+        .cookie-content { max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; justify-content: space-between; }
+        .cookie-text { flex: 1; min-width: 280px; }
+        .cookie-text p { font-size: 0.85rem; margin: 0; }
+        .cookie-text a { color: #8B4513; }
+        .cookie-buttons { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+        .cookie-btn { padding: 0.6rem 1.2rem; border-radius: 50px; font-size: 0.8rem; cursor: pointer; border: none; font-family: inherit; }
+        .cookie-btn.accept { background: linear-gradient(135deg, #8B4513, #A0522D); color: white; }
+        .cookie-btn.reject { background: transparent; color: #8B4513; border: 1px solid #8B4513; }
+        .cookie-btn.settings { background: transparent; color: #666; border: 1px solid #ccc; }
+        #cookie-modal { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.5); z-index: 10000; }
+        #cookie-modal.show { display: flex; align-items: center; justify-content: center; }
+        .modal-box { background: #fff; max-width: 500px; width: 90%; border-radius: 12px; }
+        .modal-header { background: linear-gradient(135deg, #8B4513, #B8860B); color: white; padding: 1rem; border-radius: 12px 12px 0 0; }
+        .modal-body { padding: 1.5rem; }
+        .cookie-option { margin-bottom: 1rem; padding-bottom: 1rem; border-bottom: 1px solid #eee; }
+        .cookie-option-header { display: flex; justify-content: space-between; margin-bottom: 0.3rem; }
+        .cookie-option-header strong { color: #8B4513; font-size: 0.9rem; }
+        .cookie-badge { padding: 0.2rem 0.5rem; border-radius: 10px; font-size: 0.7rem; }
+        .cookie-badge.active { background: #8B4513; color: white; }
+        .cookie-badge.inactive { background: #ccc; color: #666; }
+        .cookie-option p { font-size: 0.8rem; color: #666; margin: 0; }
+        .modal-footer { display: flex; gap: 0.5rem; justify-content: flex-end; margin-top: 1rem; }
         @media (min-width: 600px) { .plants-grid { grid-template-columns: repeat(2, 1fr); } }
-        @media (min-width: 768px) { body { padding-top: 80px; } nav { padding: 1.2rem 2rem; } .logo { font-size: 1.4rem; } .section { padding: 2.5rem 2rem; } .section-title { font-size: 2.5rem; } .intro-box, .plant-card { padding: 2rem; } }
-        @media (min-width: 1024px) { body { padding-top: 100px; } nav { padding: 1.5rem 3rem; } .logo { font-size: 1.5rem; } .menu-toggle { display: none; } .nav-links { display: flex; } .section { padding: 3rem; } .section-title { font-size: 3rem; } .plants-grid { grid-template-columns: repeat(3, 1fr); gap: 2rem; } }
+        @media (min-width: 768px) { body { padding-top: 80px; } nav { padding: 1.2rem 2rem; } .section-title { font-size: 2.5rem; } }
+        @media (min-width: 1024px) { body { padding-top: 100px; } nav { padding: 1.5rem 3rem; } .menu-toggle { display: none; } .nav-links { display: flex; } .plants-grid { grid-template-columns: repeat(3, 1fr); } }
     </style>
 </head>
 <body>
@@ -72,100 +91,34 @@
         <p class="section-subtitle">Ewe - La Medicina della Terra</p>
         <div class="intro-box">
             <h3>Il Progetto</h3>
-            <p>Questo glossario fa parte di un <strong>progetto di 987 piante</strong> che unisce tradizione italiana, europea e saggezza ancestrale Yoruba.</p>
-            <div class="sources">
-                <h4>Fonti:</h4>
-                <ul>
-                    <li>📚 <strong>Ewé</strong> di Pierre Fatumbi Verger</li>
-                    <li>📚 <strong>APG IV</strong> - Classificazione botanica</li>
-                    <li>📚 <strong>POWO/IPNI</strong> - Plants of the World Online</li>
-                    <li>📚 <strong>Acta Plantarum</strong> - Specie italiane</li>
-                </ul>
-            </div>
+            <p>Glossario di <strong>987 piante</strong> che unisce tradizione italiana e saggezza Yoruba.</p>
+            <p><strong>Fonti:</strong> Ewé di Pierre Fatumbi Verger, APG IV, POWO/IPNI, Acta Plantarum.</p>
         </div>
         <div class="plants-grid">
-            <div class="plant-card">
-                <h3>Gombo</h3>
-                <p class="plant-latin">Abelmoschus esculentus</p>
-                <p class="plant-yoruba">Yoruba: <strong>Ílá</strong></p>
-                <p class="plant-family">Malvaceae</p>
-                <div class="plant-info">
-                    <h4>Proprietà:</h4>
-                    <p>Pianta mucillaginosa, sacra a Ọṣun. Emolliente, aiuta la digestione. Semi antidiabetici.</p>
-                    <span class="plant-location">📍 Africa / Italia</span>
-                </div>
-            </div>
-            <div class="plant-card">
-                <h3>Aloe</h3>
-                <p class="plant-latin">Aloe vera</p>
-                <p class="plant-yoruba">Yoruba: <strong>Eti-erin, Ahon-erin</strong></p>
-                <p class="plant-family">Asphodelaceae</p>
-                <div class="plant-info">
-                    <h4>Proprietà:</h4>
-                    <p>Cicatrizzante, lenitiva, immunostimolante. Gel per pelle. Usata per protezione e purificazione.</p>
-                    <span class="plant-location">📍 Ovunque</span>
-                </div>
-            </div>
-            <div class="plant-card">
-                <h3>Amaranto</h3>
-                <p class="plant-latin">Amaranthus hybridus</p>
-                <p class="plant-yoruba">Yoruba: <strong>Tẹ̀tẹ̀</strong></p>
-                <p class="plant-family">Amaranthaceae</p>
-                <div class="plant-info">
-                    <h4>Proprietà:</h4>
-                    <p>Ricca di ferro e proteine. Associata a fertilità e abbondanza. Depurativa del sangue.</p>
-                    <span class="plant-location">📍 Italia / Africa</span>
-                </div>
-            </div>
-            <div class="plant-card">
-                <h3>Kalanchoe</h3>
-                <p class="plant-latin">Bryophyllum pinnatum</p>
-                <p class="plant-yoruba">Yoruba: <strong>Abamoda, Odundun</strong></p>
-                <p class="plant-family">Crassulaceae</p>
-                <div class="plant-info">
-                    <h4>Proprietà:</h4>
-                    <p>Cicatrizzante, antinfiammatoria. Usata per Obàtálá - purificazione e pace.</p>
-                    <span class="plant-location">📍 Tropicale</span>
-                </div>
-            </div>
-            <div class="plant-card">
-                <h3>Grani del Paradiso</h3>
-                <p class="plant-latin">Aframomum melegueta</p>
-                <p class="plant-yoruba">Yoruba: <strong>Àtàrè</strong></p>
-                <p class="plant-family">Zingiberaceae</p>
-                <div class="plant-info">
-                    <h4>Proprietà:</h4>
-                    <p>Spezia sacra usata in tutti i rituali Yoruba. Stimolante, afrodisiaco, antibatterico.</p>
-                    <span class="plant-location">📍 Africa occidentale</span>
-                </div>
-            </div>
-            <div class="plant-card">
-                <h3>Cola</h3>
-                <p class="plant-latin">Cola acuminata</p>
-                <p class="plant-yoruba">Yoruba: <strong>Obì</strong></p>
-                <p class="plant-family">Malvaceae</p>
-                <div class="plant-info">
-                    <h4>Proprietà:</h4>
-                    <p>Noce sacra usata in TUTTI i rituali Yoruba. Stimolante. Simbolo di ospitalità.</p>
-                    <span class="plant-location">📍 Africa occidentale</span>
-                </div>
-            </div>
+            <div class="plant-card"><h3>Gombo</h3><p class="plant-latin">Abelmoschus esculentus</p><p class="plant-yoruba">Yoruba: <strong>Ílá</strong></p><div class="plant-info"><p>Sacra a Ọṣun. Emolliente, digestiva.</p><span class="plant-location">📍 Africa / Italia</span></div></div>
+            <div class="plant-card"><h3>Aloe</h3><p class="plant-latin">Aloe vera</p><p class="plant-yoruba">Yoruba: <strong>Eti-erin</strong></p><div class="plant-info"><p>Cicatrizzante, lenitiva, immunostimolante.</p><span class="plant-location">📍 Ovunque</span></div></div>
+            <div class="plant-card"><h3>Grani del Paradiso</h3><p class="plant-latin">Aframomum melegueta</p><p class="plant-yoruba">Yoruba: <strong>Àtàrè</strong></p><div class="plant-info"><p>Spezia sacra in tutti i rituali Yoruba.</p><span class="plant-location">📍 Africa occidentale</span></div></div>
+            <div class="plant-card"><h3>Cola</h3><p class="plant-latin">Cola acuminata</p><p class="plant-yoruba">Yoruba: <strong>Obì</strong></p><div class="plant-info"><p>Noce sacra in TUTTI i rituali Yoruba.</p><span class="plant-location">📍 Africa occidentale</span></div></div>
+            <div class="plant-card"><h3>Kalanchoe</h3><p class="plant-latin">Bryophyllum pinnatum</p><p class="plant-yoruba">Yoruba: <strong>Odundun</strong></p><div class="plant-info"><p>Per Obàtálá - purificazione e pace.</p><span class="plant-location">📍 Tropicale</span></div></div>
+            <div class="plant-card"><h3>Amaranto</h3><p class="plant-latin">Amaranthus hybridus</p><p class="plant-yoruba">Yoruba: <strong>Tẹ̀tẹ̀</strong></p><div class="plant-info"><p>Fertilità e abbondanza. Depurativa.</p><span class="plant-location">📍 Italia / Africa</span></div></div>
         </div>
-        <div class="copyright-box">
-            <p><strong>© 2025 Lorenzo Okìkí Rossi</strong></p>
-            <p>Opera protetta - Tutti i diritti riservati</p>
-            <p>Glossario completo: <strong>987 piante</strong></p>
-        </div>
-        <div class="button-container">
-            <a href="index.html" class="back-button">← Home</a>
-        </div>
+        <div class="copyright-box"><p><strong>© 2025 Lorenzo Okìkí Rossi</strong> | Glossario completo: 987 piante</p></div>
+        <div class="button-container"><a href="index.html" class="back-button">← Home</a></div>
     </section>
     <footer>
-        <p>© 2025 CASA OBÀTÁLÁ - LORENZO ROSSI</p>
-        <p style="margin-top: 0.3rem; font-size: 0.75rem;"><a href="privacy-policy.html" style="color: #6b5d4f;">Privacy</a> | <a href="cookie-policy.html" style="color: #6b5d4f;">Cookie</a></p>
-        <p>📱 3473638901 | 📧 lorenzo.okiki@gmail.com</p>
+        <p>© 2025 CASA OBÀTÁLÁ - LORENZO ROSSI - C.F. RSSLNZ76A21H501K</p>
+        <p style="margin-top: 0.5rem;"><a href="privacy-policy.html">Privacy</a> | <a href="cookie-policy.html">Cookie</a></p>
     </footer>
-    <script>function toggleMenu() { document.getElementById('mobileMenu').classList.toggle('active'); }</script>
-<script src="cookie-banner.js"></script>
+    <div id="cookie-banner"><div class="cookie-content"><div class="cookie-text"><p><strong>🍪 Cookie tecnici</strong><br>Solo necessari. <a href="cookie-policy.html">Info</a></p></div><div class="cookie-buttons"><button class="cookie-btn accept" onclick="acceptCookies()">Accetta</button><button class="cookie-btn reject" onclick="rejectCookies()">Rifiuta</button><button class="cookie-btn settings" onclick="openCookieSettings()">Personalizza</button></div></div></div>
+    <div id="cookie-modal" onclick="if(event.target===this)closeCookieModal()"><div class="modal-box"><div class="modal-header"><h3>Preferenze Cookie</h3></div><div class="modal-body"><div class="cookie-option"><div class="cookie-option-header"><strong>Tecnici</strong><span class="cookie-badge active">Attivi</span></div><p>Necessari.</p></div><div class="cookie-option"><div class="cookie-option-header"><strong>Analitici</strong><span class="cookie-badge inactive">No</span></div></div><div class="cookie-option"><div class="cookie-option-header"><strong>Marketing</strong><span class="cookie-badge inactive">No</span></div></div><div class="modal-footer"><button class="cookie-btn reject" onclick="rejectCookies()">Rifiuta</button><button class="cookie-btn accept" onclick="acceptCookies()">Accetta</button></div></div></div></div>
+    <script>
+    function toggleMenu(){document.getElementById('mobileMenu').classList.toggle('active')}
+    function acceptCookies(){localStorage.setItem('cookieConsent','accepted');hideBanner()}
+    function rejectCookies(){localStorage.setItem('cookieConsent','rejected');hideBanner()}
+    function hideBanner(){document.getElementById('cookie-banner').classList.remove('show');document.getElementById('cookie-modal').classList.remove('show')}
+    function openCookieSettings(){document.getElementById('cookie-modal').classList.add('show')}
+    function closeCookieModal(){document.getElementById('cookie-modal').classList.remove('show')}
+    if(!localStorage.getItem('cookieConsent')){document.getElementById('cookie-banner').classList.add('show')}
+    </script>
 </body>
 </html>

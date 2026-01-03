@@ -19,41 +19,56 @@
         .mobile-menu { display: none; position: fixed; top: 58px; left: 0; right: 0; background: #fff; padding: 1rem; z-index: 999; }
         .mobile-menu.active { display: block; }
         .mobile-menu a { display: block; padding: 0.9rem 0; color: #1a1a1a; text-decoration: none; border-bottom: 1px solid rgba(139,69,19,0.08); }
-        .section { padding: 1.5rem 1rem 2.5rem; }
+        .section { padding: 1.5rem 1rem 2.5rem; max-width: 900px; margin: 0 auto; }
         .section-title { font-family: 'Playfair Display', serif; text-align: center; font-size: 2rem; margin-bottom: 0.5rem; }
         .section-subtitle { text-align: center; color: #6b5d4f; font-size: 0.85rem; margin-bottom: 1.5rem; text-transform: uppercase; }
-        .content { max-width: 900px; margin: 0 auto; }
-        .no-events { background: #fff; border: 1px solid rgba(139,69,19,0.12); border-radius: 12px; padding: 2rem 1.5rem; text-align: center; margin-bottom: 2rem; position: relative; }
+        .no-events { background: #fff; border: 1px solid rgba(139,69,19,0.12); border-radius: 12px; padding: 2rem; text-align: center; margin-bottom: 2rem; position: relative; }
         .no-events::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, #8B4513, #B8860B); border-radius: 12px 12px 0 0; }
         .no-events-icon { font-size: 3rem; margin-bottom: 1rem; }
         .no-events h3 { font-family: 'Playfair Display', serif; color: #8B4513; font-size: 1.4rem; margin-bottom: 0.8rem; }
-        .no-events p { font-size: 0.95rem; color: #2a2a2a; line-height: 1.6; margin-bottom: 0.5rem; }
         .newsletter { background: rgba(139,69,19,0.04); border: 1px solid rgba(184,134,11,0.2); border-radius: 12px; padding: 1.5rem; text-align: center; margin-bottom: 2rem; }
         .newsletter h4 { font-family: 'Playfair Display', serif; color: #8B4513; font-size: 1.3rem; margin-bottom: 0.8rem; }
-        .newsletter p { font-size: 0.9rem; color: #2a2a2a; margin-bottom: 1.2rem; line-height: 1.6; }
-        .newsletter-form { display: flex; flex-direction: column; gap: 0.8rem; max-width: 400px; margin: 0 auto; }
-        .newsletter-form input { padding: 0.9rem 1rem; border: 1px solid rgba(139,69,19,0.2); border-radius: 50px; font-size: 1rem; }
-        .newsletter-form button { padding: 0.9rem; background: linear-gradient(135deg, #8B4513, #A0522D); color: white; border: none; border-radius: 50px; font-size: 0.9rem; cursor: pointer; text-transform: uppercase; }
-        .services-title { font-family: 'Playfair Display', serif; text-align: center; color: #8B4513; font-size: 1.5rem; margin: 2rem 0 1rem; }
-        .services-grid { display: grid; grid-template-columns: 1fr; gap: 1.2rem; }
-        .service-card { background: #fff; border: 1px solid rgba(139,69,19,0.12); border-radius: 12px; padding: 1.5rem 1.2rem; }
+        .newsletter-form { display: flex; flex-direction: column; gap: 0.8rem; max-width: 400px; margin: 1rem auto 0; }
+        .newsletter-form input { padding: 0.9rem; border: 1px solid rgba(139,69,19,0.2); border-radius: 50px; font-size: 1rem; }
+        .newsletter-form button { padding: 0.9rem; background: linear-gradient(135deg, #8B4513, #A0522D); color: white; border: none; border-radius: 50px; cursor: pointer; }
+        .services-grid { display: grid; grid-template-columns: 1fr; gap: 1.2rem; margin-top: 2rem; }
+        .service-card { background: #fff; border: 1px solid rgba(139,69,19,0.12); border-radius: 12px; padding: 1.5rem; }
         .service-icon { font-size: 2.5rem; margin-bottom: 0.8rem; }
-        .service-card h4 { font-family: 'Playfair Display', serif; color: #8B4513; font-size: 1.2rem; margin-bottom: 0.6rem; }
-        .service-card p { font-size: 0.9rem; color: #2a2a2a; line-height: 1.6; margin-bottom: 0.8rem; }
-        .service-card ul { padding-left: 1.2rem; margin-bottom: 0.8rem; }
-        .service-card li { font-size: 0.85rem; color: #6b5d4f; margin-bottom: 0.3rem; }
-        .service-tag { display: inline-block; background: rgba(139,69,19,0.06); padding: 0.4rem 0.8rem; border-radius: 20px; font-size: 0.8rem; color: #8B4513; }
-        .cta-box { background: #fff; border: 1px solid rgba(139,69,19,0.12); border-radius: 12px; padding: 1.5rem; text-align: center; margin-top: 2rem; }
-        .cta-box h4 { font-family: 'Playfair Display', serif; color: #8B4513; font-size: 1.3rem; margin-bottom: 0.6rem; }
-        .cta-box p { font-size: 0.9rem; color: #2a2a2a; line-height: 1.6; margin-bottom: 1rem; }
-        .cta-box .contact { font-size: 0.95rem; }
+        .service-card h4 { font-family: 'Playfair Display', serif; color: #8B4513; font-size: 1.2rem; margin-bottom: 0.5rem; }
+        .service-card p { font-size: 0.9rem; color: #2a2a2a; margin-bottom: 0.8rem; }
+        .service-tag { display: inline-block; background: rgba(139,69,19,0.06); padding: 0.3rem 0.8rem; border-radius: 20px; font-size: 0.8rem; color: #8B4513; }
         .back-button { display: inline-block; margin: 1.5rem auto; padding: 0.9rem 1.8rem; background: linear-gradient(135deg, #8B4513, #A0522D); color: white; text-decoration: none; border-radius: 50px; font-size: 0.85rem; text-transform: uppercase; }
-        .button-container { text-align: center; margin-top: 1.5rem; }
+        .button-container { text-align: center; }
         footer { text-align: center; padding: 2rem 1rem; background: #f8f6f3; }
         footer p { color: #6b5d4f; font-size: 0.8rem; line-height: 1.7; }
-        @media (min-width: 600px) { .services-grid { grid-template-columns: repeat(2, 1fr); } .newsletter-form { flex-direction: row; } .newsletter-form input { flex: 1; } .newsletter-form button { white-space: nowrap; } }
-        @media (min-width: 768px) { body { padding-top: 80px; } nav { padding: 1.2rem 2rem; } .logo { font-size: 1.4rem; } .section { padding: 2.5rem 2rem; } .section-title { font-size: 2.5rem; } .no-events, .service-card { padding: 2rem; } }
-        @media (min-width: 1024px) { body { padding-top: 100px; } nav { padding: 1.5rem 3rem; } .logo { font-size: 1.5rem; } .menu-toggle { display: none; } .nav-links { display: flex; } .section { padding: 3rem; } .section-title { font-size: 3rem; } .services-grid { grid-template-columns: repeat(3, 1fr); } }
+        footer a { color: #6b5d4f; }
+        #cookie-banner { position: fixed; bottom: 0; left: 0; right: 0; background: #fff; border-top: 2px solid #8B4513; padding: 1rem; z-index: 9999; display: none; }
+        #cookie-banner.show { display: block; }
+        .cookie-content { max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; justify-content: space-between; }
+        .cookie-text { flex: 1; min-width: 280px; }
+        .cookie-text p { font-size: 0.85rem; margin: 0; }
+        .cookie-text a { color: #8B4513; }
+        .cookie-buttons { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+        .cookie-btn { padding: 0.6rem 1.2rem; border-radius: 50px; font-size: 0.8rem; cursor: pointer; border: none; }
+        .cookie-btn.accept { background: linear-gradient(135deg, #8B4513, #A0522D); color: white; }
+        .cookie-btn.reject { background: transparent; color: #8B4513; border: 1px solid #8B4513; }
+        .cookie-btn.settings { background: transparent; color: #666; border: 1px solid #ccc; }
+        #cookie-modal { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.5); z-index: 10000; }
+        #cookie-modal.show { display: flex; align-items: center; justify-content: center; }
+        .modal-box { background: #fff; max-width: 500px; width: 90%; border-radius: 12px; margin: 1rem; }
+        .modal-header { background: linear-gradient(135deg, #8B4513, #B8860B); color: white; padding: 1rem; border-radius: 12px 12px 0 0; }
+        .modal-body { padding: 1.5rem; }
+        .cookie-option { margin-bottom: 1rem; padding-bottom: 1rem; border-bottom: 1px solid #eee; }
+        .cookie-option-header { display: flex; justify-content: space-between; margin-bottom: 0.3rem; }
+        .cookie-option-header strong { color: #8B4513; font-size: 0.9rem; }
+        .cookie-badge { padding: 0.2rem 0.5rem; border-radius: 10px; font-size: 0.7rem; }
+        .cookie-badge.active { background: #8B4513; color: white; }
+        .cookie-badge.inactive { background: #ccc; color: #666; }
+        .cookie-option p { font-size: 0.8rem; color: #666; margin: 0; }
+        .modal-footer { display: flex; gap: 0.5rem; justify-content: flex-end; margin-top: 1rem; }
+        @media (min-width: 600px) { .services-grid { grid-template-columns: repeat(2, 1fr); } .newsletter-form { flex-direction: row; } .newsletter-form input { flex: 1; } }
+        @media (min-width: 768px) { body { padding-top: 80px; } nav { padding: 1.2rem 2rem; } .logo { font-size: 1.4rem; } .section-title { font-size: 2.5rem; } }
+        @media (min-width: 1024px) { body { padding-top: 100px; } nav { padding: 1.5rem 3rem; } .menu-toggle { display: none; } .nav-links { display: flex; } .services-grid { grid-template-columns: repeat(3, 1fr); } }
     </style>
 </head>
 <body>
@@ -76,73 +91,57 @@
     <section class="section">
         <h2 class="section-title">Eventi</h2>
         <p class="section-subtitle">Opportunità per iniziare</p>
-        <div class="content">
-            <div class="no-events">
-                <div class="no-events-icon">🌱</div>
-                <h3>Prossimamente</h3>
-                <p>Al momento non ci sono eventi programmati.</p>
-                <p>Iscriviti per essere avvisato!</p>
+        <div class="no-events">
+            <div class="no-events-icon">🌱</div>
+            <h3>Prossimamente</h3>
+            <p>Al momento non ci sono eventi programmati.</p>
+        </div>
+        <div class="newsletter">
+            <h4>Resta Aggiornato</h4>
+            <p>Ricevi notifiche su nuovi eventi.</p>
+            <form class="newsletter-form" name="newsletter" method="POST" data-netlify="true">
+                <input type="hidden" name="form-name" value="newsletter">
+                <input type="email" name="email" placeholder="La tua email" required>
+                <button type="submit">Iscriviti</button>
+            </form>
+        </div>
+        <h3 style="font-family: 'Playfair Display', serif; color: #8B4513; text-align: center; margin: 2rem 0 1rem;">Sempre Disponibili</h3>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">🧘</div>
+                <h4>Meditazione</h4>
+                <p>Sessioni individuali guidate.</p>
+                <span class="service-tag">Su appuntamento</span>
             </div>
-            <div class="newsletter">
-                <h4>Resta Aggiornato</h4>
-                <p>Ricevi notifiche su nuovi eventi e contenuti.</p>
-                <form class="newsletter-form" name="newsletter" method="POST" data-netlify="true">
-                    <input type="hidden" name="form-name" value="newsletter">
-                    <input type="email" name="email" placeholder="La tua email" required>
-                    <button type="submit">Iscriviti</button>
-                </form>
+            <div class="service-card">
+                <div class="service-icon">🌿</div>
+                <h4>Consulenza Piante</h4>
+                <p>Consulenza personalizzata.</p>
+                <span class="service-tag">Su appuntamento</span>
             </div>
-            <h3 class="services-title">Sempre Disponibili</h3>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">🧘</div>
-                    <h4>Meditazione</h4>
-                    <p>Sessioni individuali di meditazione profonda guidata.</p>
-                    <ul>
-                        <li>60-90 minuti</li>
-                        <li>In presenza o online</li>
-                    </ul>
-                    <span class="service-tag">Su appuntamento</span>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">🌿</div>
-                    <h4>Consulenza Piante</h4>
-                    <p>Consulenza personalizzata su fitoterapia e tradizione Yoruba.</p>
-                    <ul>
-                        <li>Analisi personalizzata</li>
-                        <li>Consigli pratici</li>
-                    </ul>
-                    <span class="service-tag">Su appuntamento</span>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">✨</div>
-                    <h4>Percorso Personale</h4>
-                    <p>Cammino di crescita spirituale su più incontri.</p>
-                    <ul>
-                        <li>Meditazione + Piante</li>
-                        <li>Supporto continuo</li>
-                    </ul>
-                    <span class="service-tag">Su richiesta</span>
-                </div>
-            </div>
-            <div class="cta-box">
-                <h4>Vuoi organizzare un evento?</h4>
-                <p>Sei un'associazione o un gruppo? Contattami per workshop nella tua zona.</p>
-                <div class="contact">
-                    <strong>📱</strong> 3473638901 | <strong>📧</strong> lorenzo.okiki@gmail.com
-                </div>
-            </div>
-            <div class="button-container">
-                <a href="contatti.html" class="back-button">Contattami</a>
+            <div class="service-card">
+                <div class="service-icon">✨</div>
+                <h4>Percorso Personale</h4>
+                <p>Cammino di crescita spirituale.</p>
+                <span class="service-tag">Su richiesta</span>
             </div>
         </div>
+        <div class="button-container"><a href="contatti.html" class="back-button">Contattami</a></div>
     </section>
     <footer>
-        <p>© 2025 CASA OBÀTÁLÁ - LORENZO ROSSI</p>
-        <p style="margin-top: 0.3rem; font-size: 0.75rem;"><a href="privacy-policy.html" style="color: #6b5d4f;">Privacy</a> | <a href="cookie-policy.html" style="color: #6b5d4f;">Cookie</a></p>
-        <p>📱 3473638901 | 📧 lorenzo.okiki@gmail.com</p>
+        <p>© 2025 CASA OBÀTÁLÁ - LORENZO ROSSI - C.F. RSSLNZ76A21H501K</p>
+        <p style="margin-top: 0.5rem;"><a href="privacy-policy.html">Privacy Policy</a> | <a href="cookie-policy.html">Cookie Policy</a></p>
     </footer>
-    <script>function toggleMenu() { document.getElementById('mobileMenu').classList.toggle('active'); }</script>
-<script src="cookie-banner.js"></script>
+    <div id="cookie-banner"><div class="cookie-content"><div class="cookie-text"><p><strong>🍪 Questo sito usa cookie tecnici</strong><br>Utilizziamo solo cookie necessari. <a href="cookie-policy.html">Info</a></p></div><div class="cookie-buttons"><button class="cookie-btn accept" onclick="acceptCookies()">Accetta</button><button class="cookie-btn reject" onclick="rejectCookies()">Rifiuta</button><button class="cookie-btn settings" onclick="openCookieSettings()">Personalizza</button></div></div></div>
+    <div id="cookie-modal" onclick="if(event.target===this)closeCookieModal()"><div class="modal-box"><div class="modal-header"><h3>Preferenze Cookie</h3></div><div class="modal-body"><div class="cookie-option"><div class="cookie-option-header"><strong>Cookie Tecnici</strong><span class="cookie-badge active">Sempre attivi</span></div><p>Necessari per il funzionamento.</p></div><div class="cookie-option"><div class="cookie-option-header"><strong>Cookie Analitici</strong><span class="cookie-badge inactive">Non utilizzati</span></div><p>Non usiamo tracciamento.</p></div><div class="cookie-option"><div class="cookie-option-header"><strong>Cookie Marketing</strong><span class="cookie-badge inactive">Non utilizzati</span></div><p>Non usiamo pubblicità.</p></div><div class="modal-footer"><button class="cookie-btn reject" onclick="rejectCookies()">Rifiuta</button><button class="cookie-btn accept" onclick="acceptCookies()">Accetta</button></div></div></div></div>
+    <script>
+    function toggleMenu(){document.getElementById('mobileMenu').classList.toggle('active')}
+    function acceptCookies(){localStorage.setItem('cookieConsent','accepted');hideBanner()}
+    function rejectCookies(){localStorage.setItem('cookieConsent','rejected');hideBanner()}
+    function hideBanner(){document.getElementById('cookie-banner').classList.remove('show');document.getElementById('cookie-modal').classList.remove('show')}
+    function openCookieSettings(){document.getElementById('cookie-modal').classList.add('show')}
+    function closeCookieModal(){document.getElementById('cookie-modal').classList.remove('show')}
+    if(!localStorage.getItem('cookieConsent')){document.getElementById('cookie-banner').classList.add('show')}
+    </script>
 </body>
 </html>
