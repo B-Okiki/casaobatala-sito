@@ -1,0 +1,21 @@
+# Robots.txt per casaobatala.it
+# Casa Obàtálá - Lorenzo Okìkí Rossi
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://casaobatala.it/sitemap.xml
+
+# Blocca file non necessari per l'indicizzazione
+Disallow: /cookie-banner.js
+
+# Consenti tutti i crawler principali
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
