@@ -25,6 +25,7 @@
         .policy-content { background: #fff; border: 1px solid rgba(139,69,19,0.12); border-radius: 12px; padding: 1.5rem 1.2rem; }
         .policy-content h2 { font-family: 'Playfair Display', serif; color: #8B4513; font-size: 1.3rem; margin: 2rem 0 1rem; }
         .policy-content h2:first-child { margin-top: 0; }
+        .policy-content h3 { color: #8B4513; font-size: 1.1rem; margin: 1.2rem 0 0.6rem; }
         .policy-content p { font-size: 0.95rem; line-height: 1.7; margin-bottom: 1rem; color: #2a2a2a; }
         .policy-content ul { padding-left: 1.5rem; margin-bottom: 1rem; }
         .policy-content li { font-size: 0.95rem; line-height: 1.6; margin-bottom: 0.5rem; color: #2a2a2a; }
@@ -63,16 +64,18 @@
 
     <section class="section">
         <h1 class="section-title">Cookie Policy</h1>
-        <p class="last-update">Ultimo aggiornamento: Gennaio 2025</p>
+        <p class="last-update">Ultimo aggiornamento: Gennaio 2026</p>
 
         <div class="policy-content">
             <h2>1. Cosa sono i Cookie</h2>
             <p>I cookie sono piccoli file di testo che i siti web salvano sul tuo dispositivo (computer, smartphone, tablet) quando li visiti. Servono a memorizzare informazioni sulla tua visita, come le preferenze di lingua o altri dati, per rendere la navigazione più semplice e personalizzata.</p>
+            <p>Questa Cookie Policy è redatta in conformità al Regolamento (UE) 2016/679 (GDPR), al D.Lgs. 196/2003 (Codice Privacy) come modificato dal D.Lgs. 101/2018, e alle Linee Guida del Garante Privacy del 10 giugno 2021 in materia di cookie e altri strumenti di tracciamento.</p>
 
             <h2>2. Titolare del Trattamento</h2>
             <div class="info-box">
                 <p><strong>Titolare:</strong> Lorenzo Rossi</p>
                 <p><strong>Indirizzo:</strong> Viale dei Promontori 310, 00122 Ostia Lido (RM)</p>
+                <p><strong>Codice Fiscale:</strong> RSSLNZ76A21H501K</p>
                 <p><strong>Email:</strong> <a href="mailto:lorenzo.okiki@gmail.com">lorenzo.okiki@gmail.com</a></p>
             </div>
 
@@ -93,13 +96,13 @@
 
             <h3>Per finalità:</h3>
             <ul>
-                <li><strong>Cookie tecnici:</strong> necessari al funzionamento del sito</li>
+                <li><strong>Cookie tecnici:</strong> necessari al funzionamento del sito (non richiedono consenso)</li>
                 <li><strong>Cookie analitici:</strong> raccolgono statistiche sulla navigazione</li>
                 <li><strong>Cookie di profilazione:</strong> tracciano le preferenze per pubblicità mirata</li>
             </ul>
 
             <h2>4. Cookie Utilizzati da Questo Sito</h2>
-            <p>Il sito <strong>casaobatala.it</strong> utilizza esclusivamente <strong>cookie tecnici</strong> strettamente necessari al funzionamento.</p>
+            <p>Il sito <strong>casaobatala.it</strong> utilizza esclusivamente <strong>cookie tecnici</strong> strettamente necessari al funzionamento. Ai sensi dell'Art. 122 del Codice Privacy e del Provvedimento del Garante del 10 giugno 2021, i cookie tecnici non richiedono il consenso preventivo dell'utente.</p>
 
             <table>
                 <tr>
@@ -111,14 +114,20 @@
                 <tr>
                     <td>cookieConsent</td>
                     <td>Tecnico (prima parte)</td>
-                    <td>Memorizza la scelta sui cookie</td>
+                    <td>Memorizza la scelta dell'utente sui cookie</td>
                     <td>12 mesi</td>
                 </tr>
                 <tr>
-                    <td>__cfduid (Netlify)</td>
-                    <td>Tecnico (terza parte)</td>
-                    <td>Sicurezza e performance</td>
-                    <td>30 giorni</td>
+                    <td>__cf_bm</td>
+                    <td>Tecnico (Cloudflare)</td>
+                    <td>Protezione da bot e traffico malevolo</td>
+                    <td>30 minuti</td>
+                </tr>
+                <tr>
+                    <td>cf_clearance</td>
+                    <td>Tecnico (Cloudflare)</td>
+                    <td>Verifica JavaScript per sicurezza</td>
+                    <td>30 minuti</td>
                 </tr>
             </table>
 
@@ -129,58 +138,91 @@
                     <li>Cookie pubblicitari</li>
                     <li>Google Analytics o altri strumenti di tracciamento</li>
                     <li>Facebook Pixel o strumenti di marketing</li>
+                    <li>Cookie per finalità di remarketing</li>
                 </ul>
             </div>
 
-            <h2>5. Cookie di Terze Parti</h2>
+            <h2>5. Servizi di Terze Parti</h2>
             <p>Il sito si appoggia ai seguenti servizi esterni che potrebbero installare cookie tecnici:</p>
             
-            <p><strong>Netlify</strong> (hosting e form)</p>
+            <h3>Cloudflare (CDN e Sicurezza)</h3>
             <ul>
-                <li>Finalità: hosting del sito e gestione moduli di contatto</li>
-                <li>Cookie: tecnici per sicurezza e performance</li>
-                <li>Privacy Policy: <a href="https://www.netlify.com/privacy/" target="_blank">netlify.com/privacy</a></li>
+                <li><strong>Finalità:</strong> Content Delivery Network, protezione DDoS, sicurezza del sito</li>
+                <li><strong>Cookie:</strong> tecnici per sicurezza e protezione da bot (__cf_bm, cf_clearance)</li>
+                <li><strong>Dati trattati:</strong> indirizzo IP, dati di navigazione (in forma anonimizzata)</li>
+                <li><strong>Privacy Policy:</strong> <a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener">cloudflare.com/privacypolicy</a></li>
             </ul>
 
-            <p><strong>Google Fonts</strong> (caratteri tipografici)</p>
+            <h3>GitHub Pages (Hosting)</h3>
             <ul>
-                <li>Finalità: caricamento dei font del sito</li>
-                <li>Cookie: nessun cookie, ma registra l'indirizzo IP</li>
-                <li>Privacy Policy: <a href="https://policies.google.com/privacy" target="_blank">policies.google.com/privacy</a></li>
+                <li><strong>Finalità:</strong> hosting statico del sito web</li>
+                <li><strong>Cookie:</strong> nessun cookie di tracciamento</li>
+                <li><strong>Dati trattati:</strong> log di accesso standard (IP, user agent)</li>
+                <li><strong>Privacy Policy:</strong> <a href="https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement" target="_blank" rel="noopener">docs.github.com/privacy</a></li>
+            </ul>
+
+            <h3>Google Fonts (Caratteri Tipografici)</h3>
+            <ul>
+                <li><strong>Finalità:</strong> caricamento dei font del sito</li>
+                <li><strong>Cookie:</strong> nessun cookie installato</li>
+                <li><strong>Dati trattati:</strong> indirizzo IP per il caricamento dei font</li>
+                <li><strong>Privacy Policy:</strong> <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a></li>
+            </ul>
+
+            <h3>Formspree (Modulo di Contatto)</h3>
+            <ul>
+                <li><strong>Finalità:</strong> gestione e invio dei messaggi dal form di contatto</li>
+                <li><strong>Cookie:</strong> nessun cookie di tracciamento</li>
+                <li><strong>Dati trattati:</strong> i dati inseriti dall'utente nel form (nome, email, messaggio)</li>
+                <li><strong>Privacy Policy:</strong> <a href="https://formspree.io/legal/privacy-policy/" target="_blank" rel="noopener">formspree.io/legal/privacy-policy</a></li>
             </ul>
 
             <h2>6. Base Giuridica</h2>
-            <p>I <strong>cookie tecnici</strong> non richiedono il consenso preventivo in quanto strettamente necessari al funzionamento del sito (Art. 122 D.Lgs. 196/2003 e Provvedimento Garante 8 maggio 2014).</p>
-            <p>Qualora in futuro venissero introdotti cookie analitici o di profilazione, sarà richiesto il tuo consenso esplicito tramite banner.</p>
+            <p>I <strong>cookie tecnici</strong> non richiedono il consenso preventivo dell'utente in quanto strettamente necessari all'erogazione del servizio richiesto (Art. 122, comma 1, del Codice Privacy e Provvedimento del Garante Privacy del 10 giugno 2021).</p>
+            <p>Il banner informativo presente sul sito ha finalità esclusivamente informativa e consente all'utente di esprimere la propria preferenza, che viene memorizzata per evitare la riproposizione del banner ad ogni visita.</p>
+            <p>Qualora in futuro venissero introdotti cookie analitici o di profilazione, sarà richiesto il tuo consenso esplicito tramite banner conforme alle Linee Guida del Garante, con possibilità di accettare, rifiutare o personalizzare le scelte.</p>
 
             <h2>7. Come Gestire i Cookie</h2>
             <p>Puoi gestire le preferenze sui cookie in diversi modi:</p>
 
+            <h3>Tramite il banner del sito:</h3>
+            <p>Al primo accesso puoi scegliere se accettare o rifiutare i cookie. La tua scelta viene memorizzata per 12 mesi.</p>
+
             <h3>Tramite il browser:</h3>
             <ul>
-                <li><strong>Chrome:</strong> Impostazioni → Privacy e sicurezza → Cookie</li>
-                <li><strong>Firefox:</strong> Opzioni → Privacy → Cronologia</li>
-                <li><strong>Safari:</strong> Preferenze → Privacy</li>
-                <li><strong>Edge:</strong> Impostazioni → Privacy → Cookie</li>
+                <li><strong>Chrome:</strong> Impostazioni → Privacy e sicurezza → Cookie e altri dati dei siti</li>
+                <li><strong>Firefox:</strong> Impostazioni → Privacy e sicurezza → Cookie e dati dei siti web</li>
+                <li><strong>Safari:</strong> Preferenze → Privacy → Gestisci dati siti web</li>
+                <li><strong>Edge:</strong> Impostazioni → Cookie e autorizzazioni sito → Cookie e dati archiviati</li>
             </ul>
 
-            <p><strong>Attenzione:</strong> la disabilitazione dei cookie tecnici potrebbe compromettere alcune funzionalità del sito.</p>
+            <p><strong>Attenzione:</strong> la disabilitazione dei cookie tecnici potrebbe compromettere alcune funzionalità del sito, come la protezione da bot malevoli.</p>
 
-            <h2>8. Aggiornamenti</h2>
-            <p>Questa Cookie Policy può essere aggiornata periodicamente. Ti invitiamo a consultare questa pagina regolarmente. La data dell'ultimo aggiornamento è indicata in alto.</p>
-
-            <h2>9. Contatti</h2>
-            <p>Per qualsiasi domanda sui cookie utilizzati da questo sito, puoi contattare il Titolare:</p>
+            <h2>8. Trasferimento Dati Extra-UE</h2>
+            <p>Alcuni servizi di terze parti (Cloudflare, GitHub, Formspree) hanno server situati negli Stati Uniti. Il trasferimento dei dati avviene sulla base di:</p>
             <ul>
-                <li>Email: <a href="mailto:lorenzo.okiki@gmail.com">lorenzo.okiki@gmail.com</a></li>
-                <li>Telefono: +39 347 363 8901</li>
+                <li>Clausole Contrattuali Standard (SCC) approvate dalla Commissione Europea</li>
+                <li>Data Privacy Framework UE-USA (per i fornitori certificati)</li>
             </ul>
+            <p>Questi meccanismi garantiscono un livello di protezione adeguato ai sensi del Capo V del GDPR.</p>
 
-            <h2>10. Link Utili</h2>
+            <h2>9. Aggiornamenti</h2>
+            <p>Questa Cookie Policy può essere aggiornata periodicamente per riflettere modifiche normative o cambiamenti nei servizi utilizzati. Ti invitiamo a consultare questa pagina regolarmente. La data dell'ultimo aggiornamento è indicata in alto.</p>
+
+            <h2>10. Contatti e Diritti</h2>
+            <p>Per qualsiasi domanda sui cookie utilizzati da questo sito o per esercitare i tuoi diritti (accesso, rettifica, cancellazione, opposizione), puoi contattare il Titolare:</p>
+            <ul>
+                <li><strong>Email:</strong> <a href="mailto:lorenzo.okiki@gmail.com">lorenzo.okiki@gmail.com</a></li>
+                <li><strong>Telefono:</strong> +39 347 363 8901</li>
+            </ul>
+            <p>Hai inoltre diritto di proporre reclamo al <strong>Garante per la Protezione dei Dati Personali</strong> (<a href="https://www.garanteprivacy.it" target="_blank" rel="noopener">www.garanteprivacy.it</a>).</p>
+
+            <h2>11. Link Utili</h2>
             <ul>
                 <li><a href="privacy-policy.html">Privacy Policy completa</a></li>
-                <li><a href="https://www.garanteprivacy.it/cookie" target="_blank">Garante Privacy - Informazioni sui cookie</a></li>
-                <li><a href="https://www.youronlinechoices.eu/" target="_blank">Your Online Choices - Gestione cookie pubblicitari</a></li>
+                <li><a href="https://www.garanteprivacy.it/temi/cookie" target="_blank" rel="noopener">Garante Privacy - Informazioni sui cookie</a></li>
+                <li><a href="https://www.garanteprivacy.it/home/docweb/-/docweb-display/docweb/9677876" target="_blank" rel="noopener">Linee Guida Cookie del 10 giugno 2021</a></li>
+                <li><a href="https://www.youronlinechoices.eu/" target="_blank" rel="noopener">Your Online Choices - Gestione cookie pubblicitari</a></li>
             </ul>
         </div>
 
