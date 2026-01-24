@@ -26,11 +26,12 @@
         .no-events::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, #8B4513, #B8860B); border-radius: 12px 12px 0 0; }
         .no-events-icon { font-size: 3rem; margin-bottom: 1rem; }
         .no-events h3 { font-family: 'Playfair Display', serif; color: #8B4513; font-size: 1.4rem; margin-bottom: 0.8rem; }
-        .newsletter { background: rgba(139,69,19,0.04); border: 1px solid rgba(184,134,11,0.2); border-radius: 12px; padding: 1.5rem; text-align: center; margin-bottom: 2rem; }
-        .newsletter h4 { font-family: 'Playfair Display', serif; color: #8B4513; font-size: 1.3rem; margin-bottom: 0.8rem; }
-        .newsletter-form { display: flex; flex-direction: column; gap: 0.8rem; max-width: 400px; margin: 1rem auto 0; }
-        .newsletter-form input { padding: 0.9rem; border: 1px solid rgba(139,69,19,0.2); border-radius: 50px; font-size: 1rem; }
-        .newsletter-form button { padding: 0.9rem; background: linear-gradient(135deg, #8B4513, #A0522D); color: white; border: none; border-radius: 50px; cursor: pointer; }
+        .no-events p { color: #2a2a2a; font-size: 0.95rem; line-height: 1.6; margin-bottom: 1rem; }
+        .newsletter-box { background: rgba(139,69,19,0.04); border: 1px solid rgba(184,134,11,0.2); border-radius: 12px; padding: 1.5rem; text-align: center; margin-bottom: 2rem; }
+        .newsletter-box h4 { font-family: 'Playfair Display', serif; color: #8B4513; font-size: 1.3rem; margin-bottom: 0.8rem; }
+        .newsletter-box p { color: #2a2a2a; font-size: 0.95rem; line-height: 1.6; margin-bottom: 1rem; }
+        .contact-link { display: inline-block; padding: 0.9rem 1.8rem; background: linear-gradient(135deg, #8B4513, #A0522D); color: white; text-decoration: none; border-radius: 50px; font-size: 0.85rem; text-transform: uppercase; transition: all 0.3s; }
+        .contact-link:hover { background: linear-gradient(135deg, #A0522D, #B8860B); transform: translateY(-2px); }
         .services-grid { display: grid; grid-template-columns: 1fr; gap: 1.2rem; margin-top: 2rem; }
         .service-card { background: #fff; border: 1px solid rgba(139,69,19,0.12); border-radius: 12px; padding: 1.5rem; }
         .service-icon { font-size: 2.5rem; margin-bottom: 0.8rem; }
@@ -66,7 +67,7 @@
         .cookie-badge.inactive { background: #ccc; color: #666; }
         .cookie-option p { font-size: 0.8rem; color: #666; margin: 0; }
         .modal-footer { display: flex; gap: 0.5rem; justify-content: flex-end; margin-top: 1rem; }
-        @media (min-width: 600px) { .services-grid { grid-template-columns: repeat(2, 1fr); } .newsletter-form { flex-direction: row; } .newsletter-form input { flex: 1; } }
+        @media (min-width: 600px) { .services-grid { grid-template-columns: repeat(2, 1fr); } }
         @media (min-width: 768px) { body { padding-top: 80px; } nav { padding: 1.2rem 2rem; } .logo { font-size: 1.4rem; } .section-title { font-size: 2.5rem; } }
         @media (min-width: 1024px) { body { padding-top: 100px; } nav { padding: 1.5rem 3rem; } .menu-toggle { display: none; } .nav-links { display: flex; } .services-grid { grid-template-columns: repeat(3, 1fr); } }
     </style>
@@ -96,14 +97,10 @@
             <h3>Prossimamente</h3>
             <p>Al momento non ci sono eventi programmati.</p>
         </div>
-        <div class="newsletter">
+        <div class="newsletter-box">
             <h4>Resta Aggiornato</h4>
-            <p>Ricevi notifiche su nuovi eventi.</p>
-            <form class="newsletter-form" name="newsletter" method="POST" data-netlify="true">
-                <input type="hidden" name="form-name" value="newsletter">
-                <input type="email" name="email" placeholder="La tua email" required>
-                <button type="submit">Iscriviti</button>
-            </form>
+            <p>Vuoi ricevere notifiche sui prossimi eventi? Contattami e ti terrò informato.</p>
+            <a href="contatti.html" class="contact-link">Scrivimi →</a>
         </div>
         <h3 style="font-family: 'Playfair Display', serif; color: #8B4513; text-align: center; margin: 2rem 0 1rem;">Sempre Disponibili</h3>
         <div class="services-grid">
