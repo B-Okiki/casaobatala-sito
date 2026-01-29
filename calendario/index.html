@@ -1,0 +1,1138 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Calendario Yorùbá</title>
+    <meta name="description" content="Calendario tradizionale Yorùbá con settimana di 4 giorni - I giorni sacri degli Òrìṣà">
+    <meta name="author" content="Lorenzo Okìkí Rossi">
+    <meta name="theme-color" content="#EDE6D6">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Calendario Yorùbá">
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" type="image/png" href="logo.png">
+    <link rel="apple-touch-icon" href="logo.png">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #fafafa;
+            color: #1a1a1a;
+            touch-action: pan-y;
+            min-height: 100vh;
+        }
+        
+        /* Header - Stile pergamena/botanico */
+        .header {
+            background: linear-gradient(180deg, #F5F0E1 0%, #EDE6D6 50%, #E8DFC9 100%);
+            color: #3D3225;
+            padding: 1.5rem 1rem 1.2rem;
+            text-align: center;
+            border-bottom: 1px solid #D4C4A8;
+            position: relative;
+        }
+        
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                radial-gradient(ellipse at 20% 30%, rgba(139, 69, 19, 0.03) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 70%, rgba(139, 69, 19, 0.04) 0%, transparent 50%);
+            pointer-events: none;
+        }
+        
+        .header-logo {
+            width: 100px;
+            height: 100px;
+            margin: 0 auto 0.6rem;
+            background: transparent;
+            border-radius: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .header-logo img {
+            width: 100px;
+            height: 100px;
+            object-fit: contain;
+            filter: drop-shadow(0 2px 4px rgba(61, 50, 37, 0.15));
+        }
+        
+        .header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem;
+            font-weight: 400;
+            margin-bottom: 0.2rem;
+            letter-spacing: 0.03em;
+            color: #3D3225;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .header-subtitle {
+            font-size: 0.7rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: #6B5344;
+            font-weight: 400;
+        }
+        
+        .header-name {
+            font-size: 0.8rem;
+            margin-top: 0.5rem;
+            font-weight: 400;
+            color: #8B4513;
+            font-style: italic;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .header-divider {
+            width: 60px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #B8860B, transparent);
+            margin: 0.6rem auto;
+        }
+        
+        .header-link {
+            display: inline-block;
+            margin-top: 0.8rem;
+            padding: 0.5rem 1.2rem;
+            background: linear-gradient(135deg, #8B4513, #A0522D);
+            color: white;
+            text-decoration: none;
+            font-size: 0.75rem;
+            font-weight: 500;
+            letter-spacing: 0.08em;
+            border-radius: 20px;
+            box-shadow: 0 2px 8px rgba(139, 69, 19, 0.3);
+            transition: transform 0.2s, box-shadow 0.2s;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .header-link:active {
+            transform: scale(0.97);
+        }
+        
+        .header-link:hover {
+            box-shadow: 0 4px 12px rgba(139, 69, 19, 0.4);
+        }
+        
+        /* Main container */
+        #app {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 1rem;
+        }
+        
+        /* Today banner */
+        .today-banner {
+            background: linear-gradient(135deg, #f8f6f3 0%, #fff 100%);
+            border: 1px solid rgba(139, 69, 19, 0.2);
+            border-radius: 12px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(139, 69, 19, 0.08);
+        }
+        
+        .today-banner .date {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.1rem;
+            color: #8B4513;
+            margin-bottom: 0.3rem;
+        }
+        
+        .today-banner .ose {
+            font-size: 1.3rem;
+            font-weight: 500;
+            color: #1a1a1a;
+        }
+        
+        .today-banner .orisa {
+            font-size: 0.85rem;
+            color: #6b5d4f;
+            margin-top: 0.3rem;
+        }
+        
+        /* Navigation controls */
+        .nav-control {
+            background: #fff;
+            border: 1px solid rgba(139, 69, 19, 0.12);
+            border-radius: 12px;
+            padding: 0.8rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+        }
+        
+        .nav-control button {
+            background: linear-gradient(135deg, #8B4513, #A0522D);
+            color: white;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        
+        .nav-control button:active {
+            transform: scale(0.95);
+        }
+        
+        .nav-control button svg {
+            width: 20px;
+            height: 20px;
+        }
+        
+        .nav-control .label {
+            text-align: center;
+        }
+        
+        .nav-control .label-main {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            color: #1a1a1a;
+        }
+        
+        .nav-control .label-sub {
+            font-size: 0.75rem;
+            color: #8B4513;
+            margin-top: 0.2rem;
+        }
+        
+        /* Go to today button */
+        .goto-today {
+            display: block;
+            width: 100%;
+            background: transparent;
+            border: 1px dashed rgba(139, 69, 19, 0.3);
+            color: #8B4513;
+            padding: 0.6rem;
+            border-radius: 8px;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.85rem;
+            cursor: pointer;
+            margin-bottom: 1rem;
+            transition: all 0.2s;
+        }
+        
+        .goto-today:hover {
+            background: rgba(139, 69, 19, 0.05);
+            border-style: solid;
+        }
+        
+        .goto-today.hidden {
+            display: none;
+        }
+        
+        /* Calendar grid */
+        .calendar-container {
+            background: #fff;
+            border: 1px solid rgba(139, 69, 19, 0.12);
+            border-radius: 16px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+        
+        .calendar-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            text-align: center;
+            color: #1a1a1a;
+            margin-bottom: 1rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 1px solid rgba(139, 69, 19, 0.1);
+        }
+        
+        .calendar-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 8px;
+        }
+        
+        /* Day cells */
+        .day-cell {
+            border-radius: 10px;
+            padding: 0.6rem 0.4rem;
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            min-height: 85px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .day-cell:active {
+            transform: scale(0.97);
+        }
+        
+        .day-cell.empty {
+            background: transparent;
+            cursor: default;
+        }
+        
+        /* Ọsẹ́ colors - light theme */
+        .day-cell.ose-osa {
+            background: linear-gradient(145deg, #f5f5f5, #ececec);
+            border: 1px solid #ddd;
+            color: #444;
+        }
+        
+        .day-cell.ose-ifa {
+            background: linear-gradient(145deg, #FFF8E7, #FFF3D4);
+            border: 1px solid #E8D5A3;
+            color: #8B6914;
+        }
+        
+        .day-cell.ose-ogun {
+            background: linear-gradient(145deg, #E8F5E9, #D7ECD9);
+            border: 1px solid #A5D6A7;
+            color: #2E7D32;
+        }
+        
+        .day-cell.ose-jakuta {
+            background: linear-gradient(145deg, #FFEBEE, #FFE0E3);
+            border: 1px solid #FFAB91;
+            color: #C62828;
+        }
+        
+        /* Today highlight */
+        .day-cell.is-today {
+            background: linear-gradient(135deg, #8B4513, #B8860B) !important;
+            color: white !important;
+            border: none !important;
+            box-shadow: 0 4px 12px rgba(139, 69, 19, 0.4);
+        }
+        
+        .day-cell.is-today .day-western {
+            color: rgba(255,255,255,0.8) !important;
+        }
+        
+        /* Special days borders */
+        .day-cell.ojo-nla-obatala {
+            box-shadow: inset 0 0 0 3px #4CAF50;
+        }
+        
+        .day-cell.itadogun {
+            box-shadow: inset 0 0 0 3px #FFD700;
+        }
+        
+        .day-cell.jakuta-oloyin {
+            box-shadow: inset 0 0 0 3px #E53935;
+        }
+        
+        .day-cell .day-number {
+            font-size: 1.2rem;
+            font-weight: 600;
+            line-height: 1.2;
+        }
+        
+        .day-cell .day-ose {
+            font-size: 0.6rem;
+            font-weight: 500;
+            margin-top: 0.2rem;
+            line-height: 1.2;
+        }
+        
+        .day-cell .day-orisa {
+            font-size: 0.55rem;
+            opacity: 0.8;
+            margin-top: 0.1rem;
+        }
+        
+        .day-cell .day-western {
+            font-size: 0.6rem;
+            opacity: 0.6;
+            margin-top: 0.2rem;
+        }
+        
+        .day-cell .day-festa {
+            background: #9C27B0;
+            color: white;
+            font-size: 0.5rem;
+            padding: 0.15rem 0.3rem;
+            border-radius: 4px;
+            margin-top: 0.2rem;
+            font-weight: 600;
+        }
+        
+        /* Legend section */
+        .legend-section {
+            background: #fff;
+            border: 1px solid rgba(139, 69, 19, 0.12);
+            border-radius: 16px;
+            padding: 1.2rem;
+            margin-bottom: 1rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+        }
+        
+        .legend-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.1rem;
+            text-align: center;
+            color: #1a1a1a;
+            margin-bottom: 1rem;
+        }
+        
+        .legend-item {
+            border-radius: 10px;
+            padding: 0.8rem;
+            margin-bottom: 0.6rem;
+        }
+        
+        .legend-item:last-child {
+            margin-bottom: 0;
+        }
+        
+        .legend-item .legend-name {
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 0.3rem;
+        }
+        
+        .legend-item .legend-orisa {
+            font-size: 0.8rem;
+            line-height: 1.5;
+        }
+        
+        /* Special days legend */
+        .special-legend {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 0.5rem;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(139, 69, 19, 0.1);
+        }
+        
+        .special-item {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            padding: 0.6rem;
+            background: #f8f6f3;
+            border-radius: 8px;
+        }
+        
+        .special-indicator {
+            width: 24px;
+            height: 24px;
+            border-radius: 6px;
+            flex-shrink: 0;
+        }
+        
+        .special-indicator.ojo-nla {
+            background: white;
+            box-shadow: inset 0 0 0 3px #4CAF50;
+        }
+        
+        .special-indicator.itadogun {
+            background: white;
+            box-shadow: inset 0 0 0 3px #FFD700;
+        }
+        
+        .special-indicator.jakuta {
+            background: white;
+            box-shadow: inset 0 0 0 3px #E53935;
+        }
+        
+        .special-text {
+            font-size: 0.85rem;
+            color: #1a1a1a;
+        }
+        
+        /* Modal/Popup */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.5);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            padding: 1rem;
+        }
+        
+        .modal-overlay.active {
+            display: flex;
+        }
+        
+        .modal-content {
+            background: #fff;
+            border-radius: 16px;
+            max-width: 400px;
+            width: 100%;
+            max-height: 80vh;
+            overflow-y: auto;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+        }
+        
+        .modal-header {
+            padding: 1.2rem;
+            border-bottom: 1px solid rgba(139, 69, 19, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .modal-header h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            color: #8B4513;
+        }
+        
+        .modal-close {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: #6b5d4f;
+            cursor: pointer;
+            padding: 0.2rem;
+        }
+        
+        .modal-body {
+            padding: 1.2rem;
+        }
+        
+        .modal-ose {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 0.5rem;
+        }
+        
+        .modal-orisa-title {
+            font-size: 0.85rem;
+            color: #8B4513;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin: 1rem 0 0.5rem;
+        }
+        
+        .modal-orisa-list {
+            font-size: 0.95rem;
+            color: #1a1a1a;
+            line-height: 1.6;
+        }
+        
+        .modal-special {
+            margin-top: 1rem;
+            padding: 0.8rem;
+            background: #f8f6f3;
+            border-radius: 8px;
+        }
+        
+        .modal-special-title {
+            font-weight: 600;
+            color: #8B4513;
+            margin-bottom: 0.3rem;
+        }
+        
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 1.5rem 1rem;
+            background: #f8f6f3;
+            border-top: 1px solid rgba(139, 69, 19, 0.1);
+            margin-top: 1rem;
+        }
+        
+        .footer p {
+            font-size: 0.75rem;
+            color: #6b5d4f;
+            line-height: 1.6;
+        }
+        
+        .footer a {
+            color: #8B4513;
+            text-decoration: none;
+        }
+        
+        /* Install banner */
+        #install-banner {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, #8B4513 0%, #B8860B 100%);
+            color: white;
+            padding: 12px 20px;
+            border-radius: 30px;
+            box-shadow: 0 4px 15px rgba(139, 69, 19, 0.4);
+            display: none;
+            z-index: 1000;
+            animation: slideUp 0.5s ease;
+            font-size: 0.9rem;
+        }
+        
+        @keyframes slideUp {
+            from { transform: translateX(-50%) translateY(100px); opacity: 0; }
+            to { transform: translateX(-50%) translateY(0); opacity: 1; }
+        }
+        
+        #install-banner button {
+            background: white;
+            color: #8B4513;
+            border: none;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-weight: 600;
+            margin-left: 10px;
+            cursor: pointer;
+            font-family: 'Inter', sans-serif;
+        }
+        
+        #install-banner .dismiss {
+            background: transparent;
+            color: white;
+            padding: 6px;
+            margin-left: 5px;
+        }
+        
+        /* Responsive */
+        @media (min-width: 480px) {
+            .calendar-grid {
+                gap: 10px;
+            }
+            
+            .day-cell {
+                min-height: 95px;
+                padding: 0.8rem 0.5rem;
+            }
+            
+            .day-cell .day-number {
+                font-size: 1.4rem;
+            }
+            
+            .day-cell .day-ose {
+                font-size: 0.7rem;
+            }
+        }
+        
+        @media (min-width: 600px) {
+            .special-legend {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-logo">
+            <img src="logo.png" alt="Calendario Yorùbá" onerror="this.style.display='none'">
+        </div>
+        <h1>Calendario Yorùbá</h1>
+        <div class="header-divider"></div>
+        <p class="header-subtitle">I giorni sacri degli Òrìṣà</p>
+        <p class="header-name">Lorenzo Okìkí Rossi · Casa Obàtálá</p>
+        <a href="https://casaobatala.it" target="_blank" class="header-link">🌐 Visita casaobatala.it</a>
+    </header>
+
+    <!-- Install banner -->
+    <div id="install-banner">
+        <span>📱 Installa l'app</span>
+        <button id="install-button">Installa</button>
+        <button id="dismiss-button" class="dismiss">✕</button>
+    </div>
+
+    <!-- Modal for day details -->
+    <div class="modal-overlay" id="dayModal" onclick="if(event.target===this)closeModal()">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modalDate"></h3>
+                <button class="modal-close" onclick="closeModal()">×</button>
+            </div>
+            <div class="modal-body" id="modalBody"></div>
+        </div>
+    </div>
+
+    <!-- Main app container -->
+    <div id="app"></div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>© 2025 Casa Obàtálá · Lorenzo Okìkí Rossi</p>
+        <p style="margin-top: 0.5rem;">
+            <a href="privacy-policy-app.html">Privacy Policy</a> · 
+            <a href="termini-utilizzo-app.html">Termini di Utilizzo</a>
+        </p>
+    </footer>
+
+    <script>
+        // State
+        const oggi = new Date();
+        let annoSelezionato = oggi.getFullYear();
+        let meseSelezionato = oggi.getMonth();
+        const meseCorrente = oggi.getMonth();
+        const giornoCorrente = oggi.getDate();
+        const annoCorrente = oggi.getFullYear();
+
+        // Yoruba week days with full Òrìṣà lists
+        const giorniSettimana = [
+            { 
+                nome: 'Ọsẹ́ Ọ̀sà', 
+                orisa: 'Obàtálá, Ẹgúngún, Ìyáàmi (Madri ancestrali), Ògìrìíyàn, Yemọja, Yemọọ́',
+                orisaPrimario: 'Obàtálá',
+                classe: 'ose-osa'
+            },
+            { 
+                nome: 'Ọsẹ́ Ifá', 
+                orisa: 'Ifá, Odù, Ajé, Olósà, Ẹgbẹ́ Ọ̀run, Ọ̀ṣun, Orí, Èṣù',
+                orisaPrimario: 'Ifá',
+                classe: 'ose-ifa'
+            },
+            { 
+                nome: 'Ọsẹ́ Ògún', 
+                orisa: 'Ògún, Ọ̀sọ́ọ̀sì, Òkò, Ìjà, Erinlẹ̀',
+                orisaPrimario: 'Ògún',
+                classe: 'ose-ogun'
+            },
+            { 
+                nome: 'Ọsẹ́ Jàkúta', 
+                orisa: 'Ṣàngó, Ọya, Àgànjù, Ọbalúayé/Ṣànpọ̀nà',
+                orisaPrimario: 'Ṣàngó',
+                classe: 'ose-jakuta'
+            }
+        ];
+
+        const festivita = {
+            5: { 
+                2: { nome: 'FINE ANNO' }, 
+                3: { nome: 'CAPODANNO' }
+            }
+        };
+
+        const nomiMesi = ['Gennaio', 'Febbraio', 'Marzo', 'Aprile', 'Maggio', 'Giugno', 
+                         'Luglio', 'Agosto', 'Settembre', 'Ottobre', 'Novembre', 'Dicembre'];
+        
+        const giorniSettimanaOcc = ['Dom', 'Lun', 'Mar', 'Mer', 'Gio', 'Ven', 'Sab'];
+
+        // Calculations
+        const calcolaOseIndex = (giorno, mese, anno) => {
+            const dataRiferimento = new Date(2025, 0, 1);
+            const dataCorrente = new Date(anno, mese, giorno);
+            const diff = Math.floor((dataCorrente - dataRiferimento) / (1000 * 60 * 60 * 24));
+            const indice = diff % 4;
+            return indice < 0 ? (indice + 4) % 4 : indice;
+        };
+
+        const calcolaAnnoYoruba = (anno, mese, giorno) => {
+            if (mese < 5 || (mese === 5 && giorno < 3)) {
+                return 10066 + (anno - 2026);
+            } else {
+                return 10067 + (anno - 2026);
+            }
+        };
+
+        const isBisestile = (anno) => (anno % 4 === 0 && anno % 100 !== 0) || (anno % 400 === 0);
+
+        const calcolaInizioMese = (mese, anno) => {
+            const giorniPerMese = [0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334];
+            let giorni = giorniPerMese[mese];
+            if (mese > 1 && isBisestile(anno)) giorni += 1;
+            const anniDiff = anno - 2025;
+            const giorniBisestili = Math.floor(anniDiff / 4);
+            return (giorni + (anniDiff * 365) + giorniBisestili) % 4;
+        };
+
+        const calcolaItadogun = (giorno, mese, anno) => {
+            const dataBase = new Date(2025, 9, 13);
+            const dataCorrente = new Date(anno, mese, giorno);
+            const diff = Math.floor((dataCorrente - dataBase) / (1000 * 60 * 60 * 24));
+            return diff >= 0 && diff % 16 === 0;
+        };
+
+        const calcolaOjoNlaObatala = (giorno, mese, anno) => {
+            const dataBase = new Date(2025, 9, 12);
+            const dataCorrente = new Date(anno, mese, giorno);
+            const diff = Math.floor((dataCorrente - dataBase) / (1000 * 60 * 60 * 24));
+            return diff >= 0 && diff % 16 === 0;
+        };
+
+        const calcolaJakutaOloyin = (giorno, mese, anno) => {
+            const dataBase = new Date(2025, 9, 3);
+            const dataCorrente = new Date(anno, mese, giorno);
+            const diff = Math.floor((dataCorrente - dataBase) / (1000 * 60 * 60 * 24));
+            return diff >= 0 && diff % 28 === 0;
+        };
+
+        // Modal functions
+        function openModal(giorno, mese, anno) {
+            const oseIndex = calcolaOseIndex(giorno, mese, anno);
+            const ose = giorniSettimana[oseIndex];
+            const data = new Date(anno, mese, giorno);
+            const giornoOcc = giorniSettimanaOcc[data.getDay()];
+            const annoYoruba = calcolaAnnoYoruba(anno, mese, giorno);
+            
+            const isItadogun = calcolaItadogun(giorno, mese, anno);
+            const isOjoNla = calcolaOjoNlaObatala(giorno, mese, anno);
+            const isJakuta = calcolaJakutaOloyin(giorno, mese, anno);
+            const haFesta = festivita[mese] && festivita[mese][giorno];
+
+            document.getElementById('modalDate').textContent = 
+                `${giorno} ${nomiMesi[mese]} ${anno}`;
+
+            let bodyHTML = `
+                <p style="color: #6b5d4f; margin-bottom: 0.5rem;">${giornoOcc} · Anno Yorùbá ${annoYoruba}</p>
+                <p class="modal-ose">${ose.nome}</p>
+                <p class="modal-orisa-title">Òrìṣà del giorno</p>
+                <p class="modal-orisa-list">${ose.orisa}</p>
+            `;
+
+            if (isOjoNla) {
+                bodyHTML += `
+                    <div class="modal-special" style="border-left: 4px solid #4CAF50;">
+                        <p class="modal-special-title">🟢 Ọjọ́ Nla Obàtálá</p>
+                        <p style="font-size: 0.85rem; color: #6b5d4f;">Grande giorno di Obàtálá - Giorno di purificazione e preghiera</p>
+                    </div>
+                `;
+            }
+
+            if (isItadogun) {
+                bodyHTML += `
+                    <div class="modal-special" style="border-left: 4px solid #FFD700;">
+                        <p class="modal-special-title">🟡 Ìtàdógún</p>
+                        <p style="font-size: 0.85rem; color: #6b5d4f;">Giorno speciale che ricorre ogni 16 giorni nel ciclo Ifá</p>
+                    </div>
+                `;
+            }
+
+            if (isJakuta) {
+                bodyHTML += `
+                    <div class="modal-special" style="border-left: 4px solid #E53935;">
+                        <p class="modal-special-title">🔴 Jàkúta Olóyìn</p>
+                        <p style="font-size: 0.85rem; color: #6b5d4f;">Giorno sacro di Ṣàngó - Ricorre ogni 28 giorni</p>
+                    </div>
+                `;
+            }
+
+            if (haFesta) {
+                bodyHTML += `
+                    <div class="modal-special" style="border-left: 4px solid #9C27B0;">
+                        <p class="modal-special-title">🎉 ${haFesta.nome}</p>
+                        <p style="font-size: 0.85rem; color: #6b5d4f;">Festività del calendario Yorùbá</p>
+                    </div>
+                `;
+            }
+
+            document.getElementById('modalBody').innerHTML = bodyHTML;
+            document.getElementById('dayModal').classList.add('active');
+        }
+
+        function closeModal() {
+            document.getElementById('dayModal').classList.remove('active');
+        }
+
+        // Navigation
+        function cambiaAnno(delta) {
+            annoSelezionato += delta;
+            render();
+        }
+
+        function cambiaMese(delta) {
+            meseSelezionato += delta;
+            if (meseSelezionato < 0) {
+                meseSelezionato = 11;
+                annoSelezionato--;
+            } else if (meseSelezionato > 11) {
+                meseSelezionato = 0;
+                annoSelezionato++;
+            }
+            render();
+        }
+
+        function vaiAOggi() {
+            annoSelezionato = annoCorrente;
+            meseSelezionato = meseCorrente;
+            render();
+        }
+
+        // Render function
+        function render() {
+            const oseOggiIndex = calcolaOseIndex(giornoCorrente, meseCorrente, annoCorrente);
+            const oseOggi = giorniSettimana[oseOggiIndex];
+            const annoYoruba = calcolaAnnoYoruba(annoSelezionato, meseSelezionato, 1);
+            
+            const inizioMese = calcolaInizioMese(meseSelezionato, annoSelezionato);
+            const giorniMese = meseSelezionato === 1 ? (isBisestile(annoSelezionato) ? 29 : 28) : 
+                              [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31][meseSelezionato];
+
+            const isCurrentMonth = annoSelezionato === annoCorrente && meseSelezionato === meseCorrente;
+
+            let html = '';
+
+            // Today banner (only if viewing current month)
+            if (isCurrentMonth) {
+                html += `
+                    <div class="today-banner">
+                        <p class="date">Oggi, ${giornoCorrente} ${nomiMesi[meseCorrente]} ${annoCorrente}</p>
+                        <p class="ose">${oseOggi.nome}</p>
+                        <p class="orisa">Dedicato a ${oseOggi.orisaPrimario}</p>
+                    </div>
+                `;
+            }
+
+            // Year navigation
+            html += `
+                <div class="nav-control">
+                    <button onclick="cambiaAnno(-1)" aria-label="Anno precedente">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+                        </svg>
+                    </button>
+                    <div class="label">
+                        <div class="label-main">${annoSelezionato}</div>
+                        <div class="label-sub">Anno Yorùbá ${annoYoruba}</div>
+                    </div>
+                    <button onclick="cambiaAnno(1)" aria-label="Anno successivo">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                        </svg>
+                    </button>
+                </div>
+            `;
+
+            // Month navigation
+            html += `
+                <div class="nav-control">
+                    <button onclick="cambiaMese(-1)" aria-label="Mese precedente">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+                        </svg>
+                    </button>
+                    <div class="label">
+                        <div class="label-main">${nomiMesi[meseSelezionato]}</div>
+                    </div>
+                    <button onclick="cambiaMese(1)" aria-label="Mese successivo">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                        </svg>
+                    </button>
+                </div>
+            `;
+
+            // Go to today button (hidden if already on current month)
+            html += `
+                <button class="goto-today ${isCurrentMonth ? 'hidden' : ''}" onclick="vaiAOggi()">
+                    ↩ Torna a oggi
+                </button>
+            `;
+
+            // Calendar grid
+            html += `
+                <div class="calendar-container">
+                    <h2 class="calendar-title">${nomiMesi[meseSelezionato]} ${annoSelezionato}</h2>
+                    <div class="calendar-grid">
+            `;
+
+            // Empty cells for alignment
+            for (let i = 0; i < inizioMese; i++) {
+                html += '<div class="day-cell empty"></div>';
+            }
+
+            // Day cells
+            for (let giorno = 1; giorno <= giorniMese; giorno++) {
+                const oseIndex = calcolaOseIndex(giorno, meseSelezionato, annoSelezionato);
+                const ose = giorniSettimana[oseIndex];
+                const haFesta = festivita[meseSelezionato] && festivita[meseSelezionato][giorno];
+                const isOggi = annoSelezionato === annoCorrente && meseSelezionato === meseCorrente && giorno === giornoCorrente;
+                const dataCorrente = new Date(annoSelezionato, meseSelezionato, giorno);
+                const giornoOcc = giorniSettimanaOcc[dataCorrente.getDay()];
+                const isItadogun = calcolaItadogun(giorno, meseSelezionato, annoSelezionato);
+                const isOjoNla = calcolaOjoNlaObatala(giorno, meseSelezionato, annoSelezionato);
+                const isJakuta = calcolaJakutaOloyin(giorno, meseSelezionato, annoSelezionato);
+                
+                let classi = `day-cell ${ose.classe}`;
+                if (isOggi) classi += ' is-today';
+                if (isOjoNla) classi += ' ojo-nla-obatala';
+                else if (isItadogun) classi += ' itadogun';
+                else if (isJakuta) classi += ' jakuta-oloyin';
+
+                html += `
+                    <div class="${classi}" onclick="openModal(${giorno}, ${meseSelezionato}, ${annoSelezionato})">
+                        <div class="day-number">${giorno}</div>
+                        <div class="day-ose">${ose.nome}</div>
+                        <div class="day-orisa">${ose.orisaPrimario}</div>
+                        <div class="day-western">${giornoOcc}</div>
+                        ${haFesta ? `<div class="day-festa">${haFesta.nome}</div>` : ''}
+                    </div>
+                `;
+            }
+
+            html += `
+                    </div>
+                </div>
+            `;
+
+            // Legend
+            html += `
+                <div class="legend-section">
+                    <h3 class="legend-title">Settimana Yorùbá (Ọ̀sẹ̀)</h3>
+            `;
+
+            giorniSettimana.forEach(giorno => {
+                html += `
+                    <div class="legend-item ${giorno.classe}">
+                        <div class="legend-name">${giorno.nome}</div>
+                        <div class="legend-orisa">${giorno.orisa}</div>
+                    </div>
+                `;
+            });
+
+            html += `
+                    <div class="special-legend">
+                        <div class="special-item">
+                            <div class="special-indicator ojo-nla"></div>
+                            <div class="special-text">Ọjọ́ Nla Obàtálá</div>
+                        </div>
+                        <div class="special-item">
+                            <div class="special-indicator itadogun"></div>
+                            <div class="special-text">Ìtàdógún</div>
+                        </div>
+                        <div class="special-item">
+                            <div class="special-indicator jakuta"></div>
+                            <div class="special-text">Jàkúta Olóyìn</div>
+                        </div>
+                    </div>
+                </div>
+            `;
+
+            document.getElementById('app').innerHTML = html;
+        }
+
+        // Service Worker & PWA
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('service-worker.js')
+                    .then(registration => {
+                        console.log('Service Worker registrato');
+                        
+                        setTimeout(() => {
+                            richiediPermessoNotifiche(registration);
+                        }, 3000);
+                        
+                        registration.addEventListener('updatefound', () => {
+                            const newWorker = registration.installing;
+                            newWorker.addEventListener('statechange', () => {
+                                if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
+                                    if (confirm('📱 Nuova versione disponibile! Vuoi aggiornare?')) {
+                                        newWorker.postMessage({ type: 'SKIP_WAITING' });
+                                        window.location.reload();
+                                    }
+                                }
+                            });
+                        });
+                    })
+                    .catch(error => console.log('Errore SW:', error));
+            });
+        }
+
+        async function richiediPermessoNotifiche(registration) {
+            if (!('Notification' in window)) return;
+            if (Notification.permission === 'granted') {
+                programmaNotificaGiornaliera(registration);
+                return;
+            }
+            if (Notification.permission !== 'denied') {
+                const permission = await Notification.requestPermission();
+                if (permission === 'granted') {
+                    programmaNotificaGiornaliera(registration);
+                    mostraNotificaOggi(registration);
+                }
+            }
+        }
+
+        function programmaNotificaGiornaliera(registration) {
+            const ora = new Date();
+            const domani8 = new Date(ora);
+            domani8.setDate(domani8.getDate() + 1);
+            domani8.setHours(8, 0, 0, 0);
+            const ritardo = domani8 - ora;
+            setTimeout(() => {
+                mostraNotificaOggi(registration);
+                setInterval(() => mostraNotificaOggi(registration), 24 * 60 * 60 * 1000);
+            }, ritardo);
+        }
+
+        function mostraNotificaOggi(registration) {
+            const oggi = new Date();
+            const oseIndex = calcolaOseIndex(oggi.getDate(), oggi.getMonth(), oggi.getFullYear());
+            const ose = giorniSettimana[oseIndex];
+            
+            if (registration.showNotification) {
+                registration.showNotification('Calendario Yorùbá', {
+                    body: `Oggi: ${ose.nome}\nDedicato a ${ose.orisaPrimario}`,
+                    icon: 'logo.png',
+                    badge: 'logo.png',
+                    tag: 'ose-giornaliero',
+                    renotify: true,
+                    vibrate: [200, 100, 200]
+                });
+            }
+        }
+
+        // Install prompt
+        let deferredPrompt;
+        const installBanner = document.getElementById('install-banner');
+        const installButton = document.getElementById('install-button');
+        const dismissButton = document.getElementById('dismiss-button');
+
+        window.addEventListener('beforeinstallprompt', (e) => {
+            e.preventDefault();
+            deferredPrompt = e;
+            installBanner.style.display = 'block';
+        });
+
+        installButton.addEventListener('click', async () => {
+            if (deferredPrompt) {
+                deferredPrompt.prompt();
+                await deferredPrompt.userChoice;
+                deferredPrompt = null;
+                installBanner.style.display = 'none';
+            }
+        });
+
+        dismissButton.addEventListener('click', () => {
+            installBanner.style.display = 'none';
+        });
+
+        // Initial render
+        render();
+    </script>
+</body>
+</html>
