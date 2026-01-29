@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <!-- Favicon -->
+    <link rel="icon" href="/favicon.ico" sizes="48x48">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <meta name="apple-mobile-web-app-title" content="Casa Obàtálá">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="msapplication-TileColor" content="#8B4513">
+    <meta name="theme-color" content="#8B4513">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendario Yorùbá - I Giorni Sacri degli Òrìṣà | Casa Obàtálá</title>
+    <meta name="description" content="Scopri il calendario tradizionale Yorùbá con la settimana di 4 giorni (Ọ̀sẹ̀). Ogni giorno è sacro a specifici Òrìṣà. App gratuita per Android e iOS.">
+    <meta name="keywords" content="calendario yoruba, Ọ̀sẹ̀, settimana yoruba, Orisha, giorni sacri, Obàtálá, Ifá, Ògún, Ṣàngó, tradizione africana">
+    <meta name="author" content="Lorenzo Okìkí Rossi">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://casaobatala.it/calendario.html">
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://casaobatala.it/calendario.html">
+    <meta property="og:title" content="Calendario Yorùbá - I Giorni Sacri degli Òrìṣà">
+    <meta property="og:description" content="Scopri il calendario tradizionale Yorùbá con la settimana di 4 giorni. Ogni giorno è sacro a specifici Òrìṣà.">
+    <meta property="og:locale" content="it_IT">
+    <meta property="og:site_name" content="Casa Obàtálá">
+    <meta property="og:image" content="https://casaobatala.it/calendario/logo-512.png">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Calendario Yorùbá - I Giorni Sacri degli Òrìṣà">
+    <meta name="twitter:description" content="Scopri il calendario tradizionale Yorùbá con la settimana di 4 giorni.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <!-- Schema.org SoftwareApplication -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Calendario Yorùbá",
+      "applicationCategory": "LifestyleApplication",
+      "operatingSystem": "Android, iOS, Web",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "EUR",
+        "availability": "https://schema.org/LimitedAvailability",
+        "priceValidUntil": "2025-12-31"
+      },
+      "author": {
+        "@type": "Person",
+        "name": "Lorenzo Okìkí Rossi",
+        "url": "https://casaobatala.it/chi-sono.html"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Casa Obàtálá",
+        "url": "https://casaobatala.it"
+      },
+      "description": "Calendario tradizionale Yorùbá di Oyo (Nigeria) con settimana sacra di 4 giorni (Ọ̀sẹ̀) e indicazione dei giorni sacri degli Òrìṣà. Non è un calendario della diaspora.",
+      "screenshot": [
+        "https://casaobatala.it/calendario/screenshots/app-home.png",
+        "https://casaobatala.it/calendario/screenshots/app-griglia.png",
+        "https://casaobatala.it/calendario/screenshots/app-dettaglio.png"
+      ],
+      "featureList": [
+        "Settimana Yorùbá di 4 giorni",
+        "Giorni speciali: Ìtàdógún Ifá, Ọjọ́ Nla Obàtálá, Jàkúta Olóyìn",
+        "Funziona offline",
+        "Notifiche giornaliere",
+        "Nessun tracciamento - Privacy totale"
+      ],
+      "softwareVersion": "1.0",
+      "datePublished": "2025-01-29",
+      "inLanguage": "it"
+    }
+    </script>
+    
+    <!-- Schema.org WebPage -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Calendario Yorùbá - I Giorni Sacri degli Òrìṣà",
+      "description": "Scopri il calendario tradizionale Yorùbá di Oyo (Nigeria) con la settimana sacra di 4 giorni. App gratuita per Android, iOS e Web.",
+      "url": "https://casaobatala.it/calendario.html",
+      "inLanguage": "it-IT",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "Casa Obàtálá",
+        "url": "https://casaobatala.it"
+      },
+      "about": {
+        "@type": "Thing",
+        "name": "Calendario Yorùbá",
+        "description": "Sistema di calendario tradizionale della cultura Yorùbá di Oyo, Nigeria"
+      },
+      "mainEntity": {
+        "@type": "SoftwareApplication",
+        "name": "Calendario Yorùbá"
+      }
+    }
+    </script>
+    
+    <!-- Schema.org FAQPage per SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Quanti giorni ha la settimana Yorùbá?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "La settimana Yorùbá (Ọ̀sẹ̀) ha 4 giorni: Ọsẹ́ Ọ̀sà (Obàtálá), Ọsẹ́ Ifá, Ọsẹ́ Ògún e Ọsẹ́ Jàkúta (Ṣàngó)."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Questo calendario è della Santería o del Candomblé?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No, questo calendario non si rifà ai culti della diaspora. È il calendario tradizionale utilizzato a Oyo, in Nigeria, cuore storico della civiltà Yorùbá."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Quando inizia l'anno Yorùbá?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "L'anno Yorùbá inizia il 3 Giugno di ogni anno."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { overflow-x: hidden; }
+        body { font-family: 'Inter', sans-serif; background: #fafafa; color: #1a1a1a; overflow-x: hidden; max-width: 100vw; }
+        
+        /* Navigation */
+        nav { position: fixed; top: 0; width: 100%; padding: 1rem 1.2rem; z-index: 1000; display: flex; justify-content: space-between; align-items: center; background: rgba(255,255,255,0.98); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(139,69,19,0.1); }
+        .logo { font-family: 'Playfair Display', serif; font-size: 1.2rem; background: linear-gradient(135deg, #8B4513, #B8860B); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; text-decoration: none; }
+        .nav-links { display: none; gap: 2rem; list-style: none; }
+        .nav-links a { color: #1a1a1a; text-decoration: none; font-size: 0.85rem; letter-spacing: 0.1em; text-transform: uppercase; }
+        .nav-links a:hover { color: #8B4513; }
+        .menu-toggle { display: flex; flex-direction: column; cursor: pointer; gap: 5px; padding: 5px; }
+        .menu-toggle span { width: 24px; height: 2px; background: #8B4513; }
+        .mobile-menu { display: none; position: fixed; top: 58px; left: 0; right: 0; background: #fff; padding: 1rem 1.2rem; border-bottom: 1px solid rgba(139,69,19,0.1); box-shadow: 0 10px 30px rgba(0,0,0,0.1); z-index: 999; }
+        .mobile-menu.active { display: block; }
+        .mobile-menu a { display: block; padding: 0.9rem 0; color: #1a1a1a; text-decoration: none; font-size: 1rem; border-bottom: 1px solid rgba(139,69,19,0.08); }
+        .mobile-menu a:last-child { border-bottom: none; }
+        
+        /* Hero */
+        .hero { min-height: 70vh; display: flex; align-items: center; justify-content: center; position: relative; background: linear-gradient(180deg, #F5F0E1 0%, #EDE6D6 50%, #fafafa 100%); padding: 6rem 1.5rem 3rem; }
+        .hero-content { text-align: center; max-width: 800px; }
+        .hero-logo { width: 120px; height: 120px; margin: 0 auto 1.5rem; }
+        .hero-logo img { width: 100%; height: 100%; object-fit: contain; }
+        h1 { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 6vw, 3.5rem); font-weight: 300; margin-bottom: 1rem; color: #3D3225; line-height: 1.2; }
+        .hero-subtitle { font-size: clamp(0.85rem, 2.5vw, 1.1rem); color: #6b5d4f; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 2rem; }
+        
+        /* CTA Buttons */
+        .cta-buttons { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; margin-top: 2rem; }
+        .btn { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.9rem 1.8rem; border-radius: 50px; font-size: 0.95rem; font-weight: 500; text-decoration: none; transition: transform 0.3s, box-shadow 0.3s; }
+        .btn-primary { background: linear-gradient(135deg, #8B4513, #A0522D); color: white; box-shadow: 0 4px 15px rgba(139,69,19,0.3); }
+        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(139,69,19,0.4); }
+        .btn-secondary { background: white; color: #8B4513; border: 2px solid #8B4513; }
+        .btn-secondary:hover { background: #8B4513; color: white; }
+        
+        /* Sections */
+        .section { padding: 3rem 1.5rem; max-width: 1000px; margin: 0 auto; }
+        .section-title { font-family: 'Playfair Display', serif; font-size: clamp(1.6rem, 4vw, 2.2rem); font-weight: 400; margin-bottom: 0.5rem; color: #1a1a1a; text-align: center; }
+        .section-subtitle { text-align: center; color: #6b5d4f; font-size: 0.85rem; margin-bottom: 2rem; letter-spacing: 0.1em; text-transform: uppercase; }
+        
+        /* Intro Text */
+        .intro-text { max-width: 700px; margin: 0 auto 2rem; text-align: center; line-height: 1.8; color: #333; font-size: 1rem; }
+        
+        /* Calendar Explanation */
+        .calendar-grid { display: grid; grid-template-columns: 1fr; gap: 1.2rem; margin: 2rem 0; }
+        .day-card { background: #fff; border: 1px solid rgba(139,69,19,0.15); border-radius: 12px; padding: 1.5rem; position: relative; overflow: hidden; }
+        .day-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; }
+        .day-card.obatala::before { background: linear-gradient(90deg, #E8E8E8, #FFFFFF); }
+        .day-card.ifa::before { background: linear-gradient(90deg, #DAA520, #FFD700); }
+        .day-card.ogun::before { background: linear-gradient(90deg, #228B22, #2E8B2E); }
+        .day-card.sango::before { background: linear-gradient(90deg, #DC143C, #FF4500); }
+        .day-name { font-family: 'Playfair Display', serif; font-size: 1.4rem; color: #8B4513; margin-bottom: 0.3rem; }
+        .day-meaning { font-size: 0.85rem; color: #6b5d4f; font-style: italic; margin-bottom: 0.8rem; }
+        .day-orisa { font-weight: 500; color: #1a1a1a; margin-bottom: 0.5rem; }
+        .day-orisa-list { font-size: 0.9rem; color: #555; line-height: 1.6; }
+        
+        /* Special Days */
+        .special-section { background: linear-gradient(135deg, #f8f6f3 0%, #fff 100%); border-radius: 16px; padding: 2rem 1.5rem; margin: 2rem 0; border: 1px solid rgba(139,69,19,0.1); }
+        .special-grid { display: grid; grid-template-columns: 1fr; gap: 1rem; margin-top: 1.5rem; }
+        .special-item { display: flex; gap: 1rem; align-items: flex-start; }
+        .special-icon { font-size: 1.5rem; flex-shrink: 0; }
+        .special-content h4 { font-family: 'Playfair Display', serif; font-size: 1.1rem; color: #8B4513; margin-bottom: 0.3rem; }
+        .special-content p { font-size: 0.9rem; color: #555; line-height: 1.5; }
+        
+        /* Features */
+        .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin: 2rem 0; }
+        .feature { text-align: center; padding: 1.5rem; }
+        .feature-icon { font-size: 2.5rem; margin-bottom: 1rem; }
+        .feature h3 { font-family: 'Playfair Display', serif; font-size: 1.2rem; margin-bottom: 0.5rem; color: #1a1a1a; }
+        .feature p { font-size: 0.9rem; color: #6b5d4f; line-height: 1.5; }
+        
+        /* Download Section */
+        .download-section { background: linear-gradient(180deg, #F5F0E1 0%, #EDE6D6 100%); padding: 3rem 1.5rem; margin-top: 2rem; text-align: center; }
+        .download-section .section-title { margin-bottom: 1rem; }
+        .download-note { font-size: 0.9rem; color: #6b5d4f; margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto; }
+        
+        /* Terms Checkbox */
+        .terms-box { max-width: 500px; margin: 0 auto 1.5rem; text-align: left; background: white; padding: 1.2rem; border-radius: 10px; border: 1px solid rgba(139,69,19,0.15); }
+        .terms-box label { display: flex; gap: 0.8rem; align-items: flex-start; cursor: pointer; font-size: 0.9rem; line-height: 1.5; color: #333; }
+        .terms-box input[type="checkbox"] { width: 20px; height: 20px; flex-shrink: 0; margin-top: 2px; accent-color: #8B4513; }
+        .terms-box a { color: #8B4513; }
+        
+        /* Launch Button */
+        .launch-btn { display: inline-flex; align-items: center; gap: 0.6rem; padding: 1rem 2.5rem; background: linear-gradient(135deg, #8B4513, #A0522D); color: white; border: none; border-radius: 50px; font-size: 1.1rem; font-weight: 500; cursor: pointer; transition: all 0.3s; box-shadow: 0 4px 15px rgba(139,69,19,0.3); text-decoration: none; }
+        .launch-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 25px rgba(139,69,19,0.4); }
+        .launch-btn:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
+        .launch-btn svg { width: 24px; height: 24px; }
+        
+        /* Platform badges */
+        .platforms { display: flex; justify-content: center; gap: 2rem; margin-top: 2rem; flex-wrap: wrap; }
+        .platform { text-align: center; color: #6b5d4f; font-size: 0.85rem; }
+        .platform-icon { font-size: 2rem; margin-bottom: 0.3rem; }
+        
+        /* Limited offer */
+        .limited-offer { margin-top: 1.5rem; font-size: 0.95rem; color: #B8860B; font-weight: 500; animation: pulse 2s infinite; }
+        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.7; } }
+        
+        /* Screenshot Gallery */
+        .screenshots-section { padding: 3rem 1.5rem; background: #fff; }
+        .screenshots-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; max-width: 800px; margin: 0 auto; }
+        .screenshot-item { position: relative; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.1); background: #f5f5f5; }
+        .screenshot-item img { width: 100%; height: auto; display: block; }
+        .screenshot-caption { position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(transparent, rgba(0,0,0,0.7)); color: white; padding: 2rem 1rem 1rem; font-size: 0.85rem; text-align: center; }
+        
+        @media (max-width: 500px) {
+            .screenshots-grid { grid-template-columns: 1fr; max-width: 300px; }
+        }
+        
+        /* Footer */
+        footer { text-align: center; padding: 2rem 1rem; background: #f8f6f3; border-top: 1px solid rgba(139,69,19,0.1); }
+        footer p { color: #6b5d4f; font-size: 0.8rem; line-height: 1.7; }
+        footer a { color: #6b5d4f; }
+        
+        /* Cookie Banner */
+        #cookie-banner { position: fixed; bottom: 0; left: 0; right: 0; background: #fff; border-top: 2px solid #8B4513; padding: 1rem; box-shadow: 0 -4px 20px rgba(0,0,0,0.15); z-index: 9999; display: none; }
+        #cookie-banner.show { display: block; }
+        .cookie-content { max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; justify-content: space-between; }
+        .cookie-text { flex: 1; min-width: 280px; }
+        .cookie-text p { font-size: 0.85rem; color: #2a2a2a; margin: 0; line-height: 1.5; }
+        .cookie-text a { color: #8B4513; }
+        .cookie-buttons { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+        .cookie-btn { padding: 0.6rem 1.2rem; border-radius: 50px; font-size: 0.8rem; cursor: pointer; border: none; font-family: inherit; }
+        .cookie-btn.accept { background: linear-gradient(135deg, #8B4513, #A0522D); color: white; }
+        .cookie-btn.reject { background: transparent; color: #8B4513; border: 1px solid #8B4513; }
+        .cookie-btn.settings { background: transparent; color: #666; border: 1px solid #ccc; }
+        
+        /* Cookie Modal */
+        #cookie-modal { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.5); z-index: 10000; padding: 1rem; overflow-y: auto; }
+        #cookie-modal.show { display: flex; align-items: center; justify-content: center; }
+        .modal-box { background: #fff; max-width: 500px; width: 100%; border-radius: 12px; overflow: hidden; }
+        .modal-header { background: linear-gradient(135deg, #8B4513, #B8860B); color: white; padding: 1rem 1.5rem; }
+        .modal-header h3 { margin: 0; font-size: 1.1rem; }
+        .modal-body { padding: 1.5rem; }
+        .cookie-option { margin-bottom: 1.2rem; padding-bottom: 1rem; border-bottom: 1px solid #eee; }
+        .cookie-option:last-child { border-bottom: none; margin-bottom: 0; }
+        .cookie-option-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.4rem; }
+        .cookie-option-header strong { color: #8B4513; font-size: 0.95rem; }
+        .cookie-badge { padding: 0.2rem 0.5rem; border-radius: 10px; font-size: 0.7rem; }
+        .cookie-badge.active { background: #8B4513; color: white; }
+        .cookie-badge.inactive { background: #ccc; color: #666; }
+        .cookie-option p { font-size: 0.8rem; color: #666; margin: 0; line-height: 1.4; }
+        .modal-footer { display: flex; gap: 0.5rem; justify-content: flex-end; margin-top: 1rem; }
+        
+        /* Responsive */
+        @media (min-width: 600px) {
+            .calendar-grid { grid-template-columns: repeat(2, 1fr); }
+            .special-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (min-width: 768px) {
+            nav { padding: 1.2rem 2rem; }
+            .logo { font-size: 1.4rem; }
+            .section { padding: 4rem 2rem; }
+            .hero-logo { width: 140px; height: 140px; }
+        }
+        @media (min-width: 1024px) {
+            nav { padding: 1.5rem 3rem; }
+            .logo { font-size: 1.5rem; letter-spacing: 0.12em; }
+            .menu-toggle { display: none; }
+            .nav-links { display: flex; }
+            .calendar-grid { grid-template-columns: repeat(4, 1fr); }
+            .special-grid { grid-template-columns: repeat(3, 1fr); }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html" class="logo">CASA OBÀTÁLÁ</a>
+        <div class="menu-toggle" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="meditazione.html">Meditazione</a></li>
+            <li><a href="piante.html">Piante</a></li>
+            <li><a href="glossario.html">Glossario</a></li>
+            <li><a href="calendario.html" style="color: #8B4513; font-weight: 500;">Calendario</a></li>
+            <li><a href="eventi.html">Eventi</a></li>
+            <li><a href="contatti.html">Contatti</a></li>
+        </ul>
+    </nav>
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="index.html">Home</a>
+        <a href="meditazione.html">Meditazione</a>
+        <a href="piante.html">Piante</a>
+        <a href="glossario.html">Glossario Piante</a>
+        <a href="calendario.html" style="color: #8B4513; font-weight: 500;">📅 Calendario Yorùbá</a>
+        <a href="eventi.html">Eventi</a>
+        <a href="chi-sono.html">Chi Sono</a>
+        <a href="contatti.html">Contatti</a>
+    </div>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-logo">
+                <img src="calendario/logo.png" alt="Calendario Yorùbá">
+            </div>
+            <h1>Calendario Yorùbá</h1>
+            <p class="hero-subtitle">I Giorni Sacri degli Òrìṣà</p>
+            <p class="intro-text">
+                Nella tradizione Yorùbá di Oyo (Nigeria) la settimana sacra ha <strong>4 giorni</strong>, chiamata <strong>Ọ̀sẹ̀</strong>. 
+                Ogni giorno è dedicato a specifici Òrìṣà e porta con sé energie e significati particolari.
+            </p>
+            <div class="cta-buttons">
+                <a href="#scarica" class="btn btn-primary">📱 Scarica l'App Gratuita</a>
+                <a href="#origine" class="btn btn-secondary">📖 Scopri di più</a>
+            </div>
+            <p class="limited-offer">⏳ Disponibile gratis per un periodo limitato</p>
+        </div>
+    </section>
+
+    <!-- Origine del Calendario -->
+    <section class="section" id="origine">
+        <h2 class="section-title">Un Calendario dalla Nigeria</h2>
+        <p class="section-subtitle">Tradizione di Oyo, non della diaspora</p>
+        
+        <div class="intro-text">
+            <p>Questo calendario <strong>non si rifà ai culti della diaspora</strong> (come Candomblé, Santería o Lucumí), 
+            ma è il <strong>calendario tradizionale utilizzato a Oyo, in Nigeria</strong>, cuore storico della civiltà Yorùbá.</p>
+            <p style="margin-top: 1rem;">In Nigeria, accanto a questo calendario dedicato agli Òrìṣà, 
+            viene utilizzato anche il normale calendario con i giorni della settimana occidentali. 
+            I due sistemi coesistono nella vita quotidiana.</p>
+        </div>
+    </section>
+
+    <!-- I 4 Giorni -->
+    <section class="section" id="giorni">
+        <h2 class="section-title">I Quattro Giorni dell'Ọ̀sẹ̀</h2>
+        <p class="section-subtitle">La settimana sacra Yorùbá</p>
+        
+        <div class="calendar-grid">
+            <div class="day-card obatala">
+                <div class="day-name">Ọsẹ́ Ọ̀sà</div>
+                <div class="day-meaning">Il giorno di Ọ̀sà (Obàtálá)</div>
+                <div class="day-orisa">Òrìṣà del giorno:</div>
+                <div class="day-orisa-list">Obàtálá, Ẹgúngún, Ìyáàmi (Madri ancestrali), Ògìrìíyàn, Yemọja, Yemọọ́</div>
+            </div>
+            
+            <div class="day-card ifa">
+                <div class="day-name">Ọsẹ́ Ifá</div>
+                <div class="day-meaning">Il giorno di Ifá</div>
+                <div class="day-orisa">Òrìṣà del giorno:</div>
+                <div class="day-orisa-list">Ifá, Odù, Ajé, Olósà, Ẹgbẹ́ Ọ̀run, Ọ̀ṣun, Orí, Èṣù</div>
+            </div>
+            
+            <div class="day-card ogun">
+                <div class="day-name">Ọsẹ́ Ògún</div>
+                <div class="day-meaning">Il giorno di Ògún</div>
+                <div class="day-orisa">Òrìṣà del giorno:</div>
+                <div class="day-orisa-list">Ògún, Ọ̀sọ́ọ̀sì, Òkò, Ìjà, Erinlẹ̀</div>
+            </div>
+            
+            <div class="day-card sango">
+                <div class="day-name">Ọsẹ́ Jàkúta</div>
+                <div class="day-meaning">Il giorno di Jàkúta (Ṣàngó)</div>
+                <div class="day-orisa">Òrìṣà del giorno:</div>
+                <div class="day-orisa-list">Ṣàngó, Ọya, Àgànjù, Ọbalúayé/Ṣànpọ̀nà</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Giorni Speciali -->
+    <section class="section">
+        <div class="special-section">
+            <h2 class="section-title">Giorni Speciali</h2>
+            <p class="section-subtitle">Ricorrenze nel calendario Yorùbá</p>
+            
+            <div class="special-grid">
+                <div class="special-item">
+                    <div class="special-icon">🟡</div>
+                    <div class="special-content">
+                        <h4>Ìtàdógún Ifá</h4>
+                        <p>Ogni 16 giorni. Giorno di particolare potenza spirituale legato a Ifá.</p>
+                    </div>
+                </div>
+                
+                <div class="special-item">
+                    <div class="special-icon">🟢</div>
+                    <div class="special-content">
+                        <h4>Ọjọ́ Nla Obàtálá</h4>
+                        <p>Ogni 16 giorni. Il "Grande Giorno di Obàtálá", dedicato al padre di tutti gli Òrìṣà.</p>
+                    </div>
+                </div>
+                
+                <div class="special-item">
+                    <div class="special-icon">🔴</div>
+                    <div class="special-content">
+                        <h4>Jàkúta Olóyìn</h4>
+                        <p>Ogni 28 giorni. Giorno speciale dedicato a Ṣàngó.</p>
+                    </div>
+                </div>
+                
+                <div class="special-item">
+                    <div class="special-icon">🎉</div>
+                    <div class="special-content">
+                        <h4>Capodanno Yorùbá</h4>
+                        <p>3 Giugno di ogni anno. Inizio del nuovo anno nella tradizione.</p>
+                    </div>
+                </div>
+                
+                <div class="special-item">
+                    <div class="special-icon">🌙</div>
+                    <div class="special-content">
+                        <h4>Fine Anno</h4>
+                        <p>2 Giugno. Ultimo giorno dell'anno Yorùbá, momento di riflessione.</p>
+                    </div>
+                </div>
+                
+                <div class="special-item">
+                    <div class="special-icon">📅</div>
+                    <div class="special-content">
+                        <h4>Anno Yorùbá</h4>
+                        <p>L'anno corrente secondo la tradizione, calcolato dal 3 Giugno.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Funzionalità App -->
+    <section class="section">
+        <h2 class="section-title">Cosa Offre l'App</h2>
+        <p class="section-subtitle">Gratuita, senza pubblicità, rispetta la tua privacy</p>
+        
+        <div class="features-grid">
+            <div class="feature">
+                <div class="feature-icon">📆</div>
+                <h3>Calendario Completo</h3>
+                <p>Naviga tra i mesi e gli anni. Vedi a colpo d'occhio quale Ọ̀sẹ̀ cade ogni giorno.</p>
+            </div>
+            
+            <div class="feature">
+                <div class="feature-icon">🔔</div>
+                <h3>Notifiche Giornaliere</h3>
+                <p>Ricevi ogni mattina il giorno Yorùbá corrente e gli Òrìṣà da onorare.</p>
+            </div>
+            
+            <div class="feature">
+                <div class="feature-icon">📴</div>
+                <h3>Funziona Offline</h3>
+                <p>Una volta installata, non richiede connessione internet.</p>
+            </div>
+            
+            <div class="feature">
+                <div class="feature-icon">🔒</div>
+                <h3>Privacy Totale</h3>
+                <p>Nessun dato raccolto. Nessun tracciamento. Tutto resta sul tuo dispositivo.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Screenshot Gallery -->
+    <section class="screenshots-section">
+        <h2 class="section-title">L'App in Azione</h2>
+        <p class="section-subtitle">Scopri l'interfaccia</p>
+        
+        <div class="screenshots-grid">
+            <div class="screenshot-item">
+                <img src="calendario/screenshots/app-home.png" alt="Schermata principale Calendario Yorùbá" loading="lazy">
+                <div class="screenshot-caption">Schermata principale</div>
+            </div>
+            <div class="screenshot-item">
+                <img src="calendario/screenshots/app-griglia.png" alt="Griglia mensile del calendario" loading="lazy">
+                <div class="screenshot-caption">Vista mensile</div>
+            </div>
+            <div class="screenshot-item">
+                <img src="calendario/screenshots/app-dettaglio.png" alt="Dettaglio giorno con Òrìṣà" loading="lazy">
+                <div class="screenshot-caption">Dettaglio giorno</div>
+            </div>
+            <div class="screenshot-item">
+                <img src="calendario/screenshots/app-legenda.png" alt="Legenda dei 4 giorni Ọ̀sẹ̀" loading="lazy">
+                <div class="screenshot-caption">I 4 giorni dell'Ọ̀sẹ̀</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Download Section -->
+    <section class="download-section" id="scarica">
+        <h2 class="section-title">Scarica l'App</h2>
+        <p class="download-note">
+            L'app è gratuita e disponibile per tutti i dispositivi. 
+            Funziona come app nativa su Android e iOS, oppure direttamente dal browser.
+        </p>
+        
+        <div class="terms-box">
+            <label>
+                <input type="checkbox" id="acceptTerms" onchange="updateLaunchButton()">
+                <span>Ho letto e accetto la <a href="calendario/privacy-policy-app.html" target="_blank">Privacy Policy</a> e i <a href="calendario/termini-utilizzo-app.html" target="_blank">Termini di Utilizzo</a> dell'app Calendario Yorùbá.</span>
+            </label>
+        </div>
+        
+        <a href="calendario/" id="launchBtn" class="launch-btn" onclick="return checkTerms()" style="pointer-events: none; opacity: 0.5;">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
+            </svg>
+            Scarica Calendario Yorùbá
+        </a>
+        
+        <div class="platforms">
+            <div class="platform">
+                <div class="platform-icon">🤖</div>
+                <div>Android</div>
+            </div>
+            <div class="platform">
+                <div class="platform-icon">🍎</div>
+                <div>iPhone/iPad</div>
+            </div>
+            <div class="platform">
+                <div class="platform-icon">💻</div>
+                <div>Browser Web</div>
+            </div>
+        </div>
+        
+        <p style="margin-top: 2rem; font-size: 0.85rem; color: #6b5d4f;">
+            💡 <strong>Suggerimento:</strong> Una volta aperta l'app, usa "Aggiungi a Home" o "Installa" dal menu del browser per averla sempre a portata di mano.
+        </p>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 CASA OBÀTÁLÁ - LORENZO OKÌKÍ ROSSI - C.F. RSSLNZ76A21H501K</p>
+        <p style="margin-top: 0.5rem;">📱 3473638901 | 📧 lorenzo.okiki@gmail.com</p>
+        <p style="margin-top: 0.5rem;">
+            <a href="privacy-policy.html">Privacy Policy Sito</a> | 
+            <a href="cookie-policy.html">Cookie Policy</a> | 
+            <a href="calendario/privacy-policy-app.html">Privacy App</a> | 
+            <a href="calendario/termini-utilizzo-app.html">Termini App</a>
+        </p>
+    </footer>
+
+    <!-- Cookie Banner -->
+    <div id="cookie-banner">
+        <div class="cookie-content">
+            <div class="cookie-text">
+                <p><strong>🍪 Questo sito usa cookie tecnici</strong><br>
+                Utilizziamo solo cookie necessari al funzionamento. <a href="cookie-policy.html">Maggiori info</a></p>
+            </div>
+            <div class="cookie-buttons">
+                <button class="cookie-btn accept" onclick="acceptCookies()">Accetta</button>
+                <button class="cookie-btn reject" onclick="rejectCookies()">Rifiuta</button>
+                <button class="cookie-btn settings" onclick="openCookieSettings()">Personalizza</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cookie Modal -->
+    <div id="cookie-modal" onclick="if(event.target===this)closeCookieModal()">
+        <div class="modal-box">
+            <div class="modal-header"><h3>Preferenze Cookie</h3></div>
+            <div class="modal-body">
+                <div class="cookie-option">
+                    <div class="cookie-option-header">
+                        <strong>Cookie Tecnici</strong>
+                        <span class="cookie-badge active">Sempre attivi</span>
+                    </div>
+                    <p>Necessari per il funzionamento del sito.</p>
+                </div>
+                <div class="cookie-option">
+                    <div class="cookie-option-header">
+                        <strong>Cookie Analitici</strong>
+                        <span class="cookie-badge inactive">Non utilizzati</span>
+                    </div>
+                    <p>Questo sito non usa cookie di tracciamento.</p>
+                </div>
+                <div class="cookie-option">
+                    <div class="cookie-option-header">
+                        <strong>Cookie Marketing</strong>
+                        <span class="cookie-badge inactive">Non utilizzati</span>
+                    </div>
+                    <p>Questo sito non usa cookie pubblicitari.</p>
+                </div>
+                <div class="modal-footer">
+                    <button class="cookie-btn reject" onclick="rejectCookies()">Rifiuta</button>
+                    <button class="cookie-btn accept" onclick="acceptCookies()">Accetta</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+    // Menu toggle
+    function toggleMenu() {
+        document.getElementById('mobileMenu').classList.toggle('active');
+    }
+    
+    // Cookie functions
+    function acceptCookies() { localStorage.setItem('cookieConsent','accepted'); hideBanner(); }
+    function rejectCookies() { localStorage.setItem('cookieConsent','rejected'); hideBanner(); }
+    function hideBanner() { 
+        document.getElementById('cookie-banner').classList.remove('show'); 
+        document.getElementById('cookie-modal').classList.remove('show'); 
+    }
+    function openCookieSettings() { document.getElementById('cookie-modal').classList.add('show'); }
+    function closeCookieModal() { document.getElementById('cookie-modal').classList.remove('show'); }
+    if(!localStorage.getItem('cookieConsent')) { document.getElementById('cookie-banner').classList.add('show'); }
+    
+    // Terms acceptance
+    function updateLaunchButton() {
+        const checkbox = document.getElementById('acceptTerms');
+        const btn = document.getElementById('launchBtn');
+        if (checkbox.checked) {
+            btn.style.pointerEvents = 'auto';
+            btn.style.opacity = '1';
+        } else {
+            btn.style.pointerEvents = 'none';
+            btn.style.opacity = '0.5';
+        }
+    }
+    
+    function checkTerms() {
+        const checkbox = document.getElementById('acceptTerms');
+        if (!checkbox.checked) {
+            alert('Per accedere all\'app, devi prima accettare la Privacy Policy e i Termini di Utilizzo.');
+            return false;
+        }
+        return true;
+    }
+    </script>
+</body>
+</html>
