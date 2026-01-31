@@ -531,28 +531,21 @@
             </label>
         </div>
         
-        <a href="calendario/" id="launchBtn" class="launch-btn" onclick="return checkTerms()" style="pointer-events: none; opacity: 0.5;">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
-            </svg>
-            Scarica Calendario Yorùbá
-        </a>
-        
-        <div class="platforms">
+        <div class="platforms" id="platformButtons" style="opacity: 0.5; pointer-events: none;">
             <div class="platform">
                 <div class="platform-icon">🤖</div>
                 <div>Android</div>
-                <a href="calendario/calendario-yoruba.apk" download class="btn btn-primary" style="margin-top: 0.8rem; padding: 0.6rem 1.2rem; font-size: 0.85rem;">📥 Scarica APK</a>
+                <a href="calendario/calendario-yoruba.apk" download onclick="return checkTerms()" class="btn btn-primary" style="margin-top: 0.8rem; padding: 0.6rem 1.2rem; font-size: 0.85rem;">📥 Scarica APK</a>
             </div>
             <div class="platform">
                 <div class="platform-icon">🍎</div>
                 <div>iPhone/iPad</div>
-                <a href="calendario/" class="btn btn-secondary" style="margin-top: 0.8rem; padding: 0.6rem 1.2rem; font-size: 0.85rem;">🌐 Apri Web App</a>
+                <a href="calendario/" onclick="return checkTerms()" class="btn btn-secondary" style="margin-top: 0.8rem; padding: 0.6rem 1.2rem; font-size: 0.85rem;">🌐 Apri Web App</a>
             </div>
             <div class="platform">
                 <div class="platform-icon">💻</div>
                 <div>Browser Web</div>
-                <a href="calendario/" class="btn btn-secondary" style="margin-top: 0.8rem; padding: 0.6rem 1.2rem; font-size: 0.85rem;">🌐 Apri</a>
+                <a href="calendario/" onclick="return checkTerms()" class="btn btn-secondary" style="margin-top: 0.8rem; padding: 0.6rem 1.2rem; font-size: 0.85rem;">🌐 Apri</a>
             </div>
         </div>
         
@@ -659,20 +652,20 @@
     // Terms acceptance
     function updateLaunchButton() {
         const checkbox = document.getElementById('acceptTerms');
-        const btn = document.getElementById('launchBtn');
+        const platformBtns = document.getElementById('platformButtons');
         if (checkbox.checked) {
-            btn.style.pointerEvents = 'auto';
-            btn.style.opacity = '1';
+            platformBtns.style.pointerEvents = 'auto';
+            platformBtns.style.opacity = '1';
         } else {
-            btn.style.pointerEvents = 'none';
-            btn.style.opacity = '0.5';
+            platformBtns.style.pointerEvents = 'none';
+            platformBtns.style.opacity = '0.5';
         }
     }
     
     function checkTerms() {
         const checkbox = document.getElementById('acceptTerms');
         if (!checkbox.checked) {
-            alert('Per accedere all\'app, devi prima accettare la Privacy Policy e i Termini di Utilizzo.');
+            alert('Per scaricare l\'app, devi prima accettare la Privacy Policy e i Termini di Utilizzo.');
             return false;
         }
         return true;
