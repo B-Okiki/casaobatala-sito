@@ -1,1 +1,327 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <!-- Favicon -->
+    <link rel="icon" href="/favicon.ico" sizes="48x48">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <meta name="apple-mobile-web-app-title" content="Casa Obàtálá">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="msapplication-TileColor" content="#8B4513">
+    <meta name="msapplication-config" content="/browserconfig.xml">
+    <meta name="theme-color" content="#8B4513">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- ============================================
+         SEO - MODIFICA QUESTI CAMPI PER OGNI ARTICOLO
+         ============================================ -->
+    <title>{{TITOLO_ARTICOLO}} | Blog Casa Obàtálá</title>
+    <meta name="description" content="{{DESCRIZIONE_SEO}}">
+    <meta name="keywords" content="{{TAGS_SEPARATI_DA_VIRGOLA}}">
+    <meta name="author" content="Lorenzo Okìkí Rossi">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://casaobatala.it/blog/{{SLUG_ARTICOLO}}.html">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://casaobatala.it/blog/{{SLUG_ARTICOLO}}.html">
+    <meta property="og:title" content="{{TITOLO_ARTICOLO}} | Casa Obàtálá">
+    <meta property="og:description" content="{{DESCRIZIONE_SEO}}">
+    <meta property="og:locale" content="it_IT">
+    <meta property="og:site_name" content="Casa Obàtálá">
+    <meta property="og:image" content="https://casaobatala.it/images/blog/{{IMMAGINE_ARTICOLO}}">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="{{ALT_IMMAGINE}}">
+    <meta property="article:published_time" content="{{DATA_ISO}}">
+    <meta property="article:author" content="Lorenzo Okìkí Rossi">
+    <meta property="article:section" content="{{CATEGORIA}}">
+    <meta property="article:tag" content="{{TAG1}}">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{TITOLO_ARTICOLO}} | Casa Obàtálá">
+    <meta name="twitter:description" content="{{DESCRIZIONE_SEO}}">
+    <meta name="twitter:image" content="https://casaobatala.it/images/blog/{{IMMAGINE_ARTICOLO}}">
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <!-- Schema.org Article -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "{{TITOLO_ARTICOLO}}",
+      "description": "{{DESCRIZIONE_SEO}}",
+      "image": "https://casaobatala.it/images/blog/{{IMMAGINE_ARTICOLO}}",
+      "author": {
+        "@type": "Person",
+        "name": "Lorenzo Okìkí Rossi",
+        "url": "https://casaobatala.it/chi-sono.html"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Casa Obàtálá",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://casaobatala.it/logo.png"
+        }
+      },
+      "datePublished": "{{DATA_ISO}}",
+      "dateModified": "{{DATA_ISO}}",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://casaobatala.it/blog/{{SLUG_ARTICOLO}}.html"
+      },
+      "articleSection": "{{CATEGORIA}}",
+      "keywords": "{{TAGS_SEPARATI_DA_VIRGOLA}}"
+    }
+    </script>
+
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background: #fafafa; color: #1a1a1a; padding-top: 70px; }
+        
+        /* Navigation */
+        nav { position: fixed; top: 0; width: 100%; padding: 1rem 1.2rem; z-index: 1000; display: flex; justify-content: space-between; align-items: center; background: rgba(255,255,255,0.98); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(139,69,19,0.1); }
+        .logo { font-family: 'Playfair Display', serif; font-size: 1.2rem; background: linear-gradient(135deg, #8B4513, #B8860B); -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-decoration: none; }
+        .nav-links { display: none; gap: 2rem; list-style: none; }
+        .nav-links a { color: #1a1a1a; text-decoration: none; font-size: 0.85rem; text-transform: uppercase; transition: color 0.3s; }
+        .nav-links a:hover { color: #8B4513; }
+        .menu-toggle { display: flex; flex-direction: column; cursor: pointer; gap: 5px; }
+        .menu-toggle span { width: 24px; height: 2px; background: #8B4513; }
+        .mobile-menu { display: none; position: fixed; top: 58px; left: 0; right: 0; background: #fff; padding: 1rem; z-index: 999; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .mobile-menu.active { display: block; }
+        .mobile-menu a { display: block; padding: 0.9rem 0; color: #1a1a1a; text-decoration: none; border-bottom: 1px solid rgba(139,69,19,0.08); }
+
+        /* Article Header */
+        .article-header { max-width: 900px; margin: 0 auto; padding: 2rem 1rem; text-align: center; }
+        .article-category { display: inline-block; background: linear-gradient(135deg, #8B4513, #B8860B); color: white; padding: 0.4rem 1rem; border-radius: 20px; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 1.5rem; }
+        .article-title { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 400; line-height: 1.2; margin-bottom: 1.5rem; color: #1a1a1a; }
+        .article-meta { display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; color: #6b5d4f; font-size: 0.9rem; }
+        .article-meta span { display: flex; align-items: center; gap: 0.5rem; }
+
+        /* Featured Image */
+        .featured-image { max-width: 1000px; margin: 0 auto 3rem; padding: 0 1rem; }
+        .featured-image img { width: 100%; height: auto; border-radius: 16px; box-shadow: 0 10px 40px rgba(139,69,19,0.15); }
+        .featured-image figcaption { text-align: center; margin-top: 1rem; color: #6b5d4f; font-size: 0.85rem; font-style: italic; }
+
+        /* Article Content */
+        .article-content { max-width: 750px; margin: 0 auto; padding: 0 1.5rem 4rem; }
+        .article-content p { font-size: 1.1rem; line-height: 1.9; margin-bottom: 1.8rem; color: #2a2a2a; }
+        .article-content h2 { font-family: 'Playfair Display', serif; font-size: 1.8rem; color: #8B4513; margin: 3rem 0 1.5rem; font-weight: 400; }
+        .article-content h3 { font-family: 'Playfair Display', serif; font-size: 1.4rem; color: #8B4513; margin: 2.5rem 0 1rem; font-weight: 400; }
+        .article-content ul, .article-content ol { margin: 1.5rem 0; padding-left: 2rem; }
+        .article-content li { font-size: 1.05rem; line-height: 1.8; margin-bottom: 0.8rem; color: #2a2a2a; }
+        .article-content blockquote { border-left: 4px solid #B8860B; padding: 1.5rem 2rem; margin: 2rem 0; background: rgba(139,69,19,0.04); border-radius: 0 12px 12px 0; font-style: italic; font-size: 1.15rem; color: #6b5d4f; }
+        .article-content a { color: #8B4513; text-decoration: underline; text-underline-offset: 3px; transition: color 0.3s; }
+        .article-content a:hover { color: #B8860B; }
+        .article-content img { max-width: 100%; height: auto; border-radius: 12px; margin: 2rem 0; }
+        .article-content strong { color: #8B4513; }
+        .article-content em { color: #6b5d4f; }
+
+        /* Highlight Box */
+        .highlight-box { background: linear-gradient(135deg, rgba(139,69,19,0.06), rgba(184,134,11,0.06)); border: 1px solid rgba(184,134,11,0.2); border-radius: 12px; padding: 2rem; margin: 2.5rem 0; }
+        .highlight-box p { margin-bottom: 0.8rem; }
+        .highlight-box p:last-child { margin-bottom: 0; }
+
+        /* Tags */
+        .article-tags { display: flex; flex-wrap: wrap; gap: 0.8rem; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid rgba(139,69,19,0.15); }
+        .article-tags span { font-size: 0.9rem; color: #6b5d4f; }
+        .tag { display: inline-block; background: rgba(139,69,19,0.08); color: #8B4513; padding: 0.4rem 1rem; border-radius: 20px; font-size: 0.8rem; text-decoration: none; transition: all 0.3s; }
+        .tag:hover { background: #8B4513; color: white; }
+
+        /* Author Box */
+        .author-box { display: flex; gap: 1.5rem; align-items: center; background: #fff; border: 1px solid rgba(139,69,19,0.15); border-radius: 16px; padding: 2rem; margin-top: 3rem; box-shadow: 0 4px 20px rgba(139,69,19,0.08); }
+        .author-avatar { width: 80px; height: 80px; border-radius: 50%; background: linear-gradient(135deg, #8B4513, #B8860B); display: flex; align-items: center; justify-content: center; color: white; font-family: 'Playfair Display', serif; font-size: 2rem; flex-shrink: 0; }
+        .author-info h4 { font-family: 'Playfair Display', serif; color: #8B4513; font-size: 1.2rem; margin-bottom: 0.5rem; }
+        .author-info p { font-size: 0.9rem; color: #6b5d4f; line-height: 1.6; }
+        .author-info a { color: #8B4513; }
+
+        /* Related Articles */
+        .related-articles { max-width: 900px; margin: 0 auto; padding: 4rem 1.5rem; }
+        .related-articles h3 { font-family: 'Playfair Display', serif; font-size: 1.8rem; color: #8B4513; text-align: center; margin-bottom: 2rem; }
+        .related-grid { display: grid; grid-template-columns: 1fr; gap: 1.5rem; }
+        .related-card { background: #fff; border: 1px solid rgba(139,69,19,0.12); border-radius: 12px; padding: 1.5rem; text-decoration: none; transition: all 0.3s; }
+        .related-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(139,69,19,0.12); }
+        .related-card h4 { font-family: 'Playfair Display', serif; color: #1a1a1a; font-size: 1.1rem; margin-bottom: 0.5rem; }
+        .related-card p { color: #6b5d4f; font-size: 0.85rem; line-height: 1.5; }
+        .related-card .date { font-size: 0.75rem; color: #8B4513; margin-top: 0.8rem; }
+
+        /* CTA Box */
+        .cta-box { text-align: center; padding: 3rem 2rem; background: linear-gradient(135deg, rgba(139,69,19,0.06), rgba(184,134,11,0.06)); border-radius: 16px; margin-top: 3rem; }
+        .cta-box h4 { font-family: 'Playfair Display', serif; font-size: 1.5rem; color: #8B4513; margin-bottom: 1rem; }
+        .cta-box p { color: #2a2a2a; margin-bottom: 1.5rem; }
+        .cta-button { display: inline-block; padding: 1rem 2rem; background: linear-gradient(135deg, #8B4513, #A0522D); color: white; text-decoration: none; border-radius: 50px; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.1em; transition: all 0.3s; }
+        .cta-button:hover { background: linear-gradient(135deg, #A0522D, #B8860B); transform: translateY(-2px); }
+
+        /* Back Button */
+        .back-button { display: inline-block; margin: 2rem auto; padding: 0.9rem 1.8rem; background: linear-gradient(135deg, #8B4513, #A0522D); color: white; text-decoration: none; border-radius: 50px; font-size: 0.85rem; text-transform: uppercase; }
+        .button-container { text-align: center; padding-bottom: 3rem; }
+
+        /* Footer */
+        footer { text-align: center; padding: 3rem 1rem; background: #f8f6f3; border-top: 1px solid rgba(139,69,19,0.1); }
+        footer p { color: #6b5d4f; font-size: 0.8rem; line-height: 1.7; }
+        footer a { color: #6b5d4f; }
+
+        /* Responsive */
+        @media (min-width: 600px) {
+            .related-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (min-width: 768px) {
+            body { padding-top: 80px; }
+            nav { padding: 1.2rem 2rem; }
+            .logo { font-size: 1.4rem; }
+            .article-header { padding: 3rem 2rem; }
+            .author-box { padding: 2.5rem; }
+        }
+        @media (min-width: 1024px) {
+            body { padding-top: 100px; }
+            nav { padding: 1.5rem 3rem; }
+            .menu-toggle { display: none; }
+            .nav-links { display: flex; }
+            .related-grid { grid-template-columns: repeat(3, 1fr); }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="/index.html" class="logo">CASA OBÀTÁLÁ</a>
+        <div class="menu-toggle" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+        <ul class="nav-links">
+            <li><a href="/index.html">Home</a></li>
+            <li><a href="/meditazione.html">Meditazione</a></li>
+            <li><a href="/piante.html">Piante</a></li>
+            <li><a href="/glossario.html">Glossario</a></li>
+            <li><a href="/blog.html">Blog</a></li>
+            <li><a href="/chi-sono.html">Chi Sono</a></li>
+            <li><a href="/contatti.html">Contatti</a></li>
+        </ul>
+    </nav>
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="/index.html">Home</a>
+        <a href="/meditazione.html">Meditazione</a>
+        <a href="/piante.html">Piante</a>
+        <a href="/glossario.html">Glossario</a>
+        <a href="/blog.html">Blog</a>
+        <a href="/chi-sono.html">Chi Sono</a>
+        <a href="/contatti.html">Contatti</a>
+    </div>
+
+    <article>
+        <!-- Header Articolo -->
+        <header class="article-header">
+            <span class="article-category">{{CATEGORIA}}</span>
+            <h1 class="article-title">{{TITOLO_ARTICOLO}}</h1>
+            <div class="article-meta">
+                <span>📅 {{DATA_FORMATTATA}}</span>
+                <span>✍️ Lorenzo Okìkí Rossi</span>
+                <span>⏱️ {{MINUTI_LETTURA}} min di lettura</span>
+            </div>
+        </header>
+
+        <!-- Immagine di Copertina -->
+        <figure class="featured-image">
+            <img src="/images/blog/{{IMMAGINE_ARTICOLO}}" alt="{{ALT_IMMAGINE}}" loading="lazy">
+            <figcaption>{{DIDASCALIA_IMMAGINE}}</figcaption>
+        </figure>
+
+        <!-- Contenuto Articolo -->
+        <div class="article-content">
+            
+            <!-- ============================================
+                 QUI VA IL CONTENUTO DELL'ARTICOLO
+                 ============================================ -->
+            
+            <p>{{PARAGRAFO_INTRODUTTIVO}}</p>
+
+            <h2>{{TITOLO_SEZIONE_1}}</h2>
+            <p>{{CONTENUTO_SEZIONE_1}}</p>
+
+            <blockquote>
+                "{{CITAZIONE_YORUBA}}"
+                <br><small>— {{FONTE_CITAZIONE}}</small>
+            </blockquote>
+
+            <h2>{{TITOLO_SEZIONE_2}}</h2>
+            <p>{{CONTENUTO_SEZIONE_2}}</p>
+
+            <div class="highlight-box">
+                <p><strong>💡 Da ricordare:</strong></p>
+                <p>{{PUNTO_CHIAVE}}</p>
+            </div>
+
+            <h2>{{TITOLO_SEZIONE_3}}</h2>
+            <p>{{CONTENUTO_SEZIONE_3}}</p>
+
+            <!-- Fine contenuto -->
+
+            <!-- Tags -->
+            <div class="article-tags">
+                <span>🏷️ Tags:</span>
+                <a href="/blog.html?tag={{TAG1}}" class="tag">{{TAG1}}</a>
+                <a href="/blog.html?tag={{TAG2}}" class="tag">{{TAG2}}</a>
+                <a href="/blog.html?tag={{TAG3}}" class="tag">{{TAG3}}</a>
+            </div>
+
+            <!-- Author Box -->
+            <div class="author-box">
+                <div class="author-avatar">L</div>
+                <div class="author-info">
+                    <h4>Lorenzo Okìkí Rossi</h4>
+                    <p>Iniziato nel culto tradizionale Yoruba di Obàtálá, certificato in Fitoterapia. Guido meditazioni profonde e percorsi di crescita spirituale.</p>
+                    <p><a href="/chi-sono.html">Scopri di più →</a></p>
+                </div>
+            </div>
+
+            <!-- CTA Box -->
+            <div class="cta-box">
+                <h4>Vuoi approfondire?</h4>
+                <p>Se questo articolo ti ha ispirato, contattami per una sessione personale.</p>
+                <a href="/contatti.html" class="cta-button">Scrivimi</a>
+            </div>
+        </div>
+    </article>
+
+    <!-- Articoli Correlati -->
+    <section class="related-articles">
+        <h3>Potrebbe Interessarti</h3>
+        <div class="related-grid">
+            <a href="/blog/{{SLUG_CORRELATO_1}}.html" class="related-card">
+                <h4>{{TITOLO_CORRELATO_1}}</h4>
+                <p>{{DESCRIZIONE_CORRELATO_1}}</p>
+                <span class="date">{{DATA_CORRELATO_1}}</span>
+            </a>
+            <a href="/blog/{{SLUG_CORRELATO_2}}.html" class="related-card">
+                <h4>{{TITOLO_CORRELATO_2}}</h4>
+                <p>{{DESCRIZIONE_CORRELATO_2}}</p>
+                <span class="date">{{DATA_CORRELATO_2}}</span>
+            </a>
+            <a href="/blog/{{SLUG_CORRELATO_3}}.html" class="related-card">
+                <h4>{{TITOLO_CORRELATO_3}}</h4>
+                <p>{{DESCRIZIONE_CORRELATO_3}}</p>
+                <span class="date">{{DATA_CORRELATO_3}}</span>
+            </a>
+        </div>
+    </section>
+
+    <div class="button-container">
+        <a href="/blog.html" class="back-button">← Tutti gli Articoli</a>
+    </div>
+
+    <footer>
+        <p>© 2025 CASA OBÀTÁLÁ - LORENZO ROSSI - C.F. RSSLNZ76A21H501K</p>
+        <p style="margin-top: 0.5rem;"><a href="/privacy-policy.html">Privacy Policy</a> | <a href="/cookie-policy.html">Cookie Policy</a></p>
+    </footer>
+
+    <script>
+    function toggleMenu(){document.getElementById('mobileMenu').classList.toggle('active')}
+    </script>
+</body>
+</html>
