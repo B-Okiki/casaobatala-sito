@@ -1,1 +1,51 @@
+name: Build Blog
 
+# Quando si attiva
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'blog/*.md'
+      - 'templates/*.html'
+      - '.github/workflows/build-blog.yml'
+      - 'scripts/build_blog.py'
+  
+  # Permette di lanciarlo manualmente
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+      # 1. Scarica il repository
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+      
+      # 2. Installa Python
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      
+      # 3. Installa dipendenze
+      - name: Install dependencies
+        run: |
+          pip install pyyaml
+      
+      # 4. Esegui lo script di build
+      - name: Build blog articles
+        run: |
+          python scripts/build_blog.py
+      
+      # 5. Committa e pusha le modifiche
+      - name: Commit and push changes
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add -A
+          git diff --staged --quiet || git commit -m "🤖 Auto-build: convert blog articles to HTML"
+          git push
