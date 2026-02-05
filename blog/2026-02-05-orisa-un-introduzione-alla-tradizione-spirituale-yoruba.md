@@ -1,7 +1,7 @@
 ---
 title: 'Òrìṣà: Un’Introduzione alla Tradizione Spirituale Yorùbá'
 date: 2026-02-05
-published: true
+published: false
 image: ''
 image_alt: ''
 category: yoruba
