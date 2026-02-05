@@ -6,10 +6,9 @@
 
 backend:
   name: github
-  repo: B-Okiki/casaobatala-sito  # ⚠️ MODIFICA CON IL TUO USERNAME GITHUB
+  repo: B-Okiki/casaobatala-sito
   branch: main
-  base_url: https://casaobatala.it
-  auth_endpoint: /api/auth  # Opzionale: per OAuth (vedi istruzioni)
+  base_url: https://sveltia-cms-auth.rossi-lorenzo-1976.workers.dev
 
 # Dove salvare le immagini caricate
 media_folder: "images/blog"
