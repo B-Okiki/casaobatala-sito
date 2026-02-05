@@ -1,0 +1,298 @@
+# ============================================
+# CONFIGURAZIONE DECAP CMS - CASA OBÀTÁLÁ
+# ============================================
+# Questo file configura il pannello admin del blog
+# Posizione: /admin/config.yml
+
+backend:
+  name: github
+  repo: TUO-USERNAME/casaobatala-sito  # ⚠️ MODIFICA CON IL TUO USERNAME GITHUB
+  branch: main
+  base_url: https://casaobatala.it
+  auth_endpoint: /api/auth  # Opzionale: per OAuth (vedi istruzioni)
+
+# Dove salvare le immagini caricate
+media_folder: "images/blog"
+public_folder: "/images/blog"
+
+# Lingua interfaccia
+locale: "it"
+
+# Logo nel pannello admin
+logo_url: "/logo.png"
+
+# Slug (URL) degli articoli
+slug:
+  encoding: "ascii"
+  clean_accents: true
+  sanitize_replacement: "-"
+
+# ============================================
+# COLLEZIONI (Tipi di contenuto)
+# ============================================
+
+collections:
+
+  # --------------------------------------------
+  # BLOG - Articoli
+  # --------------------------------------------
+  - name: "blog"
+    label: "📝 Articoli Blog"
+    folder: "blog"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    preview_path: "blog/{{slug}}.html"
+    summary: "{{title}} - {{date | date('DD/MM/YYYY')}}"
+    sortable_fields: ['date', 'title']
+    view_filters:
+      - label: "Pubblicati"
+        field: published
+        pattern: true
+      - label: "Bozze"
+        field: published
+        pattern: false
+    view_groups:
+      - label: "Anno"
+        field: date
+        pattern: \d{4}
+    fields:
+      # Titolo articolo
+      - label: "Titolo"
+        name: "title"
+        widget: "string"
+        required: true
+        hint: "Il titolo dell'articolo (apparirà anche nei motori di ricerca)"
+
+      # Data pubblicazione
+      - label: "Data Pubblicazione"
+        name: "date"
+        widget: "datetime"
+        format: "YYYY-MM-DD"
+        date_format: "DD/MM/YYYY"
+        time_format: false
+        required: true
+
+      # Stato pubblicazione
+      - label: "Pubblicato"
+        name: "published"
+        widget: "boolean"
+        default: false
+        hint: "Attiva per rendere l'articolo visibile sul sito"
+
+      # Immagine di copertina
+      - label: "Immagine di Copertina"
+        name: "image"
+        widget: "image"
+        required: false
+        hint: "Dimensione consigliata: 1200x630px (formato 1.91:1)"
+        media_library:
+          config:
+            max_file_size: 2048000  # 2MB
+
+      # Alt text immagine (accessibilità + SEO)
+      - label: "Descrizione Immagine (Alt Text)"
+        name: "image_alt"
+        widget: "string"
+        required: false
+        hint: "Descrivi l'immagine per accessibilità e SEO"
+
+      # Categoria
+      - label: "Categoria"
+        name: "category"
+        widget: "select"
+        options:
+          - { label: "Meditazione", value: "meditazione" }
+          - { label: "Piante e Fitoterapia", value: "piante" }
+          - { label: "Tradizione Yoruba", value: "yoruba" }
+          - { label: "Òrìṣà", value: "orisa" }
+          - { label: "Crescita Personale", value: "crescita" }
+          - { label: "Riflessioni", value: "riflessioni" }
+        default: "riflessioni"
+        required: true
+
+      # Tags
+      - label: "Tags"
+        name: "tags"
+        widget: "list"
+        required: false
+        hint: "Parole chiave separate da virgola (es: meditazione, orí, pace)"
+
+      # Descrizione SEO
+      - label: "Descrizione SEO"
+        name: "description"
+        widget: "text"
+        required: true
+        hint: "Descrizione per Google (150-160 caratteri ideali)"
+        pattern: ['.{50,200}', "La descrizione deve essere tra 50 e 200 caratteri"]
+
+      # Autore
+      - label: "Autore"
+        name: "author"
+        widget: "string"
+        default: "Lorenzo Okìkí Rossi"
+        required: true
+
+      # Contenuto articolo
+      - label: "Contenuto"
+        name: "body"
+        widget: "markdown"
+        required: true
+        hint: "Scrivi il tuo articolo qui. Puoi usare formattazione, immagini e link."
+        buttons:
+          - bold
+          - italic
+          - link
+          - heading-two
+          - heading-three
+          - quote
+          - bulleted-list
+          - numbered-list
+        editor_components:
+          - image
+          - code-block
+
+      # Articoli correlati
+      - label: "Articoli Correlati"
+        name: "related"
+        widget: "relation"
+        collection: "blog"
+        search_fields: ["title"]
+        value_field: "{{slug}}"
+        display_fields: ["title"]
+        multiple: true
+        required: false
+        hint: "Seleziona articoli correlati da mostrare in fondo"
+
+  # --------------------------------------------
+  # PAGINE STATICHE (opzionale)
+  # --------------------------------------------
+  - name: "pages"
+    label: "📄 Pagine"
+    files:
+      - label: "Chi Sono"
+        name: "chi-sono"
+        file: "content/chi-sono.md"
+        fields:
+          - { label: "Titolo", name: "title", widget: "string" }
+          - { label: "Contenuto", name: "body", widget: "markdown" }
+
+  # --------------------------------------------
+  # GLOSSARIO YORUBA
+  # --------------------------------------------
+  - name: "glossario-yoruba"
+    label: "📖 Glossario Yoruba"
+    folder: "glossario-yoruba"
+    create: true
+    slug: "{{slug}}"
+    identifier_field: "termine"
+    summary: "{{termine}} - {{traduzione}}"
+    fields:
+      - label: "Termine Yoruba"
+        name: "termine"
+        widget: "string"
+        required: true
+        hint: "Es: Àṣẹ, Orí, Ìwà"
+
+      - label: "Pronuncia"
+        name: "pronuncia"
+        widget: "string"
+        required: false
+        hint: "Es: ah-SHEH"
+
+      - label: "Traduzione Breve"
+        name: "traduzione"
+        widget: "string"
+        required: true
+        hint: "Traduzione in 2-5 parole"
+
+      - label: "Spiegazione Completa"
+        name: "body"
+        widget: "markdown"
+        required: true
+
+      - label: "Categoria"
+        name: "categoria"
+        widget: "select"
+        options:
+          - { label: "Concetti Spirituali", value: "spirituale" }
+          - { label: "Òrìṣà", value: "orisa" }
+          - { label: "Rituali", value: "rituali" }
+          - { label: "Natura e Piante", value: "natura" }
+          - { label: "Vita Quotidiana", value: "quotidiano" }
+        required: true
+
+  # --------------------------------------------
+  # ÒRÌṢÀ
+  # --------------------------------------------
+  - name: "orisa"
+    label: "🙏 Òrìṣà"
+    folder: "orisa"
+    create: true
+    slug: "{{slug}}"
+    identifier_field: "nome"
+    summary: "{{nome}} - {{dominio}}"
+    fields:
+      - label: "Nome"
+        name: "nome"
+        widget: "string"
+        required: true
+        hint: "Es: Obàtálá, Ṣàngó, Yemọja"
+
+      - label: "Altri Nomi"
+        name: "altri_nomi"
+        widget: "list"
+        required: false
+        hint: "Nomi alternativi o epiteti"
+
+      - label: "Dominio"
+        name: "dominio"
+        widget: "string"
+        required: true
+        hint: "Es: Creazione, Saggezza, Purezza"
+
+      - label: "Colori Sacri"
+        name: "colori"
+        widget: "list"
+        required: false
+        hint: "Es: Bianco, Argento"
+
+      - label: "Elementi"
+        name: "elementi"
+        widget: "list"
+        required: false
+        hint: "Es: Acqua, Montagna, Fulmine"
+
+      - label: "Giorno"
+        name: "giorno"
+        widget: "string"
+        required: false
+        hint: "Giorno della settimana associato"
+
+      - label: "Numero"
+        name: "numero"
+        widget: "number"
+        required: false
+        hint: "Numero sacro"
+
+      - label: "Immagine"
+        name: "immagine"
+        widget: "image"
+        required: false
+
+      - label: "Descrizione SEO"
+        name: "description"
+        widget: "text"
+        required: true
+        hint: "Per i motori di ricerca (150-160 caratteri)"
+
+      - label: "Contenuto"
+        name: "body"
+        widget: "markdown"
+        required: true
+        hint: "Descrizione completa, storia, caratteristiche"
+
+      - label: "Ordine Visualizzazione"
+        name: "ordine"
+        widget: "number"
+        default: 99
+        hint: "Numero più basso = appare prima"
