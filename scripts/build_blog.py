@@ -135,10 +135,15 @@ def build_article(md_file, template):
     # Prepara i dati
     title = metadata.get('title', 'Senza titolo')
     date = metadata.get('date', datetime.now().strftime("%Y-%m-%d"))
-    if isinstance(date, datetime):
-        date_str = date.strftime("%Y-%m-%d")
+    tags = metadata.get('tags', [])
+    if isinstance(tags, str):
+        tags = [t.strip() for t in tags.split(',')]
     else:
-        date_str = str(date)
+        # Gestisce il caso Sveltia: lista con un singolo elemento separato da virgole
+        expanded = []
+        for tag in tags:
+            expanded.extend([t.strip() for t in str(tag).split(',')])
+        tags = [t for t in expanded if t]
     
     category_key = metadata.get('category', 'riflessioni')
     category_display = CATEGORIE.get(category_key, category_key.title())
