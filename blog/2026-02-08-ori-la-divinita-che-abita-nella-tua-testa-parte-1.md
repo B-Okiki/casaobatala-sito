@@ -1,5 +1,5 @@
 ---
-title: '# Orí: La Divinità che Abita nella Tua Testa (parte 1)'
+title: 'Orí: La Divinità che Abita nella Tua Testa (parte 1)'
 date: 2026-02-08
 published: false
 image: ''
