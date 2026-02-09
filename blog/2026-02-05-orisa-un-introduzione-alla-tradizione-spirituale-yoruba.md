@@ -1,8 +1,8 @@
 ---
 title: 'Òrìṣà: Un’Introduzione alla Tradizione Spirituale Yorùbá'
 date: 2026-02-05
-published: false
-image: /images/blog/www.nano-banana-ai.studio-1770627290928.png
+published: true
+image: /images/blog/egungun_1200x630.png
 image_alt: culto egungun in nigeria, culto ancestrale e dinastico, fa parte della tradizione del culto del orisa in nigeria
 category: yoruba
 tags:
