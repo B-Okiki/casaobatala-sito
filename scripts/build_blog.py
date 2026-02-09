@@ -139,6 +139,11 @@ def build_article(md_file, template):
     if isinstance(tags, str):
         tags = [t.strip() for t in tags.split(',')]
     else:
+        expanded = []
+        for tag in tags:
+            expanded.extend([t.strip() for t in str(tag).split(',')])
+        tags = [t for t in expanded if t]
+    else:
         # Gestisce il caso Sveltia: lista con un singolo elemento separato da virgole
         expanded = []
         for tag in tags:
@@ -177,17 +182,12 @@ def build_article(md_file, template):
         '{{ALT_IMMAGINE}}': image_alt,
         '{{DIDASCALIA_IMMAGINE}}': '',
         '{{TAGS_SEPARATI_DA_VIRGOLA}}': ', '.join(tags) if tags else '',
+        '{{TAGS_HTML}}': ' '.join([f'<a href="/blog.html?tag={tag}" class="tag">{tag}</a>' for tag in tags]) if tags else '',
     }
     
     for placeholder, value in replacements.items():
         html = html.replace(placeholder, value)
-    
-    # Tags singoli
-    for i, tag in enumerate(tags[:3], 1):
-        html = html.replace(f'{{{{TAG{i}}}}}', tag)
-    
-    # Rimuovi placeholder tag non usati
-    html = re.sub(r'\{\{TAG\d+\}\}', '', html)
+
     
     # Sostituisci il contenuto principale
     # Trova la sezione del contenuto e sostituiscila
