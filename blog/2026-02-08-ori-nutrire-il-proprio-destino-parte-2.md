@@ -1,5 +1,5 @@
 ---
-title: '# Orí: Nutrire il Proprio Destino (parte 2)'
+title: 'Orí: Nutrire il Proprio Destino (parte 2)'
 date: 2026-02-08
 published: false
 image: ''
