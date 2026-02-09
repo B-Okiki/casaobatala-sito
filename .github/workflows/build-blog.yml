@@ -37,7 +37,7 @@ jobs:
       # 3. Installa dipendenze
       - name: Install dependencies
         run: |
-          pip install pyyaml
+          pip install -r requirements.txt
       
       # 4. Esegui lo script di build
       - name: Build blog articles
