@@ -117,6 +117,17 @@ def format_date_italian(date_obj):
         date_obj = datetime.strptime(date_obj, "%Y-%m-%d")
     return f"{date_obj.day} {mesi[date_obj.month]} {date_obj.year}"
 
+def parse_tags(raw_tags):
+    """Normalizza i tag: gestisce sia stringhe che liste con elementi separati da virgola."""
+    if isinstance(raw_tags, str):
+        return [t.strip() for t in raw_tags.split(',') if t.strip()]
+    elif isinstance(raw_tags, list):
+        expanded = []
+        for tag in raw_tags:
+            expanded.extend([t.strip() for t in str(tag).split(',')])
+        return [t for t in expanded if t]
+    return []
+
 def build_article(md_file, template):
     """Costruisce l'HTML di un articolo dal file markdown."""
     with open(md_file, 'r', encoding='utf-8') as f:
@@ -135,20 +146,10 @@ def build_article(md_file, template):
     # Prepara i dati
     title = metadata.get('title', 'Senza titolo')
     date = metadata.get('date', datetime.now().strftime("%Y-%m-%d"))
-    tags = metadata.get('tags', [])
-    if isinstance(tags, str):
-        tags = [t.strip() for t in tags.split(',')]
+    if isinstance(date, datetime):
+        date_str = date.strftime("%Y-%m-%d")
     else:
-        expanded = []
-        for tag in tags:
-            expanded.extend([t.strip() for t in str(tag).split(',')])
-        tags = [t for t in expanded if t]
-    else:
-        # Gestisce il caso Sveltia: lista con un singolo elemento separato da virgole
-        expanded = []
-        for tag in tags:
-            expanded.extend([t.strip() for t in str(tag).split(',')])
-        tags = [t for t in expanded if t]
+        date_str = str(date)
     
     category_key = metadata.get('category', 'riflessioni')
     category_display = CATEGORIE.get(category_key, category_key.title())
@@ -156,9 +157,7 @@ def build_article(md_file, template):
     description = metadata.get('description', '')
     image = metadata.get('image', '')
     image_alt = metadata.get('image_alt', title)
-    tags = metadata.get('tags', [])
-    if isinstance(tags, str):
-        tags = [t.strip() for t in tags.split(',')]
+    tags = parse_tags(metadata.get('tags', []))
     
     # Slug dal nome file
     slug = Path(md_file).stem
@@ -187,7 +186,6 @@ def build_article(md_file, template):
     
     for placeholder, value in replacements.items():
         html = html.replace(placeholder, value)
-
     
     # Sostituisci il contenuto principale
     # Trova la sezione del contenuto e sostituiscila
