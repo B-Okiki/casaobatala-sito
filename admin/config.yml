@@ -75,7 +75,7 @@ collections:
       - label: "Pubblicato"
         name: "published"
         widget: "boolean"
-        default: false
+        default: true
         hint: "Attiva per rendere l'articolo visibile sul sito"
 
       # Immagine di copertina
