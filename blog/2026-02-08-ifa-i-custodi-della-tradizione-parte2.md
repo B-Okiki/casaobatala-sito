@@ -1,5 +1,5 @@
 ---
-title: '#Ifá: I Custodi della Tradizione (parte2)'
+title: 'Ifá: I Custodi della Tradizione (parte2)'
 date: 2026-02-08
 published: false
 image: ''
@@ -34,7 +34,6 @@ Prima di parlare delle iniziazioni, è necessario comprendere una figura central
 Questa distinzione genera \*\*due forme di iniziazione a Ifá\*\*, con funzioni molto diverse:
 
 - \*\*Ìtẹ̀lódù\*\* — L'iniziazione completa, durante la quale Ìyá Odù è presente. Solo gli uomini possono ricevere questa forma di iniziazione. Chi riceve Ìtẹ̀lódù può praticare come Babaláwo, ovvero consultare Ifá per altre persone.
-
 - \*\*Ìtẹfá\*\* — L'iniziazione senza la presenza di Ìyá Odù. Chi riceve Ìtẹfá è iniziato a Ifá ma non pratica come Babaláwo: consulta Ifá esclusivamente per il proprio benessere personale, non per altri.
 
 ### Babaláwo, Ìyánífá e Babalórìṣà: Distinzioni Fondamentali
@@ -114,11 +113,8 @@ In \*\*Brasile\*\*, il Candomblé incorporò elementi di Ifá, pur sviluppando p
 Queste tradizioni della diaspora sono percorsi spirituali legittimi con milioni di praticanti. Tuttavia, presentano differenze significative rispetto alla tradizione Yorùbá originaria:
 
 - La \*\*terminologia\*\* varia (Orixá in Brasile, Orisha a Cuba, Òrìṣà in Nigeria)
-
 - Le \*\*pratiche rituali\*\* si sono adattate ai contesti locali
-
 - Il \*\*sincretismo\*\* con il cattolicesimo ha introdotto elementi estranei alla tradizione africana
-
 - La \*\*trasmissione\*\* è avvenuta in condizioni di oppressione che hanno inevitabilmente causato perdite e trasformazioni
 
 Questo blog si concentra sulla tradizione Yorùbá nella sua forma originaria, come praticata nella terra d'origine. Non per sminuire le tradizioni della diaspora, ma per offrire un punto di riferimento a chi desidera conoscere la fonte.
@@ -132,36 +128,27 @@ Wande Abímbọ́lá lo riassume così: "Ifá offre chiarezza nei momenti di dis
 Ma c'è di più. Ifá insegna che:
 
 - \*\*Il destino esiste\*\*, ma non è una prigione. Attraverso il buon carattere (\*ìwà pẹ̀lẹ̀\*), il sacrificio (\*ẹbọ\*), e l'allineamento con il proprio Orí, è possibile realizzare il meglio del proprio potenziale.
-
 - \*\*La conoscenza è sacra\*\*, e accessibile. Ifá non è un sistema esoterico riservato a pochi iniziati: è una guida pratica per vivere bene, aperta a chiunque si avvicini con rispetto.
-
 - \*\*L'etica non è separata dalla spiritualità\*\*. Come recita un verso fondamentale: \*"Ìwà l'ẹ̀ṣin"\* — "Il carattere è la religione." Nessun rituale può sostituire la rettitudine.
-
 - \*\*L'individuo e la comunità sono interconnessi\*\*. Ifá non promette salvezza individuale a scapito degli altri: il benessere personale è legato al benessere della famiglia, della comunità, del mondo.
 
 In un'epoca di incertezza globale, questi insegnamenti — codificati millenni fa nella terra Yorùbá — continuano a offrire orientamento. Come disse il professor Abímbọ́lá al Parlamento delle Religioni del Mondo nel 2021: Ifá offre soluzioni a "guerra, carestia, depressione economica, malattia, ansia e problemi di salute mentale." Non è magia: è saggezza accumulata attraverso generazioni di osservazione della condizione umana.
 
 E questa saggezza attende chiunque sia pronto ad ascoltare.
 
----
+***
 
 \*\*Fonti e riferimenti:\*\*
 
 - UNESCO. "Ifa Divination System." Intangible Cultural Heritage, 2005.
-
 - Baba Ifaloba, Babaláwo e Babalórìṣà, tradizione di Ọ̀yọ́, tempio Orixa Aje Ifa (Bari/Zeme). Insegnamenti orali.
-
 - Abímbọ́lá, Wande. \*Ifá: An Exposition of Ifá Literary Corpus\*. Oxford University Press, 1977.
-
 - Abímbọ́lá, Wande. \*Ifá Divination: Communication Between Gods and Men in West Africa\*. Oxford University Press, 1976.
-
 - Bascom, William. \*Sixteen Cowries: Yoruba Divination from Africa to the New World\*. Indiana University Press, 1993.
-
 - Olúpọ̀nà, Jacob K. \*City of 201 Gods: Ilé-Ifẹ̀ in Time, Space, and the Imagination\*. University of California Press, 2011.
-
 - Olúwọlé, Sophie. \*Socrates and Orunmila: Two Patron Saints of Classical Philosophy\*. Ark Publishers, 2014.
 
----
+***
 
 \*\*© 2026 Lorenzo Okìkí Rossi / Casa Obàtálá\*\*
 
