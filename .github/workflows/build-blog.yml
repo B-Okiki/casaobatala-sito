@@ -27,11 +27,12 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
       
-      # 2. Installa Python
+      # 2. Installa Python con cache pip
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
+          cache: 'pip'
       
       # 3. Installa dipendenze
       - name: Install dependencies
