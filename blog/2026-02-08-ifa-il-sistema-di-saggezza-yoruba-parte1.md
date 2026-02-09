@@ -1,5 +1,5 @@
 ---
-title: '# Ifá: Il Sistema di Saggezza Yorùbá (parte1)'
+title: 'Ifá: Il Sistema di Saggezza Yorùbá (parte1)'
 date: 2026-02-08
 published: false
 image: ''
