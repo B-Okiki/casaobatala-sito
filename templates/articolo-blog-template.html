@@ -16,9 +16,7 @@
     <meta name="theme-color" content="#8B4513">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- ============================================
-         SEO - MODIFICA QUESTI CAMPI PER OGNI ARTICOLO
-         ============================================ -->
+    <!-- SEO -->
     <title>{{TITOLO_ARTICOLO}} | Blog Casa Obàtálá</title>
     <meta name="description" content="{{DESCRIZIONE_SEO}}">
     <meta name="keywords" content="{{TAGS_SEPARATI_DA_VIRGOLA}}">
@@ -90,7 +88,7 @@
         
         /* Navigation */
         nav { position: fixed; top: 0; width: 100%; padding: 1rem 1.2rem; z-index: 1000; display: flex; justify-content: space-between; align-items: center; background: rgba(255,255,255,0.98); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(139,69,19,0.1); }
-        .logo { font-family: 'Playfair Display', serif;text-decoration: none; font-size: 1.2rem; background: linear-gradient(135deg, #8B4513, #B8860B); -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-decoration: none; }
+        .logo { font-family: 'Playfair Display', serif; text-decoration: none; font-size: 1.2rem; background: linear-gradient(135deg, #8B4513, #B8860B); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
         .nav-links { display: none; gap: 2rem; list-style: none; }
         .nav-links a { color: #1a1a1a; text-decoration: none; font-size: 0.85rem; text-transform: uppercase; transition: color 0.3s; }
         .nav-links a:hover { color: #8B4513; }
@@ -125,6 +123,7 @@
         .article-content img { max-width: 100%; height: auto; border-radius: 12px; margin: 2rem 0; }
         .article-content strong { color: #8B4513; }
         .article-content em { color: #6b5d4f; }
+        .article-content hr { border: none; border-top: 1px solid rgba(139,69,19,0.15); margin: 3rem 0; }
 
         /* Highlight Box */
         .highlight-box { background: linear-gradient(135deg, rgba(139,69,19,0.06), rgba(184,134,11,0.06)); border: 1px solid rgba(184,134,11,0.2); border-radius: 12px; padding: 2rem; margin: 2.5rem 0; }
@@ -239,38 +238,14 @@
         <!-- Contenuto Articolo -->
         <div class="article-content">
             
-            <!-- ============================================
-                 QUI VA IL CONTENUTO DELL'ARTICOLO
-                 ============================================ -->
-            
-            <p>{{PARAGRAFO_INTRODUTTIVO}}</p>
-
-            <h2>{{TITOLO_SEZIONE_1}}</h2>
-            <p>{{CONTENUTO_SEZIONE_1}}</p>
-
-            <blockquote>
-                "{{CITAZIONE_YORUBA}}"
-                <br><small>— {{FONTE_CITAZIONE}}</small>
-            </blockquote>
-
-            <h2>{{TITOLO_SEZIONE_2}}</h2>
-            <p>{{CONTENUTO_SEZIONE_2}}</p>
-
-            <div class="highlight-box">
-                <p><strong>💡 Da ricordare:</strong></p>
-                <p>{{PUNTO_CHIAVE}}</p>
-            </div>
-
-            <h2>{{TITOLO_SEZIONE_3}}</h2>
-            <p>{{CONTENUTO_SEZIONE_3}}</p>
-
-            <!-- Fine contenuto -->
+            <!-- CONTENT_START -->
+            <!-- CONTENT_END -->
 
             <!-- Tags -->
-           <div class="article-tags">
-               <span>🏷️ Tags:</span>
-               {{TAGS_HTML}}
-           </div>
+            <div class="article-tags">
+                <span>🏷️ Tags:</span>
+                {{TAGS_HTML}}
+            </div>
 
             <!-- Author Box -->
             <div class="author-box">
@@ -318,7 +293,7 @@
     </div>
 
     <footer>
-        <p>© 2026 CASA OBÀTÁLÁ - LORENZO Okìkí ROSSI - C.F. RSSLNZ76A21H501K</p>
+        <p>© 2026 CASA OBÀTÁLÁ - LORENZO OKÌKÍ ROSSI - C.F. RSSLNZ76A21H501K</p>
         <p style="margin-top: 0.5rem;"><a href="/privacy-policy.html">Privacy Policy</a> | <a href="/cookie-policy.html">Cookie Policy</a></p>
     </footer>
 
