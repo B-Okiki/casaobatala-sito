@@ -136,6 +136,21 @@
         .tag { display: inline-block; background: rgba(139,69,19,0.08); color: #8B4513; padding: 0.4rem 1rem; border-radius: 20px; font-size: 0.8rem; text-decoration: none; transition: all 0.3s; }
         .tag:hover { background: #8B4513; color: white; }
 
+        /* Share Buttons */
+        .share-section { margin-top: 2.5rem; padding-top: 2rem; border-top: 1px solid rgba(139,69,19,0.15); }
+        .share-section h4 { font-family: 'Playfair Display', serif; font-size: 1.1rem; color: #8B4513; margin-bottom: 1rem; font-weight: 400; }
+        .share-buttons { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+        .share-btn { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.5rem 1rem; border-radius: 25px; font-size: 0.8rem; text-decoration: none; transition: all 0.3s; border: none; cursor: pointer; font-family: 'Inter', sans-serif; }
+        .share-btn:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
+        .share-btn.whatsapp { background: #25D366; color: white; }
+        .share-btn.telegram { background: #0088cc; color: white; }
+        .share-btn.facebook { background: #1877F2; color: white; }
+        .share-btn.twitter { background: #1a1a1a; color: white; }
+        .share-btn.linkedin { background: #0A66C2; color: white; }
+        .share-btn.email { background: rgba(139,69,19,0.1); color: #8B4513; }
+        .share-btn.copy-link { background: rgba(139,69,19,0.08); color: #8B4513; }
+        .share-btn.copy-link.copied { background: #25D366; color: white; }
+
         /* Author Box */
         .author-box { display: flex; gap: 1.5rem; align-items: center; background: #fff; border: 1px solid rgba(139,69,19,0.15); border-radius: 16px; padding: 2rem; margin-top: 3rem; box-shadow: 0 4px 20px rgba(139,69,19,0.08); }
         .author-avatar { width: 80px; height: 80px; border-radius: 50%; background: linear-gradient(135deg, #8B4513, #B8860B); display: flex; align-items: center; justify-content: center; color: white; font-family: 'Playfair Display', serif; font-size: 2rem; flex-shrink: 0; }
@@ -247,6 +262,20 @@
                 {{TAGS_HTML}}
             </div>
 
+            <!-- Condividi -->
+            <div class="share-section">
+                <h4>📤 Condividi questo articolo</h4>
+                <div class="share-buttons">
+                    <a href="https://api.whatsapp.com/send?text={{TITOLO_ENCODED}}%20{{URL_ARTICOLO}}" target="_blank" rel="noopener" class="share-btn whatsapp" aria-label="Condividi su WhatsApp">WhatsApp</a>
+                    <a href="https://t.me/share/url?url={{URL_ARTICOLO}}&text={{TITOLO_ENCODED}}" target="_blank" rel="noopener" class="share-btn telegram" aria-label="Condividi su Telegram">Telegram</a>
+                    <a href="https://www.facebook.com/sharer/sharer.php?u={{URL_ARTICOLO}}" target="_blank" rel="noopener" class="share-btn facebook" aria-label="Condividi su Facebook">Facebook</a>
+                    <a href="https://twitter.com/intent/tweet?url={{URL_ARTICOLO}}&text={{TITOLO_ENCODED}}" target="_blank" rel="noopener" class="share-btn twitter" aria-label="Condividi su X">X</a>
+                    <a href="https://www.linkedin.com/sharing/share-offsite/?url={{URL_ARTICOLO}}" target="_blank" rel="noopener" class="share-btn linkedin" aria-label="Condividi su LinkedIn">LinkedIn</a>
+                    <a href="mailto:?subject={{TITOLO_ENCODED}}&body=Leggi%20questo%20articolo:%20{{URL_ARTICOLO}}" class="share-btn email" aria-label="Invia per email">✉️ Email</a>
+                    <button onclick="copyLink()" class="share-btn copy-link" id="copyLinkBtn" aria-label="Copia link">🔗 Copia link</button>
+                </div>
+            </div>
+
             <!-- Author Box -->
             <div class="author-box">
                 <div class="author-avatar">L</div>
@@ -299,6 +328,14 @@
 
     <script>
     function toggleMenu(){document.getElementById('mobileMenu').classList.toggle('active')}
+    function copyLink(){
+        navigator.clipboard.writeText(window.location.href).then(function(){
+            var btn=document.getElementById('copyLinkBtn');
+            btn.textContent='✅ Copiato!';
+            btn.classList.add('copied');
+            setTimeout(function(){btn.textContent='🔗 Copia link';btn.classList.remove('copied');},2000);
+        });
+    }
     </script>
 </body>
 </html>
