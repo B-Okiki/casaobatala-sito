@@ -26,7 +26,7 @@
   </url>
   <url>
     <loc>https://casaobatala.it/blog.html</loc>
-    <lastmod>2026-02-06</lastmod>
+    <lastmod>2026-02-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -83,5 +83,11 @@
     <lastmod>2026-01-29</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://casaobatala.it/blog/2026-02-05-orisa-un-introduzione-alla-tradizione-spirituale-yoruba.html</loc>
+    <lastmod>2026-02-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
 </urlset>
