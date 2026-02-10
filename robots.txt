@@ -3,6 +3,7 @@
 
 User-agent: *
 Allow: /
+Disallow: /admin/
 
 # Sitemap
 Sitemap: https://casaobatala.it/sitemap.xml
