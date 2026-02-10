@@ -16,6 +16,7 @@ Changelog rispetto alla versione originale:
 - Fix: reading time calcolato su testo pulito
 - Miglioramento: marker contenuto dedicati con fallback a cascata
 - Miglioramento: log errori YAML
+- Miglioramento: generazione automatica sitemap.xml con articoli pubblicati
 """
 
 import os
@@ -29,6 +30,8 @@ from urllib.parse import quote
 BLOG_FOLDER = "blog"
 TEMPLATE_FILE = "templates/articolo-blog-template.html"
 OUTPUT_FOLDER = "blog"
+SITEMAP_FILE = "sitemap.xml"
+SITE_URL = "https://casaobatala.it"
 
 # Marker per il template
 CONTENT_MARKER_START = "<!-- CONTENT_START -->"
@@ -298,6 +301,8 @@ def build_article(md_file, template):
          for tag in tags if tag]
     )
 
+    title_encoded = quote(title)
+
     html = template
 
     replacements = {
@@ -313,6 +318,8 @@ def build_article(md_file, template):
         '{{DIDASCALIA_IMMAGINE}}': '',
         '{{TAGS_SEPARATI_DA_VIRGOLA}}': ', '.join(tags) if tags else '',
         '{{TAGS_HTML}}': tags_html,
+        '{{URL_ARTICOLO}}': f'{SITE_URL}/blog/{slug}.html',
+        '{{TITOLO_ENCODED}}': title_encoded,
     }
 
     for placeholder, value in replacements.items():
@@ -428,6 +435,87 @@ def update_blog_index(articles):
 
 
 # ============================================
+# SITEMAP
+# ============================================
+
+# Pagine statiche con priorità e frequenza di aggiornamento.
+# Modifica qui se aggiungi nuove pagine al sito.
+STATIC_PAGES = [
+    {"loc": "/",                                    "changefreq": "monthly",  "priority": "1.0"},
+    {"loc": "/meditazione.html",                    "changefreq": "monthly",  "priority": "0.9"},
+    {"loc": "/piante.html",                         "changefreq": "monthly",  "priority": "0.9"},
+    {"loc": "/glossario.html",                      "changefreq": "monthly",  "priority": "0.8"},
+    {"loc": "/blog.html",                           "changefreq": "weekly",   "priority": "0.8"},
+    {"loc": "/calendario.html",                     "changefreq": "monthly",  "priority": "0.9"},
+    {"loc": "/calendario/",                         "changefreq": "monthly",  "priority": "0.8"},
+    {"loc": "/chi-sono.html",                       "changefreq": "monthly",  "priority": "0.8"},
+    {"loc": "/eventi.html",                         "changefreq": "weekly",   "priority": "0.7"},
+    {"loc": "/contatti.html",                       "changefreq": "monthly",  "priority": "0.8"},
+    {"loc": "/privacy-policy.html",                 "changefreq": "yearly",   "priority": "0.3"},
+    {"loc": "/cookie-policy.html",                  "changefreq": "yearly",   "priority": "0.3"},
+    {"loc": "/calendario/privacy-policy-app.html",  "changefreq": "yearly",   "priority": "0.3"},
+    {"loc": "/calendario/termini-utilizzo-app.html","changefreq": "yearly",   "priority": "0.3"},
+]
+
+
+def update_sitemap(articles):
+    """Rigenera sitemap.xml con le pagine statiche e tutti gli articoli pubblicati."""
+    today = datetime.now().strftime("%Y-%m-%d")
+
+    xml_lines = [
+        '<?xml version="1.0" encoding="UTF-8"?>',
+        '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
+    ]
+
+    # Pagine statiche
+    for page in STATIC_PAGES:
+        # blog.html usa la data di oggi (viene aggiornato ad ogni build)
+        if page["loc"] == "/blog.html":
+            lastmod = today
+        else:
+            lastmod = _get_existing_lastmod(page["loc"]) or today
+        xml_lines.append(f"""  <url>
+    <loc>{SITE_URL}{page["loc"]}</loc>
+    <lastmod>{lastmod}</lastmod>
+    <changefreq>{page["changefreq"]}</changefreq>
+    <priority>{page["priority"]}</priority>
+  </url>""")
+
+    # Articoli blog
+    for article in sorted(articles, key=lambda x: x['date'], reverse=True):
+        xml_lines.append(f"""  <url>
+    <loc>{SITE_URL}/blog/{article['slug']}.html</loc>
+    <lastmod>{article['date']}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>""")
+
+    xml_lines.append('</urlset>')
+
+    with open(SITEMAP_FILE, 'w', encoding='utf-8') as f:
+        f.write('\n'.join(xml_lines) + '\n')
+
+    total = len(STATIC_PAGES) + len(articles)
+    print(f"  ✅ sitemap.xml aggiornata ({total} URL: {len(STATIC_PAGES)} pagine + {len(articles)} articoli)")
+
+
+def _get_existing_lastmod(loc):
+    """Legge la lastmod attuale dalla sitemap esistente per una pagina statica,
+    così da non sovrascrivere date già corrette."""
+    if not os.path.exists(SITEMAP_FILE):
+        return None
+    try:
+        with open(SITEMAP_FILE, 'r', encoding='utf-8') as f:
+            content = f.read()
+        # Cerca il blocco <url> che contiene questo loc
+        pattern = rf'<url>\s*<loc>{re.escape(SITE_URL + loc)}</loc>\s*<lastmod>(\d{{4}}-\d{{2}}-\d{{2}})</lastmod>'
+        match = re.search(pattern, content)
+        return match.group(1) if match else None
+    except Exception:
+        return None
+
+
+# ============================================
 # MAIN
 # ============================================
 
@@ -481,6 +569,9 @@ def main():
 
     print(f"\n📋 Aggiorno indice blog...")
     update_blog_index(articles)
+
+    print(f"\n🗺️  Aggiorno sitemap...")
+    update_sitemap(articles)
 
     print(f"\n✨ Build completata! ({len(articles)} articoli pubblicati)")
 
