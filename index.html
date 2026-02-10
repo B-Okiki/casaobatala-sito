@@ -190,8 +190,8 @@
         .mobile-menu.active { display: block; }
         .mobile-menu a { display: block; padding: 0.9rem 0; color: #1a1a1a; text-decoration: none; font-size: 1rem; border-bottom: 1px solid rgba(139,69,19,0.08); }
         .mobile-menu a:last-child { border-bottom: none; }
-        .hero { height: 100vh; min-height: 500px; display: flex; align-items: center; justify-content: center; position: relative; background: linear-gradient(135deg, #ffffff 0%, #f8f6f3 100%); overflow: hidden; }
-        .hero::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(139,69,19,0.06) 0%, transparent 70%); animation: rotate 25s linear infinite; pointer-events: none; }
+        .hero { height: 70vh; min-height: 400px; display: flex; align-items: center; justify-content: center; position: relative; background: linear-gradient(135deg, #faf8f5 0%, #f0ebe4 100%); overflow: hidden; }
+        .hero::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(139,69,19,0.08) 0%, rgba(184,134,11,0.04) 40%, transparent 70%); animation: rotate 25s linear infinite; pointer-events: none; }
         @keyframes rotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
         .hero-content { text-align: center; z-index: 2; padding: 1.5rem; width: 100%; max-width: 100%; }
         h1 { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 8vw, 5rem); font-weight: 300; margin-bottom: 1rem; background: linear-gradient(135deg, #1a1a1a 0%, #8B4513 50%, #B8860B 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; animation: fadeInUp 1.2s ease-out; line-height: 1.2; word-wrap: break-word; }
@@ -207,9 +207,19 @@
         .card { background: #fff; border: 1px solid rgba(139,69,19,0.12); border-radius: 12px; padding: 1.5rem; text-decoration: none; color: inherit; display: block; transition: transform 0.3s, box-shadow 0.3s; }
         .card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(139,69,19,0.1); }
         .card-icon { font-size: 2.5rem; margin-bottom: 1rem; }
+        .card-icon img { width: 56px; height: 56px; object-fit: contain; }
         .card h3 { font-family: 'Playfair Display', serif; font-size: 1.4rem; margin-bottom: 0.6rem; color: #1a1a1a; }
         .card p { color: #6b5d4f; line-height: 1.6; font-size: 0.9rem; }
         .card-badge { display: inline-block; background: linear-gradient(135deg, #B8860B, #DAA520); color: white; font-size: 0.65rem; padding: 0.2rem 0.5rem; border-radius: 10px; margin-bottom: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; }
+        /* News Section */
+        .news-section { max-width: 800px; margin: 0 auto 2rem; padding: 0 1rem; }
+        .news-card { background: #fff; border: 1px solid rgba(139,69,19,0.15); border-radius: 16px; padding: 2rem; position: relative; overflow: hidden; text-decoration: none; color: inherit; display: block; transition: transform 0.3s, box-shadow 0.3s; }
+        .news-card:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(139,69,19,0.12); }
+        .news-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(135deg, #8B4513, #B8860B); }
+        .news-label { display: inline-block; font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; color: #B8860B; font-weight: 500; margin-bottom: 0.6rem; }
+        .news-card h3 { font-family: 'Playfair Display', serif; font-size: 1.3rem; color: #1a1a1a; margin-bottom: 0.5rem; font-weight: 400; }
+        .news-card p { color: #6b5d4f; font-size: 0.9rem; line-height: 1.6; margin-bottom: 0.8rem; }
+        .news-date { font-size: 0.75rem; color: #8B4513; }
         footer { text-align: center; padding: 2rem 1rem; background: #f8f6f3; border-top: 1px solid rgba(139,69,19,0.1); }
         footer p { color: #6b5d4f; font-size: 0.8rem; line-height: 1.7; }
         footer a { color: #6b5d4f; }
@@ -240,8 +250,8 @@
         .cookie-option p { font-size: 0.8rem; color: #666; margin: 0; line-height: 1.4; }
         .modal-footer { display: flex; gap: 0.5rem; justify-content: flex-end; margin-top: 1rem; }
         @media (min-width: 600px) { .grid { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; } }
-        @media (min-width: 768px) { nav { padding: 1.2rem 2rem; } .logo { font-size: 1.4rem; } .section { padding: 4rem 2rem; } .card { padding: 2rem; } .card h3 { font-size: 1.5rem; } }
-        @media (min-width: 1024px) { nav { padding: 1.5rem 3rem; } .logo { font-size: 1.5rem; letter-spacing: 0.12em; } .menu-toggle { display: none; } .nav-links { display: flex; } .section { padding: 5rem 3rem; } .section-subtitle { font-size: 1rem; margin-bottom: 3rem; } .grid { grid-template-columns: repeat(3, 1fr); gap: 2rem; } .card { padding: 2.5rem; border-radius: 16px; } .card-icon { font-size: 3rem; } .card h3 { font-size: 1.6rem; } .card p { font-size: 0.95rem; } footer { padding: 3rem 2rem; } footer p { font-size: 0.85rem; } }
+        @media (min-width: 768px) { nav { padding: 1.2rem 2rem; } .logo { font-size: 1.4rem; } .section { padding: 4rem 2rem; } .card { padding: 2rem; } .card h3 { font-size: 1.5rem; } .hero { height: 75vh; } .card-icon img { width: 64px; height: 64px; } }
+        @media (min-width: 1024px) { nav { padding: 1.5rem 3rem; } .logo { font-size: 1.5rem; letter-spacing: 0.12em; } .menu-toggle { display: none; } .nav-links { display: flex; } .section { padding: 5rem 3rem; } .section-subtitle { font-size: 1rem; margin-bottom: 3rem; } .grid { grid-template-columns: repeat(4, 1fr); gap: 2rem; } .card { padding: 2.5rem; border-radius: 16px; } .card-icon { font-size: 3rem; } .card-icon img { width: 72px; height: 72px; } .card h3 { font-size: 1.6rem; } .card p { font-size: 0.95rem; } footer { padding: 3rem 2rem; } footer p { font-size: 0.85rem; } .hero { height: 80vh; } }
     </style>
 </head>
 <body>
@@ -281,6 +291,16 @@
     </section>
 
     <section class="section" id="sezioni">
+        <!-- News -->
+        <div class="news-section">
+            <a href="blog.html" class="news-card">
+                <span class="news-label">✦ Novità</span>
+                <h3>Il Blog di Casa Obàtálá è online</h3>
+                <p>Articoli sulla tradizione Yoruba, la meditazione e il cammino spirituale. Nuovi contenuti ogni settimana.</p>
+                <span class="news-date">Scopri gli articoli →</span>
+            </a>
+        </div>
+
         <h2 class="section-title">Esplora</h2>
         <p class="section-subtitle">Scopri il mio cammino</p>
         <div class="grid">
@@ -299,11 +319,16 @@
                 <h3>Glossario Piante</h3>
                 <p>987 piante tra tradizione italiana e saggezza Yoruba.</p>
             </a>
+            <a href="blog.html" class="card">
+                <div class="card-icon">✍️</div>
+                <h3>Blog</h3>
+                <p>Riflessioni sulla tradizione Yoruba, la meditazione e il cammino spirituale.</p>
+            </a>
             <a href="calendario.html" class="card">
                 <div class="card-badge">Gratis per un periodo limitato</div>
                 <div class="card-icon">📅</div>
-                <h3>Calendario Yorùbá</h3>
-                <p>I giorni sacri degli Òrìṣà. La settimana di 4 giorni della tradizione di Oyo.</p>
+                <h3>App Calendario Yorùbá</h3>
+                <p>Un'app per scoprire i giorni sacri degli Òrìṣà secondo l'antico ciclo di quattro giorni della tradizione di Oyo.</p>
             </a>
             <a href="chi-sono.html" class="card">
                 <div class="card-icon">🙏</div>
