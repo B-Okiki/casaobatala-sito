@@ -51,6 +51,7 @@ jobs:
           git config --local user.name "GitHub Action"
           git add -A
           git diff --staged --quiet || git commit -m "🤖 Auto-build: convert blog articles to HTML"
+          git pull --rebase origin main
           git push
           
       # 6. Svuota cache Cloudflare
