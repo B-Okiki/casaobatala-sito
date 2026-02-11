@@ -52,3 +52,15 @@ jobs:
           git add -A
           git diff --staged --quiet || git commit -m "🤖 Auto-build: convert blog articles to HTML"
           git push
+          
+      # 6. Svuota cache Cloudflare
+      - name: Attendi deploy GitHub Pages
+        run: sleep 30
+
+      - name: Svuota Cache Cloudflare
+        uses: jakejarvis/cloudflare-purge-action@master
+        env:
+          CLOUDFLARE_ZONE: ${{ secrets.CLOUDFLARE_ZONE }}
+          CLOUDFLARE_TOKEN: ${{ secrets.CLOUDFLARE:TOKEN }}
+
+        
