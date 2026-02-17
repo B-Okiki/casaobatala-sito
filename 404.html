@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="/favicon.ico" sizes="48x48">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <meta name="apple-mobile-web-app-title" content="Casa Obàtálá">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="msapplication-TileColor" content="#8B4513">
+    <meta name="theme-color" content="#8B4513">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Pagina non trovata | Casa Obàtálá</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background: #fafafa; color: #1a1a1a; min-height: 100vh; display: flex; flex-direction: column; }
+        nav { position: fixed; top: 0; width: 100%; padding: 1rem 1.2rem; z-index: 1000; display: flex; justify-content: space-between; align-items: center; background: rgba(255,255,255,0.98); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(139,69,19,0.1); }
+        .logo { font-family: 'Playfair Display', serif; text-decoration: none; font-size: 1.2rem; background: linear-gradient(135deg, #8B4513, #B8860B); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .nav-links { display: none; gap: 2rem; list-style: none; }
+        .nav-links a { color: #1a1a1a; text-decoration: none; font-size: 0.85rem; text-transform: uppercase; transition: color 0.3s; }
+        .nav-links a:hover { color: #8B4513; }
+        .menu-toggle { display: flex; flex-direction: column; cursor: pointer; gap: 5px; }
+        .menu-toggle span { width: 24px; height: 2px; background: #8B4513; }
+        .mobile-menu { display: none; position: fixed; top: 58px; left: 0; right: 0; background: #fff; padding: 1rem; z-index: 999; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .mobile-menu.active { display: block; }
+        .mobile-menu a { display: block; padding: 0.9rem 0; color: #1a1a1a; text-decoration: none; border-bottom: 1px solid rgba(139,69,19,0.08); }
+        .error-container { flex: 1; display: flex; align-items: center; justify-content: center; padding: 2rem 1.5rem; margin-top: 70px; }
+        .error-content { text-align: center; max-width: 600px; }
+        .error-icon { font-size: 5rem; margin-bottom: 2rem; opacity: 0.8; }
+        .error-content h1 { font-family: 'Playfair Display', serif; font-size: clamp(2.5rem, 7vw, 4rem); font-weight: 300; margin-bottom: 1rem; background: linear-gradient(135deg, #1a1a1a 0%, #8B4513 50%, #B8860B 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .error-content p { color: #6b5d4f; font-size: 1.1rem; line-height: 1.8; margin-bottom: 2rem; font-weight: 300; }
+        .error-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; margin-top: 2rem; }
+        .error-link { display: inline-block; padding: 0.9rem 1.8rem; background: linear-gradient(135deg, #8B4513, #A0522D); color: white; text-decoration: none; border-radius: 50px; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.1em; transition: all 0.3s; }
+        .error-link:hover { background: linear-gradient(135deg, #A0522D, #B8860B); transform: translateY(-2px); box-shadow: 0 8px 30px rgba(139,69,19,0.3); }
+        .error-link.secondary { background: transparent; color: #8B4513; border: 1px solid rgba(139,69,19,0.3); }
+        .error-link.secondary:hover { background: rgba(139,69,19,0.05); }
+        .quote { margin-top: 3rem; padding: 1.5rem; background: rgba(139,69,19,0.04); border-radius: 12px; border-left: 3px solid #B8860B; }
+        .quote p { font-style: italic; font-size: 0.95rem; color: #6b5d4f; margin-bottom: 0; }
+        footer { text-align: center; padding: 2rem 1rem; background: #f8f6f3; border-top: 1px solid rgba(139,69,19,0.1); }
+        footer p { color: #6b5d4f; font-size: 0.8rem; line-height: 1.7; }
+        footer a { color: #6b5d4f; }
+        @media (min-width: 768px) { nav { padding: 1.2rem 2rem; } .logo { font-size: 1.4rem; } .error-container { margin-top: 80px; } }
+        @media (min-width: 1024px) { nav { padding: 1.5rem 3rem; } .menu-toggle { display: none; } .nav-links { display: flex; } .error-container { margin-top: 100px; } }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="/" class="logo">CASA OBÀTÁLÁ</a>
+        <div class="menu-toggle" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+        <ul class="nav-links">
+            <li><a href="/">Home</a></li>
+            <li><a href="/meditazione.html">Meditazione</a></li>
+            <li><a href="/piante.html">Piante</a></li>
+            <li><a href="/glossario.html">Glossario Piante</a></li>
+            <li><a href="/blog.html">Blog</a></li>
+            <li><a href="/calendario.html">App Calendario Yoruba</a></li>
+            <li><a href="/eventi.html">Eventi</a></li>
+            <li><a href="/chi-sono.html">Chi Sono</a></li>
+            <li><a href="/contatti.html">Contatti</a></li>
+        </ul>
+    </nav>
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="/">Home</a>
+        <a href="/meditazione.html">Meditazione</a>
+        <a href="/piante.html">Piante</a>
+        <a href="/glossario.html">Glossario Piante</a>
+        <a href="/blog.html">Blog</a>
+        <a href="/calendario.html">App Calendario Yoruba</a>
+        <a href="/eventi.html">Eventi</a>
+        <a href="/chi-sono.html">Chi Sono</a>
+        <a href="/contatti.html">Contatti</a>
+    </div>
+
+    <div class="error-container">
+        <div class="error-content">
+            <div class="error-icon">🌿</div>
+            <h1>Pagina non trovata</h1>
+            <p>Il sentiero che cercavi non esiste, oppure è stato spostato. Capita anche nel cammino spirituale di prendere una strada diversa da quella prevista.</p>
+            <div class="error-links">
+                <a href="/" class="error-link">Torna alla Home</a>
+                <a href="/blog.html" class="error-link secondary">Vai al Blog</a>
+                <a href="/contatti.html" class="error-link secondary">Contattami</a>
+            </div>
+            <div class="quote">
+                <p>"Bí a bá mọ̀ ẹni tí a ń bá lọ, a á mọ bí a ṣe ń rìn"<br>— Se sappiamo con chi stiamo camminando, sapremo come camminare.</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2026 CASA OBÀTÁLÁ - LORENZO OKÌKÍ ROSSI</p>
+        <p style="margin-top: 0.5rem;"><a href="/privacy-policy.html">Privacy Policy</a> | <a href="/cookie-policy.html">Cookie Policy</a></p>
+    </footer>
+    <script>function toggleMenu(){document.getElementById('mobileMenu').classList.toggle('active')}</script>
+</body>
+</html>
