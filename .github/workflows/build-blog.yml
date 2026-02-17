@@ -10,6 +10,7 @@ on:
       - 'templates/*.html'
       - '.github/workflows/build-blog.yml'
       - 'scripts/build_blog.py'
+      - 'scripts/generate_rss.py'
   
   # Permette di lanciarlo manualmente
   workflow_dispatch:
@@ -38,23 +39,41 @@ jobs:
       - name: Install dependencies
         run: |
           pip install -r requirements.txt
+          pip install Pillow
       
       # 4. Esegui lo script di build
       - name: Build blog articles
         run: |
           python scripts/build_blog.py
-      
-      # 5. Committa e pusha le modifiche
+
+      # 5. Genera il feed RSS
+      - name: Generate RSS feed
+        run: |
+          python scripts/generate_rss.py
+
+      # 6. Ottimizza immagini del blog
+      - name: Optimize blog images
+        run: |
+          python scripts/optimize_images.py
+
+      # 7. Controlla link rotti
+      - name: Check broken links
+        run: |
+          python scripts/check_links.py
+        # Non blocca la build — solo avviso nei log
+        # Per bloccarla: python scripts/check_links.py --strict
+
+      # 8. Committa e pusha le modifiche
       - name: Commit and push changes
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add -A
-          git diff --staged --quiet || git commit -m "🤖 Auto-build: convert blog articles to HTML"
+          git diff --staged --quiet || git commit -m "🤖 Auto-build: blog + RSS + image optimization"
           git pull --rebase origin main
           git push
           
-      # 6. Svuota cache Cloudflare
+      # 9. Svuota cache Cloudflare
       - name: Attendi deploy GitHub Pages
         run: sleep 30
 
@@ -64,4 +83,10 @@ jobs:
           CLOUDFLARE_ZONE: ${{ secrets.CLOUDFLARE_ZONE }}
           CLOUDFLARE_TOKEN: ${{ secrets.CLOUDFLARE_TOKEN }}
 
-        
+      # 10. Ping IndexNow a Bing (e altri motori partecipanti)
+      - name: Ping IndexNow
+        if: success()
+        env:
+          INDEXNOW_KEY: ${{ secrets.INDEXNOW_KEY }}
+        run: |
+          python scripts/ping_indexnow.py --changed-only --days 7
