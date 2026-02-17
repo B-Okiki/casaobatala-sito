@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+     xmlns:atom="http://www.w3.org/2005/Atom"
+     xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Casa Obàtálá - Blog</title>
+    <link>https://casaobatala.it</link>
+    <description>Tradizione Yoruba, spiritualità, meditazione e piante sacre. Il blog di Lorenzo Okìkí Rossi.</description>
+    <language>it</language>
+    <lastBuildDate>Tue, 17 Feb 2026 15:41:39 -0000</lastBuildDate>
+    <atom:link href="https://casaobatala.it/feed.xml" rel="self" type="application/rss+xml" />
+    <image>
+      <url>https://casaobatala.it/favicon-96x96.png</url>
+      <title>Casa Obàtálá - Blog</title>
+      <link>https://casaobatala.it</link>
+    </image>
+    <item>
+      <title>Orí: La Divinità che Abita nella Tua Testa (parte 1)</title>
+      <link>https://casaobatala.it/blog/2026-02-08-ori-la-divinita-che-abita-nella-tua-testa-parte-1.html</link>
+      <guid isPermaLink="true">https://casaobatala.it/blog/2026-02-08-ori-la-divinita-che-abita-nella-tua-testa-parte-1.html</guid>
+      <pubDate>Sun, 08 Feb 2026 00:00:00 -0000</pubDate>
+      <description>Cosa è Orí? Scopri la tradizione spirituale Yorùbá: Òrìṣà, Orí, Àṣẹ nella tradizione africana nella sua forma originaria, senza sincretismi.</description>
+      <author>Lorenzo Okìkí Rossi</author>
+      <category>Orì, Orisa, Orisha, Orixa, Ifá, Yoruba, Candomble, Santeria, Umbanda,ifà, afro, afrobrasiliano,cosmologia Yorùbá</category>
+    </item>
+    <item>
+      <title>Ifá: Il Sistema di Saggezza Yorùbá (parte1)</title>
+      <link>https://casaobatala.it/blog/2026-02-08-ifa-il-sistema-di-saggezza-yoruba-parte1.html</link>
+      <guid isPermaLink="true">https://casaobatala.it/blog/2026-02-08-ifa-il-sistema-di-saggezza-yoruba-parte1.html</guid>
+      <pubDate>Sun, 08 Feb 2026 00:00:00 -0000</pubDate>
+      <description>Cosa è Ifá? Scopri la tradizione spirituale Yorùbá: Òrìṣà, Orí, Àṣẹ, Ifá nella tradizione africana nella sua forma originaria, senza sincretismi.</description>
+      <author>Lorenzo Okìkí Rossi</author>
+      <category>Orì, Orisa, Orisha, Orixa, Ifá, Yoruba, Candomble, Santeria, Umbanda,ifà, afro, afrobrasiliano,cosmologia Yorùbá</category>
+    </item>
+    <item>
+      <title>Orí: Nutrire il Proprio Destino (parte 2)</title>
+      <link>https://casaobatala.it/blog/2026-02-08-ori-nutrire-il-proprio-destino-parte-2.html</link>
+      <guid isPermaLink="true">https://casaobatala.it/blog/2026-02-08-ori-nutrire-il-proprio-destino-parte-2.html</guid>
+      <pubDate>Sun, 08 Feb 2026 00:00:00 -0000</pubDate>
+      <description>Cosa è Orí? Scopri la tradizione spirituale Yorùbá: Òrìṣà, Orí, Àṣẹ nella tradizione africana nella sua forma originaria, senza sincretismi.</description>
+      <author>Lorenzo Okìkí Rossi</author>
+      <category>Orì, Orisa, Orisha, Orixa, Ifá, Yoruba, Candomble, Santeria, Umbanda,ifà, afro, afrobrasiliano,cosmologia Yorùbá</category>
+    </item>
+    <item>
+      <title>Ifá: I Custodi della Tradizione (parte2)</title>
+      <link>https://casaobatala.it/blog/2026-02-08-ifa-i-custodi-della-tradizione-parte2.html</link>
+      <guid isPermaLink="true">https://casaobatala.it/blog/2026-02-08-ifa-i-custodi-della-tradizione-parte2.html</guid>
+      <pubDate>Sun, 08 Feb 2026 00:00:00 -0000</pubDate>
+      <description>Cosa è Ifá? Scopri la tradizione spirituale Yorùbá: Òrìṣà, Orí, Àṣẹ, Ifá nella tradizione africana nella sua forma originaria, senza sincretismi.</description>
+      <author>Lorenzo Okìkí Rossi</author>
+      <category>Orì, Orisa, Orisha, Orixa, Ifá, Yoruba, Candomble, Santeria, Umbanda,ifà, afro, afrobrasiliano,cosmologia Yorùbá.</category>
+    </item>
+    <item>
+      <title>Òrìṣà: Un’Introduzione alla Tradizione Spirituale Yorùbá</title>
+      <link>https://casaobatala.it/blog/2026-02-05-orisa-un-introduzione-alla-tradizione-spirituale-yoruba.html</link>
+      <guid isPermaLink="true">https://casaobatala.it/blog/2026-02-05-orisa-un-introduzione-alla-tradizione-spirituale-yoruba.html</guid>
+      <pubDate>Thu, 05 Feb 2026 00:00:00 -0000</pubDate>
+      <description>Cosa sono gli Òrìṣà? Scopri la tradizione spirituale Yorùbá: Olódùmarè, Orí, Àṣẹ e la cosmologia africana nella sua forma originaria, senza sincretismi.</description>
+      <author>Lorenzo Okìkí Rossi</author>
+      <category>Orisa, Orisha, Orixa, Yoruba, Candomble, Santeria, Umbanda,ifà, afro, afrobrasiliano,cosmologia Yorùbá</category>
+      <enclosure url="https://casaobatala.it/images/blog/egungun_1200x630.png" type="image/jpeg" />
+    </item>
+  </channel>
+</rss>
