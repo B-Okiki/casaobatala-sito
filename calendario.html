@@ -120,7 +120,7 @@
             "@type": "ListItem",
             "position": 1,
             "name": "Home",
-            "item": "https://casaobatala.it/"
+            "item": "https://casaobatala.it/index.html"
           },
           {
             "@type": "ListItem",
@@ -351,10 +351,10 @@
 </head>
 <body>
     <nav>
-        <a href="/" class="logo">CASA OBÀTÁLÁ</a>
+        <a href="index.html" class="logo">CASA OBÀTÁLÁ</a>
         <div class="menu-toggle" onclick="toggleMenu()"><span></span><span></span><span></span></div>
         <ul class="nav-links">
-            <li><a href="/">Home</a></li>
+            <li><a href="index.html">Home</a></li>
             <li><a href="meditazione.html">Meditazione</a></li>
             <li><a href="piante.html">Piante</a></li>
             <li><a href="glossario.html">Glossario</a></li>
@@ -366,7 +366,7 @@
         </ul>
     </nav>
     <div class="mobile-menu" id="mobileMenu">
-        <a href="/">Home</a>
+        <a href="index.html">Home</a>
         <a href="meditazione.html">Meditazione</a>
         <a href="piante.html">Piante</a>
         <a href="glossario.html">Glossario Piante</a>
@@ -406,7 +406,7 @@
             <div class="story-text">
                 <p>Immagina di svegliarti e, prima ancora di guardare l'orologio, sapere che oggi è <em>Ọsẹ́ Ifá</em> — il giorno in cui l'oracolo parla più chiaramente, in cui la saggezza ancestrale è più vicina.</p>
                 
-                <p>Questo non è un calendario inventato. Non è una ricostruzione moderna. <strong>Kọ́jọ́dá</strong> (possa il giorno essere chiaro) è il <strong>calendario che ancora oggi scandisce la vita a Sacra</strong>, in Nigeria, nel cuore della civiltà Yorùbá.</p>
+                <p>Questo non è un calendario inventato. Non è una ricostruzione moderna. <strong>Kọ́jọ́dá</strong> (possa il giorno essere chiaro) è il <strong>calendario che ancora oggi scandisce la vita a Oyo</strong>, in Nigeria, nel cuore della civiltà Yorùbá.</p>
                 
                 <p>Basato sui cicli lunari, con un anno composto da 13 mesi, che va dal dal 3 giugno al 2 giugno del calendario Gragoriano.</p>
                 
@@ -604,17 +604,17 @@
             <div class="platform">
                 <div class="platform-icon">🤖</div>
                 <div>Android</div>
-                <a href="calendario/calendario-yoruba.apk" download onclick="return checkTerms()" class="btn btn-primary" style="margin-top: 0.8rem; padding: 0.6rem 1.2rem; font-size: 0.85rem;">📥 Scarica APK</a>
+                <a href="calendario/calendario-yoruba.apk" download class="btn btn-primary" style="margin-top: 0.8rem; padding: 0.6rem 1.2rem; font-size: 0.85rem; pointer-events: auto;">📥 Scarica APK</a>
             </div>
             <div class="platform">
                 <div class="platform-icon">🍎</div>
                 <div>iPhone/iPad</div>
-                <a href="calendario/" onclick="return checkTerms()" class="btn btn-secondary" style="margin-top: 0.8rem; padding: 0.6rem 1.2rem; font-size: 0.85rem;">🌐 Apri Web App</a>
+                <a href="calendario/index.html" class="btn btn-secondary" style="margin-top: 0.8rem; padding: 0.6rem 1.2rem; font-size: 0.85rem; pointer-events: auto;">🌐 Apri Web App</a>
             </div>
             <div class="platform">
                 <div class="platform-icon">💻</div>
                 <div>Browser Web</div>
-                <a href="calendario/" onclick="return checkTerms()" class="btn btn-secondary" style="margin-top: 0.8rem; padding: 0.6rem 1.2rem; font-size: 0.85rem;">🌐 Apri</a>
+                <a href="calendario/index.html" class="btn btn-secondary" style="margin-top: 0.8rem; padding: 0.6rem 1.2rem; font-size: 0.85rem; pointer-events: auto;">🌐 Apri</a>
             </div>
         </div>
         
@@ -645,7 +645,7 @@
     <footer>
         <p>© 2026 CASA OBÀTÁLÁ - LORENZO OKÌKÍ ROSSI - C.F. RSSLNZ76A21H501K</p>
         <p style="margin-top: 0.5rem;">📱 3473638901 | 📧 lorenzo.okiki@gmail.com</p>
-        <p style="argin-top: 0.5rem;">
+        <p style="margin-top: 0.5rem;">
             <a href="privacy-policy.html">Privacy Policy Sito</a> | 
             <a href="cookie-policy.html">Cookie Policy</a> | 
             <a href="calendario/privacy-policy-app.html">Privacy App</a> | 
@@ -730,15 +730,6 @@
             platformBtns.style.pointerEvents = 'none';
             platformBtns.style.opacity = '0.5';
         }
-    }
-    
-    function checkTerms() {
-        const checkbox = document.getElementById('acceptTerms');
-        if (!checkbox.checked) {
-            alert('Per scaricare l\'app, devi prima accettare la Privacy Policy e i Termini di Utilizzo.');
-            return false;
-        }
-        return true;
     }
     </script>
      <!-- Cloudflare Web Analytics -->
