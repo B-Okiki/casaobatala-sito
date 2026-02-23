@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <!-- Favicon -->
+    <link rel="icon" href="/favicon.ico" sizes="48x48">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <meta name="apple-mobile-web-app-title" content="Casa Obàtálá">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="msapplication-TileColor" content="#8B4513">
+    <meta name="msapplication-config" content="/browserconfig.xml">
+    <meta name="theme-color" content="#8B4513">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meditazioni su Orí - Tradizione Yoruba Autentica | Casa Obàtálá</title>
+    <meta name="description" content="Meditazioni profonde su Orí, la divinità personale nella tradizione Yoruba. Livello base e avanzato, 4 varianti specializzate. Sessioni in presenza a Roma e Toscana.">
+    <meta name="keywords" content="meditazione orí, orí yoruba, tradizione yoruba, meditazione yoruba, guida interiore, destinazione personale, meditazione profonda roma">
+    <meta name="author" content="Lorenzo Okìkí Rossi">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://casaobatala.it/meditazione/ori">
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://casaobatala.it/meditazione/ori">
+    <meta property="og:title" content="Meditazioni su Orí - Tradizione Yoruba | Casa Obàtálá">
+    <meta property="og:description" content="Connessione profonda con Orí, la tua divinità personale. Tradizione Yoruba autentica.">
+    <meta property="og:locale" content="it_IT">
+    <meta property="og:site_name" content="Casa Obàtálá">
+    <meta property="og:image" content="https://casaobatala.it/og-image.png">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Meditazioni su Orí - Tradizione Yoruba">
+    <meta name="twitter:description" content="Connessione profonda con la tua essenza spirituale secondo la tradizione Yoruba.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <!-- Schema.org -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Meditazioni su Orí",
+      "description": "Meditazioni profonde per connettersi con Orí, la divinità personale nella tradizione Yoruba. Livello base, avanzato e varianti specializzate.",
+      "provider": {
+        "@type": "Person",
+        "name": "Lorenzo Okìkí Rossi"
+      },
+      "areaServed": ["Roma", "Toscana", "Italia"],
+      "serviceType": "Meditazione guidata tradizione Yoruba"
+    }
+    </script>
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://casaobatala.it/" },
+        { "@type": "ListItem", "position": 2, "name": "Meditazione", "item": "https://casaobatala.it/meditazione" },
+        { "@type": "ListItem", "position": 3, "name": "Meditazioni su Orí", "item": "https://casaobatala.it/meditazione/ori" }
+      ]
+    }
+    </script>
+
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background: #fafafa; color: #1a1a1a; padding-top: 70px; line-height: 1.6; }
+        nav { position: fixed; top: 0; width: 100%; padding: 1rem 1.2rem; z-index: 1000; display: flex; justify-content: space-between; align-items: center; background: rgba(255,255,255,0.98); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(139,69,19,0.1); }
+        .logo { font-family: 'Playfair Display', serif; text-decoration: none; font-size: 1.2rem; background: linear-gradient(135deg, #8B4513, #B8860B); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .nav-links { display: none; gap: 2rem; list-style: none; }
+        .nav-links a { color: #1a1a1a; text-decoration: none; font-size: 0.85rem; text-transform: uppercase; transition: color 0.3s; }
+        .nav-links a:hover { color: #8B4513; }
+        .menu-toggle { display: flex; flex-direction: column; cursor: pointer; gap: 5px; }
+        .menu-toggle span { width: 24px; height: 2px; background: #8B4513; }
+        .mobile-menu { display: none; position: fixed; top: 58px; left: 0; right: 0; background: #fff; padding: 1rem; z-index: 999; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .mobile-menu.active { display: block; }
+        .mobile-menu a { display: block; padding: 0.9rem 0; color: #1a1a1a; text-decoration: none; border-bottom: 1px solid rgba(139,69,19,0.08); }
+        
+        /* Breadcrumb */
+        .breadcrumb { max-width: 1200px; margin: 0 auto; padding: 1rem 1.5rem; font-size: 0.85rem; color: #6b5d4f; }
+        .breadcrumb a { color: #8B4513; text-decoration: none; }
+        .breadcrumb a:hover { text-decoration: underline; }
+        .breadcrumb span { margin: 0 0.5rem; }
+        
+        /* Hero */
+        .hero { text-align: center; padding: 2rem 1.5rem 3rem; max-width: 900px; margin: 0 auto; }
+        .hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 400; line-height: 1.2; margin-bottom: 1rem; color: #8B4513; }
+        .hero .subtitle { font-size: 1.15rem; color: #6b5d4f; line-height: 1.7; max-width: 700px; margin: 0 auto 2rem; }
+        
+        /* Intro Section */
+        .intro-section { max-width: 900px; margin: 0 auto 4rem; padding: 0 1.5rem; }
+        .intro-box { background: #fff; border: 1px solid rgba(139,69,19,0.12); border-radius: 16px; padding: 2.5rem 2rem; border-top: 4px solid #B8860B; }
+        .intro-box h2 { font-family: 'Playfair Display', serif; font-size: 1.8rem; color: #8B4513; margin-bottom: 1.5rem; }
+        .intro-box p { font-size: 1.05rem; line-height: 1.8; color: #2a2a2a; margin-bottom: 1.3rem; }
+        .intro-box blockquote { margin: 2rem 0; padding: 1.5rem; background: rgba(139,69,19,0.04); border-left: 4px solid #B8860B; font-family: 'Playfair Display', serif; font-style: italic; color: #8B4513; font-size: 1.1rem; }
+        .intro-box blockquote .translation { display: block; margin-top: 0.5rem; font-size: 0.95rem; color: #6b5d4f; font-family: 'Inter', sans-serif; font-style: normal; }
+        
+        /* Aspects */
+        .aspects { list-style: none; padding: 0; margin: 1.5rem 0; }
+        .aspects li { padding: 1rem 0 1rem 2rem; position: relative; font-size: 1rem; }
+        .aspects li:before { content: "•"; position: absolute; left: 0; color: #B8860B; font-size: 1.5rem; font-weight: bold; top: 0.9rem; }
+        .aspects li strong { color: #8B4513; font-size: 1.05rem; }
+        
+        /* Benefits Grid */
+        .benefits-grid { max-width: 1000px; margin: 4rem auto; padding: 0 1.5rem; }
+        .benefits-grid h2 { font-family: 'Playfair Display', serif; font-size: 2rem; text-align: center; color: #8B4513; margin-bottom: 2.5rem; }
+        .benefits-container { display: grid; grid-template-columns: 1fr; gap: 1.5rem; }
+        .benefit-card { background: #fff; border: 1px solid rgba(139,69,19,0.12); border-radius: 12px; padding: 2rem; transition: all 0.3s; }
+        .benefit-card:hover { transform: translateY(-5px); box-shadow: 0 8px 25px rgba(139,69,19,0.12); }
+        .benefit-card h3 { font-family: 'Playfair Display', serif; font-size: 1.4rem; color: #8B4513; margin-bottom: 0.8rem; }
+        .benefit-card p { color: #2a2a2a; line-height: 1.7; }
+        
+        /* Levels Section */
+        .levels-section { max-width: 1200px; margin: 4rem auto; padding: 0 1.5rem; }
+        .levels-section h2 { font-family: 'Playfair Display', serif; font-size: 2.2rem; text-align: center; color: #8B4513; margin-bottom: 3rem; }
+        .level-card { background: #fff; border: 1px solid rgba(139,69,19,0.12); border-radius: 16px; padding: 2.5rem 2rem; margin-bottom: 2rem; position: relative; }
+        .level-card.featured { border: 2px solid #B8860B; box-shadow: 0 8px 30px rgba(184,134,11,0.15); }
+        .badge-livello { position: absolute; top: 1.5rem; right: 1.5rem; background: linear-gradient(135deg, #B8860B, #DAA520); color: white; padding: 0.5rem 1.2rem; border-radius: 25px; font-size: 0.75rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.05em; }
+        .level-card h3 { font-family: 'Playfair Display', serif; font-size: 1.9rem; color: #8B4513; margin-bottom: 0.5rem; }
+        .durata { color: #6b5d4f; font-size: 0.95rem; margin-bottom: 1.2rem; display: block; }
+        .level-card p { font-size: 1.05rem; line-height: 1.8; color: #2a2a2a; margin-bottom: 1.5rem; }
+        .level-features { list-style: none; padding: 0; margin: 1.5rem 0; }
+        .level-features li { padding: 0.7rem 0 0.7rem 1.8rem; position: relative; color: #2a2a2a; line-height: 1.6; }
+        .level-features li:before { content: "•"; position: absolute; left: 0; color: #B8860B; font-size: 1.2rem; font-weight: bold; }
+        
+        /* Varianti Grid */
+        .varianti-title { font-family: 'Playfair Display', serif; font-size: 1.8rem; color: #8B4513; margin: 4rem 0 2rem; text-align: center; }
+        .varianti-grid { display: grid; grid-template-columns: 1fr; gap: 1.5rem; margin-top: 2rem; }
+        .variante-card { background: #fff; border: 1px solid rgba(139,69,19,0.12); border-radius: 12px; padding: 2rem; transition: all 0.3s; }
+        .variante-card:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(139,69,19,0.1); }
+        .variante-card h4 { font-family: 'Playfair Display', serif; font-size: 1.3rem; color: #8B4513; margin-bottom: 0.5rem; }
+        .variante-card .durata { margin-bottom: 1rem; }
+        .variante-card p { font-size: 0.95rem; line-height: 1.7; color: #2a2a2a; }
+        
+        /* Come Si Svolge */
+        .sessione-info { max-width: 900px; margin: 4rem auto; padding: 0 1.5rem; }
+        .sessione-info h2 { font-family: 'Playfair Display', serif; font-size: 2rem; text-align: center; color: #8B4513; margin-bottom: 2rem; }
+        .info-box { background: #fff; border: 1px solid rgba(139,69,19,0.12); border-radius: 12px; padding: 2rem; margin-bottom: 2rem; }
+        .info-box h3 { font-family: 'Playfair Display', serif; font-size: 1.5rem; color: #8B4513; margin-bottom: 1.2rem; }
+        .info-box p { line-height: 1.8; color: #2a2a2a; margin-bottom: 1rem; }
+        .info-box ol { padding-left: 1.5rem; margin: 1rem 0; }
+        .info-box ol li { padding: 0.5rem 0; color: #2a2a2a; line-height: 1.7; }
+        .info-box ol li strong { color: #8B4513; }
+        
+        /* Unicità */
+        .unicita { max-width: 1000px; margin: 4rem auto; padding: 0 1.5rem; }
+        .unicita h2 { font-family: 'Playfair Display', serif; font-size: 2rem; text-align: center; color: #8B4513; margin-bottom: 2.5rem; }
+        .unique-points { display: grid; grid-template-columns: 1fr; gap: 1.5rem; }
+        .point { background: rgba(139,69,19,0.03); border: 1px solid rgba(139,69,19,0.1); border-radius: 12px; padding: 2rem; }
+        .point h3 { font-family: 'Playfair Display', serif; font-size: 1.4rem; color: #8B4513; margin-bottom: 0.8rem; }
+        .point p { line-height: 1.7; color: #2a2a2a; }
+        
+        /* CTA */
+        .cta-ori { text-align: center; max-width: 800px; margin: 4rem auto; padding: 3rem 2rem; background: linear-gradient(135deg, rgba(139,69,19,0.06), rgba(184,134,11,0.06)); border-radius: 16px; border: 1px solid rgba(184,134,11,0.2); }
+        .cta-ori h2 { font-family: 'Playfair Display', serif; font-size: 2rem; color: #8B4513; margin-bottom: 1rem; }
+        .cta-ori p { font-size: 1.05rem; color: #2a2a2a; margin-bottom: 2rem; line-height: 1.7; }
+        .btn-large { display: inline-block; padding: 1.2rem 3rem; background: linear-gradient(135deg, #8B4513, #A0522D); color: white; text-decoration: none; border-radius: 50px; font-size: 1rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.05em; transition: all 0.3s; }
+        .btn-large:hover { background: linear-gradient(135deg, #A0522D, #B8860B); transform: translateY(-3px); box-shadow: 0 10px 30px rgba(139,69,19,0.3); }
+        
+        /* FAQ */
+        .faq-ori { max-width: 900px; margin: 4rem auto 3rem; padding: 0 1.5rem; }
+        .faq-ori h2 { font-family: 'Playfair Display', serif; font-size: 2rem; text-align: center; color: #8B4513; margin-bottom: 2rem; }
+        details { background: #fff; border: 1px solid rgba(139,69,19,0.12); border-radius: 12px; padding: 1.5rem; margin-bottom: 1rem; cursor: pointer; }
+        details[open] { border-color: #B8860B; }
+        summary { font-weight: 500; color: #8B4513; font-size: 1.05rem; cursor: pointer; }
+        details p { margin-top: 1rem; color: #2a2a2a; line-height: 1.7; }
+        
+        footer { text-align: center; padding: 3rem 1rem; background: #f8f6f3; border-top: 1px solid rgba(139,69,19,0.1); margin-top: 4rem; }
+        footer p { color: #6b5d4f; font-size: 0.8rem; line-height: 1.7; }
+        footer a { color: #6b5d4f; text-decoration: underline; }
+        
+        /* Cookie Banner */
+        #cookie-banner { position: fixed; bottom: 0; left: 0; right: 0; background: #fff; border-top: 2px solid #8B4513; padding: 1rem; box-shadow: 0 -4px 20px rgba(0,0,0,0.15); z-index: 9999; display: none; }
+        #cookie-banner.show { display: block; }
+        .cookie-content { max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; justify-content: space-between; }
+        .cookie-text { flex: 1; min-width: 280px; }
+        .cookie-text p { font-size: 0.85rem; color: #2a2a2a; margin: 0; line-height: 1.5; }
+        .cookie-text a { color: #8B4513; }
+        .cookie-buttons { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+        .cookie-btn { padding: 0.6rem 1.2rem; border-radius: 50px; font-size: 0.8rem; cursor: pointer; border: none; font-family: inherit; transition: all 0.2s; }
+        .cookie-btn.accept { background: linear-gradient(135deg, #8B4513, #A0522D); color: white; }
+        .cookie-btn.reject { background: transparent; color: #8B4513; border: 1px solid #8B4513; }
+        .cookie-btn:hover { transform: translateY(-2px); }
+        
+        @media (min-width: 768px) {
+            body { padding-top: 80px; }
+            nav { padding: 1.2rem 2rem; }
+            .logo { font-size: 1.4rem; }
+            .benefits-container { grid-template-columns: repeat(2, 1fr); }
+            .varianti-grid { grid-template-columns: repeat(2, 1fr); }
+            .unique-points { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (min-width: 1024px) {
+            body { padding-top: 100px; }
+            nav { padding: 1.5rem 3rem; }
+            .menu-toggle { display: none; }
+            .nav-links { display: flex; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="/" class="logo">CASA OBÀTÁLÁ</a>
+        <div class="menu-toggle" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+        <ul class="nav-links">
+            <li><a href="/">Home</a></li>
+            <li><a href="/meditazione">Meditazione</a></li>
+            <li><a href="/piante">Piante</a></li>
+            <li><a href="/glossario">Glossario</a></li>
+            <li><a href="/blog">Blog</a></li>
+            <li><a href="/calendario">Calendario Yoruba</a></li>
+            <li><a href="/eventi">Eventi</a></li>
+            <li><a href="/chi-sono">Chi Sono</a></li>
+            <li><a href="/contatti">Contatti</a></li>
+        </ul>
+    </nav>
+    
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="/">Home</a>
+        <a href="/meditazione">Meditazione</a>
+        <a href="/piante">Piante</a>
+        <a href="/glossario">Glossario</a>
+        <a href="/blog">Blog</a>
+        <a href="/calendario">Calendario Yoruba</a>
+        <a href="/eventi">Eventi</a>
+        <a href="/chi-sono">Chi Sono</a>
+        <a href="/contatti">Contatti</a>
+    </div>
+
+    <div class="breadcrumb">
+        <a href="/">Home</a> <span>›</span>
+        <a href="/meditazione">Meditazione</a> <span>›</span>
+        <span>Meditazioni su Orí</span>
+    </div>
+
+    <section class="hero">
+        <h1>Meditazioni su Orí</h1>
+        <p class="subtitle">Connessione profonda con la tua divinità personale secondo l'antica tradizione Yoruba</p>
+    </section>
+
+    <section class="intro-section">
+        <div class="intro-box">
+            <h2>Cos'è Orí nella Tradizione Yoruba</h2>
+            
+            <p><strong>Orí</strong> (letteralmente "testa" in lingua Yoruba) è molto più del capo fisico: è la sede della tua essenza spirituale, il tuo destino personale scelto prima della nascita, la tua saggezza interiore più profonda.</p>
+            
+            <blockquote>
+                "Orí la o dá kó tó d'òrìṣà"
+                <span class="translation">— È Orí che dobbiamo onorare prima degli Òrìṣà (divinità) —</span>
+            </blockquote>
+            
+            <p>Nella cosmologia Yoruba, Orí è considerato il tuo primo e più importante protettore. <strong>Non è un dio esterno</strong> - è la tua divinità interiore, il tuo Sé superiore, la tua guida personale che conosce il tuo percorso.</p>
+            
+            <h3 style="font-family: 'Playfair Display', serif; color: #8B4513; font-size: 1.5rem; margin: 2rem 0 1rem;">I Tre Aspetti di Orí</h3>
+            
+            <ul class="aspects">
+                <li><strong>Àyànmọ́</strong> - Il destino scelto prima della nascita, il potenziale che porti con te</li>
+                <li><strong>Orí Inú</strong> - La testa interiore, l'essenza spirituale che guida le tue scelte</li>
+                <li><strong>Orí Òde</strong> - La testa fisica, la manifestazione della tua essenza nel mondo</li>
+            </ul>
+            
+            <p>Connettendoti con Orí attraverso queste meditazioni, accedi alla saggezza che già possiedi, alla guida che già sei, alla pace che già abita in te.</p>
+        </div>
+    </section>
+
+    <section class="benefits-grid">
+        <h2>Benefici delle Meditazioni su Orí</h2>
+        
+        <div class="benefits-container">
+            <div class="benefit-card">
+                <h3>Chiarezza sul Destino</h3>
+                <p>Comprendi il tuo scopo di vita autentico e la direzione che la tua anima ha scelto. Non più dubbi su cosa fare, ma certezza interiore.</p>
+            </div>
+            
+            <div class="benefit-card">
+                <h3>Guida Interiore</h3>
+                <p>Accedi alla saggezza profonda di Orí per decisioni importanti. Le risposte emergono da dentro, non da fuori.</p>
+            </div>
+            
+            <div class="benefit-card">
+                <h3>Rafforzamento Identità</h3>
+                <p>Connessione profonda con chi sei veramente, al di là dei ruoli sociali. Autenticità e auto-stima radicate nell'essenza.</p>
+            </div>
+            
+            <div class="benefit-card">
+                <h3>Sblocco Potenziale</h3>
+                <p>Libera capacità e talenti nascosti che Orí custodisce. Rimuovi i blocchi che impediscono la tua piena realizzazione.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="levels-section">
+        <h2>Scegli il Tuo Percorso</h2>
+        
+        <p style="text-align: center; color: #6b5d4f; max-width: 800px; margin: 0 auto 2.5rem; font-size: 0.95rem;">Le sessioni dal vivo includono colloquio iniziale, meditazione guidata completa e integrazione finale. Ogni incontro è un'esperienza profonda e personalizzata.</p>
+        
+        <!-- LIVELLO BASE -->
+        <div class="level-card">
+            <span class="badge-livello">Principianti</span>
+            <h3>Livello Base - Neofiti</h3>
+            <span class="durata">Durata: 1 ora - 1 ora e un quarto (sessione dal vivo)</span>
+            <p>Meditazione guidata introduttiva per connetterti con Orí. Perfetta per chi inizia il percorso o ha poca esperienza di meditazione. Un viaggio dolce ma profondo nella tua essenza.</p>
+            
+            <ul class="level-features">
+                <li>Preparazione dello spazio e grounding energetico</li>
+                <li>Connessione guidata passo-passo con Orí</li>
+                <li>Dialogo interiore e ricezione di messaggi</li>
+                <li>Integrazione dell'esperienza nel quotidiano</li>
+                <li>Ideale per chi inizia questo percorso spirituale</li>
+            </ul>
+        </div>
+
+        <!-- LIVELLO AVANZATO -->
+        <div class="level-card featured">
+            <span class="badge-livello">Avanzato</span>
+            <h3>Livello Avanzato - Ipnosi Profonda</h3>
+            <span class="durata">Durata: 1 ora - 1 ora e un quarto (sessione dal vivo)</span>
+            <p>Meditazione ipnotica profonda per chi ha già familiarità con Orí. Tecniche di induzione progressiva, deepening e frazionamento per stati di coscienza espansa. Un viaggio nell'intimo della tua essenza spirituale.</p>
+            
+            <ul class="level-features">
+                <li>Induzione ipnotica progressiva professionale</li>
+                <li>Stati di coscienza profondamente espansa</li>
+                <li>Dialogo diretto e profondo con Orí</li>
+                <li>Esplorazione del destino e dello scopo</li>
+                <li>Per praticanti con esperienza di meditazione</li>
+            </ul>
+        </div>
+
+        <h3 class="varianti-title">Meditazioni Specializzate</h3>
+        <p style="text-align: center; color: #6b5d4f; max-width: 700px; margin: 0 auto 2rem;">Quattro varianti create per obiettivi specifici. Da integrare dopo aver familiarizzato con il livello base o avanzato.</p>
+        
+        <p style="text-align: center; color: #8B4513; font-size: 0.9rem; max-width: 700px; margin: 0 auto 1.5rem; font-style: italic;"><strong>Nota:</strong> Le durate indicate sono per le sessioni dal vivo guidate personalmente. In futuro saranno disponibili anche versioni audio più brevi per la pratica autonoma.</p>
+        
+        <div class="varianti-grid">
+            <!-- VERSIONE BREVE -->
+            <div class="variante-card">
+                <h4>Versione Breve</h4>
+                <span class="durata">Durata: 1 ora - 1 ora e un quarto (sessione dal vivo)</span>
+                <p>Per la pratica quotidiana quando hai poco tempo. Mantieni viva la connessione con Orí anche nei giorni più intensi. Essenziale ma completa.</p>
+            </div>
+
+            <!-- DECISIONI -->
+            <div class="variante-card">
+                <h4>Decisioni Importanti</h4>
+                <span class="durata">Durata: 1 ora - 1 ora e un quarto (sessione dal vivo)</span>
+                <p>Quando devi prendere scelte significative di vita o lavoro. Accedi alla guida di Orí per chiarezza, lucidità e certezza interiore. La risposta è già in te.</p>
+            </div>
+
+            <!-- GUARIGIONE -->
+            <div class="variante-card">
+                <h4>Guarigione Emotiva</h4>
+                <span class="durata">Durata: 1 ora - 1 ora e un quarto (sessione dal vivo)</span>
+                <p>Per elaborare traumi, dolore emotivo e ferite del passato. Orí ti accompagna nel processo di guarigione profonda e rilascio. Gentilezza e forza insieme.</p>
+            </div>
+
+            <!-- SCOPO -->
+            <div class="variante-card">
+                <h4>Scoperta dello Scopo</h4>
+                <span class="durata">Durata: 1 ora - 1 ora e un quarto (sessione dal vivo)</span>
+                <p>Per comprendere la tua missione di vita e allinearti al tuo destino autentico. Orí rivela il sentiero che la tua anima ha scelto di percorrere.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="sessione-info">
+        <h2>Come Si Svolgono le Sessioni</h2>
+        
+        <div class="info-box">
+            <h3>Formato Individuale</h3>
+            <p>Sessioni personalizzate one-to-one in presenza (Roma, Toscana) o online via Zoom. Ogni incontro è costruito su di te, sui tuoi obiettivi e sul momento che stai vivendo.</p>
+            
+            <ol>
+                <li><strong>Colloquio Iniziale</strong> (10 minuti) - Ascolto profondo dei tuoi obiettivi e del momento che stai attraversando</li>
+                <li><strong>Meditazione Guidata</strong> (15-40 minuti) - Ti guido nell'esperienza passo dopo passo, con presenza totale</li>
+                <li><strong>Integrazione</strong> (10 minuti) - Elaboriamo insieme l'esperienza, ti aiuto a portarla nel quotidiano</li>
+            </ol>
+        </div>
+        
+        <div class="info-box">
+            <h3>Percorsi Strutturati</h3>
+            <p>Cicli di 4-8 sessioni per approfondire progressivamente la connessione con Orí. Ogni incontro costruisce sul precedente, creando una trasformazione profonda e duratura.</p>
+        </div>
+    </section>
+
+    <section class="unicita">
+        <h2>Perché Queste Meditazioni Sono Uniche</h2>
+        
+        <div class="unique-points">
+            <div class="point">
+                <h3>Tradizione Autentica</h3>
+                <p>Basate sul culto tradizionale Yoruba (Ìṣẹ̀ṣe Òrìṣà Ìbílẹ̀), senza sincretismi. Rispetto profondo della tradizione originale dell'Africa Occidentale.</p>
+            </div>
+            
+            <div class="point">
+                <h3>Approccio Occidentale</h3>
+                <p>Adattate per il contesto di counseling e crescita personale, mantenendo intatta l'essenza spirituale yoruba.</p>
+            </div>
+            
+            <div class="point">
+                <h3>Quasi Uniche in Italia</h3>
+                <p>Tra le pochissime proposte autentiche di meditazioni su Orí nel panorama italiano della spiritualità. Un'opportunità rara.</p>
+            </div>
+            
+            <div class="point">
+                <h3>Guida Esperta</h3>
+                <p>Condotte da Lorenzo Okìkí Rossi, iniziato nel culto tradizionale Yoruba di Obàtálá. Competenza tecnica e connessione spirituale autentica.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-ori">
+        <h2>Pronto a Connetterti con Orí?</h2>
+        <p>Prenota una <strong>sessione gratuita di orientamento (20 minuti)</strong> per scoprire quale meditazione è più adatta a te e al momento che stai vivendo. Senza impegno, solo ascolto e guida autentica.</p>
+        <a href="/contatti.html" class="btn-large">Prenota Sessione Gratuita</a>
+        <p style="margin-top: 1.5rem; font-size: 0.9rem; color: #6b5d4f;">Tel. 3473638901 | Email <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="cca0a3bea9a2b6a3e2a3a7a5a7a58caba1ada5a0e2afa3a1">[email&#160;protected]</a></p>
+    </section>
+
+    <section class="faq-ori">
+        <h2>Domande Frequenti</h2>
+        
+        <details>
+            <summary>Devo essere yoruba o conoscere la tradizione?</summary>
+            <p>No, le meditazioni sono aperte anche a chi non ha background yoruba. Ti spiegherò tutto il necessario prima della sessione, con chiarezza e semplicità.</p>
+        </details>
+        
+        <details>
+            <summary>È una pratica religiosa?</summary>
+            <p>No, è una pratica di crescita personale e connessione interiore ispirata alla tradizione Yoruba, ma adattata per il contesto di counseling occidentale. Non richiede alcuna adesione religiosa.</p>
+        </details>
+        
+        <details>
+            <summary>Quanto dura un percorso completo?</summary>
+            <p>Dipende dai tuoi obiettivi. Puoi fare una singola sessione esplorativa oppure un percorso strutturato di 4-8 sessioni per approfondire la connessione con Orí nel tempo.</p>
+        </details>
+        
+        <details>
+            <summary>È adatta a principianti della meditazione?</summary>
+            <p>Sì, il livello base è pensato proprio per chi ha poca esperienza con la meditazione. Ti guido passo dopo passo con presenza totale durante la sessione.</p>
+        </details>
+        
+        <details>
+            <summary>Posso fare le sessioni online?</summary>
+            <p>Sì, le sessioni online via Zoom hanno la stessa profondità ed efficacia di quelle in presenza. Molti clienti preferiscono l'online per la comodità e la possibilità di praticare nel proprio spazio.</p>
+        </details>
+    </section>
+
+    <footer>
+        <p>© 2026 CASA OBÀTÁLÁ - LORENZO OKÌKÍ ROSSI - C.F. RSSLNZ76A21H501K</p>
+        <p style="margin-top: 0.5rem;"><a href="/privacy-policy">Privacy Policy</a> | <a href="/cookie-policy">Cookie Policy</a></p>
+    </footer>
+
+    <div id="cookie-banner">
+        <div class="cookie-content">
+            <div class="cookie-text">
+                <p><strong>Questo sito usa cookie tecnici</strong><br>Utilizziamo solo cookie necessari al funzionamento. <a href="/cookie-policy">Maggiori info</a></p>
+            </div>
+            <div class="cookie-buttons">
+                <button class="cookie-btn accept" onclick="acceptCookies()">Accetta</button>
+                <button class="cookie-btn reject" onclick="rejectCookies()">Rifiuta</button>
+            </div>
+        </div>
+    </div>
+
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    function toggleMenu(){document.getElementById('mobileMenu').classList.toggle('active')}
+    function acceptCookies(){localStorage.setItem('cookieConsent','accepted');hideBanner()}
+    function rejectCookies(){localStorage.setItem('cookieConsent','rejected');hideBanner()}
+    function hideBanner(){document.getElementById('cookie-banner').classList.remove('show')}
+    if(!localStorage.getItem('cookieConsent')){document.getElementById('cookie-banner').classList.a
