@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <!-- Favicon -->
+    <link rel="icon" href="/favicon.ico" sizes="48x48">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Training Autogeno - In Costruzione | Casa Obàtálá</title>
+    <meta name="description" content="Corso di Training Autogeno in presenza a Roma e Toscana. Pagina in costruzione.">
+    <meta name="robots" content="noindex, nofollow">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background: #fafafa; color: #1a1a1a; padding-top: 70px; }
+        nav { position: fixed; top: 0; width: 100%; padding: 1rem 1.2rem; z-index: 1000; display: flex; justify-content: space-between; align-items: center; background: rgba(255,255,255,0.98); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(139,69,19,0.1); }
+        .logo { font-family: 'Playfair Display', serif; text-decoration: none; font-size: 1.2rem; background: linear-gradient(135deg, #8B4513, #B8860B); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .nav-links { display: none; gap: 2rem; list-style: none; }
+        .nav-links a { color: #1a1a1a; text-decoration: none; font-size: 0.85rem; text-transform: uppercase; }
+        .menu-toggle { display: flex; flex-direction: column; cursor: pointer; gap: 5px; }
+        .menu-toggle span { width: 24px; height: 2px; background: #8B4513; }
+        .mobile-menu { display: none; position: fixed; top: 58px; left: 0; right: 0; background: #fff; padding: 1rem; z-index: 999; }
+        .mobile-menu.active { display: block; }
+        .mobile-menu a { display: block; padding: 0.9rem 0; color: #1a1a1a; text-decoration: none; border-bottom: 1px solid rgba(139,69,19,0.08); }
+        
+        .breadcrumb { max-width: 1200px; margin: 0 auto; padding: 1rem 1.5rem; font-size: 0.85rem; color: #6b5d4f; }
+        .breadcrumb a { color: #8B4513; text-decoration: none; }
+        .breadcrumb span { margin: 0 0.5rem; }
+        
+        .construction-container { max-width: 800px; margin: 4rem auto; padding: 0 1.5rem; text-align: center; }
+        .construction-box { background: #fff; border: 1px solid rgba(139,69,19,0.12); border-radius: 16px; padding: 4rem 2rem; border-top: 4px solid #B8860B; }
+        .construction-box h1 { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 5vw, 2.8rem); color: #8B4513; margin-bottom: 1rem; }
+        .badge-status { display: inline-block; background: rgba(184,134,11,0.15); color: #8B4513; padding: 0.5rem 1.5rem; border-radius: 25px; font-size: 0.85rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 2rem; }
+        .construction-box p { font-size: 1.1rem; line-height: 1.8; color: #2a2a2a; margin-bottom: 1.5rem; }
+        .info-box { background: rgba(139,69,19,0.04); border-left: 4px solid #B8860B; padding: 2rem; margin: 2rem 0; text-align: left; border-radius: 0 8px 8px 0; }
+        .info-box h3 { font-family: 'Playfair Display', serif; color: #8B4513; font-size: 1.4rem; margin-bottom: 1rem; }
+        .info-box ul { list-style: none; padding: 0; }
+        .info-box ul li { padding: 0.6rem 0 0.6rem 1.5rem; position: relative; line-height: 1.6; }
+        .info-box ul li:before { content: "•"; position: absolute; left: 0; color: #B8860B; font-size: 1.2rem; font-weight: bold; }
+        .btn-primary { display: inline-block; margin-top: 2rem; padding: 1rem 2.5rem; background: linear-gradient(135deg, #8B4513, #A0522D); color: white; text-decoration: none; border-radius: 50px; font-size: 0.95rem; font-weight: 500; text-transform: uppercase; transition: all 0.3s; }
+        .btn-primary:hover { background: linear-gradient(135deg, #A0522D, #B8860B); transform: translateY(-3px); box-shadow: 0 10px 30px rgba(139,69,19,0.3); }
+        .btn-secondary { display: inline-block; margin: 1rem 0.5rem 0; padding: 1rem 2rem; background: transparent; color: #8B4513; text-decoration: none; border: 2px solid #8B4513; border-radius: 50px; font-size: 0.9rem; font-weight: 500; transition: all 0.3s; }
+        .btn-secondary:hover { background: #8B4513; color: white; }
+        
+        footer { text-align: center; padding: 3rem 1rem; background: #f8f6f3; margin-top: 4rem; }
+        footer p { color: #6b5d4f; font-size: 0.8rem; }
+        
+        @media (min-width: 768px) { nav { padding: 1.2rem 2rem; } .logo { font-size: 1.4rem; } }
+        @media (min-width: 1024px) { nav { padding: 1.5rem 3rem; } .menu-toggle { display: none; } .nav-links { display: flex; } }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="/" class="logo">CASA OBÀTÁLÁ</a>
+        <div class="menu-toggle" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+        <ul class="nav-links">
+            <li><a href="/">Home</a></li>
+            <li><a href="/meditazione">Meditazione</a></li>
+            <li><a href="/piante">Piante</a></li>
+            <li><a href="/glossario">Glossario</a></li>
+            <li><a href="/blog">Blog</a></li>
+            <li><a href="/calendario">Calendario Yoruba</a></li>
+            <li><a href="/eventi">Eventi</a></li>
+            <li><a href="/chi-sono">Chi Sono</a></li>
+            <li><a href="/contatti">Contatti</a></li>
+        </ul>
+    </nav>
+    
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="/">Home</a>
+        <a href="/meditazione">Meditazione</a>
+        <a href="/piante">Piante</a>
+        <a href="/glossario">Glossario</a>
+        <a href="/blog">Blog</a>
+        <a href="/calendario">Calendario Yoruba</a>
+        <a href="/eventi">Eventi</a>
+        <a href="/chi-sono">Chi Sono</a>
+        <a href="/contatti">Contatti</a>
+    </div>
+
+    <div class="breadcrumb">
+        <a href="/">Home</a> <span>›</span>
+        <a href="/meditazione">Meditazione</a> <span>›</span>
+        <span>Training Autogeno</span>
+    </div>
+
+    <div class="construction-container">
+        <div class="construction-box">
+            <span class="badge-status">In Costruzione</span>
+            <h1>Training Autogeno</h1>
+            <p>Stiamo preparando questa sezione con cura e attenzione. Il Training Autogeno è una tecnica scientificamente validata di rilassamento profondo, e vogliamo offrirti le informazioni più complete e utili.</p>
+            
+            <div class="info-box">
+                <h3>Cosa Troverai Presto</h3>
+                <ul>
+                    <li>Corso Base di 8 Settimane (protocollo completo)</li>
+                    <li>Spiegazione scientifica del metodo</li>
+                    <li>Benefici documentati (stress, ansia, insonnia, performance)</li>
+                    <li>Modalità in presenza (Roma, Toscana) e online</li>
+                    <li>Materiali didattici e registrazioni audio</li>
+                </ul>
+            </div>
+            
+            <p style="font-size: 1rem; color: #6b5d4f; margin-top: 2rem;">Nel frattempo, se sei interessato al Training Autogeno, contattami direttamente. Posso già fornirti tutte le informazioni e organizzare un percorso personalizzato.</p>
+            
+            <a href="/contatti.html" class="btn-primary">Contattami per Info</a>
+            <a href="/meditazione" class="btn-secondary">← Torna a Meditazione</a>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2026 CASA OBÀTÁLÁ - LORENZO OKÌKÍ ROSSI</p>
+    </footer>
+
+    <script>
+    function toggleMenu(){document.getElementById('mobileMenu').classList.toggle('active')}
+    </script>
+</body>
+</html>
