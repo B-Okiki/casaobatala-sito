@@ -1,22 +1,14 @@
 # Robots.txt per casaobatala.it
 # Casa Obàtálá - Lorenzo Okíkí Rossi
 
-# ═══════════════════════════════════════════════════════════════
-# REGOLA GENERALE - Consenti accesso a tutti i motori di ricerca
-# ═══════════════════════════════════════════════════════════════
-
 User-agent: *
 Allow: /
 Disallow: /admin/
 Disallow: /cookie-banner.js
 
-# ═══════════════════════════════════════════════════════════════
 # BOT AI - POLICY BILANCIATA
-# ═══════════════════════════════════════════════════════════════
 
-# ✅ PERMESSI - Bot AI Search (utili per essere trovati)
-# Questi bot aiutano le persone a trovare il tuo sito tramite AI search
-
+# ✅ PERMESSI - Bot AI Search
 User-agent: Google-Extended
 Allow: /
 
@@ -29,9 +21,7 @@ Allow: /
 User-agent: ClaudeBot
 Allow: /
 
-# ❌ BLOCCATI - Bot AI Training (protezione contenuti)
-# Questi bot usano i contenuti per addestrare modelli AI
-
+# ❌ BLOCCATI - Bot AI Training
 User-agent: GPTBot
 Disallow: /
 
@@ -56,32 +46,10 @@ Disallow: /
 User-agent: meta-externalagent
 Disallow: /
 
-# ═══════════════════════════════════════════════════════════════
-# SITEMAP
-# ═══════════════════════════════════════════════════════════════
-
 Sitemap: https://casaobatala.it/sitemap.xml
 
-# ═══════════════════════════════════════════════════════════════
-# NOTE
-# ═══════════════════════════════════════════════════════════════
-# 
-# PERMESSI (Allow):
-# - Google-Extended: Google AI search (Bard, SGE)
-# - Applebot-Extended: Apple Intelligence
-# - PerplexityBot: Perplexity AI search engine
-# - ClaudeBot: Anthropic Claude (ricerca e indicizzazione)
-#
-# BLOCCATI (Disallow):
-# - GPTBot: OpenAI training (ChatGPT)
-# - CCBot: Common Crawl dataset
-# - Bytespider: TikTok/ByteDance scraping
-# - Omgilibot: Scraping aggressivo
-# - anthropic-ai: Anthropic training (diverso da ClaudeBot search)
-# - Altri bot scraping/training
-#
-# Questa configurazione:
-# ✅ Permette ai bot AI di aiutare le persone a trovare il sito
-# ✅ Permette la lettura di llms.txt per indicizzazione AI
-# ❌ Impedisce l'uso dei contenuti per addestrare nuovi modelli AI
-# ═══════════════════════════════════════════════════════════════
+# OVERRIDE Cloudflare (fix errore Bing)
+User-agent: *
+Allow: /
+```
+
