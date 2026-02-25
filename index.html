@@ -244,206 +244,116 @@
         .section-subtitle { text-align: center; color: #6b5d4f; font-size: 0.85rem; margin-bottom: 2rem; letter-spacing: 0.12em; text-transform: uppercase; }
         .grid { display: grid; grid-template-columns: 1fr; gap: 1.2rem; max-width: 1200px; margin: 0 auto; padding: 0 0.5rem; }
   
+/* CARDS - Glassmorphism Elegante                      */
         .card {
-            /* Base vetro trasparente */
+            /* Effetto vetro elegante */
             background: rgba(255, 255, 255, 0.65);
             backdrop-filter: blur(16px) saturate(160%);
             -webkit-backdrop-filter: blur(16px) saturate(160%);
-            
-            /* BORDI MULTIPLI = Spessore vetro 3D */
-            border: 1.5px solid rgba(255, 255, 255, 0.6);  /* Bordo esterno chiaro */
-            
-            /* OMBRE MULTIPLE = Profondità lastra vetro */
+            /* Bordo sottile */
+            border: 1px solid rgba(139, 69, 19, 0.15);
+            /* Ombra morbida */
             box-shadow: 
-                /* Ombra esterna principale */
                 0 8px 32px rgba(139, 69, 19, 0.12),
-                /* Ombra esterna secondaria (più lontana) */
-                0 15px 50px rgba(139, 69, 19, 0.08),
-                /* Riflesso luce SOPRA (bordo superiore luminoso) */
-                inset 0 2px 0 rgba(255, 255, 255, 0.8),
-                /* Ombra SOTTO (bordo inferiore scuro) */
-                inset 0 -1px 0 rgba(139, 69, 19, 0.08),
-                /* Spessore vetro sui lati */
-                inset 1px 0 0 rgba(255, 255, 255, 0.3),
-                inset -1px 0 0 rgba(255, 255, 255, 0.3);
+                0 2px 6px rgba(0, 0, 0, 0.04);
             
             border-radius: 16px;
             padding: 2rem 1.5rem;
             text-decoration: none;
             color: inherit;
             display: block;
-            
-            /* Transizione smooth */
-            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+            /* Transizione lenta = elegante */
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
             
             position: relative;
-            overflow: visible;  /* IMPORTANTE per mobile! */
-            
-            /* Fix movimento mobile */
-            will-change: transform;
-            -webkit-transform: translateZ(0);
-            transform: translateZ(0);
         }
         
-        /* RIFLESSO LUCE DIAGONALE (pseudo-elemento) */
-        .card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            
-            /* Gradiente riflesso luce */
-            background: linear-gradient(
-                135deg,
-                rgba(255, 255, 255, 0.4) 0%,
-                rgba(255, 255, 255, 0.1) 30%,
-                transparent 50%,
-                transparent 100%
-            );
-            
-            border-radius: 16px;
-            pointer-events: none;
-            opacity: 0.6;
-        }
-        
-        /* RIFLESSO LUCE ANIMATO (scorre su hover) */
-        .card::after {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -100%;
-            width: 50%;
-            height: 200%;
-            
-            /* Riflesso luminoso che scorre */
-            background: linear-gradient(
-                90deg,
-                transparent,
-                rgba(255, 255, 255, 0.5),
-                transparent
-            );
-            
-            transform: rotate(25deg);
-            transition: left 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-            pointer-events: none;
-        }
-        
-        /* Hover: riflesso scorre */
-        .card:hover::after {
-            left: 150%;  /* Scorre da sinistra a destra */
-        }
-        
-        /* HOVER CARD */
+        /* Hover discreto */
         .card:hover {
             background: rgba(255, 255, 255, 0.85);
             backdrop-filter: blur(20px) saturate(180%);
             -webkit-backdrop-filter: blur(20px) saturate(180%);
             
-            /* Bordo più luminoso */
-            border-color: rgba(255, 255, 255, 0.8);
-            
-            /* OMBRE ANCORA PIÙ PROFONDE = lastra si solleva */
             box-shadow: 
-                /* Ombra molto lontana (card alta!) */
-                0 20px 60px rgba(139, 69, 19, 0.20),
-                0 30px 80px rgba(139, 69, 19, 0.10),
-                /* Riflessi interni più forti */
-                inset 0 3px 0 rgba(255, 255, 255, 1),
-                inset 0 -2px 0 rgba(139, 69, 19, 0.12),
-                inset 2px 0 0 rgba(255, 255, 255, 0.5),
-                inset -2px 0 0 rgba(255, 255, 255, 0.5);
+                0 16px 48px rgba(139, 69, 19, 0.18),
+                0 4px 12px rgba(0, 0, 0, 0.06);
             
-            /* MOVIMENTO mobile-friendly */
-            transform: translateY(-8px) scale(1.02);
-            -webkit-transform: translateY(-8px) scale(1.02);
+            transform: translateY(-6px); /* -2px invece di -5px = più elegante */
             
-            border-color: rgba(255, 255, 255, 0.9);
+            border-color: rgba(139, 69, 19, 0.15);
         }
         
-        /* Assicura z-index corretto */
+        /* Icona card */
+        .card-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            filter: drop-shadow(0 2px 4px rgba(139, 69, 19, 0.1));
+        }
+        
+        .card-icon img {
+            width: 80px;
+            height: 80px;
+            object-fit: contain;
+        }
+        
+        /* Titolo card */
+        .card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            margin-bottom: 0.6rem;
+            color: #1a1a1a;
+            font-weight: 400;
+            letter-spacing: -0.01em;
+        }
+        
+        /* Testo card */
+        .card p {
+            color: #6b5d4f;
+            line-height: 1.6;
+            font-size: 0.9rem;
+            font-weight: 300;
+        }
+        
+        /* Badge (se presente) */
+        .card-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #B8860B, #DAA520);
+            color: white;
+            font-size: 0.65rem;
+            padding: 0.2rem 0.5rem;
+            border-radius: 10px;
+            margin-bottom: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        
+        /* Assicura leggibilità contenuto */
         .card > * {
             position: relative;
-            z-index: 2;
-        }
-        background-image: 
-        linear-gradient(
-            135deg,
-            rgba(184, 134, 11, 0.05) 0%,
-            transparent 40%,
-            transparent 60%,
-            rgba(139, 69, 19, 0.03) 100%
-        );
+            z-index: 1;
         }
         /* News Section */
         .news-section { max-width: 800px; margin: 0 auto 2rem; padding: 0 1rem; }
         .news-card { 
+            /* Stesso glassmorphism delle card */
             background: rgba(255, 255, 255, 0.65);
             backdrop-filter: blur(16px) saturate(160%);
             -webkit-backdrop-filter: blur(16px) saturate(160%);
             
-            border: 1.5px solid rgba(255, 255, 255, 0.6);
-            
-            box-shadow: 
-                0 8px 32px rgba(139, 69, 19, 0.12),
-                0 15px 50px rgba(139, 69, 19, 0.08),
-                inset 0 2px 0 rgba(255, 255, 255, 0.8),
-                inset 0 -1px 0 rgba(139, 69, 19, 0.08),
-                inset 1px 0 0 rgba(255, 255, 255, 0.3),
-                inset -1px 0 0 rgba(255, 255, 255, 0.3);
-            
+            border: 1px solid rgba(139,69,19,0.15); 
             border-radius: 16px; 
             padding: 2rem; 
             position: relative; 
-            overflow: visible;
+            overflow: hidden; 
             text-decoration: none; 
             color: inherit; 
             display: block; 
             
-            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-            will-change: transform;
-            -webkit-transform: translateZ(0);
-            transform: translateZ(0);
-        }
-        
-        /* Riflesso luce news card */
-        .news-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(
-                135deg,
-                rgba(255, 255, 255, 0.4) 0%,
-                rgba(255, 255, 255, 0.1) 30%,
-                transparent 50%
-            );
-            border-radius: 16px;
-            pointer-events: none;
-            opacity: 0.6;
-            z-index: 0;
-        }
-        
-        /* Riflesso animato news card */
-        .news-card::after {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -100%;
-            width: 50%;
-            height: 200%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.5), transparent);
-            transform: rotate(25deg);
-            transition: left 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-            pointer-events: none;
-            z-index: 0;
-        }
-        
-        .news-card:hover::after {
-            left: 150%;
+            box-shadow: 
+                0 8px 32px rgba(139, 69, 19, 0.12),
+                0 2px 6px rgba(0, 0, 0, 0.04);
+            
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
         }
         
         .news-card:hover { 
@@ -451,24 +361,13 @@
             backdrop-filter: blur(20px) saturate(180%);
             -webkit-backdrop-filter: blur(20px) saturate(180%);
             
-            border-color: rgba(255, 255, 255, 0.8);
-            
-            transform: translateY(-8px) scale(1.02);
-            -webkit-transform: translateY(-8px) scale(1.02);
+            transform: translateY(-6px); 
             
             box-shadow: 
-                0 20px 60px rgba(139, 69, 19, 0.20),
-                0 30px 80px rgba(139, 69, 19, 0.10),
-                inset 0 3px 0 rgba(255, 255, 255, 1),
-                inset 0 -2px 0 rgba(139, 69, 19, 0.12),
-                inset 2px 0 0 rgba(255, 255, 255, 0.5),
-                inset -2px 0 0 rgba(255, 255, 255, 0.5);
-        }
-        
-        /* Fix z-index news card */
-        .news-card > * {
-            position: relative;
-            z-index: 2;
+                0 16px 48px rgba(139, 69, 19, 0.18),
+                0 4px 12px rgba(0, 0, 0, 0.06);
+            
+            border-color: rgba(139, 69, 19, 0.15);
         }
         .news-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(135deg, #8B4513, #B8860B); }
         .news-label { display: inline-block; font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; color: #B8860B; font-weight: 500; margin-bottom: 0.6rem; }
@@ -674,4 +573,4 @@
     function closeCookieModal(){document.getElementById('cookie-modal').classList.remove('show')}
     if(!localStorage.getItem('cookieConsent')){document.getElementById('cookie-banner').classList.add('show')}
     </script>
-     <!-- Cl
+    
