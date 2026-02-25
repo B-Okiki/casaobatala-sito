@@ -205,12 +205,12 @@
             background: 
                 radial-gradient(
                     circle at 15% 20%, 
-                    rgba(139, 69, 19, 0.015) 0%, 
+                    rgba(139, 69, 19, 0.05) 0%, 
                     transparent 50%
                 ),
                 radial-gradient(
                     circle at 85% 80%, 
-                    rgba(184, 134, 11, 0.015) 0%, 
+                    rgba(184, 134, 11, 0.05) 0%, 
                     transparent 50%
                 ),
                 #fafafa;
@@ -247,15 +247,15 @@
 /* CARDS - Glassmorphism Elegante                      */
         .card {
             /* Effetto vetro elegante */
-            background: rgba(255, 255, 255, 0.88);
-            backdrop-filter: blur(8px) saturate(120%);
-            -webkit-backdrop-filter: blur(8px) saturate(120%);
+            background: rgba(255, 255, 255, 0.65);
+            backdrop-filter: blur(16px) saturate(160%);
+            -webkit-backdrop-filter: blur(16px) saturate(160%);
             /* Bordo sottile */
-            border: 0.5px solid rgba(139, 69, 19, 0.1);
+            border: 1px solid rgba(139, 69, 19, 0.15);
             /* Ombra morbida */
             box-shadow: 
-                0 4px 20px rgba(139, 69, 19, 0.05),
-                0 1px 3px rgba(0, 0, 0, 0.02);
+                0 8px 32px rgba(139, 69, 19, 0.12),
+                0 2px 6px rgba(0, 0, 0, 0.04);
             
             border-radius: 16px;
             padding: 2rem 1.5rem;
@@ -270,15 +270,15 @@
         
         /* Hover discreto */
         .card:hover {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px) saturate(130%);
-            -webkit-backdrop-filter: blur(10px) saturate(130%);
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(20px) saturate(180%);
+            -webkit-backdrop-filter: blur(20px) saturate(180%);
             
             box-shadow: 
-                0 8px 30px rgba(139, 69, 19, 0.08),
-                0 2px 6px rgba(0, 0, 0, 0.03);
+                0 16px 48px rgba(139, 69, 19, 0.18),
+                0 4px 12px rgba(0, 0, 0, 0.06);
             
-            transform: translateY(-2px); /* -2px invece di -5px = più elegante */
+            transform: translateY(-6px); /* -2px invece di -5px = più elegante */
             
             border-color: rgba(139, 69, 19, 0.15);
         }
@@ -336,11 +336,11 @@
         .news-section { max-width: 800px; margin: 0 auto 2rem; padding: 0 1rem; }
         .news-card { 
             /* Stesso glassmorphism delle card */
-            background: rgba(255, 255, 255, 0.88);
-            backdrop-filter: blur(8px) saturate(120%);
-            -webkit-backdrop-filter: blur(8px) saturate(120%);
+            background: rgba(255, 255, 255, 0.65);
+            backdrop-filter: blur(16px) saturate(160%);
+            -webkit-backdrop-filter: blur(16px) saturate(160%);
             
-            border: 0.5px solid rgba(139,69,19,0.1); 
+            border: 1px solid rgba(139,69,19,0.15); 
             border-radius: 16px; 
             padding: 2rem; 
             position: relative; 
@@ -350,22 +350,22 @@
             display: block; 
             
             box-shadow: 
-                0 4px 20px rgba(139, 69, 19, 0.05),
-                0 1px 3px rgba(0, 0, 0, 0.02);
+                0 8px 32px rgba(139, 69, 19, 0.12),
+                0 2px 6px rgba(0, 0, 0, 0.04);
             
             transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
         }
         
         .news-card:hover { 
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px) saturate(130%);
-            -webkit-backdrop-filter: blur(10px) saturate(130%);
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(20px) saturate(180%);
+            -webkit-backdrop-filter: blur(20px) saturate(180%);
             
-            transform: translateY(-2px); 
+            transform: translateY(-6px); 
             
             box-shadow: 
-                0 8px 30px rgba(139, 69, 19, 0.08),
-                0 2px 6px rgba(0, 0, 0, 0.03);
+                0 16px 48px rgba(139, 69, 19, 0.18),
+                0 4px 12px rgba(0, 0, 0, 0.06);
             
             border-color: rgba(139, 69, 19, 0.15);
         }
