@@ -225,13 +225,95 @@
         .section-title { font-family: 'Playfair Display', serif; text-align: center; font-size: clamp(1.8rem, 5vw, 3rem); font-weight: 300; margin-bottom: 0.5rem; }
         .section-subtitle { text-align: center; color: #6b5d4f; font-size: 0.85rem; margin-bottom: 2rem; letter-spacing: 0.12em; text-transform: uppercase; }
         .grid { display: grid; grid-template-columns: 1fr; gap: 1.2rem; max-width: 1200px; margin: 0 auto; padding: 0 0.5rem; }
-        .card { background: #fff; border: 1px solid rgba(139,69,19,0.12); border-radius: 12px; padding: 1.5rem; text-decoration: none; color: inherit; display: block; transition: transform 0.3s, box-shadow 0.3s; }
-        .card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(139,69,19,0.1); }
-        .card-icon { font-size: 2.5rem; margin-bottom: 1rem; }
-        .card-icon img { width: 80px; height: 80px; object-fit: contain; }
-        .card h3 { font-family: 'Playfair Display', serif; font-size: 1.4rem; margin-bottom: 0.6rem; color: #1a1a1a; }
-        .card p { color: #6b5d4f; line-height: 1.6; font-size: 0.9rem; }
-        .card-badge { display: inline-block; background: linear-gradient(135deg, #B8860B, #DAA520); color: white; font-size: 0.65rem; padding: 0.2rem 0.5rem; border-radius: 10px; margin-bottom: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; }
+  
+/* CARDS - Glassmorphism Elegante                      */
+        .card {
+            /* Effetto vetro elegante */
+            background: rgba(255, 255, 255, 0.88);
+            backdrop-filter: blur(8px) saturate(120%);
+            -webkit-backdrop-filter: blur(8px) saturate(120%);
+            /* Bordo sottile */
+            border: 0.5px solid rgba(139, 69, 19, 0.1);
+            /* Ombra morbida */
+            box-shadow: 
+                0 4px 20px rgba(139, 69, 19, 0.05),
+                0 1px 3px rgba(0, 0, 0, 0.02);
+            
+            border-radius: 16px;
+            padding: 2rem 1.5rem;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+            /* Transizione lenta = elegante */
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            
+            position: relative;
+        }
+        
+        /* Hover discreto */
+        .card:hover {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px) saturate(130%);
+            -webkit-backdrop-filter: blur(10px) saturate(130%);
+            
+            box-shadow: 
+                0 8px 30px rgba(139, 69, 19, 0.08),
+                0 2px 6px rgba(0, 0, 0, 0.03);
+            
+            transform: translateY(-2px); /* -2px invece di -5px = più elegante */
+            
+            border-color: rgba(139, 69, 19, 0.15);
+        }
+        
+        /* Icona card */
+        .card-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            filter: drop-shadow(0 2px 4px rgba(139, 69, 19, 0.1));
+        }
+        
+        .card-icon img {
+            width: 80px;
+            height: 80px;
+            object-fit: contain;
+        }
+        
+        /* Titolo card */
+        .card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            margin-bottom: 0.6rem;
+            color: #1a1a1a;
+            font-weight: 400;
+            letter-spacing: -0.01em;
+        }
+        
+        /* Testo card */
+        .card p {
+            color: #6b5d4f;
+            line-height: 1.6;
+            font-size: 0.9rem;
+            font-weight: 300;
+        }
+        
+        /* Badge (se presente) */
+        .card-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #B8860B, #DAA520);
+            color: white;
+            font-size: 0.65rem;
+            padding: 0.2rem 0.5rem;
+            border-radius: 10px;
+            margin-bottom: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        
+        /* Assicura leggibilità contenuto */
+        .card > * {
+            position: relative;
+            z-index: 1;
+        }
         /* News Section */
         .news-section { max-width: 800px; margin: 0 auto 2rem; padding: 0 1rem; }
         .news-card { background: #fff; border: 1px solid rgba(139,69,19,0.15); border-radius: 16px; padding: 2rem; position: relative; overflow: hidden; text-decoration: none; color: inherit; display: block; transition: transform 0.3s, box-shadow 0.3s; }
