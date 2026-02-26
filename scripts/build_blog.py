@@ -453,6 +453,9 @@ STATIC_PAGES = [
     {"loc": "/contatti.html",                       "changefreq": "monthly",  "priority": "0.8"},
     {"loc": "/privacy-policy.html",                 "changefreq": "yearly",   "priority": "0.3"},
     {"loc": "/cookie-policy.html",                  "changefreq": "yearly",   "priority": "0.3"},
+    {"loc": "/meditazione/ori.html",                "changefreq": "monthly",  "priority": "0.8"},
+    {"loc": "/meditazione/trainig-autogeno.html",   "changefreq": "monthly",  "priority": "0.7"},
+    {"loc": "/meditazione/osho.html",               "changefreq": "monthly",  "priority": "0.7"},
     {"loc": "/calendario/privacy-policy-app.html",  "changefreq": "yearly",   "priority": "0.3"},
     {"loc": "/calendario/termini-utilizzo-app.html","changefreq": "yearly",   "priority": "0.3"},
 ]
