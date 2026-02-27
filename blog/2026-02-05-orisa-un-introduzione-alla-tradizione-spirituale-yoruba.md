@@ -2,7 +2,7 @@
 title: 'Òrìṣà: Un’Introduzione alla Tradizione Spirituale Yorùbá'
 date: 2026-02-05
 published: true
-image: /images/blog/egungun-1.webp
+image: /images/blog/egungun.webp
 image_alt: Culto di Egungun in Nigeria.
 category: yoruba
 tags:
