@@ -2,7 +2,7 @@
 title: 'Orí: La Divinità che Abita nella Tua Testa (parte 1)'
 date: 2026-02-23
 published: true
-image: /images/blog/ori.webp
+image: /images/blog/ori-1.webp
 image_alt: rappresentazione di Orì la testa spirituale e fisica yoruba
 category: yoruba
 tags:
