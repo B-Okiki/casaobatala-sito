@@ -395,7 +395,7 @@ def update_blog_index(articles):
             fetchpriority_attr = ' fetchpriority="high"' if is_first else ''
             image_html = (
                 f'<img src="{article["image"]}" alt="{article["image_alt"]}" '
-                f'class="blog-card-image"{fetchpriority_attr}>'
+                f'class="blog-card-image" width="800" heigth="420"{fetchpriority_attr}>'
             )
         else:
             image_html = '<div class="blog-card-image"></div>'
