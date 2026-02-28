@@ -387,10 +387,13 @@ def update_blog_index(articles):
 
     cards_html = ""
     for article in sorted(articles, key=lambda x: x['date'], reverse=True):
+        for idx, article in enumerate(sorted_articles):
+            is_first = (idx == 0)
         if article['image']:
+            fetchpriority_attr = ' fetchpriority="high" if is_first else ''
             image_html = (
                 f'<img src="{article["image"]}" alt="{article["image_alt"]}" '
-                f'class="blog-card-image">'
+                f'class="blog-card-image">{fetchpriority_attr,}'
             )
         else:
             image_html = '<div class="blog-card-image"></div>'
