@@ -389,7 +389,7 @@ def update_blog_index(articles):
     sorted_articles = sorted(articles, key=lambda x: x['date'], reverse=True)
     
     for idx, article in enumerate(sorted_articles):
-            is_first = (idx == 0)
+        is_first = (idx == 0)
         
         if article['image']:
             fetchpriority_attr = ' fetchpriority="high"' if is_first else ''
