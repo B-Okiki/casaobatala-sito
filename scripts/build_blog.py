@@ -386,7 +386,7 @@ def update_blog_index(articles):
         html = f.read()
 
     cards_html = ""
-    sorted_articles = sorted(articles, key=lambda x: x['date'], reverse=True):
+    sorted_articles = sorted(articles, key=lambda x: x['date'], reverse=True)
     
     for idx, article in enumerate(sorted_articles):
             is_first = (idx == 0)
