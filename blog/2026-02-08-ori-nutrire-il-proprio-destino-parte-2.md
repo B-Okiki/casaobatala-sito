@@ -1,9 +1,9 @@
 ---
 title: 'Orí: Nutrire il Proprio Destino (parte 2)'
-date: 2026-02-08
-published: false
-image: ''
-image_alt: ''
+date: 2026-03-02
+published: true
+image: /images/blog/1000062336.webp
+image_alt: Ilé orí nel culto tradizionale yoruba
 category: yoruba
 tags:
   - Orì, Orisa, Orisha, Orixa, Ifá, Yoruba, Candomble, Santeria, Umbanda,ifà, afro, afrobrasiliano,cosmologia Yorùbá
