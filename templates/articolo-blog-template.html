@@ -16,14 +16,22 @@
     <meta name="msapplication-config" content="/browserconfig.xml">
     <meta name="theme-color" content="#8B4513">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Google Analytics 4 -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-CY01LVTL28"></script>
+    <!-- Google Analytics 4 con Consent Mode v2 -->
     <script>
       window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
+      function gtag(){ dataLayer.push(arguments); }
+      gtag('consent', 'default', {
+        'analytics_storage': 'denied',
+        'ad_storage': 'denied',
+        'wait_for_update': 500
+      });
       gtag('js', new Date());
-      gtag('config', 'G-CY01LVTL28');
+      gtag('config', 'G-CY01LVTL28', { 'anonymize_ip': true });
+      if (localStorage.getItem('cookieConsent') === 'accepted') {
+        gtag('consent', 'update', { 'analytics_storage': 'granted' });
+      }
     </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-CY01LVTL28"></script>
     
     <!-- SEO -->
     <title>{{TITOLO_ARTICOLO}} | Blog Casa Obàtálá</title>
@@ -353,20 +361,7 @@
         <p style="margin-top: 0.5rem;"><a href="/privacy-policy.html">Privacy Policy</a> | <a href="/cookie-policy.html">Cookie Policy</a></p>
     </footer>
 
-    <script>
-    function toggleMenu(){document.getElementById('mobileMenu').classList.toggle('active')}
-    function copyLink(){
-        navigator.clipboard.writeText(window.location.href).then(function(){
-            var btn=document.getElementById('copyLinkBtn');
-            btn.classList.add('copied');
-            btn.innerHTML='<svg viewBox="0 0 24 24" fill="white" width="20" height="20"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg>';
-            setTimeout(function(){
-                btn.classList.remove('copied');
-                btn.innerHTML='<svg viewBox="0 0 24 24" id="copyIconSvg"><path d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" fill="none" stroke="#8B4513" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
-            },2000);
-        });
-    }
-    </script>
+    <script src="/cookie-banner.js"></script>
      <!-- Cloudflare Web Analytics -->
     <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "5c2901b7eb6543afbbdc4511df321f54"}'></script>
     <!-- End Cloudflare Web Analytics -->
