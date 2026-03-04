@@ -14,14 +14,22 @@
     <meta name="msapplication-TileColor" content="#8B4513">
     <meta name="theme-color" content="#8B4513">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Google Analytics 4 -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-CY01LVTL28"></script>
+    <!-- Google Analytics 4 con Consent Mode v2 -->
     <script>
       window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
+      function gtag(){ dataLayer.push(arguments); }
+      gtag('consent', 'default', {
+        'analytics_storage': 'denied',
+        'ad_storage': 'denied',
+        'wait_for_update': 500
+      });
       gtag('js', new Date());
-      gtag('config', 'G-CY01LVTL28');
+      gtag('config', 'G-CY01LVTL28', { 'anonymize_ip': true });
+      if (localStorage.getItem('cookieConsent') === 'accepted') {
+        gtag('consent', 'update', { 'analytics_storage': 'granted' });
+      }
     </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-CY01LVTL28"></script>
     <title>Calendario Yorùbá - I Giorni Sacri degli Òrìṣà | Casa Obàtálá</title>
     <meta name="description" content="Calendario tradizionale Yorùbá: settimana 4 giorni (Kojoda), ogni giorno sacro a un Òrìṣà. App gratuita widget Android/iOS. Da Oyo, Nigeria.">    <meta name="keywords" content="calendario yoruba, Ọ̀sẹ̀, settimana yoruba, Orisha, giorni sacri, Obàtálá, Ifá, Ògún, Ṣàngó, tradizione africana, Nigeria, Oyo">
     <meta name="author" content="Lorenzo Okìkí Rossi">
@@ -662,86 +670,21 @@
             <a href="calendario/termini-utilizzo-app.html">Termini App</a>
         </p>
     </footer>
-
-    <!-- Cookie Banner -->
-    <div id="cookie-banner">
-        <div class="cookie-content">
-            <div class="cookie-text">
-                <p><strong>🍪 Questo sito usa cookie tecnici</strong><br>
-                Utilizziamo solo cookie necessari al funzionamento. <a href="cookie-policy">Maggiori info</a></p>
-            </div>
-            <div class="cookie-buttons">
-                <button class="cookie-btn accept" onclick="acceptCookies()">Accetta</button>
-                <button class="cookie-btn reject" onclick="rejectCookies()">Rifiuta</button>
-                <button class="cookie-btn settings" onclick="openCookieSettings()">Personalizza</button>
-            </div>
-        </div>
-    </div>
-
-    <!-- Cookie Modal -->
-    <div id="cookie-modal" onclick="if(event.target===this)closeCookieModal()">
-        <div class="modal-box">
-            <div class="modal-header"><h3>Preferenze Cookie</h3></div>
-            <div class="modal-body">
-                <div class="cookie-option">
-                    <div class="cookie-option-header">
-                        <strong>Cookie Tecnici</strong>
-                        <span class="cookie-badge active">Sempre attivi</span>
-                    </div>
-                    <p>Necessari per il funzionamento del sito.</p>
-                </div>
-                <div class="cookie-option">
-                    <div class="cookie-option-header">
-                        <strong>Cookie Analitici</strong>
-                        <span class="cookie-badge inactive">Non utilizzati</span>
-                    </div>
-                    <p>Questo sito non usa cookie di tracciamento.</p>
-                </div>
-                <div class="cookie-option">
-                    <div class="cookie-option-header">
-                        <strong>Cookie Marketing</strong>
-                        <span class="cookie-badge inactive">Non utilizzati</span>
-                    </div>
-                    <p>Questo sito non usa cookie pubblicitari.</p>
-                </div>
-                <div class="modal-footer">
-                    <button class="cookie-btn reject" onclick="rejectCookies()">Rifiuta</button>
-                    <button class="cookie-btn accept" onclick="acceptCookies()">Accetta</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <script>
-    // Menu toggle
-    function toggleMenu() {
-        document.getElementById('mobileMenu').classList.toggle('active');
-    }
-    
-    // Cookie functions
-    function acceptCookies() { localStorage.setItem('cookieConsent','accepted'); hideBanner(); }
-    function rejectCookies() { localStorage.setItem('cookieConsent','rejected'); hideBanner(); }
-    function hideBanner() { 
-        document.getElementById('cookie-banner').classList.remove('show'); 
-        document.getElementById('cookie-modal').classList.remove('show'); 
-    }
-    function openCookieSettings() { document.getElementById('cookie-modal').classList.add('show'); }
-    function closeCookieModal() { document.getElementById('cookie-modal').classList.remove('show'); }
-    if(!localStorage.getItem('cookieConsent')) { document.getElementById('cookie-banner').classList.add('show'); }
-    
-    // Terms acceptance
-    function updateLaunchButton() {
-        const checkbox = document.getElementById('acceptTerms');
-        const platformBtns = document.getElementById('platformButtons');
-        if (checkbox.checked) {
-            platformBtns.style.pointerEvents = 'auto';
-            platformBtns.style.opacity = '1';
-        } else {
-            platformBtns.style.pointerEvents = 'none';
-            platformBtns.style.opacity = '0.5';
-        }
+    function toggleMenu(){document.getElementById('mobileMenu').classList.toggle('active')}
+    function updateLaunchButton(){
+      var checkbox=document.getElementById('acceptTerms');
+      var platformBtns=document.getElementById('platformButtons');
+      if(checkbox.checked){
+        platformBtns.style.pointerEvents='auto';
+        platformBtns.style.opacity='1';
+      } else {
+        platformBtns.style.pointerEvents='none';
+        platformBtns.style.opacity='0.5';
+      }
     }
     </script>
+    <script src="/cookie-banner.js"></script>
      <!-- Cloudflare Web Analytics -->
     <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "5c2901b7eb6543afbbdc4511df321f54"}'></script>
     <!-- End Cloudflare Web Analytics -->
