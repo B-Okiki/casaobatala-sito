@@ -15,14 +15,22 @@
     <meta name="msapplication-config" content="/browserconfig.xml">
     <meta name="theme-color" content="#8B4513">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Google Analytics 4 -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-CY01LVTL28"></script>
+    <!-- Google Analytics 4 con Consent Mode v2 -->
     <script>
       window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
+      function gtag(){ dataLayer.push(arguments); }
+      gtag('consent', 'default', {
+        'analytics_storage': 'denied',
+        'ad_storage': 'denied',
+        'wait_for_update': 500
+      });
       gtag('js', new Date());
-      gtag('config', 'G-CY01LVTL28');
+      gtag('config', 'G-CY01LVTL28', { 'anonymize_ip': true });
+      if (localStorage.getItem('cookieConsent') === 'accepted') {
+        gtag('consent', 'update', { 'analytics_storage': 'granted' });
+      }
     </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-CY01LVTL28"></script>
     <title>Lorenzo Okìkí Rossi - Naturopata e Iniziato Yoruba | Casa Obàtálá</title>
     <meta name="description" content="Lorenzo Okìkí Rossi, iniziato Obàtálá tradizione Yoruba. Fitoterapia Federica Web Learning. Naturopata, meditazioni Orí. Roma, Toscana, online.">
     <meta name="keywords" content="Lorenzo Rossi, Okìkí, naturopata Roma, iniziato Yoruba, Obàtálá, fitoterapia, counseling, Candomblé, spiritualità africana, Orisha">
@@ -410,17 +418,7 @@
         <p style="margin-top: 0.5rem;"><a href="privacy-policy">Privacy Policy</a> | <a href="cookie-policy">Cookie Policy</a></p>
     </footer>
 
-    <div id="cookie-banner"><div class="cookie-content"><div class="cookie-text"><p><strong>🍪 Questo sito usa cookie tecnici</strong><br>Utilizziamo solo cookie necessari. <a href="cookie-policy">Info</a></p></div><div class="cookie-buttons"><button class="cookie-btn accept" onclick="acceptCookies()">Accetta</button><button class="cookie-btn reject" onclick="rejectCookies()">Rifiuta</button><button class="cookie-btn settings" onclick="openCookieSettings()">Personalizza</button></div></div></div>
-    <div id="cookie-modal" onclick="if(event.target===this)closeCookieModal()"><div class="modal-box"><div class="modal-header"><h3>Preferenze Cookie</h3></div><div class="modal-body"><div class="cookie-option"><div class="cookie-option-header"><strong>Cookie Tecnici</strong><span class="cookie-badge active">Sempre attivi</span></div><p>Necessari per il funzionamento.</p></div><div class="cookie-option"><div class="cookie-option-header"><strong>Cookie Analitici</strong><span class="cookie-badge inactive">Non utilizzati</span></div><p>Non usiamo tracciamento.</p></div><div class="cookie-option"><div class="cookie-option-header"><strong>Cookie Marketing</strong><span class="cookie-badge inactive">Non utilizzati</span></div><p>Non usiamo pubblicità.</p></div><div class="modal-footer"><button class="cookie-btn reject" onclick="rejectCookies()">Rifiuta</button><button class="cookie-btn accept" onclick="acceptCookies()">Accetta</button></div></div></div></div>
-    <script>
-    function toggleMenu(){document.getElementById('mobileMenu').classList.toggle('active')}
-    function acceptCookies(){localStorage.setItem('cookieConsent','accepted');hideBanner()}
-    function rejectCookies(){localStorage.setItem('cookieConsent','rejected');hideBanner()}
-    function hideBanner(){document.getElementById('cookie-banner').classList.remove('show');document.getElementById('cookie-modal').classList.remove('show')}
-    function openCookieSettings(){document.getElementById('cookie-modal').classList.add('show')}
-    function closeCookieModal(){document.getElementById('cookie-modal').classList.remove('show')}
-    if(!localStorage.getItem('cookieConsent')){document.getElementById('cookie-banner').classList.add('show')}
-    </script>
+    <script src="/cookie-banner.js"></script>
      <!-- Cloudflare Web Analytics -->
     <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "5c2901b7eb6543afbbdc4511df321f54"}'></script>
     <!-- End Cloudflare Web Analytics -->
