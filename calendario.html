@@ -313,36 +313,6 @@
         footer p { color: #6b5d4f; font-size: 0.8rem; line-height: 1.7; }
         footer a { color: #6b5d4f; }
         
-        /* Cookie Banner */
-        #cookie-banner { position: fixed; bottom: 0; left: 0; right: 0; background: #fff; border-top: 2px solid #8B4513; padding: 1rem; box-shadow: 0 -4px 20px rgba(0,0,0,0.15); z-index: 9999; display: none; }
-        #cookie-banner.show { display: block; }
-        .cookie-content { max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; justify-content: space-between; }
-        .cookie-text { flex: 1; min-width: 280px; }
-        .cookie-text p { font-size: 0.85rem; color: #2a2a2a; margin: 0; line-height: 1.5; }
-        .cookie-text a { color: #8B4513; }
-        .cookie-buttons { display: flex; gap: 0.5rem; flex-wrap: wrap; }
-        .cookie-btn { padding: 0.6rem 1.2rem; border-radius: 50px; font-size: 0.8rem; cursor: pointer; border: none; font-family: inherit; }
-        .cookie-btn.accept { background: linear-gradient(135deg, #8B4513, #A0522D); color: white; }
-        .cookie-btn.reject { background: transparent; color: #8B4513; border: 1px solid #8B4513; }
-        .cookie-btn.settings { background: transparent; color: #666; border: 1px solid #ccc; }
-        
-        /* Cookie Modal */
-        #cookie-modal { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.5); z-index: 10000; padding: 1rem; overflow-y: auto; }
-        #cookie-modal.show { display: flex; align-items: center; justify-content: center; }
-        .modal-box { background: #fff; max-width: 500px; width: 100%; border-radius: 12px; overflow: hidden; }
-        .modal-header { background: linear-gradient(135deg, #8B4513, #B8860B); color: white; padding: 1rem 1.5rem; }
-        .modal-header h3 { margin: 0; font-size: 1.1rem; }
-        .modal-body { padding: 1.5rem; }
-        .cookie-option { margin-bottom: 1.2rem; padding-bottom: 1rem; border-bottom: 1px solid #eee; }
-        .cookie-option:last-child { border-bottom: none; margin-bottom: 0; }
-        .cookie-option-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.4rem; }
-        .cookie-option-header strong { color: #8B4513; font-size: 0.95rem; }
-        .cookie-badge { padding: 0.2rem 0.5rem; border-radius: 10px; font-size: 0.7rem; }
-        .cookie-badge.active { background: #8B4513; color: white; }
-        .cookie-badge.inactive { background: #ccc; color: #666; }
-        .cookie-option p { font-size: 0.8rem; color: #666; margin: 0; line-height: 1.4; }
-        .modal-footer { display: flex; gap: 0.5rem; justify-content: flex-end; margin-top: 1rem; }
-        
         /* Responsive */
         @media (min-width: 600px) {
             .calendar-grid { grid-template-columns: repeat(2, 1fr); }
