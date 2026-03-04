@@ -15,14 +15,22 @@
     <meta name="msapplication-config" content="/browserconfig.xml">
     <meta name="theme-color" content="#8B4513">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Google Analytics 4 -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-CY01LVTL28"></script>
+    <!-- Google Analytics 4 con Consent Mode v2 -->
     <script>
       window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
+      function gtag(){ dataLayer.push(arguments); }
+      gtag('consent', 'default', {
+        'analytics_storage': 'denied',
+        'ad_storage': 'denied',
+        'wait_for_update': 500
+      });
       gtag('js', new Date());
-      gtag('config', 'G-CY01LVTL28');
+      gtag('config', 'G-CY01LVTL28', { 'anonymize_ip': true });
+      if (localStorage.getItem('cookieConsent') === 'accepted') {
+        gtag('consent', 'update', { 'analytics_storage': 'granted' });
+      }
     </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-CY01LVTL28"></script>
     <title>Glossario 987 Piante della Tradizione Yoruba | Casa Obàtálá</title>
     <meta name="description" content="Glossario 987 piante tradizione Yoruba con nomi scientifici, proprietà e usi. Fonti: Ewé (Pierre Verger), APG IV, POWO. Progetto completo.">    <meta name="keywords" content="piante Yoruba, glossario piante, ewe, fitoterapia africana, piante officinali, Verger, tradizione Orisha, piante medicinali">
     <meta name="author" content="Lorenzo Okìkí Rossi">
@@ -496,64 +504,11 @@
         <p style="margin-top: 1rem;"><a href="privacy-policy">Privacy Policy</a> | <a href="cookie-policy">Cookie Policy</a></p>
     </footer>
 
-    <!-- COOKIE BANNER -->
-    <div id="cookie-banner">
-        <div class="cookie-content">
-            <div class="cookie-text">
-                <p><strong>🍪 Questo sito usa cookie tecnici</strong><br>
-                Utilizziamo solo cookie necessari al funzionamento. <a href="cookie-policy">Maggiori info</a></p>
-            </div>
-            <div class="cookie-buttons">
-                <button class="cookie-btn accept" onclick="acceptCookies()">Accetta</button>
-                <button class="cookie-btn reject" onclick="rejectCookies()">Rifiuta</button>
-                <button class="cookie-btn settings" onclick="openCookieSettings()">Personalizza</button>
-            </div>
-        </div>
-    </div>
-
-    <!-- COOKIE MODAL -->
-    <div id="cookie-modal" onclick="if(event.target===this)closeCookieModal()">
-        <div class="modal-box">
-            <div class="modal-header"><h3>Preferenze Cookie</h3></div>
-            <div class="modal-body">
-                <div class="cookie-option">
-                    <div class="cookie-option-header">
-                        <strong>Cookie Tecnici</strong>
-                        <span class="cookie-badge active">Sempre attivi</span>
-                    </div>
-                    <p>Necessari per il funzionamento del sito.</p>
-                </div>
-                <div class="cookie-option">
-                    <div class="cookie-option-header">
-                        <strong>Cookie Analitici</strong>
-                        <span class="cookie-badge inactive">Non utilizzati</span>
-                    </div>
-                    <p>Questo sito non usa cookie di tracciamento.</p>
-                </div>
-                <div class="cookie-option">
-                    <div class="cookie-option-header">
-                        <strong>Cookie Marketing</strong>
-                        <span class="cookie-badge inactive">Non utilizzati</span>
-                    </div>
-                    <p>Questo sito non usa cookie pubblicitari.</p>
-                </div>
-                <div class="modal-footer">
-                    <button class="cookie-btn reject" onclick="rejectCookies()">Rifiuta</button>
-                    <button class="cookie-btn accept" onclick="acceptCookies()">Accetta</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
+    
     <script>
     function toggleMenu(){document.getElementById('mobileMenu').classList.toggle('active')}
-    function acceptCookies(){localStorage.setItem('cookieConsent','accepted');hideBanner()}
-    function rejectCookies(){localStorage.setItem('cookieConsent','rejected');hideBanner()}
-    function hideBanner(){document.getElementById('cookie-banner').classList.remove('show');document.getElementById('cookie-modal').classList.remove('show')}
-    function openCookieSettings(){document.getElementById('cookie-modal').classList.add('show')}
-    function closeCookieModal(){document.getElementById('cookie-modal').classList.remove('show')}
-    if(!localStorage.getItem('cookieConsent')){document.getElementById('cookie-banner').classList.add('show')}
     </script>
+    <script src="/cookie-banner.js"></script>
      <!-- Cloudflare Web Analytics -->
     <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "5c2901b7eb6543afbbdc4511df321f54"}'></script>
     <!-- End Cloudflare Web Analytics -->
