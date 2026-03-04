@@ -362,6 +362,20 @@
     </footer>
 
     <script src="/cookie-banner.js"></script>
+    <script>
+    function toggleMenu(){document.getElementById('mobileMenu').classList.toggle('active')}
+    function copyLink(){
+      navigator.clipboard.writeText(window.location.href).then(function(){
+        var btn=document.getElementById('copyLinkBtn');
+        btn.classList.add('copied');
+        setTimeout(function(){btn.classList.remove('copied')},2000);
+      });
+    }
+    function closeCookieModal(){
+      var m=document.getElementById('cookie-modal');
+      if(m) m.style.display='none';
+    }
+    </script>
      <!-- Cloudflare Web Analytics -->
     <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "5c2901b7eb6543afbbdc4511df321f54"}'></script>
     <!-- End Cloudflare Web Analytics -->
