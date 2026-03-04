@@ -15,14 +15,22 @@
     <meta name="msapplication-config" content="/browserconfig.xml">
     <meta name="theme-color" content="#8B4513">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Google Analytics 4 -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-CY01LVTL28"></script>
+       <!-- Google Analytics 4 con Consent Mode v2 -->
     <script>
       window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
+      function gtag(){ dataLayer.push(arguments); }
+      gtag('consent', 'default', {
+        'analytics_storage': 'denied',
+        'ad_storage': 'denied',
+        'wait_for_update': 500
+      });
       gtag('js', new Date());
-      gtag('config', 'G-CY01LVTL28');
+      gtag('config', 'G-CY01LVTL28', { 'anonymize_ip': true });
+      if (localStorage.getItem('cookieConsent') === 'accepted') {
+        gtag('consent', 'update', { 'analytics_storage': 'granted' });
+      }
     </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-CY01LVTL28"></script>
     <title>Meditazione Orí Yoruba, Training Autogeno | Online Roma</title>
     <meta name="description" content="Meditazioni Orí (tradizione Yoruba), Training Autogeno, Osho. Sessioni online e in presenza a Roma, Toscana. Lorenzo Okìkí Rossi guida spirituale.">
     <meta name="keywords" content="meditazione online, meditazione profonda, training autogeno, meditazioni osho, orì yoruba, sessioni online, meditazione roma">
@@ -321,26 +329,10 @@
         <p>© 2026 CASA OBÀTÁLÁ - LORENZO OKÌKÍ ROSSI - C.F. RSSLNZ76A21H501K</p>
         <p style="margin-top: 0.5rem;"><a href="privacy-policy">Privacy Policy</a> | <a href="cookie-policy">Cookie Policy</a></p>
     </footer>
-
-    <div id="cookie-banner">
-        <div class="cookie-content">
-            <div class="cookie-text">
-                <p><strong>Questo sito usa cookie tecnici</strong><br>Utilizziamo solo cookie necessari al funzionamento. <a href="cookie-policy">Maggiori info</a></p>
-            </div>
-            <div class="cookie-buttons">
-                <button class="cookie-btn accept" onclick="acceptCookies()">Accetta</button>
-                <button class="cookie-btn reject" onclick="rejectCookies()">Rifiuta</button>
-            </div>
-        </div>
-    </div>
-
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    <script>
     function toggleMenu(){document.getElementById('mobileMenu').classList.toggle('active')}
-    function acceptCookies(){localStorage.setItem('cookieConsent','accepted');hideBanner()}
-    function rejectCookies(){localStorage.setItem('cookieConsent','rejected');hideBanner()}
-    function hideBanner(){document.getElementById('cookie-banner').classList.remove('show')}
-    if(!localStorage.getItem('cookieConsent')){document.getElementById('cookie-banner').classList.add('show')}
     </script>
+    <script src="/cookie-banner.js"></script>
     <!-- Cloudflare Web Analytics -->
     <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "5c2901b7eb6543afbbdc4511df321f54"}'></script>
     <!-- End Cloudflare Web Analytics -->
