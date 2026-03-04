@@ -47,9 +47,16 @@
         .policy-content strong { color: #8B4513; }
         .policy-content a { color: #8B4513; }
         .info-box { background: rgba(139,69,19,0.04); border-left: 3px solid #8B4513; padding: 1rem 1.2rem; margin: 1.5rem 0; border-radius: 0 8px 8px 0; }
+        .info-box.green { border-left-color: #2e7d32; background: rgba(46,125,50,0.04); }
+        .info-box.warning { border-left-color: #B8860B; background: rgba(184,134,11,0.06); }
         table { width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: 0.85rem; }
-        th, td { border: 1px solid rgba(139,69,19,0.2); padding: 0.7rem; text-align: left; }
+        th, td { border: 1px solid rgba(139,69,19,0.2); padding: 0.7rem; text-align: left; vertical-align: top; }
         th { background: rgba(139,69,19,0.06); color: #8B4513; }
+        td code { background: rgba(139,69,19,0.08); padding: 0.1rem 0.4rem; border-radius: 4px; font-size: 0.8rem; }
+        .badge { display: inline-block; padding: 0.15rem 0.5rem; border-radius: 8px; font-size: 0.75rem; font-weight: 500; }
+        .badge-green { background: #e8f5e9; color: #2e7d32; }
+        .badge-orange { background: #fff3e0; color: #e65100; }
+        .badge-gray { background: #f5f5f5; color: #666; }
         .back-button { display: inline-block; margin: 1.5rem auto; padding: 0.9rem 1.8rem; background: linear-gradient(135deg, #8B4513, #A0522D); color: white; text-decoration: none; border-radius: 50px; font-size: 0.85rem; text-transform: uppercase; }
         .button-container { text-align: center; margin-top: 2rem; }
         footer { text-align: center; padding: 2rem 1rem; background: #f8f6f3; }
@@ -81,12 +88,13 @@
     <main>
     <section class="section">
         <h1 class="section-title">Cookie Policy</h1>
-        <p class="last-update">Ultimo aggiornamento: Gennaio 2026</p>
+        <p class="last-update">Ultimo aggiornamento: Marzo 2026</p>
 
         <div class="policy-content">
+
             <h2>1. Cosa sono i Cookie</h2>
-            <p>I cookie sono piccoli file di testo che i siti web salvano sul tuo dispositivo (computer, smartphone, tablet) quando li visiti. Servono a memorizzare informazioni sulla tua visita, come le preferenze di lingua o altri dati, per rendere la navigazione più semplice e personalizzata.</p>
-            <p>Questa Cookie Policy è redatta in conformità al Regolamento (UE) 2016/679 (GDPR), al D.Lgs. 196/2003 (Codice Privacy) come modificato dal D.Lgs. 101/2018, e alle Linee Guida del Garante Privacy del 10 giugno 2021 in materia di cookie e altri strumenti di tracciamento.</p>
+            <p>I cookie sono piccoli file di testo che i siti web salvano sul tuo dispositivo quando li visiti. Servono a memorizzare informazioni sulla tua visita per rendere la navigazione più semplice e per raccogliere dati statistici.</p>
+            <p>Questa Cookie Policy è redatta in conformità al Regolamento (UE) 2016/679 (GDPR), al D.Lgs. 196/2003 come modificato dal D.Lgs. 101/2018, e alle Linee Guida del Garante Privacy del 10 giugno 2021.</p>
 
             <h2>2. Titolare del Trattamento</h2>
             <div class="info-box">
@@ -96,77 +104,118 @@
                 <p><strong>Email:</strong> <a href="mailto:lorenzo.okiki@gmail.com">lorenzo.okiki@gmail.com</a></p>
             </div>
 
-            <h2>3. Tipologie di Cookie</h2>
-            <p>I cookie possono essere classificati in base a diversi criteri:</p>
-            
-            <h3>Per durata:</h3>
-            <ul>
-                <li><strong>Cookie di sessione:</strong> vengono eliminati alla chiusura del browser</li>
-                <li><strong>Cookie persistenti:</strong> rimangono sul dispositivo per un periodo determinato</li>
-            </ul>
+            <h2>3. Cookie Utilizzati da Questo Sito</h2>
+            <p>Il sito <strong>casaobatala.it</strong> utilizza due categorie di strumenti di analisi con caratteristiche e basi giuridiche distinte:</p>
 
-            <h3>Per provenienza:</h3>
-            <ul>
-                <li><strong>Cookie di prima parte:</strong> impostati direttamente dal sito visitato</li>
-                <li><strong>Cookie di terze parti:</strong> impostati da domini diversi dal sito visitato</li>
-            </ul>
+            <div class="info-box green">
+                <p>✅ <strong>Cloudflare Web Analytics</strong> è attivo su tutte le pagine senza consenso perché è completamente cookie-free e non traccia individualmente gli utenti.</p>
+                <p>⚙️ <strong>Google Analytics 4</strong> è attivo <em>solo dopo il tuo consenso esplicito</em> tramite il banner, perché installa cookie sul tuo browser.</p>
+            </div>
 
-            <h3>Per finalità:</h3>
-            <ul>
-                <li><strong>Cookie tecnici:</strong> necessari al funzionamento del sito (non richiedono consenso)</li>
-                <li><strong>Cookie analitici:</strong> raccolgono statistiche sulla navigazione</li>
-                <li><strong>Cookie di profilazione:</strong> tracciano le preferenze per pubblicità mirata</li>
-            </ul>
-
-            <h2>4. Cookie Utilizzati da Questo Sito</h2>
-            <p>Il sito <strong>casaobatala.it</strong> utilizza esclusivamente <strong>cookie tecnici</strong> strettamente necessari al funzionamento. Ai sensi dell'Art. 122 del Codice Privacy e del Provvedimento del Garante del 10 giugno 2021, i cookie tecnici non richiedono il consenso preventivo dell'utente.</p>
+            <h2>4. Tabella Completa dei Cookie</h2>
 
             <table>
                 <tr>
                     <th>Nome</th>
                     <th>Tipo</th>
+                    <th>Fornitore</th>
                     <th>Finalità</th>
                     <th>Durata</th>
+                    <th>Consenso</th>
                 </tr>
+                <!-- Tecnici -->
                 <tr>
-                    <td>cookieConsent</td>
-                    <td>Tecnico (prima parte)</td>
+                    <td><code>cookieConsent</code></td>
+                    <td>Tecnico — prima parte</td>
+                    <td>Casa Obàtálá</td>
                     <td>Memorizza la scelta dell'utente sui cookie</td>
                     <td>12 mesi</td>
+                    <td><span class="badge badge-green">Non richiesto</span></td>
                 </tr>
                 <tr>
-                    <td>__cf_bm</td>
-                    <td>Tecnico (Cloudflare)</td>
+                    <td><code>cookieConsentDate</code></td>
+                    <td>Tecnico — prima parte</td>
+                    <td>Casa Obàtálá</td>
+                    <td>Memorizza la data della scelta (per rinnovo consenso annuale)</td>
+                    <td>12 mesi</td>
+                    <td><span class="badge badge-green">Non richiesto</span></td>
+                </tr>
+                <tr>
+                    <td><code>__cf_bm</code></td>
+                    <td>Tecnico — Cloudflare</td>
+                    <td>Cloudflare Inc.</td>
                     <td>Protezione da bot e traffico malevolo</td>
                     <td>30 minuti</td>
+                    <td><span class="badge badge-green">Non richiesto</span></td>
                 </tr>
                 <tr>
-                    <td>cf_clearance</td>
-                    <td>Tecnico (Cloudflare)</td>
-                    <td>Verifica JavaScript per sicurezza</td>
+                    <td><code>cf_clearance</code></td>
+                    <td>Tecnico — Cloudflare</td>
+                    <td>Cloudflare Inc.</td>
+                    <td>Verifica di sicurezza per accesso al sito</td>
                     <td>30 minuti</td>
+                    <td><span class="badge badge-green">Non richiesto</span></td>
+                </tr>
+                <!-- Analitici con consenso -->
+                <tr>
+                    <td><code>_ga</code></td>
+                    <td>Analitico — Google Analytics 4</td>
+                    <td>Google LLC</td>
+                    <td>Distingue gli utenti univoci per le statistiche</td>
+                    <td>2 anni</td>
+                    <td><span class="badge badge-orange">Richiesto</span></td>
+                </tr>
+                <tr>
+                    <td><code>_ga_CY01LVTL28</code></td>
+                    <td>Analitico — Google Analytics 4</td>
+                    <td>Google LLC</td>
+                    <td>Mantiene lo stato della sessione di analytics</td>
+                    <td>1 giorno</td>
+                    <td><span class="badge badge-orange">Richiesto</span></td>
                 </tr>
             </table>
 
-            <div class="info-box">
-                <p><strong>⚠️ Nota importante:</strong> Questo sito <strong>NON utilizza</strong>:</p>
-                <ul style="margin-top: 0.5rem; margin-bottom: 0;">
-                    <li>Cookie di profilazione</li>
-                    <li>Cookie pubblicitari</li>
-                    <li>Google Analytics o altri strumenti di tracciamento</li>
-                    <li>Facebook Pixel o strumenti di marketing</li>
-                    <li>Cookie per finalità di remarketing</li>
-                </ul>
+            <h2>5. Strumenti di Analisi Senza Cookie</h2>
+
+            <h3>Cloudflare Web Analytics</h3>
+            <p>Questo sito utilizza <strong>Cloudflare Web Analytics</strong>, uno strumento di misurazione del traffico che funziona <strong>senza installare alcun cookie</strong> sul dispositivo dell'utente.</p>
+            <ul>
+                <li>Non traccia individualmente i visitatori</li>
+                <li>Non utilizza identificatori persistenti</li>
+                <li>Non raccoglie dati personali identificativi</li>
+                <li>Produce esclusivamente statistiche aggregate (numero di visite, pagine più viste, provenienza geografica approssimativa)</li>
+                <li>È conforme al GDPR senza necessità di consenso preventivo</li>
+            </ul>
+            <p><strong>Fornitore:</strong> Cloudflare Inc., 101 Townsend St., San Francisco, CA 94107, USA<br>
+            <strong>Privacy Policy:</strong> <a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener">cloudflare.com/privacypolicy</a></p>
+
+            <h2>6. Cookie Analitici con Consenso</h2>
+
+            <h3>Google Analytics 4 (GA4)</h3>
+            <p>Con il tuo consenso esplicito, il sito utilizza <strong>Google Analytics 4</strong> per raccogliere statistiche dettagliate sulla navigazione.</p>
+            
+            <div class="info-box warning">
+                <p>⚙️ <strong>Consent Mode v2:</strong> Google Analytics 4 è configurato con la modalità Consent Mode v2. Prima che tu esprima il consenso, nessun cookie GA4 viene installato e nessun dato personale viene inviato a Google. Il tracciamento inizia solo dopo il click su "Accetta" nel banner.</p>
             </div>
 
-            <h2>5. Servizi di Terze Parti</h2>
-            <p>Il sito si appoggia ai seguenti servizi esterni che potrebbero installare cookie tecnici:</p>
-            
+            <p><strong>Dati raccolti (solo con consenso):</strong></p>
+            <ul>
+                <li>Pagine visitate e durata della visita</li>
+                <li>Provenienza del traffico (diretto, social, ricerca organica)</li>
+                <li>Tipo di dispositivo, browser e sistema operativo</li>
+                <li>Paese e città (senza indirizzo IP preciso — IP anonimizzato)</li>
+                <li>Percorso di navigazione tra le pagine</li>
+            </ul>
+            <p><strong>Measurement ID:</strong> G-CY01LVTL28<br>
+            <strong>Fornitore:</strong> Google LLC, 1600 Amphitheatre Parkway, Mountain View, CA 94043, USA<br>
+            <strong>Privacy Policy:</strong> <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a><br>
+            <strong>Opt-out:</strong> <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener">Google Analytics Opt-out Browser Add-on</a></p>
+
+            <h2>7. Altri Servizi di Terze Parti</h2>
+
             <h3>Cloudflare (CDN e Sicurezza)</h3>
             <ul>
                 <li><strong>Finalità:</strong> Content Delivery Network, protezione DDoS, sicurezza del sito</li>
-                <li><strong>Cookie:</strong> tecnici per sicurezza e protezione da bot (__cf_bm, cf_clearance)</li>
-                <li><strong>Dati trattati:</strong> indirizzo IP, dati di navigazione (in forma anonimizzata)</li>
                 <li><strong>Privacy Policy:</strong> <a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener">cloudflare.com/privacypolicy</a></li>
             </ul>
 
@@ -174,7 +223,6 @@
             <ul>
                 <li><strong>Finalità:</strong> hosting statico del sito web</li>
                 <li><strong>Cookie:</strong> nessun cookie di tracciamento</li>
-                <li><strong>Dati trattati:</strong> log di accesso standard (IP, user agent)</li>
                 <li><strong>Privacy Policy:</strong> <a href="https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement" target="_blank" rel="noopener">docs.github.com/privacy</a></li>
             </ul>
 
@@ -182,28 +230,35 @@
             <ul>
                 <li><strong>Finalità:</strong> caricamento dei font del sito</li>
                 <li><strong>Cookie:</strong> nessun cookie installato</li>
-                <li><strong>Dati trattati:</strong> indirizzo IP per il caricamento dei font</li>
                 <li><strong>Privacy Policy:</strong> <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a></li>
             </ul>
 
             <h3>Formspree (Modulo di Contatto)</h3>
             <ul>
-                <li><strong>Finalità:</strong> gestione e invio dei messaggi dal form di contatto</li>
+                <li><strong>Finalità:</strong> gestione dei messaggi dal form di contatto</li>
                 <li><strong>Cookie:</strong> nessun cookie di tracciamento</li>
-                <li><strong>Dati trattati:</strong> i dati inseriti dall'utente nel form (nome, email, messaggio)</li>
                 <li><strong>Privacy Policy:</strong> <a href="https://formspree.io/legal/privacy-policy/" target="_blank" rel="noopener">formspree.io/legal/privacy-policy</a></li>
             </ul>
 
-            <h2>6. Base Giuridica</h2>
-            <p>I <strong>cookie tecnici</strong> non richiedono il consenso preventivo dell'utente in quanto strettamente necessari all'erogazione del servizio richiesto (Art. 122, comma 1, del Codice Privacy e Provvedimento del Garante Privacy del 10 giugno 2021).</p>
-            <p>Il banner informativo presente sul sito ha finalità esclusivamente informativa e consente all'utente di esprimere la propria preferenza, che viene memorizzata per evitare la riproposizione del banner ad ogni visita.</p>
-            <p>Qualora in futuro venissero introdotti cookie analitici o di profilazione, sarà richiesto il tuo consenso esplicito tramite banner conforme alle Linee Guida del Garante, con possibilità di accettare, rifiutare o personalizzare le scelte.</p>
+            <h2>8. Cookie NON Utilizzati</h2>
+            <div class="info-box">
+                <p>Questo sito <strong>non utilizza</strong>:</p>
+                <ul style="margin-top: 0.5rem; margin-bottom: 0;">
+                    <li>Cookie di profilazione o remarketing</li>
+                    <li>Facebook Pixel o strumenti Meta</li>
+                    <li>Cookie pubblicitari di qualsiasi tipo</li>
+                    <li>Strumenti di heatmap o session recording</li>
+                </ul>
+            </div>
 
-            <h2>7. Come Gestire i Cookie</h2>
-            <p>Puoi gestire le preferenze sui cookie in diversi modi:</p>
+            <h2>9. Base Giuridica</h2>
+            <p><strong>Cookie tecnici e Cloudflare Web Analytics:</strong> non richiedono consenso in quanto tecnici o privi di cookie, ai sensi dell'Art. 122 del Codice Privacy e del Provvedimento del Garante del 10 giugno 2021.</p>
+            <p><strong>Google Analytics 4:</strong> trattamento basato sul consenso esplicito dell'utente (Art. 6.1.a GDPR), espresso tramite il banner cookie. Il consenso può essere revocato in qualsiasi momento tramite il pulsante "Personalizza" nel banner.</p>
+
+            <h2>10. Come Gestire i Cookie</h2>
 
             <h3>Tramite il banner del sito:</h3>
-            <p>Al primo accesso puoi scegliere se accettare o rifiutare i cookie. La tua scelta viene memorizzata per 12 mesi.</p>
+            <p>Puoi modificare le tue preferenze in qualsiasi momento ricaricando il banner. Per forzare la ricomparsa del banner, cancella i dati del sito dal tuo browser (localStorage).</p>
 
             <h3>Tramite il browser:</h3>
             <ul>
@@ -213,33 +268,29 @@
                 <li><strong>Edge:</strong> Impostazioni → Cookie e autorizzazioni sito → Cookie e dati archiviati</li>
             </ul>
 
-            <p><strong>Attenzione:</strong> la disabilitazione dei cookie tecnici potrebbe compromettere alcune funzionalità del sito, come la protezione da bot malevoli.</p>
+            <h3>Google Analytics opt-out:</h3>
+            <p>Puoi disattivare il tracciamento di Google Analytics su tutti i siti installando l'<a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener">estensione ufficiale di Google</a>.</p>
 
-            <h2>8. Trasferimento Dati Extra-UE</h2>
-            <p>Alcuni servizi di terze parti (Cloudflare, GitHub, Formspree) hanno server situati negli Stati Uniti. Il trasferimento dei dati avviene sulla base di:</p>
+            <h2>11. Trasferimento Dati Extra-UE</h2>
+            <p>Cloudflare, GitHub e Google hanno server negli Stati Uniti. Il trasferimento avviene sulla base delle Clausole Contrattuali Standard (SCC) approvate dalla Commissione Europea e, ove applicabile, del Data Privacy Framework UE-USA (Decisione di adeguatezza del 10 luglio 2023).</p>
+
+            <h2>12. Aggiornamenti</h2>
+            <p>Questa Cookie Policy può essere aggiornata periodicamente. La data dell'ultimo aggiornamento è indicata in cima alla pagina. In caso di modifiche sostanziali, il banner cookie verrà riproposto per raccogliere un nuovo consenso.</p>
+
+            <h2>13. Contatti e Diritti</h2>
+            <p>Per qualsiasi domanda o per esercitare i tuoi diritti (accesso, rettifica, cancellazione, opposizione al trattamento):</p>
             <ul>
-                <li>Clausole Contrattuali Standard (SCC) approvate dalla Commissione Europea</li>
-                <li>Data Privacy Framework UE-USA (per i fornitori certificati)</li>
-            </ul>
-            <p>Questi meccanismi garantiscono un livello di protezione adeguato ai sensi del Capo V del GDPR.</p>
-
-            <h2>9. Aggiornamenti</h2>
-            <p>Questa Cookie Policy può essere aggiornata periodicamente per riflettere modifiche normative o cambiamenti nei servizi utilizzati. Ti invitiamo a consultare questa pagina regolarmente. La data dell'ultimo aggiornamento è indicata in alto.</p>
-
-            <h2>10. Contatti e Diritti</h2>
-            <p>Per qualsiasi domanda sui cookie utilizzati da questo sito o per esercitare i tuoi diritti (accesso, rettifica, cancellazione, opposizione), puoi contattare il Titolare:</p>
-            <ul>
-                <li><strong>Email:</strong> <a href="mailto:info@casaobatala.it">lorenzo.okiki@gmail.com</a></li>
+                <li><strong>Email:</strong> <a href="mailto:lorenzo.okiki@gmail.com">lorenzo.okiki@gmail.com</a></li>
                 <li><strong>Telefono:</strong> +39 347 363 8901</li>
             </ul>
             <p>Hai inoltre diritto di proporre reclamo al <strong>Garante per la Protezione dei Dati Personali</strong> (<a href="https://www.garanteprivacy.it" target="_blank" rel="noopener">www.garanteprivacy.it</a>).</p>
 
-            <h2>11. Link Utili</h2>
+            <h2>14. Link Utili</h2>
             <ul>
-                <li><a href="privacy-policy">Privacy Policy completa</a></li>
-                <li><a href="https://www.garanteprivacy.it/temi/cookie" target="_blank" rel="noopener">Garante Privacy - Informazioni sui cookie</a></li>
+                <li><a href="privacy-policy">Privacy Policy completa del sito</a></li>
+                <li><a href="https://www.garanteprivacy.it/temi/cookie" target="_blank" rel="noopener">Garante Privacy — Informazioni sui cookie</a></li>
                 <li><a href="https://www.garanteprivacy.it/home/docweb/-/docweb-display/docweb/9677876" target="_blank" rel="noopener">Linee Guida Cookie del 10 giugno 2021</a></li>
-                <li><a href="https://www.youronlinechoices.eu/" target="_blank" rel="noopener">Your Online Choices - Gestione cookie pubblicitari</a></li>
+                <li><a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener">Google Analytics Opt-out</a></li>
             </ul>
         </div>
 
@@ -255,7 +306,7 @@
     </footer>
 
     <script>function toggleMenu() { document.getElementById('mobileMenu').classList.toggle('active'); }</script>
-     <!-- Cloudflare Web Analytics -->
+    <!-- Cloudflare Web Analytics -->
     <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "5c2901b7eb6543afbbdc4511df321f54"}'></script>
     <!-- End Cloudflare Web Analytics -->
 </body>
