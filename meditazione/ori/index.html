@@ -15,6 +15,22 @@
     <meta name="msapplication-config" content="/browserconfig.xml">
     <meta name="theme-color" content="#8B4513">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google Analytics 4 con Consent Mode v2 -->
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){ dataLayer.push(arguments); }
+      gtag('consent', 'default', {
+        'analytics_storage': 'denied',
+        'ad_storage': 'denied',
+        'wait_for_update': 500
+      });
+      gtag('js', new Date());
+      gtag('config', 'G-CY01LVTL28', { 'anonymize_ip': true });
+      if (localStorage.getItem('cookieConsent') === 'accepted') {
+        gtag('consent', 'update', { 'analytics_storage': 'granted' });
+      }
+    </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-CY01LVTL28"></script>
     <title>Meditazioni su Orí - Tradizione Yoruba Autentica | Casa Obàtálá</title>
     <meta name="description" content="Meditazioni Orí tradizione Yoruba: livello base e avanzato, 4 varianti specializzate. Sessioni in presenza Roma e Toscana. Lorenzo Okìkí Rossi.">
     <meta name="keywords" content="meditazione orí, orí yoruba, tradizione yoruba, meditazione yoruba, guida interiore, destinazione personale, meditazione profonda roma">
@@ -175,18 +191,6 @@
         footer p { color: #6b5d4f; font-size: 0.8rem; line-height: 1.7; }
         footer a { color: #6b5d4f; text-decoration: underline; }
         
-        /* Cookie Banner */
-        #cookie-banner { position: fixed; bottom: 0; left: 0; right: 0; background: #fff; border-top: 2px solid #8B4513; padding: 1rem; box-shadow: 0 -4px 20px rgba(0,0,0,0.15); z-index: 9999; display: none; }
-        #cookie-banner.show { display: block; }
-        .cookie-content { max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; justify-content: space-between; }
-        .cookie-text { flex: 1; min-width: 280px; }
-        .cookie-text p { font-size: 0.85rem; color: #2a2a2a; margin: 0; line-height: 1.5; }
-        .cookie-text a { color: #8B4513; }
-        .cookie-buttons { display: flex; gap: 0.5rem; flex-wrap: wrap; }
-        .cookie-btn { padding: 0.6rem 1.2rem; border-radius: 50px; font-size: 0.8rem; cursor: pointer; border: none; font-family: inherit; transition: all 0.2s; }
-        .cookie-btn.accept { background: linear-gradient(135deg, #8B4513, #A0522D); color: white; }
-        .cookie-btn.reject { background: transparent; color: #8B4513; border: 1px solid #8B4513; }
-        .cookie-btn:hover { transform: translateY(-2px); }
         
         @media (min-width: 768px) {
             body { padding-top: 80px; }
@@ -469,13 +473,9 @@
 
     <script>
     function toggleMenu(){document.getElementById('mobileMenu').classList.toggle('active')}
-    function acceptCookies(){localStorage.setItem('cookieConsent','accepted');hideBanner()}
-    function rejectCookies(){localStorage.setItem('cookieConsent','rejected');hideBanner()}
-    function hideBanner(){document.getElementById('cookie-banner').classList.remove('show')}
-    if(!localStorage.getItem('cookieConsent')){document.getElementById('cookie-banner').classList.add('show')}
     </script>
-    
-    <!-- Cloudflare Web Analytics -->
+    <script src="/cookie-banner.js"></script>
+     <!-- Cloudflare Web Analytics -->
     <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "5c2901b7eb6543afbbdc4511df321f54"}'></script>
 </body>
 </html>
