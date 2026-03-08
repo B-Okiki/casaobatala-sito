@@ -6,8 +6,24 @@
     <link rel="icon" href="/favicon.ico" sizes="48x48">
     <link rel="icon" href="/favicon.svg" type="image/svg+xml">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google Analytics 4 con Consent Mode v2 -->
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){ dataLayer.push(arguments); }
+      gtag('consent', 'default', {
+        'analytics_storage': 'denied',
+        'ad_storage': 'denied',
+        'wait_for_update': 500
+      });
+      gtag('js', new Date());
+      gtag('config', 'G-CY01LVTL28', { 'anonymize_ip': true });
+      if (localStorage.getItem('cookieConsent') === 'accepted') {
+        gtag('consent', 'update', { 'analytics_storage': 'granted' });
+      }
+    </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-CY01LVTL28"></script>
     <title>Training Autogeno - In Costruzione | Casa Obàtálá</title>
-<meta name="description" content="Corso di Training Autogeno in presenza a Roma e Toscana. Pagina in costruzione.">
+    <meta name="description" content="Corso di Training Autogeno in presenza a Roma e Toscana. Pagina in costruzione.">
     <meta name="robots" content="noindex, nofollow">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -119,5 +135,9 @@
     <script>
     function toggleMenu(){document.getElementById('mobileMenu').classList.toggle('active')}
     </script>
+    <script src="/cookie-banner.js"></script>
+    <!-- Cloudflare Web Analytics -->
+    <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "5c2901b7eb6543afbbdc4511df321f54"}'></script>
+    <!-- End Cloudflare Web Analytics -->
 </body>
 </html>
