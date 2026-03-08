@@ -4,6 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-CY01LVTL28"></script>
+    <!-- Google Analytics 4 con Consent Mode v2 -->
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){ dataLayer.push(arguments); }
+      gtag('consent', 'default', {
+        'analytics_storage': 'denied',
+        'ad_storage': 'denied',
+        'wait_for_update': 500
+      });
+      gtag('js', new Date());
+      gtag('config', 'G-CY01LVTL28', { 'anonymize_ip': true });
+      if (localStorage.getItem('cookieConsent') === 'accepted') {
+        gtag('consent', 'update', { 'analytics_storage': 'granted' });
+      }
+    </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-CY01LVTL28"></script>
     <title>Calendario Yorùbá</title>
     <meta name="description" content="Calendario tradizionale Yorùbá con settimana di 4 giorni - I giorni sacri degli Òrìṣà">
     <meta name="author" content="Lorenzo Okìkí Rossi">
@@ -1134,6 +1150,11 @@
 
         // Initial render
         render();
+    </script>
+    <script src="/cookie-banner.js"></script>
+    <!-- Cloudflare Web Analytics -->
+    <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "5c2901b7eb6543afbbdc4511df321f54"}'></script>
+    <!-- End Cloudflare Web Analytics -->
     
 </body>
 </html>
