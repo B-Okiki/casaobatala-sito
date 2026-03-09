@@ -426,9 +426,21 @@ def update_blog_index(articles):
         </div>
 '''
 
+    # IMPORTANTE: Preserva la newsletter section se presente
+    newsletter_section = ""
+    newsletter_match = re.search(
+        r'</div>\s*(<!-- Newsletter Section -->.*?</div>\s*</div>)\s*<div class="button-container">',
+        html,
+        flags=re.DOTALL
+    )
+    if newsletter_match:
+        newsletter_section = "\n\n    " + newsletter_match.group(1) + "\n"
+        print("  ✅ Newsletter section preservata")
+
+    # Sostituisci solo blog-grid, reinserendo newsletter dopo
     html = re.sub(
-        r'(<div class="blog-grid">).*?(</div>\s*<div class="button-container">)',
-        f'\\1{cards_html}\n    \\2',
+        r'(<div class="blog-grid">).*?(</div>)\s*(?:<!-- Newsletter Section -->.*?</div>\s*</div>\s*)?(<div class="button-container">)',
+        f'\\1{cards_html}\n    \\2{newsletter_section}\n    \\3',
         html,
         flags=re.DOTALL
     )
