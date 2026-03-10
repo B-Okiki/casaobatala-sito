@@ -413,6 +413,7 @@ def update_blog_index(articles):
     with open(blog_file, 'r', encoding='utf-8') as f:
         html = f.read()
 
+    # Genera HTML delle card
     cards_html = ""
     sorted_articles = sorted(articles, key=lambda x: x['date'], reverse=True)
     
@@ -454,27 +455,49 @@ def update_blog_index(articles):
         </div>
 '''
 
-    # IMPORTANTE: Preserva la newsletter section se presente
-    newsletter_section = ""
-    newsletter_match = re.search(
-        r'</div>\s*(<!-- Newsletter Section -->.*?</div>\s*</div>)\s*<div class="button-container">',
-        html,
-        flags=re.DOTALL
-    )
-    if newsletter_match:
-        newsletter_section = "\n\n    " + newsletter_match.group(1) + "\n"
+    # METODO ROBUSTO: Split in 3 parti e ricostruisci
+    # Trova gli indici
+    grid_start_match = re.search(r'<div class="blog-grid">', html)
+    if not grid_start_match:
+        print("  ❌ <div class=\"blog-grid\"> non trovato")
+        return
+    
+    grid_start_pos = grid_start_match.end()
+    
+    # Cerca il </div> di chiusura del blog-grid
+    # Cerchiamo </div> seguito da whitespace e poi <!-- Newsletter Section --> o <div class="button-container">
+    remaining = html[grid_start_pos:]
+    grid_end_pattern = r'(</div>)\s*(?=(?:<!-- Newsletter Section -->|<div class="button-container">))'
+    grid_end_match = re.search(grid_end_pattern, remaining)
+    
+    if not grid_end_match:
+        # Fallback: cerca solo </div> seguito da button-container
+        grid_end_match = re.search(r'(</div>)\s*(?=<div class="button-container">)', remaining)
+    
+    if not grid_end_match:
+        print("  ❌ </div> di chiusura blog-grid non trovato")
+        return
+    
+    grid_end_pos = grid_start_pos + grid_end_match.end()
+    
+    # Ricostruisci
+    before_grid = html[:grid_start_match.start()]
+    after_grid = html[grid_end_pos:]
+    
+    # Verifica se c'è newsletter section dopo il grid
+    has_newsletter = "<!-- Newsletter Section -->" in after_grid
+    if has_newsletter:
         print("  ✅ Newsletter section preservata")
-
-    # Sostituisci solo blog-grid, reinserendo newsletter dopo
-    html = re.sub(
-        r'(<div class="blog-grid">).*?(</div>)\s*(?:<!-- Newsletter Section -->.*?</div>\s*</div>\s*)?(<div class="button-container">)',
-        f'\\1{cards_html}\n    \\2{newsletter_section}\n    \\3',
-        html,
-        flags=re.DOTALL
+    
+    new_html = (
+        before_grid +
+        '<div class="blog-grid">' +
+        cards_html + '\n    </div>\n\n' +
+        after_grid
     )
 
     with open(blog_file, 'w', encoding='utf-8') as f:
-        f.write(html)
+        f.write(new_html)
 
     print(f"  ✅ blog.html aggiornato con {len(articles)} articoli")
 
