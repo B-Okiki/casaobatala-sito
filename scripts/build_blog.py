@@ -14,6 +14,7 @@ Changelog rispetto alla versione originale:
 - Fix: pulizia titoli (rimozione # iniziali da Decap CMS)
 - Fix: tag vuoti filtrati, duplicati rimossi, URL-encoded nei link
 - Fix: reading time calcolato su testo pulito
+- **Fix: paragrafi markdown sempre wrappati in <p> (correzione conversione)**
 - Miglioramento: marker contenuto dedicati con fallback a cascata
 - Miglioramento: log errori YAML
 - Miglioramento: generazione automatica sitemap.xml con articoli pubblicati
@@ -157,26 +158,15 @@ def markdown_to_html(text):
     # STEP 0: Rimuovi backslash da CMS
     text = strip_cms_backslashes(text)
 
-    # Headers
+    # STEP 1: Horizontal rules (PRIMA di tutto per evitare confusione con i paragrafi)
+    text = re.sub(r'^\s*[-*_]{3,}\s*$', '<hr>', text, flags=re.MULTILINE)
+
+    # STEP 2: Headers
     text = re.sub(r'^### (.+)$', r'<h3>\1</h3>', text, flags=re.MULTILINE)
     text = re.sub(r'^## (.+)$', r'<h2>\1</h2>', text, flags=re.MULTILINE)
     text = re.sub(r'^# (.+)$', r'<h2>\1</h2>', text, flags=re.MULTILINE)
 
-    # Bold e italic
-    text = re.sub(r'\*\*\*(.+?)\*\*\*', r'<strong><em>\1</em></strong>', text)
-    text = re.sub(r'\*\*(.+?)\*\*', r'<strong>\1</strong>', text)
-    text = re.sub(r'(?<!\w)\*([^*\n]+?)\*(?!\w)', r'<em>\1</em>', text)
-
-    # Links
-    text = re.sub(r'\[([^\]]+)\]\(([^)]+)\)', r'<a href="\2">\1</a>', text)
-
-    # Images
-    text = re.sub(r'!\[([^\]]*)\]\(([^)]+)\)', r'<img src="\2" alt="\1" loading="lazy">', text)
-
-    # Horizontal rules (prima dei blockquote)
-    text = re.sub(r'^\s*[-*_]{3,}\s*$', '<hr>', text, flags=re.MULTILINE)
-
-    # Blockquotes
+    # STEP 3: Blockquotes
     lines = text.split('\n')
     in_blockquote = False
     new_lines = []
@@ -195,23 +185,58 @@ def markdown_to_html(text):
         new_lines.append('</blockquote>')
     text = '\n'.join(new_lines)
 
-    # Liste non ordinate
+    # STEP 4: Liste non ordinate
     text = _wrap_list_items(text, prefix=r'^- ', tag='ul')
 
-    # Liste ordinate
+    # STEP 5: Liste ordinate
     text = _wrap_list_items(text, prefix=r'^\d+\. ', tag='ol')
 
-    # Paragrafi
+    # STEP 6: Bold e italic
+    text = re.sub(r'\*\*\*(.+?)\*\*\*', r'<strong><em>\1</em></strong>', text)
+    text = re.sub(r'\*\*(.+?)\*\*', r'<strong>\1</strong>', text)
+    text = re.sub(r'(?<!\w)\*([^*\n]+?)\*(?!\w)', r'<em>\1</em>', text)
+
+    # STEP 7: Links
+    text = re.sub(r'\[([^\]]+)\]\(([^)]+)\)', r'<a href="\2">\1</a>', text)
+
+    # STEP 8: Images
+    text = re.sub(r'!\[([^\]]*)\]\(([^)]+)\)', r'<img src="\2" alt="\1" loading="lazy">', text)
+
+    # STEP 9: Paragrafi (ULTIMO, dopo aver processato tutti i blocchi)
     paragraphs = text.split('\n\n')
     new_paragraphs = []
+    
+    # Pattern per riconoscere blocchi HTML completi (NON devono essere wrappati in <p>)
+    BLOCK_HTML_PATTERNS = [
+        r'^<hr>$',
+        r'^<h[1-6]>',
+        r'^<blockquote>',
+        r'^</blockquote>$',
+        r'^<ul>',
+        r'^</ul>$',
+        r'^<ol>',
+        r'^</ol>$',
+        r'^<li>',
+        r'^<div',
+    ]
+    
     for p in paragraphs:
         p = p.strip()
-        if p and not p.startswith('<'):
+        if not p:
+            continue
+        
+        # Controlla se questo paragrafo è un blocco HTML completo
+        is_html_block = any(re.match(pattern, p, re.DOTALL) for pattern in BLOCK_HTML_PATTERNS)
+        
+        # Se non è un blocco HTML e non ha già tag <p>, wrappa
+        if not is_html_block and not p.startswith('<p>'):
             p = f'<p>{p}</p>'
+        
         new_paragraphs.append(p)
+    
     text = '\n\n'.join(new_paragraphs)
 
-    # Pulisci newlines dentro i paragrafi
+    # STEP 10: Pulisci newlines dentro i paragrafi
     text = re.sub(
         r'<p>(.+?)</p>',
         lambda m: '<p>' + m.group(1).replace('\n', ' ') + '</p>',
