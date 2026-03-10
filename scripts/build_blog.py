@@ -159,7 +159,10 @@ def markdown_to_html(text):
     text = strip_cms_backslashes(text)
 
     # STEP 1: Horizontal rules (PRIMA di tutto per evitare confusione con i paragrafi)
-    text = re.sub(r'^\s*[-*_]{3,}\s*$', '<hr>', text, flags=re.MULTILINE)
+    # Aggiungi \n\n prima e dopo per forzare separazione dai paragrafi
+    text = re.sub(r'^\s*[-*_]{3,}\s*$', '\n\n<hr>\n\n', text, flags=re.MULTILINE)
+    # Pulisci spazi bianchi multipli
+    text = re.sub(r'\n{3,}', '\n\n', text)
 
     # STEP 2: Headers
     text = re.sub(r'^### (.+)$', r'<h3>\1</h3>', text, flags=re.MULTILINE)
