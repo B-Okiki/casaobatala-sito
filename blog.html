@@ -172,6 +172,24 @@
             .featured-post { grid-column: 1 / -1; grid-template-columns: 1.2fr 1fr; }
             .blog-card h2 { font-size: 1.5rem; }
         }
+        /* Newsletter CTA Button */
+        .newsletter-cta-btn {
+            display: inline-block;
+            padding: 0.9rem 2rem;
+            background: linear-gradient(135deg, #8B4513, #B8860B);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(139,69,19,0.2);
+        }
+        .newsletter-cta-btn:hover {
+            background: linear-gradient(135deg, #A0522D, #DAA520);
+            box-shadow: 0 6px 25px rgba(139,69,19,0.3);
+            transform: translateY(-2px);
+        }
     </style>
 </head>
 
@@ -216,6 +234,12 @@
         <a href="blog.html?cat=orisa" class="category-btn">Òrìṣà</a>
         <a href="blog.html?cat=piante" class="category-btn">Piante</a>
         <a href="blog.html?cat=crescita" class="category-btn">Crescita Personale</a>
+    </div>
+        <!-- Link Newsletter -->
+    <div style="text-align: center; margin: 2rem auto 3rem; padding: 0 1rem;">
+        <a href="#newsletter" class="newsletter-cta-btn" onclick="document.getElementById('newsletter').scrollIntoView({behavior: 'smooth'}); return false;">
+             Iscriviti alla Newsletter
+        </a>
     </div>
 
     <!-- Griglia Articoli -->
@@ -274,8 +298,8 @@
 
     </div>
 
-    <!-- Newsletter Section -->
-    <div class="newsletter-section" style="max-width: 800px; margin: 4rem auto 2rem; padding: 0 1.5rem;">
+    <<!-- Newsletter Section -->
+    <div id="newsletter" class="newsletter-section" style="max-width: 800px; margin: 4rem auto 2rem; padding: 0 1.5rem;">
         <div style="background: linear-gradient(135deg, rgba(139,69,19,0.06), rgba(184,134,11,0.06)); border: 1px solid rgba(184,134,11,0.2); border-radius: 16px; padding: 2.5rem 2rem; text-align: center;">
             <h2 style="font-family: 'Playfair Display', serif; color: #8B4513; font-size: 2rem; margin-bottom: 1rem; font-weight: 400;">Non perdere i prossimi articoli</h2>
             <p style="color: #2a2a2a; font-size: 1.05rem; line-height: 1.7; margin-bottom: 1.5rem;">Iscriviti alla newsletter. Contenuti esclusivi sulla tradizione Yorùbá.<br><strong>Niente spam, promesso.</strong></p>
@@ -1089,6 +1113,72 @@
 
     <script>
     function toggleMenu(){document.getElementById('mobileMenu').classList.toggle('active')}
+    
+    // Filtro categorie e tag
+    (function() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const category = urlParams.get('cat');
+        const tag = urlParams.get('tag');
+        
+        if (!category && !tag) return; // Nessun filtro attivo
+        
+        const cards = document.querySelectorAll('.blog-card');
+        let visibleCount = 0;
+        
+        cards.forEach(card => {
+            const cardCategory = card.querySelector('.blog-card-category').textContent.toLowerCase();
+            const cardTags = card.querySelector('.blog-card-content p')?.textContent.toLowerCase() || '';
+            
+            let shouldShow = false;
+            
+            // Filtro per categoria
+            if (category) {
+                const categoryMap = {
+                    'meditazione': 'meditazione',
+                    'yoruba': 'tradizione yoruba',
+                    'orisa': 'òrìṣà',
+                    'piante': 'piante',
+                    'crescita': 'crescita personale'
+                };
+                shouldShow = cardCategory.includes(categoryMap[category] || category);
+            }
+            
+            // Filtro per tag
+            if (tag && cardTags.includes(tag.toLowerCase())) {
+                shouldShow = true;
+            }
+            
+            if (shouldShow) {
+                card.style.display = '';
+                visibleCount++;
+            } else {
+                card.style.display = 'none';
+            }
+        });
+        
+        // Mostra messaggio se nessun risultato
+        if (visibleCount === 0) {
+            const grid = document.querySelector('.blog-grid');
+            grid.innerHTML = `
+                <div class="empty-state">
+                    <h3>🔍 Nessun articolo trovato</h3>
+                    <p>Non ci sono ancora articoli in questa categoria.</p>
+                    <a href="blog.html" style="display: inline-block; margin-top: 1.5rem; padding: 0.8rem 1.5rem; background: linear-gradient(135deg, #8B4513, #A0522D); color: white; text-decoration: none; border-radius: 25px; font-size: 0.85rem;">← Tutti gli articoli</a>
+                </div>
+            `;
+        }
+        
+        // Aggiorna bottone attivo
+        document.querySelectorAll('.category-btn').forEach(btn => {
+            btn.classList.remove('active');
+            const btnHref = btn.getAttribute('href');
+            if ((category && btnHref.includes(`cat=${category}`)) || 
+                (tag && btnHref.includes(`tag=${tag}`)) ||
+                (!category && !tag && btnHref === 'blog')) {
+                btn.classList.add('active');
+            }
+        });
+    })();
     </script>
 
     <script src="/cookie-banner.js"></script>
