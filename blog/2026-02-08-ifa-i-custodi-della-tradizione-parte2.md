@@ -1,10 +1,10 @@
 ---
 title: 'Ifá: I Custodi della Tradizione (parte2)'
-date: 2026-02-08
-published: false
-image: ''
-image_alt: ''
-category: riflessioni
+date: 2026-03-23
+published: true
+image: /images/blog/divinazione di Ifà.webp
+image_alt: Divinazione di Ifà
+category: yoruba
 tags:
   - Orì, Orisa, Orisha, Orixa, Ifá, Yoruba, Candomble, Santeria, Umbanda,ifà, afro, afrobrasiliano,cosmologia Yorùbá.
 description: 'Cosa è Ifá? Scopri la tradizione spirituale Yorùbá: Òrìṣà, Orí, Àṣẹ, Ifá nella tradizione africana nella sua forma originaria, senza sincretismi.'
@@ -34,7 +34,6 @@ Prima di parlare delle iniziazioni, c'è una figura centrale e segreta del culto
 Questa distinzione genera \*\*due forme di iniziazione a Ifá\*\*:
 
 - \*\*Ìtẹ̀lódù\*\* — L'iniziazione completa, durante la quale Ìyá Odù è presente. Solo gli uomini possono riceverla. Chi riceve Ìtẹ̀lódù può praticare come Babaláwo e consultare Ifá per altre persone.
-
 - \*\*Ìtẹfá\*\* — L'iniziazione senza la presenza di Ìyá Odù. Chi la riceve è iniziato a Ifá ma non pratica come Babaláwo: consulta Ifá esclusivamente per il proprio benessere personale, non per altri.
 
 ### Babaláwo, Ìyánífá e Babalórìṣà
@@ -119,25 +118,19 @@ Ifá insegna che il destino esiste, ma non è una prigione. Attraverso il buon c
 
 Nessuna magia. Saggezza accumulata attraverso generazioni di persone che hanno osservato la condizione umana e hanno cercato di capirla.
 
----
+***
 
 \*\*Fonti e riferimenti:\*\*
 
 - UNESCO. "Ifa Divination System." Intangible Cultural Heritage, 2005.
-
 - Baba Ifaloba, Babaláwo e Babalórìṣà, tradizione di Ọ̀yọ́, tempio Orixa Aje Ifa (Bari/Zeme). Insegnamenti orali.
-
 - Abímbọ́lá, Wande. \*Ifá: An Exposition of Ifá Literary Corpus\*. Oxford University Press, 1977.
-
 - Abímbọ́lá, Wande. \*Ifá Divination: Communication Between Gods and Men in West Africa\*. Oxford University Press, 1976.
-
 - Bascom, William. \*Sixteen Cowries: Yoruba Divination from Africa to the New World\*. Indiana University Press, 1993.
-
 - Olúpọ̀nà, Jacob K. \*City of 201 Gods: Ilé-Ifẹ̀ in Time, Space, and the Imagination\*. University of California Press, 2011.
-
 - Olúwọlé, Sophie. \*Socrates and Orunmila: Two Patron Saints of Classical Philosophy\*. Ark Publishers, 2014.
 
----
+***
 
 \*\*© 2026 Lorenzo Okìkí Rossi / Casa Obàtálá\*\*
 
