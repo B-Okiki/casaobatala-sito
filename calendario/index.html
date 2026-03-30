@@ -761,8 +761,8 @@
 
         // Calculations
         const calcolaOseIndex = (giorno, mese, anno) => {
-            const dataRiferimento = new Date(2025, 0, 1);
-            const dataCorrente = new Date(anno, mese, giorno);
+            const dataRiferimento = Date.UTC(2025, 0, 1);
+            const dataCorrente   = Date.UTC(anno, mese, giorno);
             const diff = Math.floor((dataCorrente - dataRiferimento) / (1000 * 60 * 60 * 24));
             const indice = diff % 4;
             return indice < 0 ? (indice + 4) % 4 : indice;
@@ -788,22 +788,22 @@
         };
 
         const calcolaItadogun = (giorno, mese, anno) => {
-            const dataBase = new Date(2025, 9, 13);
-            const dataCorrente = new Date(anno, mese, giorno);
+            const dataBase     = Date.UTC(2025, 9, 13);
+            const dataCorrente = Date.UTC(anno, mese, giorno);
             const diff = Math.floor((dataCorrente - dataBase) / (1000 * 60 * 60 * 24));
             return diff >= 0 && diff % 16 === 0;
         };
 
         const calcolaOjoNlaObatala = (giorno, mese, anno) => {
-            const dataBase = new Date(2025, 9, 12);
-            const dataCorrente = new Date(anno, mese, giorno);
+            const dataBase     = Date.UTC(2025, 9, 12);
+            const dataCorrente = Date.UTC(anno, mese, giorno);
             const diff = Math.floor((dataCorrente - dataBase) / (1000 * 60 * 60 * 24));
             return diff >= 0 && diff % 16 === 0;
         };
 
         const calcolaJakutaOloyin = (giorno, mese, anno) => {
-            const dataBase = new Date(2025, 9, 3);
-            const dataCorrente = new Date(anno, mese, giorno);
+            const dataBase     = Date.UTC(2025, 9, 3);
+            const dataCorrente = Date.UTC(anno, mese, giorno);
             const diff = Math.floor((dataCorrente - dataBase) / (1000 * 60 * 60 * 24));
             return diff >= 0 && diff % 28 === 0;
         };
