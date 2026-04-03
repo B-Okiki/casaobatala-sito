@@ -29,7 +29,7 @@ from urllib.parse import quote
 
 # Cartelle
 BLOG_FOLDER = "blog"
-TEMPLATE_FILE = "templates/articolo-blog-template.html"
+TEMPLATE_FILE = "templates/articolo-blog-template"
 OUTPUT_FOLDER = "blog"
 SITEMAP_FILE = "sitemap.xml"
 SITE_URL = "https://casaobatala.it"
@@ -325,7 +325,7 @@ def build_article(md_file, template):
     image_filename = image.replace('/images/blog/', '') if image else ''
 
     tags_html = ' '.join(
-        [f'<a href="/blog.html?tag={quote(tag)}" class="tag">{tag}</a>'
+        [f'<a href="/blog?tag={quote(tag)}" class="tag">{tag}</a>'
          for tag in tags if tag]
     )
 
@@ -346,7 +346,7 @@ def build_article(md_file, template):
         '{{DIDASCALIA_IMMAGINE}}': '',
         '{{TAGS_SEPARATI_DA_VIRGOLA}}': ', '.join(tags) if tags else '',
         '{{TAGS_HTML}}': tags_html,
-        '{{URL_ARTICOLO}}': f'{SITE_URL}/blog/{slug}.html',
+        '{{URL_ARTICOLO}}': f'{SITE_URL}/blog/{slug}',
         '{{TITOLO_ENCODED}}': title_encoded,
     }
 
@@ -432,7 +432,7 @@ def update_blog_index(articles):
         description_safe = truncate_text(article['description'])
 
         cards_html += f'''
-        <a href="blog/{article['slug']}.html" class="blog-card">
+        <a href="blog/{article['slug']}" class="blog-card">
             {image_html}
             <div class="blog-card-content">
                 <span class="blog-card-category">{article['category']}</span>
@@ -451,7 +451,7 @@ def update_blog_index(articles):
         <div class="empty-state">
             <h3>🌱 Prossimamente</h3>
             <p>Il blog è in arrivo. Iscriviti per ricevere notifiche sui nuovi articoli.</p>
-            <a href="contatti.html" style="display: inline-block; margin-top: 1.5rem; padding: 0.8rem 1.5rem; background: linear-gradient(135deg, #8B4513, #A0522D); color: white; text-decoration: none; border-radius: 25px; font-size: 0.85rem;">Contattami</a>
+            <a href="contatti" style="display: inline-block; margin-top: 1.5rem; padding: 0.8rem 1.5rem; background: linear-gradient(135deg, #8B4513, #A0522D); color: white; text-decoration: none; border-radius: 25px; font-size: 0.85rem;">Contattami</a>
         </div>
 '''
 
@@ -513,7 +513,7 @@ STATIC_PAGES = [
     {"loc": "/meditazione",                         "changefreq": "monthly",  "priority": "0.9"},
     {"loc": "/piante",                              "changefreq": "monthly",  "priority": "0.9"},
     {"loc": "/glossario",                           "changefreq": "monthly",  "priority": "0.8"},
-    {"loc": "/blog.html",                           "changefreq": "weekly",   "priority": "0.8"},
+    {"loc": "/blog",                                "changefreq": "weekly",   "priority": "0.8"},
     {"loc": "/calendario",                          "changefreq": "monthly",  "priority": "0.9"},
     {"loc": "/calendario/",                         "changefreq": "monthly",  "priority": "0.8"},
     {"loc": "/chi-sono",                            "changefreq": "monthly",  "priority": "0.8"},
@@ -541,7 +541,7 @@ def update_sitemap(articles):
     # Pagine statiche
     for page in STATIC_PAGES:
         # blog.html usa la data di oggi (viene aggiornato ad ogni build)
-        if page["loc"] == "/blog.html":
+        if page["loc"] == "/blog":
             lastmod = today
         else:
             lastmod = _get_existing_lastmod(page["loc"]) or today
@@ -555,7 +555,7 @@ def update_sitemap(articles):
     # Articoli blog
     for article in sorted(articles, key=lambda x: x['date'], reverse=True):
         xml_lines.append(f"""  <url>
-    <loc>{SITE_URL}/blog/{article['slug']}.html</loc>
+    <loc>{SITE_URL}/blog/{article['slug']}</loc>
     <lastmod>{article['date']}</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
