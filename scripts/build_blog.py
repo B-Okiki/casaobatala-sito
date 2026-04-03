@@ -29,7 +29,7 @@ from urllib.parse import quote
 
 # Cartelle
 BLOG_FOLDER = "blog"
-TEMPLATE_FILE = "templates/articolo-blog-template"
+TEMPLATE_FILE = "templates/articolo-blog-template.html"
 OUTPUT_FOLDER = "blog"
 SITEMAP_FILE = "sitemap.xml"
 SITE_URL = "https://casaobatala.it"
