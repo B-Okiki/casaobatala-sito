@@ -1,5 +1,5 @@
 ---
-title: '"Meditare con Orí: Incontrare la Propria Natura"'
+title: 'Meditare con Orí: Incontrare la Propria Natura'
 date: 2026-04-09
 published: false
 image: ''
