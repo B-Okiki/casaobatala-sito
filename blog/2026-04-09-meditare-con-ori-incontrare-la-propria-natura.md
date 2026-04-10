@@ -2,8 +2,8 @@
 title: 'Meditare con Orí: Incontrare la Propria Natura'
 date: 2026-04-09
 published: false
-image: /images/blog/1000066845.webp
-image_alt: Meditazione Orí,  benessere e crescita personale, benessere spirituale,
+image: /images/blog/1000066849.webp
+image_alt: Meditazione Orí,  benessere e crescita personale, benessere spirituale, Yoruba, candomble
 category: meditazione
 tags:
   - meditazione Orí, tradizione Yorùbá, ìwà rere, counseling spirituale, Casa Obàtálá, percorso interiore
