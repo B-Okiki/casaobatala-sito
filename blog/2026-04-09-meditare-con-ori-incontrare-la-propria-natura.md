@@ -1,7 +1,7 @@
 ---
 title: 'Meditare con Orí: Incontrare la Propria Natura'
-date: 2026-04-09
-published: false
+date: 2026-04-10
+published: true
 image: /images/blog/1000066849.webp
 image_alt: Meditazione Orí,  benessere e crescita personale, benessere spirituale, Yoruba, candomble
 category: meditazione
