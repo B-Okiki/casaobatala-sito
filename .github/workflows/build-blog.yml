@@ -69,7 +69,7 @@ jobs:
           git config --local user.name "GitHub Action"
           git add -A
           git diff --staged --quiet || git commit -m "🤖 Auto-build: blog + RSS + image optimization"
-          git pull --rebase origin main
+          git pull origin main --no-rebase
           git push
           
       # 9. Svuota cache Cloudflare
