@@ -2,14 +2,12 @@
 title: 'Meditare con Orí: Incontrare la Propria Natura'
 date: 2026-04-09
 published: false
-image: ''
-image_alt: ''
+image: /images/blog/1000066845.webp
+image_alt: Meditazione Orí,  benessere e crescita personale, benessere spirituale,
 category: meditazione
 tags:
   - meditazione Orí, tradizione Yorùbá, ìwà rere, counseling spirituale, Casa Obàtálá, percorso interiore
-description: |-
-  La meditazione sull'Orí non è una tecnica di rilassamento. È un incontro con la propria natura profonda. Cosa succede durante la pratica, come è strutturata e cosa apre nel tempo."
-  minuti_lettura: 6
+description: La meditazione sull'Orí non è una tecnica di rilassamento. È un incontro con la propria natura profonda. Cosa succede durante la pratica, come è strutturata e cosa apre nel tempo.
 author: Lorenzo Okìkí Rossi
 related: []
 ---
