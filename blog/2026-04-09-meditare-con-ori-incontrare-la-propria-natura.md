@@ -19,13 +19,13 @@ related: []
 
 \*Se è la prima volta che incontri Orí, ti consiglio di passare
 
-prima da [[Orí: La Divinità che Abita nella Tua Testa](https://casaobatala.it/blog/2026-02-08-ori-la-divinita-che-abita-nella-tua-testa-parte-1)] e da
+prima da [Orí: La Divinità che Abita nella Tua Testa](https://casaobatala.it/blog/2026-02-08-ori-la-divinita-che-abita-nella-tua-testa-parte-1) e da
 
-[[Orí: Nutrire il Proprio Destino](https://casaobatala.it/blog/2026-02-08-ori-nutrire-il-proprio-destino-parte-2)]. Quello che segue ha più peso
+[Orí: Nutrire il Proprio Destino](https://casaobatala.it/blog/2026-02-08-ori-nutrire-il-proprio-destino-parte-2). Quello che segue ha più peso
 
-se sai già di cosa stiamo parlando — e vale la pena che ce l'abbia.\*
+se sai già di cosa stiamo parlando, e vale la pena che ce l'abbia.\*
 
----
+***
 
 > \*"Orí la o dá kó tó d'orisa."\*
 
@@ -33,15 +33,15 @@ se sai già di cosa stiamo parlando — e vale la pena che ce l'abbia.\*
 
 > — Proverbio Yorùbá tradizionale
 
----
+***
 
 C'è una domanda che mi sono posto quando ho cominciato a
 
 costruire queste meditazioni.
 
-Le tecniche occidentali che conoscevo — mindfulness, training
+Le tecniche occidentali che conoscevo, mindfulness, training
 
-autogeno, meditazione trascendentale — hanno tutte un obiettivo
+autogeno, meditazione trascendentale, hanno tutte un obiettivo
 
 preciso: ridurre il rumore. Quietare i pensieri, calmare il
 
@@ -51,9 +51,9 @@ La ricerca lo documenta da decenni.
 
 Ma c'è qualcosa che nessuna di quelle tecniche nomina. Quello
 
-stato che resta quando la voce nella testa finalmente si quieta
+stato che resta quando la voce nella testa finalmente si quieta,
 
-— una presenza silenziosa ma vigile, che non è sonno, non è
+ una presenza silenziosa ma vigile, che non è sonno, non è
 
 pensiero, non è emozione. I neuroscienziati la vedono sugli
 
