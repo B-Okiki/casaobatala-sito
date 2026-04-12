@@ -6,7 +6,12 @@ image: /images/blog/1000066849.webp
 image_alt: Illustrazione di un volto di profilo con gli occhi chiusi e un punto luminoso sulla sommità del capo, su sfondo caldo color pescae
 category: meditazione
 tags:
-  - meditazione Orí, tradizione Yorùbá, ìwà rere, counseling spirituale, Casa Obàtálá, percorso interiore
+  - '- meditazione Orí'
+  - '- tradizione Yorùbá'
+  - '- ìwà rere'
+  - '- counseling spirituale'
+  - '- Casa Obàtálá'
+  - '- percorso interiore'
 description: La meditazione sull'Orí non è una tecnica di rilassamento. È un incontro con la propria natura profonda. Cosa succede durante la pratica, come è strutturata e cosa apre nel tempo.
 author: Lorenzo Okìkí Rossi
 related: []
