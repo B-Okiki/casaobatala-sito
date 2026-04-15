@@ -27,7 +27,7 @@ se sai già di cosa stiamo parlando, e vale la pena che ce l'abbia.\*
 
 ***
 
-> \*"Orí la o dá kó tó d'_Òrìṣà_."\*
+> \*"Orí la o dá kó tó d'_Òrìṣà_"\*
 
 > "È Orí che dobbiamo onorare prima degli Òrìṣà."
 
