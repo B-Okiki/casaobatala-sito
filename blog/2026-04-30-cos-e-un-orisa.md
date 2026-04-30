@@ -3,7 +3,7 @@ title: Cos'è un Òrìṣà
 date: 2026-04-30
 published: true
 image: /images/blog/1000068953.webp
-image_alt: 'Cosa sono gli Òrìṣà nella tradizione Yorùbá originaria? Non dei greci, non spiriti generici: forze vive con cui si entra in relazione. Una guida per chi si avvicina per la prima volta.'
+image_alt: La presenza non sempre si annuncia. A volte si posa, silenziosa, e aspetta che tu la riconosca.
 category: yoruba
 tags:
   - Òrìṣà, Orisa, Yoruba, Obàtálá, Ṣàngó, Àṣẹ, Orí, cosmologia Yorùbá, tradizione africana, esin orisa ibile
