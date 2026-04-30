@@ -7,7 +7,7 @@ image_alt: La presenza non sempre si annuncia. A volte si posa, silenziosa, e as
 category: yoruba
 tags:
   - Òrìṣà, Orisa, Yoruba, Obàtálá, Ṣàngó, Àṣẹ, Orí, cosmologia Yorùbá, tradizione africana, esin orisa ibile
-description: Panno bianco su pietra nella natura tropicale — immagine evocativa per l'articolo "Cos'è un Òrìṣà?" sul blog Casa Obàtálá, tradizione Yorùbá originaria
+description: La presenza non sempre si annuncia. A volte si posa, silenziosa, e aspetta che tu la riconosca.
 author: Lorenzo Okìkí Rossi
 related: []
 ---
