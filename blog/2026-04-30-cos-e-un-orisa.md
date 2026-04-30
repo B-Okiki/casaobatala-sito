@@ -1,7 +1,7 @@
 ---
 title: Cos'è un Òrìṣà
 date: 2026-04-30
-published: false
+published: true
 image: /images/blog/1000068953.webp
 image_alt: La presenza non sempre si annuncia. A volte si posa, silenziosa, e aspetta che tu la riconosca.
 category: yoruba
