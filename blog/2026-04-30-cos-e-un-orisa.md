@@ -1,7 +1,7 @@
 ---
 title: Cos'è un Òrìṣà
 date: 2026-04-30
-published: true
+published: false
 image: /images/blog/1000068953.webp
 image_alt: 'Cosa sono gli Òrìṣà nella tradizione Yorùbá originaria? Non dei greci, non spiriti generici: forze vive con cui si entra in relazione. Una guida per chi si avvicina per la prima volta.'
 category: yoruba
