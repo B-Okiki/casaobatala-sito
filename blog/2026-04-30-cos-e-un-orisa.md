@@ -4,7 +4,7 @@ date: 2026-04-30
 published: true
 image: /images/blog/1000068953.webp
 image_alt: La presenza non sempre si annuncia. A volte si posa, silenziosa, e aspetta che tu la riconosca.
-category: yoruba
+category: orisa
 tags:
   - Òrìṣà, Orisa, Yoruba, Obàtálá, Ṣàngó, Àṣẹ, Orí, cosmologia Yorùbá, tradizione africana, esin orisa ibile
 description: La presenza non sempre si annuncia. A volte si posa, silenziosa, e aspetta che tu la riconosca.
