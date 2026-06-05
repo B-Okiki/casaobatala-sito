@@ -770,9 +770,9 @@
 
         const calcolaAnnoYoruba = (anno, mese, giorno) => {
             if (mese < 5 || (mese === 5 && giorno < 3)) {
-                return 10066 + (anno - 2026);
-            } else {
                 return 10067 + (anno - 2026);
+            } else {
+                return 10068 + (anno - 2026);
             }
         };
 
