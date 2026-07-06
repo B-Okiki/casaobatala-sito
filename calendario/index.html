@@ -903,7 +903,7 @@
         function render() {
             const oseOggiIndex = calcolaOseIndex(giornoCorrente, meseCorrente, annoCorrente);
             const oseOggi = giorniSettimana[oseOggiIndex];
-            const annoYoruba = calcolaAnnoYoruba(annoSelezionato, meseSelezionato, 1);
+            const annoYoruba = calcolaAnnoYoruba(annoSelezionato, meseSelezionato, 15);
             
             const inizioMese = calcolaInizioMese(meseSelezionato, annoSelezionato);
             const giorniMese = meseSelezionato === 1 ? (isBisestile(annoSelezionato) ? 29 : 28) : 
