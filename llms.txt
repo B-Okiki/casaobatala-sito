@@ -85,11 +85,21 @@ App gratuita per conoscere i giorni sacri nella tradizione Yoruba.
 - Attività propizie e da evitare
 - Disponibile gratuitamente sul sito
 
+## Pagine del Sito
+- [Home](https://casaobatala.it/): Presentazione generale di Casa Obàtálá
+- [Chi Sono](https://casaobatala.it/chi-sono): Percorso e credenziali di Lorenzo Okìkí Rossi
+- [Servizi](https://casaobatala.it/servizi): Elenco completo di consulenze, meditazioni ed ebò
+- [Meditazione](https://casaobatala.it/meditazione): Meditazioni su Orí, Training Autogeno, Osho
+- [Glossario delle Piante](https://casaobatala.it/glossario): Piante della tradizione Yoruba (Ewé)
+- [Blog](https://casaobatala.it/blog): Articoli sulla tradizione Yoruba e la meditazione
+- [Calendario Yoruba](https://casaobatala.it/calendario): App gratuita del calendario sacro Yoruba
+- [Contatti](https://casaobatala.it/contatti.html): Come contattare Lorenzo per una consulenza
+
 ## Contatti
 - Telefono/WhatsApp: +39 3473638901
 - Email: lorenzo.okiki@gmail.com
-- Instagram: @lorenzo.okiki.rossi
-- Sito web: https://casaobatala.it
+- Instagram: [@lorenzo.okiki.rossi](https://www.instagram.com/lorenzo.okiki.rossi)
+- Sito web: [casaobatala.it](https://casaobatala.it)
 
 ## Località Servite
 - Roma (Ostia Antica) - Sede principale
