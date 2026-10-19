@@ -7,7 +7,7 @@ image_alt: ''
 category: orisa
 tags:
   - "Obàtálá: chi è l'Òrìṣà del panno bianco | Casa Obàtálá"
-description: "Chi è Obàtálá nella tradizione Yorùbá di Ọ̀yọ́ iṣẹṣe: il nome, il panno bianco, l'Ìwà Pẹ̀lẹ́ -il buon carattere-, gli Odù e il mito del vino di palma."
+description: "Chi è Obàtálá nella tradizione Yorùbá di Ọ̀yọ́ iṣẹṣe: il nome, il panno bianco, l'Ìwà Pẹ̀lẹ́, il buon carattere, gli Odù e il mito del vino di palma."
 author: Lorenzo Okìkí Rossi
 related: []
 ---
