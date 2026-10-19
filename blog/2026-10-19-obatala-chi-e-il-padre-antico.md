@@ -78,12 +78,14 @@ Il secondo: le persone che nascono con disabilità, malformazioni fisiche o albi
 
 Questo legame è scritto nei versi, e nel culto ne circolano due formulazioni. La prima è trasmessa a voce da Babà Ifaloba:
 
-\*Ọkọ ara abojú pẹ̀tẹ̀\* 
-\*Marito del corpo dal volto piatto\*
+\*Ọkọ arọ, ọkọ abuké, ara abojú pẹ̀tẹ̀\* 
+
+\*Marito del corpo dal volto piatto
 
 La seconda è documentata anche nella letteratura (vedi Riferimenti):
 
 \*Ọkọ arọ, ọkọ abuké, ọkọ arara aborí pẹ̀tẹ̀\* 
+
 \*Marito dello storpio, marito del gobbo, marito del nano dalla testa piatta\*
 
 Sono due modi diversi di dire la stessa cosa. Non sono epiteti di Obàtálá: indicano il legame profondo che lo unisce a queste persone.
@@ -125,9 +127,7 @@ Obàtálá chiede carattere: un panno bianco da tenere pulito, la pazienza di pe
 \## Riferimenti
 
 - Tradizione orale di Babà Ifaloba (Babaláwo e Babalórìṣà): versi, poemi di lode e insegnamenti trasmessi a voce nella tradizione di Ọ̀yọ́.
-
 - Materiale liturgico di Casa Obàtálá: Odù Òfún e Ọkànràn, Canti per Obàtálá.
-
 - Bascom, William R., \*Sixteen Cowries: Yoruba Divination from Africa to the New World\*, Indiana University Press, 1980.
 
 \*\*\*
@@ -135,4 +135,4 @@ Obàtálá chiede carattere: un panno bianco da tenere pulito, la pazienza di pe
 \*© 2026 Lorenzo Okìkí Rossi / Casa Obàtálá\*
 
 \*Contenuti condivisibili con attribuzione — Uso non commerciale (CC BY-NC 4.0)\*
-*\*La tradizione Yorùbá non appartiene a nessuno. Questi scritti sono una umile elaborazione\
+MọkỌ\*\*La tradizione Yorùbá non appartiene a nessuno. Questi scritti sono una umile elaborazione\\\*
