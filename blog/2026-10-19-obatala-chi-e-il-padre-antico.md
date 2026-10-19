@@ -12,7 +12,6 @@ author: Lorenzo Okìkí Rossi
 related: []
 ---
 
-
 \## Chi è Obàtálá
 
 Obàtálá è la prima divinità creata da Olódùmarè, l'Essere Supremo. Viene prima di tutti gli altri Òrìṣà, ed è per questo che la tradizione lo chiama \*Bàbá gbogbo Òrìṣà\*, padre di tutti gli Òrìṣà. L'ordine di nascita, però, dice poco. Per capire chi è bisogna guardare che cosa chiede ai suoi figli e che cosa raccontano di lui i versi.
@@ -129,4 +128,10 @@ Obàtálá chiede carattere: un panno bianco da tenere pulito, la pazienza di pe
 
 \- Bascom, William R., \*Sixteen Cowries: Yoruba Divination from Africa to the New World\*, Indiana University Press, 1980.
 
-\*La conoscenza tradizionale descritta in questo testo appartiene alla tradizione Yorùbá e non è proprietà personale di chi la trasmette. Testo di Lorenzo Okìkí Rossi, Casa Obàtálá (casaobatala.it).\*
+\*\*\*
+
+\\\*© 2026 Lorenzo Okìkí Rossi / Casa Obàtálá\\
+
+_\Contenuti condivisibili con attribuzione — Uso non commerciale (CC BY-NC 4.0)\\
+
+\La tradizione Yorùbá non appartiene a nessuno. Questi scritti sono una sua umile elaborazione.\\_
