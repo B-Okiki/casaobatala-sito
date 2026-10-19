@@ -80,7 +80,7 @@ Questo legame è scritto nei versi, e nel culto ne circolano due formulazioni. L
 
 \*Ọkọ arọ, ọkọ abuké, ara abojú pẹ̀tẹ̀\* 
 
-\*Marito del corpo dal volto piatto
+\*Marito dello storpio, marito del gobbo, marito del corpo dal volto piatto\*
 
 La seconda è documentata anche nella letteratura (vedi Riferimenti):
 
@@ -135,4 +135,4 @@ Obàtálá chiede carattere: un panno bianco da tenere pulito, la pazienza di pe
 \*© 2026 Lorenzo Okìkí Rossi / Casa Obàtálá\*
 
 \*Contenuti condivisibili con attribuzione — Uso non commerciale (CC BY-NC 4.0)\*
-MọkỌ\*\*La tradizione Yorùbá non appartiene a nessuno. Questi scritti sono una umile elaborazione\\\*
+\*\*La tradizione Yorùbá non appartiene a nessuno. Questi scritti sono una umile elaborazione\\\*
