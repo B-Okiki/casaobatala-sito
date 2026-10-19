@@ -1,7 +1,7 @@
 ---
 title: Obàtálá — Chi è il Padre Antico
 date: 2026-10-19
-published: false
+published: true
 image: ''
 image_alt: ''
 category: orisa
