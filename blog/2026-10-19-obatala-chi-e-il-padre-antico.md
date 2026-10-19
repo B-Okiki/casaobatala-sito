@@ -130,8 +130,8 @@ Obàtálá chiede carattere: un panno bianco da tenere pulito, la pazienza di pe
 
 \*\*\*
 
-\\\*© 2026 Lorenzo Okìkí Rossi / Casa Obàtálá\\
+\\_© 2026 Lorenzo Okìkí Rossi / Casa Obàtálá\\_
 
-Contenuti condivisibili con attribuzione — Uso non commerciale (CC BY-NC 4.0)\\
+\\_Contenuti condivisibili con attribuzione — Uso non commerciale (CC BY-NC 4.0)\\_
 
-\La tradizione Yorùbá non appartiene a nessuno. Questi scritti sono una sua umile elaborazione.\\_
+\\_La tradizione Yorùbá non appartiene a nessuno. Questi scritti sono una umile elaborazione.\\_
