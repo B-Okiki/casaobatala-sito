@@ -50,7 +50,7 @@ Nell'Odù \*\*Òfún\*\* compaiono due poemi di lode trasmessi da Babà Ifaloba.
 
 Il secondo è una lode a un figlio di Obàtálá:
 
-\> \*Afun yen / Afun yeyyen / Ayeyen Akambi Ala\* \*Bianchezza, ecco la bianchezza / Bianchezza assoluta, bianchezza totale / Il candore che abbraccia il panno bianco\*
+\*Afun yen / Afun yeyyen / Ayeyen Akambi Ala\* \*Bianchezza, ecco la bianchezza / Bianchezza assoluta, bianchezza totale / Il candore che abbraccia il panno bianco\*
 
 Qui il bianco è una qualità dell'essere più che un colore. Chi nasce sotto Obàtálá riceve un patrimonio di purezza e, insieme, una responsabilità.
 
@@ -78,11 +78,13 @@ Il secondo: le persone che nascono con disabilità, malformazioni fisiche o albi
 
 Questo legame è scritto nei versi, e nel culto ne circolano due formulazioni. La prima è trasmessa a voce da Babà Ifaloba:
 
-\> \*Ọkọ ara abojú pẹ̀tẹ̀\* \*Marito del corpo dal volto piatto\*
+\*Ọkọ ara abojú pẹ̀tẹ̀\* 
+\*Marito del corpo dal volto piatto\*
 
 La seconda è documentata anche nella letteratura (vedi Riferimenti):
 
-\> \*Ọkọ arọ, ọkọ abuké, ọkọ arara aborí pẹ̀tẹ̀\* \*Marito dello storpio, marito del gobbo, marito del nano dalla testa piatta\*
+\*Ọkọ arọ, ọkọ abuké, ọkọ arara aborí pẹ̀tẹ̀\* 
+\*Marito dello storpio, marito del gobbo, marito del nano dalla testa piatta\*
 
 Sono due modi diversi di dire la stessa cosa. Non sono epiteti di Obàtálá: indicano il legame profondo che lo unisce a queste persone.
 
@@ -122,16 +124,15 @@ Obàtálá chiede carattere: un panno bianco da tenere pulito, la pazienza di pe
 
 \## Riferimenti
 
-\- Tradizione orale di Babà Ifaloba (Babaláwo e Babalórìṣà): versi, poemi di lode e insegnamenti trasmessi a voce nella tradizione di Ọ̀yọ́.
+- Tradizione orale di Babà Ifaloba (Babaláwo e Babalórìṣà): versi, poemi di lode e insegnamenti trasmessi a voce nella tradizione di Ọ̀yọ́.
 
-\- Materiale liturgico di Casa Obàtálá: Odù Òfún e Ọkànràn, Canti per Obàtálá.
+- Materiale liturgico di Casa Obàtálá: Odù Òfún e Ọkànràn, Canti per Obàtálá.
 
-\- Bascom, William R., \*Sixteen Cowries: Yoruba Divination from Africa to the New World\*, Indiana University Press, 1980.
+- Bascom, William R., \*Sixteen Cowries: Yoruba Divination from Africa to the New World\*, Indiana University Press, 1980.
 
 \*\*\*
 
-\\_© 2026 Lorenzo Okìkí Rossi / Casa Obàtálá\\_
+\*© 2026 Lorenzo Okìkí Rossi / Casa Obàtálá\*
 
-\Contenuti condivisibili con attribuzione — Uso non commerciale (CC BY-NC 4.0)\\\_
-
-\†\\_La tradizione Yorùbá non appartiene a nessuno. Questi scritti sono una umile elborazione.\\\_
+\*Contenuti condivisibili con attribuzione — Uso non commerciale (CC BY-NC 4.0)\*
+*\*La tradizione Yorùbá non appartiene a nessuno. Questi scritti sono una umile elaborazione\
