@@ -2,8 +2,8 @@
 title: Obàtálá — Chi è il Padre Antico
 date: 2026-10-19
 published: true
-image: ''
-image_alt: ''
+image: /images/blog/1000100381.webp
+image_alt: Ọbàtálá, Oxala, òrìṣà funfun,
 category: orisa
 tags:
   - Obàtálá, Obatala, Òrìṣà Funfun, Bàbá Àrúgbó, Ìwà Pẹ̀lẹ́, Odù Òfún, tradizione Yorùbá, Ìṣẹ̀ṣe, Ọ̀yọ́, esin orisa ibile
