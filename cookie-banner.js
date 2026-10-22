@@ -1,5 +1,5 @@
 // Cookie Banner per Casa Obàtálá
-// Conforme GDPR - Cookie tecnici + Google Analytics 4 (consenso) + Cloudflare Web Analytics (cookie-free)
+// Conforme GDPR + ePR - Cookie tecnici + GA4 (consenso) + MailerLite (consenso) + Cloudflare Web Analytics (cookie-free)
 
 // ─── GA4 Consent Mode: default DENIED ───────────────────────────────────────
 // Deve girare PRIMA del caricamento del tag gtag.js
@@ -11,9 +11,41 @@ gtag('consent', 'default', {
     'wait_for_update': 500
 });
 
+// Inizializza GA4 — config sempre presente, ma i dati vengono inviati
+// solo se analytics_storage è 'granted' (Consent Mode v2)
+gtag('js', new Date());
+gtag('config', 'G-CY01LVTL28', { 'anonymize_ip': true });
+
 // Se l'utente aveva già dato consenso in una visita precedente, riattiva subito
 if (localStorage.getItem('cookieConsent') === 'accepted') {
     gtag('consent', 'update', { 'analytics_storage': 'granted' });
+}
+// ─────────────────────────────────────────────────────────────────────────────
+
+// ─── MailerLite: caricamento condizionato ─────────────────────────────────────
+// Chiama questa funzione SOLO dopo il consenso. Non caricare mai webforms.min.js
+// direttamente nell'HTML — il cookie ml_guid viene scritto al caricamento dello script.
+function loadMailerLite() {
+    if (window._mlLoaded) return; // evita doppio caricamento
+    window._mlLoaded = true;
+    var s = document.createElement('script');
+    s.src = 'https://groot.mailerlite.com/js/w/webforms.min.js?v95037e5bac78f29ed026832ca21a7c7b';
+    s.type = 'text/javascript';
+    s.onload = function () {
+        // Lancia il fetch di tracking solo dopo che lo script è pronto
+        fetch('https://assets.mailerlite.com/jsonp/2173773/forms/181466867924207361/takel');
+    };
+    document.head.appendChild(s);
+}
+
+// Se aveva già acconsentito in una visita precedente, carica subito
+if (localStorage.getItem('cookieConsent') === 'accepted') {
+    // Aspetta che il DOM sia pronto prima di iniettare lo script
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', loadMailerLite);
+    } else {
+        loadMailerLite();
+    }
 }
 // ─────────────────────────────────────────────────────────────────────────────
 
@@ -43,7 +75,7 @@ if (localStorage.getItem('cookieConsent') === 'accepted') {
                         <strong style="color: #8B4513;">🍪 Questo sito usa cookie tecnici e analitici</strong>
                     </p>
                     <p style="font-size: 0.8rem; color: #6b5d4f; margin: 0; line-height: 1.4;">
-                        Utilizziamo cookie tecnici necessari al funzionamento e, con il tuo consenso, Google Analytics 4 per statistiche anonime di navigazione.
+                        Utilizziamo cookie tecnici necessari al funzionamento e, con il tuo consenso, Google Analytics 4 per statistiche anonime e MailerLite per la newsletter.
                         <a href="/cookie-policy" style="color: #8B4513; text-decoration: underline;">Maggiori informazioni</a>
                     </p>
                 </div>
@@ -142,14 +174,14 @@ if (localStorage.getItem('cookieConsent') === 'accepted') {
                     </p>
                 </div>
 
-                <!-- Cookie Marketing -->
+                <!-- MailerLite Newsletter -->
                 <div style="margin-bottom: 1.5rem;">
                     <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
-                        <strong style="color: #aaa;">Cookie Marketing</strong>
-                        <span style="background: #eee; color: #aaa; padding: 0.2rem 0.6rem; border-radius: 10px; font-size: 0.75rem;">Non utilizzati</span>
+                        <strong style="color: #555;">Cookie Newsletter (MailerLite)</strong>
+                        <span id="marketingStatusBadge" style="background: #ccc; color: #666; padding: 0.2rem 0.6rem; border-radius: 10px; font-size: 0.75rem;">Richiedono consenso</span>
                     </div>
-                    <p style="font-size: 0.85rem; color: #aaa; margin: 0; line-height: 1.5;">
-                        Questo sito non utilizza cookie pubblicitari o di profilazione.
+                    <p style="font-size: 0.85rem; color: #6b5d4f; margin: 0; line-height: 1.5;">
+                        <strong>MailerLite</strong> — gestione iscrizioni newsletter. Cookie: <code>ml_guid</code> (identificatore iscritto). Attivato solo con il tuo consenso e solo sulla pagina Blog.
                     </p>
                 </div>
 
@@ -190,6 +222,8 @@ function acceptCookies() {
     localStorage.setItem('cookieConsentDate', new Date().toISOString());
     // Attiva GA4
     gtag('consent', 'update', { 'analytics_storage': 'granted' });
+    // Attiva MailerLite (solo se siamo sulla pagina che lo usa)
+    loadMailerLite();
     hideBanner();
 }
 

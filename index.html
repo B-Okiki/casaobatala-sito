@@ -18,23 +18,12 @@
     <meta name="msvalidate.01" content="94BAC67B0A9B92E6FB4C6F49EA453313" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Google Analytics 4 con Consent Mode v2 -->
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){ dataLayer.push(arguments); }
-      gtag('consent', 'default', {
-        'analytics_storage': 'denied',
-        'ad_storage': 'denied',
-        'wait_for_update': 500
-      });
-      gtag('js', new Date());
-      gtag('config', 'G-CY01LVTL28', { 'anonymize_ip': true });
-      if (localStorage.getItem('cookieConsent') === 'accepted') {
-        gtag('consent', 'update', { 'analytics_storage': 'granted' });
-      }
-    </script>
+    <!-- NOTA: gtag consent default è gestito da cookie-banner.js (caricato a fine body).
+         Qui teniamo solo il tag asincrono di GA4; il config viene chiamato dal banner
+         dopo aver impostato il consent, evitando così il firing anticipato. -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-CY01LVTL28"></script>
-    <title>Casa Obàtálá | Tradizione Yorùbá di Òrìṣà</title>
-    <meta name="description" content="Lorenzo Okìkí Rossi, iniziato nel culto Yorùbá di Obàtálá. Meditazione profonda, percorsi spirituali e consulenze nella tradizione di Ọ̀yọ́. Roma e online.">
+    <title>Casa Obàtálá — Tradizione Yorùbá di Obatala | Meditazione e Percorsi Spirituali</title>
+    <meta name="description" content="Lorenzo Okìkí Rossi, iniziato nel culto Yorùbá di Obatala (Obàtálá). Meditazione profonda, percorsi spirituali e consulenze nella tradizione di Ọ̀yọ́. Roma e online.">
     <meta name="keywords" content="meditazione profonda, fitoterapia, tradizione Yorùbá, Orisha, naturopatia, counseling, spiritualità africana, Roma, Toscana, online">
     <meta name="author" content="Lorenzo Okìkí Rossi">
     <meta name="robots" content="index, follow">
@@ -138,9 +127,7 @@
         "name": "Lorenzo Rossi",
         "alternateName": "Bamgbalá Okìkí",
         "jobTitle": "Naturopata e Guida Spirituale",
-        "description": "Iniziato nel culto tradizionale Yoruba di Obàtálá, certificato in Fitoterapia presso Federica Web learning - Università Federico II di Napoli",
-        "url": "https://casaobatala.it/chi-sono",
-        "sameAs": ["https://www.instagram.com/lorenzo.okiki.rossi"]
+        "description": "Iniziato nel culto tradizionale Yoruba di Obàtálá, certificato in Fitoterapia presso Federica Web learning - Università Federico II di Napoli"
       },
       "knowsAbout": ["Tradizione Yoruba", "Orisha", "Obàtálá", "Fitoterapia", "Meditazione", "Piante officinali", "Naturopatia"],
       "priceRange": "€€",
@@ -196,7 +183,7 @@
       "url": "https://casaobatala.it/",
       "description": "Sito ufficiale di Casa Obàtálá - Meditazione profonda, fitoterapia e tradizione Yorùbá",
       "inLanguage": "it-IT",
-      "dateModified": "2026-07-08",
+      "dateModified": "2026-02-23",
       "publisher": {
         "@type": "Person",
         "name": "Lorenzo Okìkí Rossi"
@@ -414,7 +401,6 @@
         <div class="menu-toggle" onclick="toggleMenu()"><span></span><span></span><span></span></div>
         <ul class="nav-links">
             <li><a href="/">Home</a></li>
-            <li><a href="servizi">Servizi</a></li>
             <li><a href="meditazione">Meditazione</a></li>
             <li><a href="piante">Piante</a></li>
             <li><a href="glossario">Glossario</a></li>
@@ -427,7 +413,6 @@
     </nav>
     <div class="mobile-menu" id="mobileMenu">
         <a href="/">Home</a>
-        <a href="servizi">Servizi</a>
         <a href="meditazione">Meditazione</a>
         <a href="piante">Piante</a>
         <a href="glossario">Glossario Piante</a>
@@ -450,13 +435,12 @@
     <section class="section" id="sezioni">
         <!-- News -->
         <div class="news-section">
-            <a href="blog" class="news-card">
+            <a href="calendario" class="news-card">
                 <span class="news-label">✦ Novità</span>
-                <h3>Nuovo articolo nel blog</h3>
-                <p>Chi è Obàtálá? 
-Un breve articolo è pubblicato nel blog. Poche righe per iniziare a conoscere la filosofia di questa importante divinità. 
-Il più anziano, il Padre di tutti gli Òrìṣà, l'artista che crea e modella i corpi umani.</p>
-                
+                <h3>Aggiornamento App Calendario</h3>
+                <p>E' disponibile una nuova versione della nostar app, la versione aggiornata corregge due errori nel calcolo del giorno sacro nel widget.</p>
+                <p>COME AGGIORNARE: Scarica il nuovo APK dalla pagina del Calendario, installa sul tuo dispositivo Android e conferma la sovrascrittura quando richiesto. il widget si aggiornerà automaticamente dopo l'installazione.</p>
+                <p>In Alternativa disinstalla completamente l'app e installa nuovamente dalla pagina.</p>
                 <span class="news-date">Vai alla pagina. →</span>
             </a>
         </div>
@@ -464,7 +448,14 @@ Il più anziano, il Padre di tutti gli Òrìṣà, l'artista che crea e modella 
         <section style="max-width: 680px; margin: 2.5rem auto 3rem; padding: 0 1.2rem; text-align: center;">
             <div style="width: 40px; height: 1px; background: linear-gradient(90deg, transparent, #B8860B, transparent); margin: 0 auto 1.8rem;"></div>
             <p style="font-family: 'Playfair Display', serif; font-size: clamp(1rem, 2.5vw, 1.2rem); line-height: 1.9; color: #4a3f35; font-weight: 300; font-style: italic;">
-                Casa Obàtálá è lo spazio di lavoro di Lorenzo Okìkí Rossi, divulgatore e iniziato nel culto di Obàtálá della tradizione di Ọ̀yọ́ di Òrìṣà (ẹsin Òrìṣà ìbílẹ̀). Meditazioni e rituali radicati nella tradizione Yorùbá, percorsi di conoscenza degli Òrìṣà e consulenze spirituali. Accanto a questo cammino, offro anche pulizie energetiche secondo le conoscenze dell'Umbanda brasiliana e consultazioni divinatorie con i tarocchi. Percorsi distinti, che non appartengono alla tradizione Ìṣẹṣẹ ma completano la mia offerta. Percorsi di meditazione a mediazione corporea, mindfulness e crescita personale. Un luogo dove puoi essere te stesso senza giudizio e scoprire il tuo talento innato.
+                Casa Obàtálá è lo spazio di lavoro di Lorenzo Okìkí Rossi, 
+                divulgatore e iniziato nel culto di Obàtálá della tradizione 
+                di Ọ̀yọ́ di Òrìṣà (ẹsin Òrìṣà ìbílẹ̀). Meditazioni e Rituali radicate nella tradizione Yorùbá, 
+                percorsi di conoscenza degli Òrìṣà e consulenze spirituali.
+                Pulizie energetiche e spirituali attraverso le conoscenze dell'Umbanda Brasiliana.
+                Divinazioni,Tarocchi.
+                Percorsi di meditazione a mediazione corporea, mildfulness e crescita personale.
+                Un luogo dove puoi essere te stesso senza giudizio e scoprire il tuo talento innato.
             </p>
             <div style="width: 40px; height: 1px; background: linear-gradient(90deg, transparent, #B8860B, transparent); margin: 1.8rem auto 0;"></div>
         </section>
@@ -493,11 +484,6 @@ Il più anziano, il Padre di tutti gli Òrìṣà, l'artista che crea e modella 
                 <h3>Blog</h3>
                 <p>Riflessioni sulla tradizione Yoruba, la meditazione e il cammino spirituale.</p>
             </a>
-            <a href="servizi" class="card">
-                <div class="card-icon"><img src="/images/icons/icona-chi-sono.png" alt="Servizi"></div>
-                <h3>Servizi</h3>
-                <p>Consulenze spirituali, pulizie energetiche, meditazioni, bagni rituali e percorsi con le piante.</p>
-            </a>    
             <a href="calendario" class="card">
               <div class="card-badge">Scarica APK Android Gratis</div>
               <div class="card-icon">

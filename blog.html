@@ -16,20 +16,7 @@
     <meta name="theme-color" content="#8B4513">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Google Analytics 4 con Consent Mode v2 -->
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){ dataLayer.push(arguments); }
-      gtag('consent', 'default', {
-        'analytics_storage': 'denied',
-        'ad_storage': 'denied',
-        'wait_for_update': 500
-      });
-      gtag('js', new Date());
-      gtag('config', 'G-CY01LVTL28', { 'anonymize_ip': true });
-      if (localStorage.getItem('cookieConsent') === 'accepted') {
-        gtag('consent', 'update', { 'analytics_storage': 'granted' });
-      }
-    </script>
+    <!-- NOTA: gtag consent default è gestito da cookie-banner.js (caricato a fine body). -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-CY01LVTL28"></script>
     
     <!-- SEO -->
@@ -199,7 +186,6 @@
         <div class="menu-toggle" onclick="toggleMenu()"><span></span><span></span><span></span></div>
         <ul class="nav-links">
             <li><a href="/">Home</a></li>
-            <li><a href="servizi">Servizi</a></li>
             <li><a href="meditazione">Meditazione</a></li>
             <li><a href="piante">Piante</a></li>
             <li><a href="glossario">Glossario Piante</a></li>
@@ -212,7 +198,6 @@
     </nav>
     <div class="mobile-menu" id="mobileMenu">
         <a href="/">Home</a>
-        <a href="servizi">Servizi</a>
         <a href="meditazione">Meditazione</a>
         <a href="piante">Piante</a>
         <a href="glossario">Glossario Piante</a>
@@ -246,21 +231,8 @@
 
     <!-- Griglia Articoli -->
     <div class="blog-grid">
-        <a href="blog/2026-10-19-obatala-chi-e-il-padre-antico" class="blog-card">
-            <img src="/images/blog/1000100381.webp" alt="Ọbàtálá, Oxala, òrìṣà funfun," class="blog-card-image" width="800" heigth="420" fetchpriority="high">
-            <div class="blog-card-content">
-                <span class="blog-card-category">Òrìṣà</span>
-                <h2>Obàtálá — Chi è il Padre Antico</h2>
-                <p>Chi è Obàtálá nella tradizione Yorùbá di Ọ̀yọ́: il nome, il panno bianco, l'Ìwà Pẹ̀lẹ́, il buon carattere, gli Odù e il mito del vino di palma.</p>
-                <div class="blog-card-meta">
-                    <span>📅 19 Ottobre 2026</span>
-                    <span class="read-more">Leggi →</span>
-                </div>
-            </div>
-        </a>
-
         <a href="blog/2026-04-30-cos-e-un-orisa" class="blog-card">
-            <img src="/images/blog/1000068953.webp" alt="La presenza non sempre si annuncia. A volte si posa, silenziosa, e aspetta che tu la riconosca." class="blog-card-image" width="800" heigth="420">
+            <img src="/images/blog/1000068953.webp" alt="La presenza non sempre si annuncia. A volte si posa, silenziosa, e aspetta che tu la riconosca." class="blog-card-image" width="800" heigth="420" fetchpriority="high">
             <div class="blog-card-content">
                 <span class="blog-card-category">Òrìṣà</span>
                 <h2>Cos'è un Òrìṣà</h2>
@@ -1156,10 +1128,7 @@
       $('.ml-subscribe-form-38200475 .row-form').hide();
     }
       </script>
-      <script src="https://groot.mailerlite.com/js/w/webforms.min.js?v95037e5bac78f29ed026832ca21a7c7b" type="text/javascript"></script>
-        <script>
-            fetch("https://assets.mailerlite.com/jsonp/2173773/forms/181466867924207361/takel")
-        </script>
+      <!-- MailerLite webforms caricato da cookie-banner.js solo dopo il consenso -->
             <!-- Fine MailerLite Form -->
             
             <p style="font-size: 0.85rem; color: #6b5d4f; margin-top: 1.5rem;">
