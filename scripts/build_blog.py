@@ -135,6 +135,49 @@ def truncate_text(text, max_length=150):
         truncated = truncated[:last_space]
     return truncated + "…"
 
+def build_faq_schema(faq_list):
+    """Genera il blocco JSON-LD FAQPage dalle FAQ del frontmatter.
+    Restituisce stringa vuota se non ci sono FAQ valide."""
+    if not faq_list or not isinstance(faq_list, list):
+        return ''
+    
+    items = []
+    for item in faq_list:
+        if not isinstance(item, dict):
+            continue
+        domanda = str(item.get('domanda', '')).strip()
+        risposta = str(item.get('risposta', '')).strip()
+        if domanda and risposta:
+            # Escape caratteri speciali JSON
+            domanda = domanda.replace('\\', '\\\\').replace('"', '\\"')
+            risposta = risposta.replace('\\', '\\\\').replace('"', '\\"')
+            items.append(
+                f'''        {{
+          "@type": "Question",
+          "name": "{domanda}",
+          "acceptedAnswer": {{
+            "@type": "Answer",
+            "text": "{risposta}"
+          }}
+        }}'''
+            )
+    
+    if not items:
+        return ''
+    
+    items_json = ',\n'.join(items)
+    return f'''<script type="application/ld+json">
+    {{
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+{items_json}
+      ]
+    }}
+    </script>'''
+
+
+
 
 # ============================================
 # CONVERSIONE MARKDOWN → HTML
@@ -348,6 +391,7 @@ def build_article(md_file, template):
         '{{TAGS_HTML}}': tags_html,
         '{{URL_ARTICOLO}}': f'{SITE_URL}/blog/{slug}',
         '{{TITOLO_ENCODED}}': title_encoded,
+        '{{FAQ_JSON}}': build_faq_schema(metadata.get('faq', [])),
     }
 
     for placeholder, value in replacements.items():
