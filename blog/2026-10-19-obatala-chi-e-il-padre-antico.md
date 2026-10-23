@@ -2,13 +2,24 @@
 title: Obàtálá — Chi è il Padre Antico
 date: 2026-10-19
 published: true
-image: /images/blog/1000100381.webp
+image: ''
 image_alt: Ọbàtálá, Oxala, òrìṣà funfun,
 category: orisa
 tags:
   - Obàtálá, Obatala, Òrìṣà Funfun, Bàbá Àrúgbó, Ìwà Pẹ̀lẹ́, Odù Òfún, tradizione Yorùbá, Ìṣẹ̀ṣe, Ọ̀yọ́, esin orisa ibile
 description: "Chi è Obàtálá nella tradizione Yorùbá di Ọ̀yọ́: il nome, il panno bianco, l'Ìwà Pẹ̀lẹ́, il buon carattere, gli Odù e il mito del vino di palma."
 author: Lorenzo Okìkí Rossi
+faq:
+  - domanda: Chi è Obàtálá nella tradizione Yorùbá?
+    risposta: Obàtálá è la prima divinità creata da Olódùmarè, l'Essere Supremo, e padre di tutti gli Òrìṣà. Porta equilibrio mentale, riflessività, salute e prosperità. Il suo simbolo è il panno bianco, che rappresenta la purezza morale e la condotta retta.
+  - domanda: Obàtálá e Oxalá sono la stessa divinità?
+    risposta: Oxalá è il nome con cui Obàtálá è conosciuto nel Candomblé brasiliano, frutto della sincretizzazione avvenuta durante la diaspora africana. Nella tradizione Ìṣẹ̀ṣe di Ọ̀yọ́, Obàtálá è uno e indivisibile, senza le distinzioni in 'qualità' separate presenti in alcune linee del Candomblé.
+  - domanda: Cosa significa Ìwà Pẹ̀lẹ́?
+    risposta: "Ìwà Pẹ̀lẹ́ significa 'buon carattere' o 'condotta retta e misurata'. È il principio centrale del culto di Obàtálá: non significa non sbagliare mai, ma riflettere prima di agire, scegliere la ponderatezza e tornare al centro quando ci si è allontanati."
+  - domanda: Perché gli iniziati di Obàtálá non possono bere vino di palma?
+    risposta: Secondo l'Itan fondativo, Obàtálá bevve vino di palma (Emu) mentre plasmava i corpi umani. L'ebbrezza alterò il suo lavoro, producendo le diversità fisiche del mondo umano. Il tabù sul vino di palma è la memoria viva di quell'evento.
+  - domanda: Qual è il legame tra Obàtálá e le persone con disabilità?
+    risposta: 'Le persone nate con disabilità, malformazioni fisiche o albinismo sono considerate i figli legittimi e prediletti di Obàtálá. Non sono un errore: nel culto qualsiasi discriminazione nei loro confronti è assolutamente vietata.'
 related: []
 ---
 
@@ -46,9 +57,7 @@ In cambio della ricerca di rettitudine, Obàtálá concede la prosperità e la f
 
 Per sapere chi è Obàtálá conviene ascoltare come lo nomina la tradizione stessa. Ecco alcuni passi.
 
-Nell'Odù \*\*Òfún\*\* compaiono due poemi di lode trasmessi da Babà Ifaloba. Nel primo Obàtálá appare con l'epiteto \*Ọ̀ṣàlá Ọ̀ṣẹrẹ̀màgbò\* mentre sta per perdere un figlio. Il divinatore prescrive il sacrificio, lui lo compie senza esitare, e il figlio, che stava andando via, torna. Il poema si chiude con \*Sato ni nlo\*: «stava andando, ma è tornato». Ciò che sembra perduto può non esserlo, se si agisce al momento giusto e fino in fondo.
-
-Il secondo è una lode a un figlio di Obàtálá:
+ Il secondo è una lode a un figlio di Obàtálá:
 
 \*Afun yen / Afun yeyyen / Ayeyen Akambi Ala\* \*Bianchezza, ecco la bianchezza / Bianchezza assoluta, bianchezza totale / Il candore che abbraccia il panno bianco\*
 
@@ -126,13 +135,13 @@ Obàtálá chiede carattere: un panno bianco da tenere pulito, la pazienza di pe
 
 \## Riferimenti
 
-- Tradizione orale di Babà Ifaloba (Babaláwo e Babalórìṣà): versi, poemi di lode e insegnamenti trasmessi a voce nella tradizione di Ọ̀yọ́.
+- Tradizione orale di Babà Ifaloba (Babaláwo e Babalórìṣà): versi, poemi di lode e insegnamenti trasmessi a voce nella traadizione di Ọ̀yọ́.
 - Materiale liturgico di Casa Obàtálá: Odù Òfún e Ọkànràn, Canti per Obàtálá.
-- Bascom, William R., \*Sixteen Cowries: Yoruba Divination from Africa to the New World\*, Indiana University Press, 1980.
+- Bascsom, William R., \*Sixteen Cowries: Yaoruba Divination from Africa to the New World\*, Indiana University Press, 1980.
 
 \*\*\*
 
 \*© 2026 Lorenzo Okìkí Rossi / Casa Obàtálá\*
 
 \*Contenuti condivisibili con attribuzione — Uso non commerciale (CC BY-NC 4.0)\*
-\*\*La tradizione Yorùbá non appartiene a nessuno. Questi scritti sono una umile elaborazione\\\*
+\*La tradizione Yorùbá non appartiene a nessuno. Questi scritti sono una umile elaborazione\*
