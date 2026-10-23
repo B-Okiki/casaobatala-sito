@@ -150,6 +150,26 @@ collections:
           - image
           - code-block
 
+
+      # FAQ per schema strutturato (SEO / AI Overviews)
+      - label: "FAQ"
+        name: "faq"
+        widget: "list"
+        required: false
+        hint: "Domande e risposte frequenti — migliorano la visibilità nelle ricerche AI (Google AI Overviews, Perplexity ecc.)"
+        summary: "{{fields.domanda}}"
+        fields:
+          - label: "Domanda"
+            name: "domanda"
+            widget: "string"
+            required: true
+            hint: "Scrivi la domanda come la farebbe un utente su Google"
+          - label: "Risposta"
+            name: "risposta"
+            widget: "text"
+            required: true
+            hint: "Risposta chiara e completa (almeno 2-3 frasi)"
+
       # Articoli correlati
       - label: "Articoli Correlati"
         name: "related"
