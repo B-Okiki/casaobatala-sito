@@ -10,30 +10,23 @@ on:
       - 'templates/*.html'
       - '.github/workflows/build-blog.yml'
       - 'scripts/*.py'
-  
+
   # Permette di lanciarlo manualmente
   workflow_dispatch:
 
 jobs:
   build:
+    if: ${{ github.actor != 'github-actions[bot]' }}
     runs-on: ubuntu-latest
     permissions:
       contents: write
-    
+
     steps:
-      # 1. Scarica il repository (con fetch completo per evitare conflitti)
+      # 1. Scarica il repository
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
           fetch-depth: 0
-
-      # 1b. Sincronizza con origin prima di tutto
-      - name: Sync with origin
-        run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
-          git pull origin main --no-rebase -X theirs
 
       # 2. Installa Python con cache pip
       - name: Setup Python
@@ -41,13 +34,13 @@ jobs:
         with:
           python-version: '3.11'
           cache: 'pip'
-      
+
       # 3. Installa dipendenze
       - name: Install dependencies
         run: |
           pip install -r requirements.txt
           pip install Pillow
-      
+
       # 4. Esegui lo script di build
       - name: Build blog articles
         run: |
@@ -70,13 +63,18 @@ jobs:
         # Non blocca la build — solo avviso nei log
         # Per bloccarla: python scripts/check_links.py --strict
 
-      # 8. Committa e pusha le modifiche
+      # 8. Committa e pusha le modifiche solo se ci sono cambiamenti
       - name: Commit and push changes
         run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
           git add -A
-          git diff --staged --quiet || git commit -m "🤖 Auto-build: blog + RSS + image optimization"
-          git push
-          
+          if ! git diff --cached --quiet; then
+            git commit -m "🤖 Auto-build: blog + RSS + image optimization"
+            git push origin HEAD:main
+          fi
+
       # 9. Svuota cache Cloudflare
       - name: Attendi deploy GitHub Pages
         run: sleep 30
