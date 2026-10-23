@@ -21,12 +21,20 @@ jobs:
       contents: write
     
     steps:
-      # 1. Scarica il repository
+      # 1. Scarica il repository (con fetch completo per evitare conflitti)
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-      
+          fetch-depth: 0
+
+      # 1b. Sincronizza con origin prima di tutto
+      - name: Sync with origin
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git pull origin main --no-rebase -X theirs
+
       # 2. Installa Python con cache pip
       - name: Setup Python
         uses: actions/setup-python@v5
@@ -65,11 +73,8 @@ jobs:
       # 8. Committa e pusha le modifiche
       - name: Commit and push changes
         run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
           git add -A
           git diff --staged --quiet || git commit -m "🤖 Auto-build: blog + RSS + image optimization"
-          git pull origin main --no-rebase -X theirs
           git push
           
       # 9. Svuota cache Cloudflare
