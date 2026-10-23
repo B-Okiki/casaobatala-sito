@@ -2,7 +2,7 @@
 title: Obàtálá — Chi è il Padre Antico
 date: 2026-10-19
 published: true
-image: ''
+image: /images/blog/1000100381.webp
 image_alt: Ọbàtálá, Oxala, òrìṣà funfun,
 category: orisa
 tags:
