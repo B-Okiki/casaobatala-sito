@@ -151,12 +151,12 @@ collections:
           - code-block
 
 
-      # FAQ per schema strutturato (SEO / AI Overviews)
+      # FAQ: tendine visibili in fondo all'articolo + dati strutturati per le IA
       - label: "FAQ"
         name: "faq"
         widget: "list"
         required: false
-        hint: "Domande e risposte frequenti — migliorano la visibilità nelle ricerche AI (Google AI Overviews, Perplexity ecc.)"
+        hint: "Compaiono in fondo all'articolo come «Domande frequenti» e vengono lette anche dalle IA. Domande specifiche, risposte coerenti con il testo."
         summary: "{{fields.domanda}}"
         fields:
           - label: "Domanda"
