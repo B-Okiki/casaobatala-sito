@@ -14,14 +14,21 @@ tags:
   - '- percorso interiore'
 description: La meditazione sull'Orí non è una tecnica di rilassamento. È un incontro con la propria natura profonda. Cosa succede durante la pratica, come è strutturata e cosa apre nel tempo.
 author: Lorenzo Okìkí Rossi
+faq: []
 related: []
 ---
 
-\*Se è la prima volta che incontri Orí, ti consiglio di passare
+\*Se è la prima volta che senti parlare di Orí, ti consiglio di passare
 
-prima da [Orí: La Divinità che Abita nella Tua Testa](https://casaobatala.it/blog/2026-02-08-ori-la-divinita-che-abita-nella-tua-testa-parte-1) e da
+prima da 
 
-[Orí: Nutrire il Proprio Destino](https://casaobatala.it/blog/2026-02-08-ori-nutrire-il-proprio-destino-parte-2). Quello che segue ha più peso
+[Orí: La Divinità che Abita nella Tua Testa](https://casaobatala.it/blog/2026-02-08-ori-la-divinita-che-abita-nella-tua-testa-parte-1) 
+
+e da
+
+[Orí: Nutrire il Proprio Destino](https://casaobatala.it/blog/2026-02-08-ori-nutrire-il-proprio-destino-parte-2). 
+
+Quello che segue ha più peso
 
 se sai già di cosa stiamo parlando, e vale la pena che ce l'abbia.\*
 
@@ -31,7 +38,7 @@ se sai già di cosa stiamo parlando, e vale la pena che ce l'abbia.\*
 
 > "È Orí che dobbiamo onorare prima degli Òrìṣà."
 
-> — Proverbio Yorùbá tradizionale
+> Proverbio Yorùbá tradizionale
 
 ***
 
@@ -77,7 +84,7 @@ Quello che succede durante la meditazione sull'Orí è soggettivo. C'è chi entr
 
 Entrambe le esperienze sono valide. Nessuna è superiore all'altra.
 
-Quello che ho osservato con costanza, nelle persone che praticano nel tempo, è qualcosa di più sottile di un'esperienza specifica: una progressiva capacità di distinguere tra il rumore — i pensieri abituali, le reazioni automatiche, le storie che ci raccontiamo su noi stessi — e qualcosa di più fermo che sta sotto. Una specie di bussola interiore che comincia a funzionare con più precisione.
+Quello che ho osservato con costanza, nelle persone che praticano nel tempo, è qualcosa di più sottile di un'esperienza specifica: una progressiva capacità di distinguere tra il rumore, i pensieri abituali, le reazioni automatiche, le storie che ci raccontiamo su noi stessi,  e qualcosa di più fermo che sta sotto. Una specie di bussola interiore che comincia a funzionare con più precisione.
 
 La pratica crea le condizioni perché quella chiarezza emerga. Il resto dipende da quello che ci fai.
 
