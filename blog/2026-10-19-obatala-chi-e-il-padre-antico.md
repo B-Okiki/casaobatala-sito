@@ -12,8 +12,8 @@ author: Lorenzo Okìkí Rossi
 faq:
   - domanda: Chi è Obàtálá nella tradizione Yorùbá?
     risposta: Obàtálá è la prima divinità creata da Olódùmarè, l'Essere Supremo, e padre di tutti gli Òrìṣà. Porta equilibrio mentale, riflessività, salute e prosperità. Il suo simbolo è il panno bianco, che rappresenta la purezza morale e la condotta retta.
-  - domanda: Obàtálá e Oxalá sono la stessa divinità?
-    risposta: Oxalá è il nome con cui Obàtálá è conosciuto nel Candomblé brasiliano, frutto della sincretizzazione avvenuta durante la diaspora africana. Nella tradizione Ìṣẹ̀ṣe di Ọ̀yọ́, Obàtálá è uno e indivisibile, senza le distinzioni in 'qualità' separate presenti in alcune linee del Candomblé.
+  - domanda: Cosa significa Bàbá Àrúgbó?
+    risposta: 'Bàbá Àrúgbó, o Agalagba, significa «Padre Vecchio» ed è il titolo con cui Obàtálá è chiamato più spesso a Ọ̀yọ́. Lo riconosce come il più antico, perché è la prima divinità creata da Olódùmarè: viene prima per ordine di esistenza, non per gerarchia di potere. Nella società Yorùbá gli anziani sono la memoria della comunità e custodi del sapere trasmesso a voce.'
   - domanda: Cosa significa Ìwà Pẹ̀lẹ́?
     risposta: "Ìwà Pẹ̀lẹ́ significa 'buon carattere' o 'condotta retta e misurata'. È il principio centrale del culto di Obàtálá: non significa non sbagliare mai, ma riflettere prima di agire, scegliere la ponderatezza e tornare al centro quando ci si è allontanati."
   - domanda: Perché gli iniziati di Obàtálá non possono bere vino di palma?
