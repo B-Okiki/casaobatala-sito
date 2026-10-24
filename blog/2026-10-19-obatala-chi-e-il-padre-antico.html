@@ -209,6 +209,19 @@
         .highlight-box p { margin-bottom: 0.8rem; }
         .highlight-box p:last-child { margin-bottom: 0; }
 
+        /* FAQ */
+        .faq-section { margin-top: 3.5rem; padding-top: 2rem; border-top: 1px solid rgba(139,69,19,0.15); }
+        .faq-section h2 { margin-top: 0; }
+        .faq-item { background: #fff; border: 1px solid rgba(139,69,19,0.15); border-radius: 12px; margin-bottom: 0.8rem; overflow: hidden; }
+        .faq-item summary { cursor: pointer; list-style: none; padding: 1.1rem 3rem 1.1rem 1.4rem; position: relative; font-family: 'Playfair Display', serif; font-size: 1.1rem; color: #8B4513; line-height: 1.5; }
+        .faq-item summary::-webkit-details-marker { display: none; }
+        .faq-item summary::after { content: '+'; position: absolute; right: 1.2rem; top: 50%; transform: translateY(-50%); font-size: 1.4rem; color: #B8860B; }
+        .faq-item[open] summary::after { content: '\2212'; }
+        .faq-item summary:focus-visible { outline: 2px solid #B8860B; outline-offset: -2px; }
+        .faq-answer { padding: 0 1.4rem 1.2rem; }
+        .faq-answer p { font-size: 1rem; line-height: 1.8; margin-bottom: 0.8rem; }
+        .faq-answer p:last-child { margin-bottom: 0; }
+
         /* Tags */
         .article-tags { display: flex; flex-wrap: wrap; gap: 0.8rem; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid rgba(139,69,19,0.15); }
         .article-tags span { font-size: 0.9rem; color: #6b5d4f; }
@@ -467,6 +480,31 @@
 
 <p><em>La tradizione Yorùbá non appartiene a nessuno. Questi scritti sono una umile elaborazione</em></p>
 <!-- CONTENT_END -->
+
+            <!-- FAQ visibili (generate dal campo faq; vuote se l'articolo non ne ha) -->
+            <section class="faq-section" aria-labelledby="faq-title">
+                <h2 id="faq-title">Domande frequenti</h2>
+                <details class="faq-item">
+                    <summary>Chi è Obàtálá nella tradizione Yorùbá?</summary>
+                    <div class="faq-answer"><p>Obàtálá è la prima divinità creata da Olódùmarè, l&#x27;Essere Supremo, e padre di tutti gli Òrìṣà. Porta equilibrio mentale, riflessività, salute e prosperità. Il suo simbolo è il panno bianco, che rappresenta la purezza morale e la condotta retta.</p></div>
+                </details>
+                <details class="faq-item">
+                    <summary>Obàtálá e Oxalá sono la stessa divinità?</summary>
+                    <div class="faq-answer"><p>Oxalá è il nome con cui Obàtálá è conosciuto nel Candomblé brasiliano, frutto della sincretizzazione avvenuta durante la diaspora africana. Nella tradizione Ìṣẹ̀ṣe di Ọ̀yọ́, Obàtálá è uno e indivisibile, senza le distinzioni in &#x27;qualità&#x27; separate presenti in alcune linee del Candomblé.</p></div>
+                </details>
+                <details class="faq-item">
+                    <summary>Cosa significa Ìwà Pẹ̀lẹ́?</summary>
+                    <div class="faq-answer"><p>Ìwà Pẹ̀lẹ́ significa &#x27;buon carattere&#x27; o &#x27;condotta retta e misurata&#x27;. È il principio centrale del culto di Obàtálá: non significa non sbagliare mai, ma riflettere prima di agire, scegliere la ponderatezza e tornare al centro quando ci si è allontanati.</p></div>
+                </details>
+                <details class="faq-item">
+                    <summary>Perché gli iniziati di Obàtálá non possono bere vino di palma?</summary>
+                    <div class="faq-answer"><p>Secondo l&#x27;Itan fondativo, Obàtálá bevve vino di palma (Emu) mentre plasmava i corpi umani. L&#x27;ebbrezza alterò il suo lavoro, producendo le diversità fisiche del mondo umano. Il tabù sul vino di palma è la memoria viva di quell&#x27;evento.</p></div>
+                </details>
+                <details class="faq-item">
+                    <summary>Qual è il legame tra Obàtálá e le persone con disabilità?</summary>
+                    <div class="faq-answer"><p>Le persone nate con disabilità, malformazioni fisiche o albinismo sono considerate i figli legittimi e prediletti di Obàtálá. Non sono un errore: nel culto qualsiasi discriminazione nei loro confronti è assolutamente vietata.</p></div>
+                </details>
+            </section>
 
             <!-- Tags -->
             <div class="article-tags">

@@ -162,6 +162,19 @@
         .highlight-box p { margin-bottom: 0.8rem; }
         .highlight-box p:last-child { margin-bottom: 0; }
 
+        /* FAQ */
+        .faq-section { margin-top: 3.5rem; padding-top: 2rem; border-top: 1px solid rgba(139,69,19,0.15); }
+        .faq-section h2 { margin-top: 0; }
+        .faq-item { background: #fff; border: 1px solid rgba(139,69,19,0.15); border-radius: 12px; margin-bottom: 0.8rem; overflow: hidden; }
+        .faq-item summary { cursor: pointer; list-style: none; padding: 1.1rem 3rem 1.1rem 1.4rem; position: relative; font-family: 'Playfair Display', serif; font-size: 1.1rem; color: #8B4513; line-height: 1.5; }
+        .faq-item summary::-webkit-details-marker { display: none; }
+        .faq-item summary::after { content: '+'; position: absolute; right: 1.2rem; top: 50%; transform: translateY(-50%); font-size: 1.4rem; color: #B8860B; }
+        .faq-item[open] summary::after { content: '\2212'; }
+        .faq-item summary:focus-visible { outline: 2px solid #B8860B; outline-offset: -2px; }
+        .faq-answer { padding: 0 1.4rem 1.2rem; }
+        .faq-answer p { font-size: 1rem; line-height: 1.8; margin-bottom: 0.8rem; }
+        .faq-answer p:last-child { margin-bottom: 0; }
+
         /* Tags */
         .article-tags { display: flex; flex-wrap: wrap; gap: 0.8rem; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid rgba(139,69,19,0.15); }
         .article-tags span { font-size: 0.9rem; color: #6b5d4f; }
@@ -423,6 +436,9 @@
 
 <p><em>La tradizione Yorùbá non appartiene a nessuno. Questi scritti sono una sua umile elaborazione.</em></p>
 <!-- CONTENT_END -->
+
+            <!-- FAQ visibili (generate dal campo faq; vuote se l'articolo non ne ha) -->
+            
 
             <!-- Tags -->
             <div class="article-tags">
