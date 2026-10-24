@@ -22,7 +22,9 @@ Changelog rispetto alla versione originale:
 
 import os
 import re
+import json
 import yaml
+from html import escape as html_escape
 from datetime import datetime
 from pathlib import Path
 from urllib.parse import quote
@@ -135,48 +137,70 @@ def truncate_text(text, max_length=150):
         truncated = truncated[:last_space]
     return truncated + "…"
 
-def build_faq_schema(faq_list):
-    """Genera il blocco JSON-LD FAQPage dalle FAQ del frontmatter.
-    Restituisce stringa vuota se non ci sono FAQ valide."""
+def _clean_faq(faq_list):
+    """Restituisce solo le FAQ valide come lista di (domanda, risposta)."""
     if not faq_list or not isinstance(faq_list, list):
-        return ''
-    
-    items = []
+        return []
+    out = []
     for item in faq_list:
         if not isinstance(item, dict):
             continue
         domanda = str(item.get('domanda', '')).strip()
         risposta = str(item.get('risposta', '')).strip()
         if domanda and risposta:
-            # Escape caratteri speciali JSON
-            domanda = domanda.replace('\\', '\\\\').replace('"', '\\"')
-            risposta = risposta.replace('\\', '\\\\').replace('"', '\\"')
-            items.append(
-                f'''        {{
-          "@type": "Question",
-          "name": "{domanda}",
-          "acceptedAnswer": {{
-            "@type": "Answer",
-            "text": "{risposta}"
-          }}
-        }}'''
-            )
-    
-    if not items:
+            out.append((domanda, risposta))
+    return out
+
+
+def build_faq_schema(faq_list):
+    """Genera il blocco JSON-LD FAQPage dalle FAQ del frontmatter.
+    Restituisce stringa vuota se non ci sono FAQ valide."""
+    faqs = _clean_faq(faq_list)
+    if not faqs:
         return ''
-    
-    items_json = ',\n'.join(items)
-    return f'''<script type="application/ld+json">
-    {{
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": [
-{items_json}
-      ]
-    }}
-    </script>'''
+    data = {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": domanda,
+                "acceptedAnswer": {"@type": "Answer", "text": risposta},
+            }
+            for domanda, risposta in faqs
+        ],
+    }
+    # json.dumps gestisce virgolette, a capo e caratteri speciali;
+    # "</" viene neutralizzato per non chiudere lo <script> per errore
+    payload = json.dumps(data, ensure_ascii=False, indent=2).replace('</', '<\\/')
+    return '<script type="application/ld+json">\n' + payload + '\n    </script>'
 
 
+def build_faq_html(faq_list):
+    """Genera la sezione visibile 'Domande frequenti' (tendine <details>).
+    Usa gli stessi dati dello schema, così markup e contenuto in pagina coincidono.
+    Restituisce stringa vuota se non ci sono FAQ valide."""
+    faqs = _clean_faq(faq_list)
+    if not faqs:
+        return ''
+    items = []
+    for domanda, risposta in faqs:
+        paragrafi = ''.join(
+            f'<p>{html_escape(par.strip())}</p>'
+            for par in re.split(r'\n\s*\n', risposta) if par.strip()
+        )
+        items.append(
+            '                <details class="faq-item">\n'
+            f'                    <summary>{html_escape(domanda)}</summary>\n'
+            f'                    <div class="faq-answer">{paragrafi}</div>\n'
+            '                </details>'
+        )
+    return (
+        '<section class="faq-section" aria-labelledby="faq-title">\n'
+        '                <h2 id="faq-title">Domande frequenti</h2>\n'
+        + '\n'.join(items) + '\n'
+        '            </section>'
+    )
 
 
 # ============================================
@@ -392,6 +416,7 @@ def build_article(md_file, template):
         '{{URL_ARTICOLO}}': f'{SITE_URL}/blog/{slug}',
         '{{TITOLO_ENCODED}}': title_encoded,
         '{{FAQ_JSON}}': build_faq_schema(metadata.get('faq', [])),
+        '{{FAQ_HTML}}': build_faq_html(metadata.get('faq', [])),
     }
 
     for placeholder, value in replacements.items():
