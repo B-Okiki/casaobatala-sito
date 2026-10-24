@@ -28,9 +28,7 @@ e da
 
 [Orí: Nutrire il Proprio Destino](https://casaobatala.it/blog/2026-02-08-ori-nutrire-il-proprio-destino-parte-2). 
 
-Quello che segue ha più peso
-
-se sai già di cosa stiamo parlando, e vale la pena che ce l'abbia.\*
+Quello che segue ha più peso se sai già di cosa stiamo parlando, e vale la pena che ce l'abbia.\*
 
 ***
 
