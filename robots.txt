@@ -5,6 +5,8 @@ User-agent: *
 Allow: /
 Disallow: /admin/
 Disallow: /cookie-banner.js
+Disallow: /cdn-cgi/content
+Disallow: /cdn-cgi/l/email-protection
 
 # BOT AI - POLICY BILANCIATA
 
