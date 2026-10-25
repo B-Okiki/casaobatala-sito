@@ -74,6 +74,18 @@ def clean_title(title):
     return re.sub(r'^#+\s*', '', title).strip()
 
 
+SEO_TITLE_MAX = 65  # Bing segnala "titolo troppo lungo" oltre ~70 caratteri
+
+def build_seo_title(title):
+    """Titolo per il tag <title>: aggiunge il marchio solo se resta entro il limite.
+    Prova '| Blog Casa Obàtálá', poi '| Casa Obàtálá', altrimenti solo il titolo."""
+    for suffix in (' | Blog Casa Obàtálá', ' | Casa Obàtálá', ''):
+        candidate = f'{title}{suffix}'
+        if len(candidate) <= SEO_TITLE_MAX:
+            return candidate
+    return title
+
+
 def parse_date(date_obj):
     """Normalizza una data dal frontmatter in un oggetto datetime."""
     if isinstance(date_obj, datetime):
@@ -383,7 +395,7 @@ def build_article(md_file, template):
 
     description = metadata.get('description', '')
     image = metadata.get('image', '')
-    image_alt = metadata.get('image_alt', title)
+    image_alt = (metadata.get('image_alt') or '').strip() or title
     tags = parse_tags(metadata.get('tags', []))
 
     slug = Path(md_file).stem
@@ -401,6 +413,7 @@ def build_article(md_file, template):
     html = template
 
     replacements = {
+        '{{TITOLO_SEO}}': build_seo_title(title),
         '{{TITOLO_ARTICOLO}}': title,
         '{{DESCRIZIONE_SEO}}': description,
         '{{SLUG_ARTICOLO}}': slug,
@@ -704,7 +717,7 @@ def main():
                 'date_formatted': format_date_italian(date_obj),
                 'category': CATEGORIE.get(metadata.get('category', ''), 'Riflessioni'),
                 'image': metadata.get('image', ''),
-                'image_alt': metadata.get('image_alt', ''),
+                'image_alt': (metadata.get('image_alt') or '').strip() or clean_title(metadata.get('title', 'Senza titolo')),
             })
 
     print(f"\n📋 Aggiorno indice blog...")
