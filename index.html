@@ -22,7 +22,7 @@
          Qui teniamo solo il tag asincrono di GA4; il config viene chiamato dal banner
          dopo aver impostato il consent, evitando così il firing anticipato. -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-CY01LVTL28"></script>
-    <title>Casa Obàtálá — Tradizione Yorùbá | Meditazione e Percorsi Spirituali</title>
+    <title>Casa Obàtálá | Tradizione Yorùbá, Meditazione e Percorsi Spirituali</title>
     <meta name="description" content="Lorenzo Okìkí Rossi, iniziato nel culto Yorùbá di Obatala (Obàtálá). Meditazione profonda, percorsi spirituali e consulenze nella tradizione di Ọ̀yọ́. Roma e online.">
     <meta name="keywords" content="meditazione profonda, fitoterapia, tradizione Yorùbá, Orisha, naturopatia, counseling, spiritualità africana, Roma, Toscana, online">
     <meta name="author" content="Lorenzo Okìkí Rossi">
@@ -303,6 +303,16 @@
             filter: drop-shadow(0 2px 4px rgba(139, 69, 19, 0.1));
         }
         
+        .card-icon svg { width: 80px; height: 80px; }
+
+        /* Card Servizi: riga intera sopra le altre 8, così la griglia resta in righe complete */
+        .card-featured { grid-column: 1 / -1; }
+        @media (min-width: 768px) {
+            .card-featured { display: flex; align-items: center; gap: 2rem; }
+            .card-featured .card-icon { margin-bottom: 0; flex-shrink: 0; }
+        }
+        @media (min-width: 1024px) { .card-icon svg { width: 96px; height: 96px; } }
+
         .card-icon img {
             width: 80px;
             height: 80px;
@@ -401,6 +411,7 @@
         <div class="menu-toggle" onclick="toggleMenu()"><span></span><span></span><span></span></div>
         <ul class="nav-links">
             <li><a href="/">Home</a></li>
+            <li><a href="servizi">Servizi</a></li>
             <li><a href="meditazione">Meditazione</a></li>
             <li><a href="piante">Piante</a></li>
             <li><a href="glossario">Glossario</a></li>
@@ -413,6 +424,7 @@
     </nav>
     <div class="mobile-menu" id="mobileMenu">
         <a href="/">Home</a>
+        <a href="servizi">Servizi</a>
         <a href="meditazione">Meditazione</a>
         <a href="piante">Piante</a>
         <a href="glossario">Glossario Piante</a>
@@ -463,6 +475,22 @@
         <h2 class="section-title">Esplora</h2>
         <p class="section-subtitle">Scopri il mio cammino</p>
         <div class="grid">
+            <a href="servizi" class="card card-featured">
+                <div class="card-icon">
+                    <svg width="80" height="80" viewBox="0 0 80 80" role="img" aria-label="Servizi" fill="rgba(184,134,11,0.14)" stroke="#8B4513" stroke-width="2" stroke-linejoin="round" stroke-linecap="round">
+                        <path d="M40 16C49 29 49 45 40 58C31 45 31 29 40 16Z"/>
+                        <path d="M40 58C27 54 19 44 19 31C30 33 38 43 40 58Z"/>
+                        <path d="M40 58C53 54 61 44 61 31C50 33 42 43 40 58Z"/>
+                        <path d="M40 58C22 58 10 51 7 41C20 40 34 46 40 58Z"/>
+                        <path d="M40 58C58 58 70 51 73 41C60 40 46 46 40 58Z"/>
+                        <path d="M27 65H53" fill="none"/>
+                    </svg>
+                </div>
+                <div class="card-text">
+                    <h3>Servizi</h3>
+                    <p>Consulenze spirituali, ẹbọ, meditazione su Orí e bagni rituali. Roma, Toscana e online.</p>
+                </div>
+            </a>
             <a href="meditazione" class="card">
                 <div class="card-badge">3 Tipologie</div>
                 <div class="card-icon"><img src="/images/icons/icona-meditazione.png" alt="Meditazione"></div>
