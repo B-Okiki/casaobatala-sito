@@ -589,9 +589,12 @@ def update_blog_index(articles):
 # ============================================
 
 # Pagine statiche con priorità e frequenza di aggiornamento.
-# Modifica qui se aggiungi nuove pagine al sito.
+# Le pagine .html nuove nella cartella principale vengono aggiunte da sole
+# (vedi discover_new_root_pages); qui si elencano solo quelle con valori
+# specifici e le pagine nelle sottocartelle.
 STATIC_PAGES = [
     {"loc": "/",                                    "changefreq": "monthly",  "priority": "1.0"},
+    {"loc": "/servizi",                            "changefreq": "monthly",  "priority": "0.9"},
     {"loc": "/meditazione",                         "changefreq": "monthly",  "priority": "0.9"},
     {"loc": "/piante",                              "changefreq": "monthly",  "priority": "0.9"},
     {"loc": "/glossario",                           "changefreq": "monthly",  "priority": "0.8"},
@@ -611,6 +614,33 @@ STATIC_PAGES = [
 ]
 
 
+# Pagine in cartella principale che non devono mai entrare in sitemap
+SITEMAP_EXCLUDED_ROOT = {"index", "404"}
+
+
+def discover_new_root_pages():
+    """Trova le pagine .html nella cartella principale non ancora elencate in
+    STATIC_PAGES, così una pagina nuova entra in sitemap senza modificare lo script.
+    Salta 404, la home (già presente come "/") e le pagine con meta robots noindex."""
+    known = {page["loc"] for page in STATIC_PAGES}
+    found = []
+    for html_file in sorted(Path(".").glob("*.html")):
+        if html_file.stem in SITEMAP_EXCLUDED_ROOT:
+            continue
+        loc = f"/{html_file.stem}"
+        if loc in known:
+            continue
+        try:
+            head = html_file.read_text(encoding="utf-8")[:8000].lower()
+        except Exception:
+            continue
+        if re.search(r'<meta[^>]+name=["\']robots["\'][^>]*noindex', head):
+            continue
+        found.append({"loc": loc, "changefreq": "monthly", "priority": "0.7"})
+        print(f"  ➕ Pagina nuova aggiunta alla sitemap: {loc}")
+    return found
+
+
 def update_sitemap(articles):
     """Rigenera sitemap.xml con le pagine statiche e tutti gli articoli pubblicati."""
     today = datetime.now().strftime("%Y-%m-%d")
@@ -620,8 +650,9 @@ def update_sitemap(articles):
         '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
     ]
 
-    # Pagine statiche
-    for page in STATIC_PAGES:
+    # Pagine statiche (elenco esplicito + pagine nuove trovate in automatico)
+    all_pages = STATIC_PAGES + discover_new_root_pages()
+    for page in all_pages:
         # blog.html usa la data di oggi (viene aggiornato ad ogni build)
         if page["loc"] == "/blog":
             lastmod = today
@@ -648,8 +679,8 @@ def update_sitemap(articles):
     with open(SITEMAP_FILE, 'w', encoding='utf-8') as f:
         f.write('\n'.join(xml_lines) + '\n')
 
-    total = len(STATIC_PAGES) + len(articles)
-    print(f"  ✅ sitemap.xml aggiornata ({total} URL: {len(STATIC_PAGES)} pagine + {len(articles)} articoli)")
+    total = len(all_pages) + len(articles)
+    print(f"  ✅ sitemap.xml aggiornata ({total} URL: {len(all_pages)} pagine + {len(articles)} articoli)")
 
 
 def _get_existing_lastmod(loc):
