@@ -13,3 +13,10 @@
 # Permetti l'embed solo per il pannello admin
 /admin/*
   X-Frame-Options: SAMEORIGIN
+
+/*
+  X-Frame-Options: SAMEORIGIN
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), interest-cohort=()
+  Strict-Transport-Security: max-age=31536000; includeSubDomains
