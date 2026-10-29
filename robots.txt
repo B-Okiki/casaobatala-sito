@@ -1,5 +1,5 @@
-# Robots.txt per casaobatala.it
-# Casa Obàtálá - Lorenzo Okíkí Rossi
+# robots.txt per casaobatala.it
+# Casa Obàtálá - Lorenzo Okìkí Rossi
 
 User-agent: *
 Allow: /
@@ -49,9 +49,3 @@ User-agent: meta-externalagent
 Disallow: /
 
 Sitemap: https://casaobatala.it/sitemap.xml
-
-# OVERRIDE Cloudflare (fix errore Bing)
-User-agent: *
-Allow: /
-
-
