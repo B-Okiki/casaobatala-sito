@@ -1,14 +1,12 @@
-# ============================================
+# =============================================
 # SECURITY HEADERS - Casa Obàtálá
-# ============================================
+# =============================================
 # Cloudflare Pages legge questo file automaticamente
 # dalla root del repository.
-# Documentazione: https://developers.cloudflare.com/pages/configuration/headers/
 
 /*
   X-Content-Type-Options: nosniff
-  X-Frame-Options: DENY
-  X-XSS-Protection: 1; mode=block
+  X-Frame-Options: SAMEORIGIN
   Referrer-Policy: strict-origin-when-cross-origin
   Permissions-Policy: camera=(), microphone=(), geolocation=(), interest-cohort=()
 
