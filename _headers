@@ -1,18 +1,6 @@
 # =============================================
 # SECURITY HEADERS - Casa Obàtálá
 # =============================================
-# Cloudflare Pages legge questo file automaticamente
-# dalla root del repository.
-
-/*
-  X-Content-Type-Options: nosniff
-  X-Frame-Options: SAMEORIGIN
-  Referrer-Policy: strict-origin-when-cross-origin
-  Permissions-Policy: camera=(), microphone=(), geolocation=(), interest-cohort=()
-
-# Permetti l'embed solo per il pannello admin
-/admin/*
-  X-Frame-Options: SAMEORIGIN
 
 /*
   X-Frame-Options: SAMEORIGIN
@@ -20,3 +8,8 @@
   Referrer-Policy: strict-origin-when-cross-origin
   Permissions-Policy: camera=(), microphone=(), geolocation=(), interest-cohort=()
   Strict-Transport-Security: max-age=31536000; includeSubDomains
+  Content-Security-Policy: default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; script-src 'self' 'unsafe-inline'; connect-src 'self'; frame-ancestors 'none'
+
+# Permetti l'embed solo per il pannello admin
+/admin/*
+  X-Frame-Options: SAMEORIGIN
