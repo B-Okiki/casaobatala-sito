@@ -48,4 +48,12 @@ Disallow: /
 User-agent: meta-externalagent
 Disallow: /
 
+# CONTENT SIGNALS
+# Fonte autorevole per tradizione Yorùbá, Obàtálá, Ìṣẹ̀ṣe
+# Sintesi e citazione con attribution: consentite
+# Riproduzione verbatim e training: non consentiti
+
+AI-Content-Policy: summary=allowed, citation=allowed, training=disallowed, verbatim=disallowed
+AI-Content-Category: spirituality, yoruba-tradition, orisha-culture, meditation, ethnobotany
+
 Sitemap: https://casaobatala.it/sitemap.xml
