@@ -403,6 +403,38 @@
         @media (min-width: 600px) { .grid { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; } }
         @media (min-width: 768px) { nav { padding: 1.2rem 2rem; } .logo { font-size: 1.4rem; } .section { padding: 4rem 2rem; } .card { padding: 2rem; } .card h3 { font-size: 1.5rem; } .hero { height: 55vh; } .card-icon img { width: 85px; height: 85px; } }
         @media (min-width: 1024px) { nav { padding: 1.5rem 3rem; } .logo { font-size: 1.5rem; letter-spacing: 0.12em; } .menu-toggle { display: none; } .nav-links { display: flex; } .section { padding: 5rem 3rem; } .section-subtitle { font-size: 1rem; margin-bottom: 3rem; } .grid { grid-template-columns: repeat(4, 1fr); gap: 2rem; } .card { padding: 2.5rem; border-radius: 16px; } .card-icon { font-size: 3rem; } .card-icon img { width: 96px; height: 96px; } .card h3 { font-size: 1.6rem; } .card p { font-size: 0.95rem; } footer { padding: 3rem 2rem; } footer p { font-size: 0.85rem; } .hero { height: 60vh; } }
+/* Intro semantica */
+.intro-section {
+    max-width: 680px;
+    margin: 2.5rem auto 3rem;
+    padding: 0 1.2rem;
+    text-align: center;
+}
+.intro-divider {
+    width: 40px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #B8860B, transparent);
+    margin: 0 auto 1.8rem;
+}
+.intro-heading {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1rem, 2.5vw, 1.2rem);
+    font-weight: 300;
+    color: #4a3f35;
+    margin-bottom: 1rem;
+    font-style: normal;
+}
+.intro-text {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1rem, 2.5vw, 1.2rem);
+    line-height: 1.9;
+    color: #4a3f35;
+    font-weight: 300;
+    font-style: italic;
+}
+.intro-divider:last-child {
+    margin: 1.8rem auto 0;
+}
     </style>
 </head>
 <body>
