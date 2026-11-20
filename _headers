@@ -8,3 +8,5 @@
 
 /admin/*
   X-Frame-Options: SAMEORIGIN
+  Content-Security-Policy: default-src 'self'; base-uri 'self'; object-src 'none'; script-src 'self' 'unsafe-inline' https://unpkg.com https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self' https://api.github.com https://raw.githubusercontent.com https://sveltia-cms-auth.rossi-lorenzo-1976.workers.dev; frame-ancestors 'self'
+
