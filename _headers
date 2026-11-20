@@ -1,5 +1,3 @@
-Ecco il file _headers completo e corretto, pronto da incollare nel repository (sostituisci il contenuto attuale di _headers):
-
 # =============================================
 # SECURITY HEADERS - Casa Obàtálá
 # =============================================
@@ -9,8 +7,8 @@ Ecco il file _headers completo e corretto, pronto da incollare nel repository (s
   X-Content-Type-Options: nosniff
   Referrer-Policy: strict-origin-when-cross-origin
   Permissions-Policy: camera=(), microphone=(), geolocation=(), interest-cohort=()
-  Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
-  Content-Security-Policy: default-src 'self'; object-src 'none'; base-uri 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: blob: https:; script-src 'self' 'unsafe-inline' https://assets.mailerlite.com https://groot.mailerlite.com https://www.googletagmanager.com https://static.cloudflareinsights.com https://unpkg.com; connect-src 'self' https://formspree.io https://api.mailerlite.com https://assets.mailerlite.com https://groot.mailerlite.com https://www.google-analytics.com https://cloudflareinsights.com https://sveltia-cms-auth.rossi-lorenzo-1976.workers.dev https://api.github.com https://github.com; worker-src 'self' blob:; form-action 'self' https://formspree.io https://assets.mailerlite.com; frame-ancestors 'none'
+  Strict-Transport-Security: max-age=31536000; includeSubDomains
+  Content-Security-Policy: default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; script-src 'self' 'unsafe-inline' https://assets.mailerlite.com https://www.googletagmanager.com https://static.cloudflareinsights.com; connect-src 'self' https://formspree.io https://api.mailerlite.com https://assets.mailerlite.com https://www.google-analytics.com https://cloudflareinsights.com; form-action 'self' https://formspree.io https://assets.mailerlite.com; frame-ancestors 'none'
 
 /admin/*
   X-Frame-Options: SAMEORIGIN
