@@ -11,6 +11,9 @@ Disallow: /cdn-cgi/l/email-protection
 # BOT AI - POLICY BILANCIATA
 
 # ✅ PERMESSI - Bot AI Search
+User-agent: Bingbot
+Allow:/
+
 User-agent: Google-Extended
 Allow: /
 
