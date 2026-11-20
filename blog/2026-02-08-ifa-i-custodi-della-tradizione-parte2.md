@@ -3,7 +3,7 @@ title: 'Ifá: I Custodi della Tradizione (parte2)'
 date: 2026-03-23
 published: true
 image: /images/blog/divinazione di Ifà.webp
-image_alt: Divinazione_di_Ifa
+image_alt: divinazione_di_Ifa
 category: yoruba
 tags:
   - Orì, Orisa, Orisha, Orixa, Ifá, Yoruba, Candomble, Santeria, Umbanda,ifà, afro, afrobrasiliano,cosmologia Yorùbá.
