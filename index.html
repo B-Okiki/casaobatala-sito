@@ -208,7 +208,234 @@
       }
     }
     </script>
-<link rel="stylesheet" href="/style.css">
+
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+     html { overflow-x: hidden; }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: 
+                radial-gradient(
+                    circle at 15% 20%, 
+                    rgba(139, 69, 19, 0.05) 0%, 
+                    transparent 50%
+                ),
+                radial-gradient(
+                    circle at 85% 80%, 
+                    rgba(184, 134, 11, 0.05) 0%, 
+                    transparent 50%
+                ),
+                #fafafa;
+            color: #1a1a1a;
+            overflow-x: hidden;
+            padding-top: 70px;
+        }
+        nav { position: fixed; top: 0; width: 100%; padding: 1rem 1.2rem; z-index: 1000; display: flex; justify-content: space-between; align-items: center; background: rgba(255,255,255,0.98); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(139,69,19,0.1); }
+        .logo { font-family: 'Playfair Display', serif;text-decoration: none; font-size: 1.2rem; background: linear-gradient(135deg, #8B4513, #B8860B); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .nav-links { display: none; gap: 2rem; list-style: none; }
+        .nav-links a { color: #1a1a1a; text-decoration: none; font-size: 0.85rem; letter-spacing: 0.1em; text-transform: uppercase; }
+        .nav-links a:hover { color: #8B4513; }
+        .menu-toggle { display: flex; flex-direction: column; cursor: pointer; gap: 5px; padding: 5px; }
+        .menu-toggle span { width: 24px; height: 2px; background: #8B4513; }
+        .mobile-menu { display: none; position: fixed; top: 58px; left: 0; right: 0; background: #fff; padding: 1rem 1.2rem; border-bottom: 1px solid rgba(139,69,19,0.1); box-shadow: 0 10px 30px rgba(0,0,0,0.1); z-index: 999; }
+        .mobile-menu.active { display: block; }
+        .mobile-menu a { display: block; padding: 0.9rem 0; color: #1a1a1a; text-decoration: none; font-size: 1rem; border-bottom: 1px solid rgba(139,69,19,0.08); }
+        .mobile-menu a:last-child { border-bottom: none; }
+        .hero { height: 50vh; min-height: 320px; display: flex; align-items: center; justify-content: center; position: relative; background: linear-gradient(135deg, #faf8f5 0%, #f0ebe4 100%); overflow: hidden; }
+        .hero::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(139,69,19,0.22) 0%, rgba(184,134,11,0.12) 40%, transparent 70%); animation: rotate 25s linear infinite; pointer-events: none; }
+        @keyframes rotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+        .hero-content { text-align: center; z-index: 2; padding: 1.5rem; width: 100%; max-width: 100%; }
+        h1 { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 8vw, 5rem); font-weight: 300; margin-bottom: 1rem; background: linear-gradient(135deg, #1a1a1a 0%, #8B4513 50%, #B8860B 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; animation: fadeInUp 1.2s ease-out; line-height: 1.2; word-wrap: break-word; }
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        .subtitle { font-size: clamp(0.7rem, 2.5vw, 1.1rem); color: #6b5d4f; letter-spacing: 0.15em; text-transform: uppercase; animation: fadeInUp 1.2s ease-out 0.3s both; word-wrap: break-word; }
+        .scroll-indicator { position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%); width: 28px; height: 45px; border: 2px solid rgba(139,69,19,0.4); border-radius: 20px; cursor: pointer; }
+        .scroll-indicator::before { content: ''; position: absolute; top: 8px; left: 50%; transform: translateX(-50%); width: 5px; height: 5px; background: #B8860B; border-radius: 50%; animation: scroll 2.5s infinite; }
+        @keyframes scroll { 0%, 100% { transform: translate(-50%, 0); opacity: 1; } 50% { transform: translate(-50%, 15px); opacity: 0.3; } }
+        .section { padding: 2.5rem 1rem; width: 100%; max-width: 100%; overflow-x: hidden; }
+        .section-title { font-family: 'Playfair Display', serif; text-align: center; font-size: clamp(1.8rem, 5vw, 3rem); font-weight: 300; margin-bottom: 0.5rem; }
+        .section-subtitle { text-align: center; color: #6b5d4f; font-size: 0.85rem; margin-bottom: 2rem; letter-spacing: 0.12em; text-transform: uppercase; }
+        .grid { display: grid; grid-template-columns: 1fr; gap: 1.2rem; max-width: 1200px; margin: 0 auto; padding: 0 0.5rem; }
+  
+/* CARDS - Glassmorphism Elegante                      */
+        .card {
+            /* Effetto vetro elegante */
+            background: rgba(255, 255, 255, 0.65);
+            backdrop-filter: blur(16px) saturate(160%);
+            -webkit-backdrop-filter: blur(16px) saturate(160%);
+            /* Bordo sottile */
+            border: 1px solid rgba(139, 69, 19, 0.15);
+            /* Ombra morbida */
+            box-shadow: 
+                0 8px 32px rgba(139, 69, 19, 0.12),
+                0 2px 6px rgba(0, 0, 0, 0.04);
+            
+            border-radius: 16px;
+            padding: 2rem 1.5rem;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+            /* Transizione lenta = elegante */
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            
+            position: relative;
+        }
+        
+        /* Hover discreto */
+        .card:hover {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(20px) saturate(180%);
+            -webkit-backdrop-filter: blur(20px) saturate(180%);
+            
+            box-shadow: 
+                0 16px 48px rgba(139, 69, 19, 0.18),
+                0 4px 12px rgba(0, 0, 0, 0.06);
+            
+            transform: translateY(-6px); /* -2px invece di -5px = più elegante */
+            
+            border-color: rgba(139, 69, 19, 0.15);
+        }
+        
+        /* Icona card */
+        .card-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            filter: drop-shadow(0 2px 4px rgba(139, 69, 19, 0.1));
+        }
+        
+        .card-icon svg { width: 80px; height: 80px; }
+
+        /* Card Servizi: riga intera sopra le altre 8, così la griglia resta in righe complete */
+        .card-featured { grid-column: 1 / -1; }
+        @media (min-width: 768px) {
+            .card-featured { display: flex; align-items: center; gap: 2rem; }
+            .card-featured .card-icon { margin-bottom: 0; flex-shrink: 0; }
+        }
+        @media (min-width: 1024px) { .card-icon svg { width: 96px; height: 96px; } }
+
+        .card-icon img {
+            width: 80px;
+            height: 80px;
+            object-fit: contain;
+        }
+        
+        /* Titolo card */
+        .card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            margin-bottom: 0.6rem;
+            color: #1a1a1a;
+            font-weight: 400;
+            letter-spacing: -0.01em;
+        }
+        
+        /* Testo card */
+        .card p {
+            color: #6b5d4f;
+            line-height: 1.6;
+            font-size: 0.9rem;
+            font-weight: 300;
+        }
+        
+        /* Badge (se presente) */
+        .card-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #B8860B, #DAA520);
+            color: white;
+            font-size: 0.65rem;
+            padding: 0.2rem 0.5rem;
+            border-radius: 10px;
+            margin-bottom: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        
+        /* Assicura leggibilità contenuto */
+        .card > * {
+            position: relative;
+            z-index: 1;
+        }
+        /* News Section */
+        .news-section { max-width: 800px; margin: 0 auto 2rem; padding: 0 1rem; }
+        .news-card { 
+            /* Stesso glassmorphism delle card */
+            background: rgba(255, 255, 255, 0.65);
+            backdrop-filter: blur(16px) saturate(160%);
+            -webkit-backdrop-filter: blur(16px) saturate(160%);
+            
+            border: 1px solid rgba(139,69,19,0.15); 
+            border-radius: 16px; 
+            padding: 2rem; 
+            position: relative; 
+            overflow: hidden; 
+            text-decoration: none; 
+            color: inherit; 
+            display: block; 
+            
+            box-shadow: 
+                0 8px 32px rgba(139, 69, 19, 0.12),
+                0 2px 6px rgba(0, 0, 0, 0.04);
+            
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .news-card:hover { 
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(20px) saturate(180%);
+            -webkit-backdrop-filter: blur(20px) saturate(180%);
+            
+            transform: translateY(-6px); 
+            
+            box-shadow: 
+                0 16px 48px rgba(139, 69, 19, 0.18),
+                0 4px 12px rgba(0, 0, 0, 0.06);
+            
+            border-color: rgba(139, 69, 19, 0.15);
+        }
+        .news-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(135deg, #8B4513, #B8860B); }
+        .news-label { display: inline-block; font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; color: #B8860B; font-weight: 500; margin-bottom: 0.6rem; }
+        .news-card h3 { font-family: 'Playfair Display', serif; font-size: 1.3rem; color: #1a1a1a; margin-bottom: 0.5rem; font-weight: 400; }
+        .news-card p { color: #6b5d4f; font-size: 0.9rem; line-height: 1.6; margin-bottom: 0.8rem; }
+        .news-date { font-size: 0.75rem; color: #8B4513; }
+        footer { text-align: center; padding: 2rem 1rem; background: #f8f6f3; border-top: 1px solid rgba(139,69,19,0.1); }
+        footer p { color: #6b5d4f; font-size: 0.8rem; line-height: 1.7; }
+        footer a { color: #6b5d4f; }
+        @media (min-width: 600px) { .grid { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; } }
+        @media (min-width: 768px) { nav { padding: 1.2rem 2rem; } .logo { font-size: 1.4rem; } .section { padding: 4rem 2rem; } .card { padding: 2rem; } .card h3 { font-size: 1.5rem; } .hero { height: 55vh; } .card-icon img { width: 85px; height: 85px; } }
+        @media (min-width: 1024px) { nav { padding: 1.5rem 3rem; } .logo { font-size: 1.5rem; letter-spacing: 0.12em; } .menu-toggle { display: none; } .nav-links { display: flex; } .section { padding: 5rem 3rem; } .section-subtitle { font-size: 1rem; margin-bottom: 3rem; } .grid { grid-template-columns: repeat(4, 1fr); gap: 2rem; } .card { padding: 2.5rem; border-radius: 16px; } .card-icon { font-size: 3rem; } .card-icon img { width: 96px; height: 96px; } .card h3 { font-size: 1.6rem; } .card p { font-size: 0.95rem; } footer { padding: 3rem 2rem; } footer p { font-size: 0.85rem; } .hero { height: 60vh; } }
+/* Intro semantica */
+.intro-section {
+    max-width: 680px;
+    margin: 2.5rem auto 3rem;
+    padding: 0 1.2rem;
+    text-align: center;
+}
+.intro-divider {
+    width: 40px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #B8860B, transparent);
+    margin: 0 auto 1.8rem;
+}
+.intro-heading {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1rem, 2.5vw, 1.2rem);
+    font-weight: 300;
+    color: #4a3f35;
+    margin-bottom: 1rem;
+    font-style: normal;
+}
+.intro-text {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1rem, 2.5vw, 1.2rem);
+    line-height: 1.9;
+    color: #4a3f35;
+    font-weight: 300;
+    font-style: italic;
+}
+.intro-divider:last-child {
+    margin: 1.8rem auto 0;
+}
+    </style>
 </head>
 <body>
     <nav>
@@ -301,7 +528,7 @@
                 <div class="card-badge">3 Tipologie</div>
                 <div class="card-icon"><img src="/images/icons/icona-meditazione.png" alt="Meditazione"></div>
                 <h3>Meditazione Profonda</h3>
-                <p>Meditazioni su Orí (tradizione Yoruba), Training Autogeno e Meditazioni Dinamiche Osho. In presenza.</p>
+                <p>Meditazioni su Orí (tradizione Yoruba), Training Autogeno e Meditazioni Dinamiche Osho. In presenza e online.</p>
             </a>
             <a href="piante" class="card" title="Fitoterapia e piante officinali nella tradizione Yorùbá">
                 <div class="card-icon"><img src="/images/icons/icona-piante.png" alt="Piante"></div>
