@@ -14,11 +14,9 @@ backend:
 media_folder: "images/blog"
 public_folder: "/images/blog"
 
-# Lingua interfaccia
-locale: "it"
-
 # Logo nel pannello admin
-logo_url: "/logo.png"
+logo:
+  src: /logo.png
 
 # Slug (URL) degli articoli
 slug:
