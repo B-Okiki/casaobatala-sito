@@ -1,6 +1,6 @@
 ---
 title: Obàtálá — Chi è il Padre Antico
-date: 2026-10-19
+date: 2026-11-20
 published: true
 image: /images/blog/1000100381.webp
 image_alt: Obatala
