@@ -1,5 +1,4 @@
 # robots.txt per casaobatala.it
-Sitemap: https://casaobatala.it/sitemap.xml
 
 # --- Tutti i crawler ---
 User-agent: *
