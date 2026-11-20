@@ -16,7 +16,20 @@
     <meta name="theme-color" content="#8B4513">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Google Analytics 4 con Consent Mode v2 -->
-    <!-- NOTA: gtag consent default è gestito da cookie-banner.js (caricato a fine body). -->
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){ dataLayer.push(arguments); }
+      gtag('consent', 'default', {
+        'analytics_storage': 'denied',
+        'ad_storage': 'denied',
+        'wait_for_update': 500
+      });
+      gtag('js', new Date());
+      gtag('config', 'G-CY01LVTL28', { 'anonymize_ip': true });
+      if (localStorage.getItem('cookieConsent') === 'accepted') {
+        gtag('consent', 'update', { 'analytics_storage': 'granted' });
+      }
+    </script>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-CY01LVTL28"></script>
     
     <!-- SEO -->
@@ -186,8 +199,7 @@
         <div class="menu-toggle" onclick="toggleMenu()"><span></span><span></span><span></span></div>
         <ul class="nav-links">
             <li><a href="/">Home</a></li>
-            <li><a 
-href="servizi">Servizi</a></li>
+            <li><a href="servizi">Servizi</a></li>
             <li><a href="meditazione">Meditazione</a></li>
             <li><a href="piante">Piante</a></li>
             <li><a href="glossario">Glossario Piante</a></li>
@@ -200,8 +212,7 @@ href="servizi">Servizi</a></li>
     </nav>
     <div class="mobile-menu" id="mobileMenu">
         <a href="/">Home</a>
-        <a 
-href="servizi">Servizi</a> 
+        <a href="servizi">Servizi</a>
         <a href="meditazione">Meditazione</a>
         <a href="piante">Piante</a>
         <a href="glossario">Glossario Piante</a>
@@ -235,21 +246,8 @@ href="servizi">Servizi</a>
 
     <!-- Griglia Articoli -->
     <div class="blog-grid">
-        <a href="blog/2026-10-19-obatala-chi-e-il-padre-antico" class="blog-card">
-            <img src="/images/blog/1000100381.webp" alt="Ọbàtálá, Oxala, òrìṣà funfun," class="blog-card-image" width="800" heigth="420" fetchpriority="high">
-            <div class="blog-card-content">
-                <span class="blog-card-category">Òrìṣà</span>
-                <h2>Obàtálá — Chi è il Padre Antico</h2>
-                <p>Chi è Obàtálá nella tradizione Yorùbá di Ọ̀yọ́: il nome, il panno bianco, l'Ìwà Pẹ̀lẹ́, il buon carattere, gli Odù e il mito del vino di palma.</p>
-                <div class="blog-card-meta">
-                    <span>📅 19 Ottobre 2026</span>
-                    <span class="read-more">Leggi →</span>
-                </div>
-            </div>
-        </a>
-
         <a href="blog/2026-04-30-cos-e-un-orisa" class="blog-card">
-            <img src="/images/blog/1000068953.webp" alt="La presenza non sempre si annuncia. A volte si posa, silenziosa, e aspetta che tu la riconosca." class="blog-card-image" width="800" heigth="420">
+            <img src="/images/blog/1000068953.webp" alt="La presenza non sempre si annuncia. A volte si posa, silenziosa, e aspetta che tu la riconosca." class="blog-card-image" width="800" heigth="420" fetchpriority="high">
             <div class="blog-card-content">
                 <span class="blog-card-category">Òrìṣà</span>
                 <h2>Cos'è un Òrìṣà</h2>
@@ -275,7 +273,7 @@ href="servizi">Servizi</a>
         </a>
 
         <a href="blog/2026-02-08-ifa-i-custodi-della-tradizione-parte2" class="blog-card">
-            <img src="/images/blog/divinazione_di_Ifa.webp" alt="divinazione_di_Ifa" class="blog-card-image" width="800" heigth="420">
+            <img src="/images/blog/divinazione di Ifà.webp" alt="Divinazione di Ifà" class="blog-card-image" width="800" heigth="420">
             <div class="blog-card-content">
                 <span class="blog-card-category">Tradizione Yoruba</span>
                 <h2>Ifá: I Custodi della Tradizione (parte2)</h2>
@@ -288,7 +286,7 @@ href="servizi">Servizi</a>
         </a>
 
         <a href="blog/2026-02-08-ifa-il-sistema-di-saggezza-yoruba-parte1" class="blog-card">
-            <img src="/images/blog/Ifa.webp" alt="Tavoletta divinatoria di Ifá in legno scolpito, con segni Odù tracciati nella polvere e opele Ifá i accanto" class="blog-card-image" width="800" heigth="420">
+            <img src="/images/blog/Ifa.webp" alt="" class="blog-card-image" width="800" heigth="420">
             <div class="blog-card-content">
                 <span class="blog-card-category">Tradizione Yoruba</span>
                 <h2>Ifá: Il Sistema di Saggezza Yorùbá (parte1)</h2>
@@ -1086,7 +1084,7 @@ href="servizi">Servizi</a>
                 <h4>Iscriviti alla Newsletter</h4>
                 <p>Iscriviti per rimanere aggiornato</p>
             </div>
-            <form class="ml-block-form" action="https://assets.mailerlite.com/jsonp/2173773/forms/181466867924207361/subscribe" data-code="" method="post">
+            <form class="ml-block-form" action="https://assets.mailerlite.com/jsonp/2173773/forms/181466867924207361/subscribe" data-code="" method="post" target="_blank">
               <div class="ml-form-formContent">
                   <div class="ml-form-fieldRow ">
                     <div class="ml-field-group ml-field-name">
@@ -1145,7 +1143,10 @@ href="servizi">Servizi</a>
       $('.ml-subscribe-form-38200475 .row-form').hide();
     }
       </script>
-      <!-- MailerLite webforms caricato da cookie-banner.js solo dopo il consenso -->
+      <script src="https://groot.mailerlite.com/js/w/webforms.min.js?v95037e5bac78f29ed026832ca21a7c7b" type="text/javascript"></script>
+        <script>
+            fetch("https://assets.mailerlite.com/jsonp/2173773/forms/181466867924207361/takel")
+        </script>
             <!-- Fine MailerLite Form -->
             
             <p style="font-size: 0.85rem; color: #6b5d4f; margin-top: 1.5rem;">
@@ -1233,30 +1234,7 @@ href="servizi">Servizi</a>
         });
     })();
     </script>
-    
-    <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        var form = document.querySelector('.ml-block-form');
-        if (!form) return;
-        form.addEventListener('submit', function(e) {
-            e.preventDefault();
-            var data = new FormData(form);
-            fetch(form.action, {
-                method: 'POST',
-                body: data,
-                headers: { 'Accept': 'application/json' }
-            })
-            .then(function() {
-                document.querySelector('.ml-subscribe-form-38200475 .row-form').style.display = 'none';
-                document.querySelector('.ml-subscribe-form-38200475 .row-success').style.display = 'block';
-            })
-            .catch(function() {
-                alert('Si è verificato un errore. Riprova o scrivici direttamente.');
-            });
-        });
-    });
-    </script>
-    
+
     <script src="/cookie-banner.js"></script>
     
      <!-- Cloudflare Web Analytics -->
