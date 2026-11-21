@@ -12,6 +12,17 @@ author: Lorenzo Okìkí Rossi
 faq: []
 related:
   - 2026-02-08-ifa-il-sistema-di-saggezza-yoruba-parte1
+about:
+  - name: "Ifá"
+    id: "https://it.wikipedia.org/wiki/Ifà"
+  - name: "Bàbáláwo"
+    description: "Sacerdote di Ifá, padre dei misteri, nella tradizione Yorùbá"
+  - name: "Religione Yorùbá"
+    id: "https://it.wikipedia.org/wiki/Religione_yoruba"
+  - name: "Odù Ifá"
+    description: "I 256 corpora poetici e divinatori del sistema Ifá"
+  - name: "Ìṣẹ̀ṣe"
+    description: "Tradizione religiosa Yorùbá originaria, non sincretica"
 ---
 
 \*Questo articolo è la seconda parte di "Ifá: Il Sistema di Saggezza Yorùbá", dove abbiamo esplorato Ọ̀rúnmìlà, la tradizione orale e i 256 Odù. Qui approfondiamo i ruoli sacerdotali, gli strumenti divinatori e il messaggio centrale di Ifá.\*
