@@ -11,6 +11,17 @@ description: 'Cosa è Orí? Scopri la tradizione spirituale Yorùbá: Òrìṣà
 author: Lorenzo Okìkí Rossi
 faq: []
 related: []
+about:
+  - name: "Orí"
+    description: "Divinità personale del destino nella tradizione Yorùbá"
+  - name: "Religione Yorùbá"
+    id: "https://it.wikipedia.org/wiki/Religione_yoruba"
+  - name: "Àjàlá"
+    description: "Artigiano divino che modella gli Orí nella tradizione Yorùbá"
+  - name: "Òrìṣà"
+    id: "https://it.wikipedia.org/wiki/Orisha"
+  - name: "Ìṣẹ̀ṣe"
+    description: "Tradizione religiosa Yorùbá originaria, non sincretica"
 ---
 
 Prima ancora degli Òrìṣà, prima di Ògún che apre le strade e di Ṣàngó che scuote i cieli, esiste una divinità che nessun essere umano può evitare di incontrare. Non risiede in un santuario lontano, non richiede lunghi pellegrinaggi per essere raggiunta. Abita nel luogo più vicino e più misterioso che esista: la tua testa.
