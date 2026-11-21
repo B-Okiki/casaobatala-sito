@@ -16,6 +16,17 @@ description: La meditazione sull'Orí non è una tecnica di rilassamento. È un 
 author: Lorenzo Okìkí Rossi
 faq: []
 related: []
+about:
+  - name: "Meditazione"
+    id: "https://it.wikipedia.org/wiki/Meditazione"
+  - name: "Orí"
+    description: "Divinità personale del destino nella tradizione Yorùbá"
+  - name: "Religione Yorùbá"
+    id: "https://it.wikipedia.org/wiki/Religione_yoruba"
+  - name: "Ìwà Rere"
+    description: "Principio del buon carattere nella tradizione Yorùbá"
+  - name: "Counseling spirituale"
+    description: "Percorso di crescita interiore integrato con la tradizione Yorùbá"
 ---
 
 \*Se è la prima volta che senti parlare di Orí, ti consiglio di passare
