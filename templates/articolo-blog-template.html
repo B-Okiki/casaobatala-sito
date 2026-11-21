@@ -72,17 +72,27 @@
     {
       "@context": "https://schema.org",
       "@type": "BlogPosting",
+      "@id": "https://casaobatala.it/blog/{{SLUG_ARTICOLO}}#article",
       "headline": "{{TITOLO_ARTICOLO}}",
       "description": "{{DESCRIZIONE_SEO}}",
-      "image": "https://casaobatala.it/images/blog/{{IMMAGINE_ARTICOLO}}",
+      "image": {
+        "@type": "ImageObject",
+        "url": "https://casaobatala.it/images/blog/{{IMMAGINE_ARTICOLO}}",
+        "width": 1200,
+        "height": 630
+      },
+      "inLanguage": "it-IT",
       "author": {
         "@type": "Person",
+        "@id": "https://casaobatala.it/#lorenzo-okiki-rossi",
         "name": "Lorenzo Okìkí Rossi",
         "url": "https://casaobatala.it/chi-sono"
       },
       "publisher": {
         "@type": "Organization",
+        "@id": "https://casaobatala.it/#business",
         "name": "Casa Obàtálá",
+        "url": "https://casaobatala.it",
         "logo": {
           "@type": "ImageObject",
           "url": "https://casaobatala.it/logo.png"
@@ -94,8 +104,16 @@
         "@type": "WebPage",
         "@id": "https://casaobatala.it/blog/{{SLUG_ARTICOLO}}"
       },
+      "isPartOf": {
+        "@type": "Blog",
+        "@id": "https://casaobatala.it/blog#blog",
+        "name": "Blog Casa Obàtálá",
+        "url": "https://casaobatala.it/blog"
+      },
       "articleSection": "{{CATEGORIA}}",
-      "keywords": "{{TAGS_SEPARATI_DA_VIRGOLA}}"
+      "keywords": "{{TAGS_SEPARATI_DA_VIRGOLA}}",
+      "wordCount": {{WORD_COUNT}},
+      "about": {{ABOUT_JSON}}
     }
     </script>
 
@@ -1205,3 +1223,4 @@
     <!-- End Cloudflare Web Analytics -->
 </body>
 </html>
+
