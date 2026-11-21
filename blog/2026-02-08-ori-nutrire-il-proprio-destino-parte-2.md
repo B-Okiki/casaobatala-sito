@@ -12,6 +12,17 @@ author: Lorenzo Okìkí Rossi
 faq: []
 related:
   - 2026-02-08-ori-la-divinita-che-abita-nella-tua-testa-parte-1
+about:
+  - name: "Orí"
+    description: "Divinità personale del destino nella tradizione Yorùbá"
+  - name: "Religione Yorùbá"
+    id: "https://it.wikipedia.org/wiki/Religione_yoruba"
+  - name: "Ìbọrí"
+    description: "Rituale di nutrimento e onorificenza dell'Orí nella tradizione Yorùbá"
+  - name: "Òrìṣà"
+    id: "https://it.wikipedia.org/wiki/Orisha"
+  - name: "Ìṣẹ̀ṣe"
+    description: "Tradizione religiosa Yorùbá originaria, non sincretica"
 ---
 
 \*Questo articolo è la seconda parte di "Orí: La Divinità che Abita nella Tua Testa", dove abbiamo esplorato la doppia natura dell'Orí, la sua costruzione nella bottega di Àjàlá, i patti con l'Ẹgbẹ́ Ọ̀run e la supremazia dell'Orí sugli altri Òrìṣà. Qui approfondiamo cosa può ostacolare il nostro cammino e come nutrire la propria testa.\*
