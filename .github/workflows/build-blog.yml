@@ -72,6 +72,7 @@ jobs:
           git add -A
           if ! git diff --cached --quiet; then
             git commit -m "🤖 Auto-build: blog + RSS + image optimization"
+            git pull --rebase origin main
             git push origin HEAD:main
           fi
 
