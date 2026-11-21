@@ -215,6 +215,46 @@ def build_faq_html(faq_list):
     )
 
 
+def build_about_json(about_list):
+    """Genera il valore JSON per il campo 'about' dello schema BlogPosting.
+    Accetta una lista dal frontmatter con campi: name, id (opzionale), description (opzionale).
+    Se about_list è vuoto o assente restituisce un array vuoto [].
+    Esempio frontmatter:
+        about:
+          - name: "Obàtálá"
+            id: "https://en.wikipedia.org/wiki/Obatala"
+          - name: "Ìṣẹ̀ṣe"
+            description: "Tradizione religiosa Yorùbá originaria, non sincretica"
+    """
+    if not about_list or not isinstance(about_list, list):
+        return "[]"
+    entities = []
+    for item in about_list:
+        if not isinstance(item, dict):
+            continue
+        name = str(item.get('name', '')).strip()
+        if not name:
+            continue
+        entity = {"@type": "Thing", "name": name}
+        if item.get('id'):
+            entity["@id"] = str(item['id']).strip()
+        if item.get('description'):
+            entity["description"] = str(item['description']).strip()
+        entities.append(entity)
+    return json.dumps(entities, ensure_ascii=False, indent=2).replace('</', '<\\/')
+
+
+def calculate_word_count(body_text):
+    """Conta le parole del corpo dell'articolo (testo markdown pulito)."""
+    clean = strip_cms_backslashes(body_text)
+    clean = re.sub(r'^---.*?---', '', clean, flags=re.DOTALL)  # rimuovi frontmatter residuo
+    clean = re.sub(r'[#*\[\]()!`>]', '', clean)
+    clean = re.sub(r'\{[^}]+\}', '', clean)
+    clean = re.sub(r'https?://\S+', '', clean)
+    words = clean.split()
+    return len(words)
+
+
 # ============================================
 # CONVERSIONE MARKDOWN → HTML
 # ============================================
@@ -430,6 +470,8 @@ def build_article(md_file, template):
         '{{TITOLO_ENCODED}}': title_encoded,
         '{{FAQ_JSON}}': build_faq_schema(metadata.get('faq', [])),
         '{{FAQ_HTML}}': build_faq_html(metadata.get('faq', [])),
+        '{{WORD_COUNT}}': str(calculate_word_count(body)),
+        '{{ABOUT_JSON}}': build_about_json(metadata.get('about', [])),
     }
 
     for placeholder, value in replacements.items():
@@ -762,3 +804,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
