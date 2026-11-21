@@ -10,6 +10,17 @@ tags:
 description: La presenza non sempre si annuncia. A volte si posa, silenziosa, e aspetta che tu la riconosca.
 author: Lorenzo Okìkí Rossi
 related: []
+about:
+  - name: "Òrìṣà"
+    id: "https://it.wikipedia.org/wiki/Orisha"
+  - name: "Religione Yorùbá"
+    id: "https://it.wikipedia.org/wiki/Religione_yoruba"
+  - name: "Àṣẹ"
+    description: "Forza vitale e potere sacro nella tradizione Yorùbá"
+  - name: "Obàtálá"
+    id: "https://en.wikipedia.org/wiki/Obatala"
+  - name: "Ìṣẹ̀ṣe"
+    description: "Tradizione religiosa Yorùbá originaria, non sincretica"
 ---
 
 La prima domanda che mi fanno, quando spiego che mi occupo di tradizione Yorùbá, è sempre la stessa: ma cos'è un Òrìṣà?
