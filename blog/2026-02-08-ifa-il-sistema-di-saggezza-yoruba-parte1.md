@@ -11,6 +11,17 @@ description: 'Cosa è Ifá? Scopri la tradizione spirituale Yorùbá: Òrìṣà
 author: Lorenzo Okìkí Rossi
 faq: []
 related: []
+about:
+  - name: "Ifá"
+    id: "https://it.wikipedia.org/wiki/Ifà"
+  - name: "Ọ̀rúnmìlà"
+    description: "Òrìṣà della saggezza e della divinazione nella tradizione Yorùbá"
+  - name: "Religione Yorùbá"
+    id: "https://it.wikipedia.org/wiki/Religione_yoruba"
+  - name: "Odù Ifá"
+    description: "I 256 corpora poetici e divinatori del sistema Ifá"
+  - name: "Ìṣẹ̀ṣe"
+    description: "Tradizione religiosa Yorùbá originaria, non sincretica"
 ---
 
 Nel 2005, l'UNESCO ha iscritto il sistema di divinazione Ifá nella lista dei Capolavori del Patrimonio Orale e Immateriale dell'Umanità. Non è stata una sorpresa per chi conosce la tradizione. Ma ha reso ufficiale qualcosa che merita di essere detto chiaramente: Ifá non è un metodo per "predire il futuro". Quella è una semplificazione che non regge.
