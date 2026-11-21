@@ -10,6 +10,19 @@ tags:
 description: 'Cosa sono gli Òrìṣà? Scopri la tradizione spirituale Yorùbá: Olódùmarè, Orí, Àṣẹ e la cosmologia africana nella sua forma originaria, senza sincretismi.'
 author: Lorenzo Okìkí Rossi
 related: []
+about:
+  - name: "Òrìṣà"
+    id: "https://it.wikipedia.org/wiki/Orisha"
+  - name: "Religione Yorùbá"
+    id: "https://it.wikipedia.org/wiki/Religione_yoruba"
+  - name: "Olódùmarè"
+    description: "Essere Supremo nella cosmologia Yorùbá"
+  - name: "Àṣẹ"
+    description: "Forza vitale e potere sacro nella tradizione Yorùbá"
+  - name: "Orí"
+    description: "Divinità personale del destino nella tradizione Yorùbá"
+  - name: "Ìṣẹ̀ṣe"
+    description: "Tradizione religiosa Yorùbá originaria, non sincretica"
 ---
 
 Esiste un mondo in cui il sacro non è separato dal quotidiano, dove ogni fiume, ogni montagna, ogni fulmine che squarcia il cielo racconta una storia antica quanto l'umanità stessa. È il mondo della tradizione Yorùbá, una delle più ricche e articolate spiritualità dell'Africa occidentale, nata nella terra che oggi conosciamo come Nigeria sud-occidentale e Benin.
