@@ -21,6 +21,21 @@ faq:
   - domanda: Qual è il legame tra Obàtálá e le persone con disabilità?
     risposta: 'Le persone nate con disabilità, malformazioni fisiche o albinismo sono considerate i figli legittimi e prediletti di Obàtálá. Non sono un errore: nel culto qualsiasi discriminazione nei loro confronti è assolutamente vietata.'
 related: []
+about:
+  - name: "Obàtálá"
+    id: "https://en.wikipedia.org/wiki/Obatala"
+  - name: "Religione Yorùbá"
+    id: "https://it.wikipedia.org/wiki/Religione_yoruba"
+  - name: "Òrìṣà"
+    id: "https://it.wikipedia.org/wiki/Orisha"
+  - name: "Ìwà Pẹ̀lẹ́"
+    description: "Principio del buon carattere nella tradizione Yorùbá di Ọ̀yọ́"
+  - name: "Ìṣẹ̀ṣe"
+    description: "Tradizione religiosa Yorùbá originaria, non sincretica"
+  - name: "Ifá"
+    id: "https://it.wikipedia.org/wiki/Ifà"
+  - name: "Ọ̀yọ́"
+    id: "https://en.wikipedia.org/wiki/Oyo_Empire"
 ---
 
 \## Chi è Obàtálá
@@ -147,3 +162,4 @@ Obàtálá chiede carattere: un panno bianco da tenere pulito, la pazienza di pe
 
 
 \*La tradizione Yorùbá non appartiene a nessuno. Questi scritti sono una umile elaborazione\*
+
