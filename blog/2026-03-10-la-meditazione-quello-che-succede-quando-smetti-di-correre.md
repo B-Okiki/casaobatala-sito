@@ -11,6 +11,17 @@ description: Cos'è davvero la meditazione, perché praticarla e quali tecniche 
 author: Lorenzo Okìkí Rossi
 faq: []
 related: []
+about:
+  - name: "Meditazione"
+    id: "https://it.wikipedia.org/wiki/Meditazione"
+  - name: "Mindfulness"
+    id: "https://it.wikipedia.org/wiki/Mindfulness"
+  - name: "Training autogeno"
+    id: "https://it.wikipedia.org/wiki/Training_autogeno"
+  - name: "Neuroscienze"
+    id: "https://it.wikipedia.org/wiki/Neuroscienze"
+  - name: "Benessere psicologico"
+    id: "https://it.wikipedia.org/wiki/Benessere_psicologico"
 ---
 
 > _"La mente è come l'acqua. Quando è agitata, è difficile vedere. Quando è calma, tutto diventa chiaro."_
