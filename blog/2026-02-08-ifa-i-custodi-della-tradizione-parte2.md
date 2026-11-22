@@ -2,7 +2,7 @@
 title: 'Ifá: I Custodi della Tradizione (parte2)'
 date: 2026-03-23
 published: true
-image: /images/blog/divinazione di Ifà.webp
+image: /images/blog/divinazione-di-Ifa.webp
 image_alt: Divinazione_di_Ifa
 category: yoruba
 tags:
@@ -13,16 +13,16 @@ faq: []
 related:
   - 2026-02-08-ifa-il-sistema-di-saggezza-yoruba-parte1
 about:
-  - name: "Ifá"
-    id: "https://it.wikipedia.org/wiki/Ifà"
-  - name: "Bàbáláwo"
-    description: "Sacerdote di Ifá, padre dei misteri, nella tradizione Yorùbá"
-  - name: "Religione Yorùbá"
-    id: "https://it.wikipedia.org/wiki/Religione_yoruba"
-  - name: "Odù Ifá"
-    description: "I 256 corpora poetici e divinatori del sistema Ifá"
-  - name: "Ìṣẹ̀ṣe"
-    description: "Tradizione religiosa Yorùbá originaria, non sincretica"
+  - id: https://it.wikipedia.org/wiki/Ifà
+    name: Ifá
+  - description: Sacerdote di Ifá, padre dei misteri, nella tradizione Yorùbá
+    name: Bàbáláwo
+  - id: https://it.wikipedia.org/wiki/Religione_yoruba
+    name: Religione Yorùbá
+  - description: I 256 corpora poetici e divinatori del sistema Ifá
+    name: Odù Ifá
+  - description: Tradizione religiosa Yorùbá originaria, non sincretica
+    name: Ìṣẹ̀ṣe
 ---
 
 \*Questo articolo è la seconda parte di "Ifá: Il Sistema di Saggezza Yorùbá", dove abbiamo esplorato Ọ̀rúnmìlà, la tradizione orale e i 256 Odù. Qui approfondiamo i ruoli sacerdotali, gli strumenti divinatori e il messaggio centrale di Ifá.\*
