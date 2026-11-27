@@ -6,7 +6,7 @@ image: /images/blog/egungun.webp
 image_alt: Culto di Egungun in Nigeria.
 category: yoruba
 tags:
-  - Orisa, Orisha, Orixa, Yoruba, Candomble, Santeria, Umbanda,ifà, afro, afrobrasiliano,cosmologia Yorùbá
+  - Orisa, Orisha, Orixa, Yoruba, Candomble, Candomblé, Santeria, Umbanda, Ifá, ifà, afro, afrobrasiliano,cosmologia Yorùbá
 description: 'Cosa sono gli Òrìṣà? Scopri la tradizione spirituale Yorùbá: Olódùmarè, Orí, Àṣẹ e la cosmologia africana nella sua forma originaria, senza sincretismi.'
 author: Lorenzo Okìkí Rossi
 related: []

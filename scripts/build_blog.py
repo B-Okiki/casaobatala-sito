@@ -119,12 +119,17 @@ def format_date_italian(date_input):
 def parse_tags(raw_tags):
     """Normalizza i tag: gestisce stringhe e liste con virgole.
     Rimuove punti finali, spazi extra e duplicati."""
+    def _clean(t):
+        t = ' '.join(str(t).split())            # spazi/a capo multipli -> uno spazio
+        return t.lstrip('-–— ').rstrip('. ').strip()   # via trattini iniziali e punti finali
+
     if isinstance(raw_tags, str):
-        tags = [t.strip().rstrip('.') for t in raw_tags.split(',') if t.strip()]
+        tags = [_clean(t) for t in raw_tags.split(',')]
+        tags = [t for t in tags if t]
     elif isinstance(raw_tags, list):
         expanded = []
         for tag in raw_tags:
-            expanded.extend([t.strip().rstrip('.') for t in str(tag).split(',')])
+            expanded.extend([_clean(t) for t in str(tag).split(',')])
         tags = [t for t in expanded if t]
     else:
         tags = []

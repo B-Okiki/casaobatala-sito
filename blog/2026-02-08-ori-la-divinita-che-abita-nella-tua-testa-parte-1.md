@@ -6,7 +6,7 @@ image: /images/blog/ori.webp
 image_alt: rappresentazione di Orì la testa spirituale e fisica yoruba
 category: yoruba
 tags:
-  - Orì, Orisa, Orisha, Orixa, Ifá, Yoruba, Candomble, Santeria, Umbanda,ifà, afro, afrobrasiliano,cosmologia Yorùbá
+  - Orí, Orisa, Orisha, Orixa, Ifá, Yoruba, Candomble, Candomblé, Santeria, Umbanda, ifà, afro, afrobrasiliano,cosmologia Yorùbá
 description: 'Cosa è Orí? Scopri la tradizione spirituale Yorùbá: Òrìṣà, Orí, Àṣẹ nella tradizione africana nella sua forma originaria, senza sincretismi.'
 author: Lorenzo Okìkí Rossi
 faq: []

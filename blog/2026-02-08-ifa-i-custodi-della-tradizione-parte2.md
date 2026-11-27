@@ -6,7 +6,7 @@ image: /images/blog/divinazione-di-Ifa.webp
 image_alt: Divinazione_di_Ifa
 category: yoruba
 tags:
-  - Orì, Orisa, Orisha, Orixa, Ifá, Yoruba, Candomble, Santeria, Umbanda,ifà, afro, afrobrasiliano,cosmologia Yorùbá.
+  - Orí, Orisa, Orisha, Orixa, Ifá, Yoruba, Candomble, Candomblé, Santeria, Umbanda, ifà, afro, afrobrasiliano,cosmologia Yorùbá.
 description: 'Cosa è Ifá? Scopri la tradizione spirituale Yorùbá: Òrìṣà, Orí, Àṣẹ, Ifá nella tradizione africana nella sua forma originaria, senza sincretismi.'
 author: Lorenzo Okìkí Rossi
 faq: []

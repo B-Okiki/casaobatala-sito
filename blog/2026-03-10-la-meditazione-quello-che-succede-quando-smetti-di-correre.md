@@ -6,7 +6,7 @@ image: /images/blog/meditazione-neuroscienze.webp
 image_alt: meditazione, neuroscienze, mildfullness, benessere, training autogeno
 category: meditazione
 tags:
-  - meditazione, neuroscienze, mildfullness, relax, pace, benessere, training autogeno
+  - meditazione, neuroscienze, mindfulness, relax, pace, benessere, training autogeno
 description: Cos'è davvero la meditazione, perché praticarla e quali tecniche esistono. Un'introduzione accessibile e approfondita che unisce tradizione e scienza.
 author: Lorenzo Okìkí Rossi
 faq: []

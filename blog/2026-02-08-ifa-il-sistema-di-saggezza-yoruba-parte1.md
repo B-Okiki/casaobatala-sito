@@ -6,7 +6,7 @@ image: /images/blog/Ifa.webp
 image_alt: Tavoletta divinatoria di Ifá in legno scolpito, con segni Odù tracciati nella polvere e opele Ifá i accanto
 category: yoruba
 tags:
-  - Orì, Orisa, Orisha, Orixa, Ifá, Yoruba, Candomble, Santeria, Umbanda,ifà, afro, afrobrasiliano,cosmologia Yorùbá
+  - Orí, Orisa, Orisha, Orixa, Ifá, Yoruba, Candomble, Candomblé, Santeria, Umbanda, ifà, afro, afrobrasiliano,cosmologia Yorùbá
 description: 'Cosa è Ifá? Scopri la tradizione spirituale Yorùbá: Òrìṣà, Orí, Àṣẹ, Ifá nella tradizione africana nella sua forma originaria, senza sincretismi.'
 author: Lorenzo Okìkí Rossi
 faq: []
